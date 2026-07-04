@@ -146,13 +146,24 @@ const RELIGIONS = [
   {
     id: "lds", name: "Latter-day Saints (Mormonism)", emoji: "📖", tagline: "The Restoration",
     adherents: "~17 million", founded: "AD 1830 · New York, USA", founder: "Joseph Smith (1805–1844)",
-    scripture: "Bible, Book of Mormon, Doctrine & Covenants, Pearl of Great Price",
-    god: "God the Father, Jesus Christ, and the Holy Ghost as three distinct beings, one in purpose — a view mainstream Christianity disputes.",
-    problem: "The Fall and individual sin; mortal life as a probationary test.",
-    path: "Faith in Christ, repentance, baptism, temple covenants, and enduring to the end.",
-    afterlife: "Three degrees of glory; exaltation for the faithful.",
-    practices: "Sacrament meetings, temple worship, missionary service, tithing, the Word of Wisdom.",
-    branches: "The LDS Church (largest); Community of Christ."
+    scripture: "Bible (\"as far as it is translated correctly\"), Book of Mormon, Doctrine & Covenants, Pearl of Great Price — plus a living prophet",
+    god: "The Father, Son, and Holy Ghost as three distinct beings, one in purpose. The Father has a glorified physical body (D&C 130:22), and faithful humans may progress toward exaltation — \"As man now is, God once was; as God now is, man may be\" (Lorenzo Snow). Mainstream Christianity rejects this view of God.",
+    problem: "The Fall (viewed as a necessary step) and individual sin; mortal life is a probationary test within an eternal progression.",
+    path: "Faith in Christ, repentance, baptism by restored priesthood authority, temple ordinances and covenants, and enduring to the end — \"saved by grace, after all we can do\" (2 Nephi 25:23).",
+    afterlife: "Nearly everyone receives one of three kingdoms of glory — celestial, terrestrial, or telestial; exaltation in the celestial kingdom for the faithful; outer darkness only for rare \"sons of perdition\".",
+    practices: "Sacrament meetings, temple worship, baptism for the dead, two-year missions, tithing, the Word of Wisdom (no coffee, tea, alcohol, tobacco).",
+    branches: "The LDS Church (largest, Salt Lake City); Community of Christ."
+  },
+  {
+    id: "jw", name: "Jehovah's Witnesses", emoji: "🗼", tagline: "Jehovah's organization",
+    adherents: "~8.7 million active publishers", founded: "1870s · Pittsburgh, USA", founder: "Charles Taze Russell; reshaped under Joseph Rutherford",
+    scripture: "The Bible in the Watchtower's own New World Translation, read through Watchtower publications",
+    god: "Jehovah alone is Almighty God. The Trinity is rejected: Jesus is Jehovah's first creation (identified with Michael the archangel), and the holy spirit is God's impersonal active force.",
+    problem: "Adamic sin brought imperfection and death; Satan currently rules the world's systems.",
+    path: "Exercise faith in Jehovah and Christ's ransom, preach house to house, and remain loyal to Jehovah's visible organization led by the Governing Body.",
+    afterlife: "144,000 \"anointed\" rule with Christ in heaven; the faithful \"other sheep\" live forever on a restored paradise earth. No immortal soul and no hell — the wicked are annihilated.",
+    practices: "Door-to-door witnessing, Kingdom Hall meetings, the annual Memorial; no birthdays, holidays, military service, or blood transfusions.",
+    branches: "Centrally governed from Warwick, NY; no denominations."
   },
   {
     id: "atheism", name: "Atheism & Secular Humanism", emoji: "⚛️", tagline: "No god, self-made meaning",
