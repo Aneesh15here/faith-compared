@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Faith, Compared — An Apologetics Explorer</title>
+<meta name="description" content="An interactive, apologetics-informed comparison of the world's major religions, with a deep dive into Christianity and Islam." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top">Faith<span>,</span> Compared</a>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#religions">All Religions</a>
+      <a href="#compare">Compare Lab</a>
+      <a href="#deepdive">Christianity ↔ Islam</a>
+      <a href="#evidence">Evidence</a>
+      <a href="#questions">Questions</a>
+      <a href="#objections">Objections</a>
+      <a href="#atheism">Atheism</a>
+      <a href="#sources">Sources</a>
+      <a href="philosophy.html" style="color: var(--accent-2);">What Matters →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> An apologetics explorer</div>
+    <h1>Fifteen worldviews.<br><span class="grad">One honest comparison.</span></h1>
+    <p>A clear, friendly guide to what the world's religions actually teach — from the great five to Sikhism, Jainism, Shinto, and beyond — with a comparison lab to set any traditions side by side, apologetics deep dives into Christianity, Islam, and unbelief, and a look at what really matters in life.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#compare">Open the comparison lab →</a>
+      <a class="btn btn-ghost" href="#deepdive">Christianity vs. Islam</a>
+      <a class="btn btn-ghost" href="philosophy.html">What really matters?</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">The Big Five — Plus One</div>
+      <h2>Every worldview answers three questions</h2>
+      <p>Who (or what) is God? What is wrong with the world? And how is it made right? Every worldview — including atheism — answers all three. Here's each answer in one breath.</p>
+    </div>
+    <div class="cards-5">
+      <div class="rcard reveal">
+        <span class="emoji">✝️</span>
+        <h3>Christianity</h3>
+        <div class="tagline">Rescue by grace</div>
+        <p>One God in three persons — Father, Son, Spirit — who pursues people. Humanity's problem is sin; the solution is a free gift: forgiveness through Jesus' death and resurrection, received by faith.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">☪️</span>
+        <h3>Islam</h3>
+        <div class="tagline">Submission to Allah</div>
+        <p>One transcendent, absolutely singular God. Humanity's problem is failure to submit; the path is the Five Pillars and good deeds outweighing bad at the final judgment.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">✡️</span>
+        <h3>Judaism</h3>
+        <div class="tagline">Covenant faithfulness</div>
+        <p>One God who covenanted with Israel through Abraham and Moses. Life is lived in faithfulness to Torah — prayer, Sabbath, and study — awaiting the Messianic age.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">🕉️</span>
+        <h3>Hinduism</h3>
+        <div class="tagline">Liberation (moksha)</div>
+        <p>The divine (Brahman) manifests in many forms. The problem is karma binding souls to the cycle of rebirth; devotion, meditation, or ritual can lead to liberation.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">☸️</span>
+        <h3>Buddhism</h3>
+        <div class="tagline">Cessation (nirvana)</div>
+        <p>No creator God; the Buddha attained enlightenment, not divinity. Suffering comes from desire and attachment; the Eightfold Path leads toward nirvana, the end of craving.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">⚛️</span>
+        <h3>Atheism</h3>
+        <div class="tagline">No god, self-made meaning</div>
+        <p>The natural universe is all there is. The "problem" is ignorance and superstition; the path is reason, science, and human flourishing. Meaning is not found but made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ALL RELIGIONS ================= -->
+<section id="religions" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">The Whole Map</div>
+      <h2>All the world's major religions</h2>
+      <p>Fifteen living traditions — from the two-billion-strong to the ancient-but-small, plus the indigenous ways older than writing. Tap any card for the full profile: origins, scriptures, beliefs, and practices.</p>
+    </div>
+    <div class="cards-5" id="religionGrid"></div>
+  </div>
+</section>
+
+<!-- ================= COMPARISON LAB ================= -->
+<section id="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Build Your Own</div>
+      <h2>The comparison lab</h2>
+      <p>Pick any three to five traditions and see them side by side across ten categories — God, founder, scripture, the human problem, the path, the afterlife, and more.</p>
+    </div>
+    <div class="toggles reveal" id="compareChips"></div>
+    <p class="compare-hint" id="compareHint"></p>
+    <div class="matrix-scroll reveal" id="compareOut" hidden>
+      <table class="matrix" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MATRIX ================= -->
+<section id="matrix" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Side by Side</div>
+      <h2>The classic six-way grid</h2>
+      <p>The curated apologetics matrix for the six worldviews covered in depth below — God, scripture, the human problem, the solution, Jesus, and the afterlife. For all fifteen traditions, use the comparison lab above.</p>
+    </div>
+
+    <div class="toggles reveal" id="toggles">
+      <button class="toggle active" data-col="christianity">✝️ Christianity</button>
+      <button class="toggle active" data-col="islam">☪️ Islam</button>
+      <button class="toggle active" data-col="judaism">✡️ Judaism</button>
+      <button class="toggle" data-col="hinduism">🕉️ Hinduism</button>
+      <button class="toggle" data-col="buddhism">☸️ Buddhism</button>
+      <button class="toggle active" data-col="atheism">⚛️ Atheism</button>
+    </div>
+
+    <div class="matrix-scroll reveal">
+      <table class="matrix" id="matrixTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th data-col="christianity">✝️ Christianity</th>
+            <th data-col="islam">☪️ Islam</th>
+            <th data-col="judaism">✡️ Judaism</th>
+            <th data-col="hinduism">🕉️ Hinduism</th>
+            <th data-col="buddhism">☸️ Buddhism</th>
+            <th data-col="atheism">⚛️ Atheism</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>God</th>
+            <td data-col="christianity">One God in three persons (Trinity). Personal, relational — "God is love" (1 John 4:8). He initiates relationship with humanity.</td>
+            <td data-col="islam">One God (Allah), an absolute unity (tawhid). Transcendent creator and judge; humans relate to him as servants. Trinity and incarnation are explicitly denied.</td>
+            <td data-col="judaism">One God (the Shema, Deut. 6:4). Personal and covenantal; revealed himself to Abraham, Moses, and the prophets.</td>
+            <td data-col="hinduism">Brahman, the supreme reality, manifesting through many deities (Brahma, Vishnu, Shiva, and others). Both personal and impersonal understandings exist.</td>
+            <td data-col="buddhism">No creator God. Ultimate questions about deity are set aside; the focus is enlightenment, not worship of a divine being.</td>
+            <td data-col="atheism">None. The physical universe is all there is, was, or will be; belief in God is seen as a human invention.</td>
+          </tr>
+          <tr>
+            <th>Founder</th>
+            <td data-col="christianity">Jesus of Nazareth (c. 4 BC–AD 30/33) — claimed to be God incarnate, was crucified, and his followers proclaimed his bodily resurrection.</td>
+            <td data-col="islam">Muhammad (AD 570–632) — regarded as the final prophet, the "seal of the prophets" (Surah 33:40), who received the Quran.</td>
+            <td data-col="judaism">Abraham (covenant) and Moses (Torah), c. 2000–1300 BC.</td>
+            <td data-col="hinduism">No single founder; developed over millennia in the Indian subcontinent from the Vedic tradition.</td>
+            <td data-col="buddhism">Siddhartha Gautama, the Buddha (c. 5th century BC), who taught the path he found to enlightenment.</td>
+            <td data-col="atheism">No founder — a stream of thought running from Epicurus through the Enlightenment to the "New Atheists" (Dawkins, Hitchens, Harris, Dennett).</td>
+          </tr>
+          <tr>
+            <th>Scripture</th>
+            <td data-col="christianity">The Bible (Old + New Testaments): 66 books by ~40 authors over ~1,500 years, treated by apologists as historically testable eyewitness documents.</td>
+            <td data-col="islam">The Quran, recited by Muhammad over 23 years; plus Hadith. Muslims hold that earlier scriptures (Torah, Gospel/Injīl) were corrupted over time.</td>
+            <td data-col="judaism">The Tanakh (Torah, Prophets, Writings) and rabbinic tradition (Talmud).</td>
+            <td data-col="hinduism">The Vedas, Upanishads, Bhagavad Gita, and epics — a vast, layered corpus.</td>
+            <td data-col="buddhism">The Pali Canon (Tripitaka) and later sutras, varying by school.</td>
+            <td data-col="atheism">None. Science and reason are the trusted guides; no text carries authority beyond its evidence.</td>
+          </tr>
+          <tr>
+            <th>Human problem</th>
+            <td data-col="christianity">Sin — moral rebellion that separates every person from a holy God. Nobody can be good enough to fix it themselves.</td>
+            <td data-col="islam">Not fallen, but weak and forgetful; people fail to submit to Allah's will. There is no doctrine of original sin.</td>
+            <td data-col="judaism">Sin as breaking covenant; repentance (teshuvah), prayer, and good deeds restore relationship.</td>
+            <td data-col="hinduism">Ignorance (avidya) and karma bind the soul to samsara — the cycle of death and rebirth.</td>
+            <td data-col="buddhism">Suffering (dukkha), caused by craving and attachment (the Second Noble Truth).</td>
+            <td data-col="atheism">No cosmic problem — only practical ones: ignorance, superstition, and poorly organized societies.</td>
+          </tr>
+          <tr>
+            <th>The solution</th>
+            <td data-col="christianity"><strong>Grace.</strong> Salvation is a free gift — Jesus' death pays for sin, his resurrection secures life. Received by faith, not earned (Eph. 2:8–9).</td>
+            <td data-col="islam"><strong>Works + mercy.</strong> Follow the Five Pillars; at judgment your deeds are weighed. Allah may forgive whom he wills, but no atonement is provided.</td>
+            <td data-col="judaism"><strong>Covenant faithfulness.</strong> Live out Torah; God is merciful to the repentant.</td>
+            <td data-col="hinduism"><strong>Liberation.</strong> Through the paths of devotion (bhakti), knowledge (jnana), or works (karma yoga), escape rebirth into moksha.</td>
+            <td data-col="buddhism"><strong>The Eightfold Path.</strong> Right view, intention, speech, action, livelihood, effort, mindfulness, concentration — extinguishing desire into nirvana.</td>
+            <td data-col="atheism"><strong>Reason & progress.</strong> Science, education, and secular ethics improve the human condition; each person builds their own meaning.</td>
+          </tr>
+          <tr>
+            <th>Who is Jesus?</th>
+            <td data-col="christianity">The eternal Son of God — "the Word was God" (John 1:1) — fully God and fully man, crucified and bodily risen, head of the church, coming again as judge.</td>
+            <td data-col="islam">A revered prophet (Isa), virgin-born and miracle-working — but created, not divine (Surah 3:59), not crucified (Surah 4:157), and not the Son of God (Surah 19:35).</td>
+            <td data-col="judaism">A first-century Jewish teacher; not the Messiah, whose arrival is still awaited.</td>
+            <td data-col="hinduism">Sometimes honored as a guru or avatar among many; not unique.</td>
+            <td data-col="buddhism">A wise, enlightened moral teacher; no divine status.</td>
+            <td data-col="atheism">A first-century preacher (most grant he existed and was crucified); the miracles and resurrection are considered legend.</td>
+          </tr>
+          <tr>
+            <th>Afterlife</th>
+            <td data-col="christianity">Bodily resurrection and final judgment; eternal life with God for those in Christ, separation from God for those who reject him.</td>
+            <td data-col="islam">Resurrection and judgment; Paradise (Jannah) or Hell (Jahannam) based on the scales of deeds and Allah's decree.</td>
+            <td data-col="judaism">Views vary — from the world to come (Olam Ha-Ba) to resurrection in the Messianic age.</td>
+            <td data-col="hinduism">Reincarnation according to karma until moksha — absorption into or communion with Brahman.</td>
+            <td data-col="buddhism">Rebirth driven by karma until nirvana — the cessation of the cycle, not eternal personal life.</td>
+            <td data-col="atheism">None. Death is the permanent end of consciousness; we live on only in memory and consequence.</td>
+          </tr>
+          <tr>
+            <th>Assurance</th>
+            <td data-col="christianity">Yes — because salvation rests on Christ's finished work, not personal performance: "these things I have written… that you may know" (1 John 5:13).</td>
+            <td data-col="islam">No — final destiny rests on the scales and Allah's sovereign will; certainty before judgment is not promised.</td>
+            <td data-col="judaism">Emphasis falls on faithful living now rather than assurance about the hereafter.</td>
+            <td data-col="hinduism">None in a single lifetime — liberation may take countless rebirths.</td>
+            <td data-col="buddhism">None promised — progress toward nirvana can span many lifetimes.</td>
+            <td data-col="atheism">Not applicable — there is nothing after death to be assured of; the task is a meaningful life now.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DEEP DIVE ================= -->
+<section id="deepdive">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Deep Dive</div>
+      <h2>Christianity ↔ Islam</h2>
+      <p>The world's two largest faiths agree God is one, real, and will judge the world — then part ways on nearly everything that follows. Explore the five great divides, following Nabeel Qureshi's framework in <em>No God but One</em>.</p>
+    </div>
+
+    <div class="tabs reveal" id="ddTabs">
+      <button class="tab active" data-panel="p-god">1 · Who God Is</button>
+      <button class="tab" data-panel="p-jesus">2 · Who Jesus Is</button>
+      <button class="tab" data-panel="p-scripture">3 · Scripture</button>
+      <button class="tab" data-panel="p-salvation">4 · Salvation</button>
+      <button class="tab" data-panel="p-afterlife">5 · Afterlife & Assurance</button>
+    </div>
+
+    <!-- GOD -->
+    <div class="tab-panel active" id="p-god">
+      <div class="duel">
+        <div class="duel-card christian">
+          <div class="faith-label">✝️ Christianity</div>
+          <h4>One God, three persons — and his name is Love</h4>
+          <p>The God of the New Testament is <strong>triune</strong>: Father, Son, and Holy Spirit — one being, eternally existing in loving relationship. That's why the Bible can say "God <em>is</em> love" (1 John 4:8): love existed within God before anything was created.</p>
+          <p>Because God is relational in himself, he pursues relationship with people — climaxing in sending his Son: "God so loved the world that he gave his one and only Son" (John 3:16).</p>
+          <span class="cite">1 John 4:8</span><span class="cite">John 3:16</span><span class="cite">Matt. 28:19</span>
+        </div>
+        <div class="duel-card islam">
+          <div class="faith-label">☪️ Islam</div>
+          <h4>One God, absolutely singular — the Master</h4>
+          <p>Allah is a strict unity (<strong>tawhid</strong>) — as apologists put it, "a monad" with no internal interpersonal relations. Associating partners with him (<em>shirk</em>) is the gravest sin, so the Trinity and incarnation are firmly rejected (Surah 112).</p>
+          <p>The Quran describes Allah with 99 names — merciful, compassionate, mighty — but never identifies God <em>as</em> love, nor commands loving God the way the Bible's greatest commandment does. The believer's posture is that of a servant before a master.</p>
+          <span class="cite">Surah 112</span><span class="cite">Surah 4:171</span><span class="cite">Surah 5:73</span>
+        </div>
+      </div>
+      <div class="contrast-strip reveal">
+        <p><strong>The hinge:</strong> both faiths are monotheistic, but only one says love is eternal within God's own nature. In Islam, God's love would need creation to have an object; in Christianity, the Father loved the Son "before the foundation of the world" (John 17:24).</p>
+      </div>
+    </div>
+
+    <!-- JESUS -->
+    <div class="tab-panel" id="p-jesus">
+      <div class="duel">
+        <div class="duel-card christian">
+          <div class="faith-label">✝️ Christianity</div>
+          <h4>God the Son, crucified and risen</h4>
+          <p>Jesus is "the Word" who "was God" and "became flesh" (John 1:1, 14) — eternally existing, the agent of creation, "the only begotten of the Father" (John 1:18). He claimed divine authority, accepted worship, and forgave sins.</p>
+          <p>His crucifixion is the atoning center of history, and his bodily resurrection is Christianity's make-or-break claim: "if Christ has not been raised, your faith is futile" (1 Cor. 15:17).</p>
+          <span class="cite">John 1:1–3</span><span class="cite">Heb. 1:1–2</span><span class="cite">1 Cor. 15</span>
+        </div>
+        <div class="duel-card islam">
+          <div class="faith-label">☪️ Islam</div>
+          <h4>A great prophet — but only a prophet</h4>
+          <p>The Quran honors Isa (Jesus): virgin-born, miracle-working, even speaking from the cradle (Surah 19:27–34). Yet he is a created being — "the likeness of Jesus is as Adam; He created him from dust" (Surah 3:59).</p>
+          <p>Crucially, the Quran denies he was crucified: "they killed him not, nor crucified him, but so it was made to appear to them" (Surah 4:157). With no cross, there is no atonement — and Muhammad, not Jesus, is the final prophet and supreme example (Surah 33:21, 40).</p>
+          <span class="cite">Surah 3:59</span><span class="cite">Surah 4:157</span><span class="cite">Surah 19:35</span>
+        </div>
+      </div>
+      <div class="contrast-strip reveal">
+        <p><strong>The hinge:</strong> the crucifixion. Virtually all historians — religious or not — agree Jesus died by Roman crucifixion; it is among the best-attested facts of ancient history. Islam's denial of it (six centuries after the event) is where apologists press hardest.</p>
+      </div>
+    </div>
+
+    <!-- SCRIPTURE -->
+    <div class="tab-panel" id="p-scripture">
+      <div class="duel">
+        <div class="duel-card christian">
+          <div class="faith-label">✝️ Christianity</div>
+          <h4>A library of testable eyewitness documents</h4>
+          <p>The New Testament is a collection of first-century documents — Gospels, letters, history — that openly appeal to eyewitnesses ("we did not follow cleverly devised myths… we were eyewitnesses," 2 Pet. 1:16) and invite verification (1 Cor. 15:6 names 500 living witnesses).</p>
+          <p>Evangelical apologists lean into this: even treated merely as historical documents, the manuscripts (5,800+ Greek copies, some within decades of the originals) allow the text to be reconstructed with high confidence — no "corruption" thesis survives the manuscript evidence.</p>
+          <span class="cite">Luke 1:1–4</span><span class="cite">2 Pet. 1:16</span><span class="cite">1 Cor. 15:3–8</span>
+        </div>
+        <div class="duel-card islam">
+          <div class="faith-label">☪️ Islam</div>
+          <h4>One book, one prophet, one recitation</h4>
+          <p>The Quran is held to be Allah's literal, eternal speech, dictated to Muhammad through the angel Gabriel over 23 years. Its literary beauty is offered as its own miracle (the challenge of Surah 2:23).</p>
+          <p>Islam teaches the earlier revelations — Torah and Injīl (Gospel) — were textually corrupted (<em>tahrif</em>), which is why the Quran was needed. Apologists respond that the Quran itself tells Christians to judge by the Gospel they possessed in Muhammad's day (Surah 5:47) — a Gospel whose manuscripts predate Islam and match today's text.</p>
+          <span class="cite">Surah 2:23</span><span class="cite">Surah 5:47</span><span class="cite">Surah 33:40</span>
+        </div>
+      </div>
+      <div class="contrast-strip reveal">
+        <p><strong>The hinge:</strong> the corruption claim. Complete New Testament manuscripts (like Codex Sinaiticus, c. AD 350) predate Muhammad by centuries. If the Gospel text in AD 600 is the Gospel text today, the <em>tahrif</em> argument loses its footing — a point Qureshi develops at length.</p>
+      </div>
+    </div>
+
+    <!-- SALVATION -->
+    <div class="tab-panel" id="p-salvation">
+      <div class="duel">
+        <div class="duel-card christian">
+          <div class="faith-label">✝️ Christianity</div>
+          <h4>Grace: rescued, not rewarded</h4>
+          <p>"By grace you have been saved, through faith… it is the gift of God, not a result of works" (Eph. 2:8–9). The gospel's claim is that God himself absorbed the cost of sin at the cross, so forgiveness is free to the guilty and boasting is impossible.</p>
+          <p>Good works matter — but as the <em>fruit</em> of salvation, not the <em>root</em>. The order is: accepted, therefore obedient. Not: obedient, hoping to be accepted.</p>
+          <span class="cite">Eph. 2:8–10</span><span class="cite">Rom. 3:23–24</span><span class="cite">Titus 3:5</span>
+        </div>
+        <div class="duel-card islam">
+          <div class="faith-label">☪️ Islam</div>
+          <h4>The scales: deeds weighed on the last day</h4>
+          <p>The path is submission expressed through the <strong>Five Pillars</strong> — the confession (Shahada), prayer five times daily (Salat), almsgiving (Zakat), fasting Ramadan (Sawm), and pilgrimage (Hajj).</p>
+          <p>On the Day of Judgment "those whose scales are heavy — they are the successful; those whose scales are light — they have lost their souls" (Surah 23:102–103). Allah is merciful and may forgive, but there is no substitute, no atoning sacrifice, and no burden-bearer: "no bearer of burdens shall bear the burden of another" (Surah 35:18).</p>
+          <span class="cite">Surah 23:102–103</span><span class="cite">Surah 35:18</span>
+        </div>
+      </div>
+      <div class="contrast-strip reveal">
+        <p><strong>The hinge:</strong> grace versus scales. This is the contrast evangelical writers press most — every religion says "do"; the gospel says "done." One system tells you to climb; the other announces that God came down.</p>
+      </div>
+    </div>
+
+    <!-- AFTERLIFE -->
+    <div class="tab-panel" id="p-afterlife">
+      <div class="duel">
+        <div class="duel-card christian">
+          <div class="faith-label">✝️ Christianity</div>
+          <h4>Assurance now, resurrection ahead</h4>
+          <p>Because salvation rests on Christ's finished work rather than fluctuating performance, the believer can have assurance today: "I write these things… that you may <em>know</em> that you have eternal life" (1 John 5:13).</p>
+          <p>The destination is not a disembodied heaven but bodily resurrection in a renewed creation — Jesus' own resurrection being "the firstfruits" (1 Cor. 15:20) and the guarantee.</p>
+          <span class="cite">1 John 5:13</span><span class="cite">1 Cor. 15:20–22</span><span class="cite">Rev. 21:1–4</span>
+        </div>
+        <div class="duel-card islam">
+          <div class="faith-label">☪️ Islam</div>
+          <h4>Paradise or fire — decided at the scales</h4>
+          <p>Islam teaches bodily resurrection and a final judgment leading to the gardens of Jannah or the fire of Jahannam. Descriptions of Paradise are vivid and physical — gardens, rivers, rest.</p>
+          <p>But assurance beforehand is not offered: destiny hangs on the weighing of deeds and Allah's inscrutable decree. Even Muhammad is recorded saying he did not know what would be done with him (Hadith; cf. Surah 46:9). Faithful Muslims live in hope tempered by uncertainty.</p>
+          <span class="cite">Surah 23:102–103</span><span class="cite">Surah 46:9</span>
+        </div>
+      </div>
+      <div class="contrast-strip reveal">
+        <p><strong>The hinge:</strong> can you know? Apologists note this is often the most personally felt difference in Christian–Muslim conversations: the gospel offers a settled verdict in advance — "there is therefore now no condemnation for those who are in Christ Jesus" (Rom. 8:1).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JESUS PORTRAITS ================= -->
+<section id="jesus" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Zooming In</div>
+      <h2>Two portraits of Jesus</h2>
+      <p>Both books talk about Jesus — but they describe two very different figures. Tap each contrast to compare the Quran's Isa with the Bible's Christ, verse by verse.</p>
+    </div>
+    <div class="accordion reveal">
+      <details class="acc-item" open>
+        <summary>Is Jesus the Son of God?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ The Quran</span>"It is not befitting to the majesty of Allah that he should beget a son." — Surah 19:35</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>Jesus is "the only begotten of the Father," who makes the unseen God known. — John 1:18</div>
+        </div></div>
+      </details>
+      <details class="acc-item">
+        <summary>Was Jesus created, or eternal?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ The Quran</span>"The likeness of Jesus is as Adam; He created him from dust." — Surah 3:59</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>"In the beginning was the Word… the Word was God… all things were made through him." — John 1:1–3</div>
+        </div></div>
+      </details>
+      <details class="acc-item">
+        <summary>Is Jesus just one prophet among many?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ The Quran</span>Jesus is listed alongside Moses, David, and other prophets — an honored messenger in a long line. — Surah 6:84–85</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>Jesus is "worthy of more glory than Moses" — the Son over the house, not a servant in it. — Hebrews 3:3</div>
+        </div></div>
+      </details>
+      <details class="acc-item">
+        <summary>Who is God's final word?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ The Quran</span>Muhammad is "the seal of the prophets" — the final messenger. — Surah 33:40</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>"In these last days God has spoken to us by his Son" — Jesus is the final revelation. — Hebrews 1:1–2</div>
+        </div></div>
+      </details>
+      <details class="acc-item">
+        <summary>Can Jesus intercede for you?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ Islamic tradition</span>Jesus is not granted the role of intercessor on the last day. — cf. Sahih al-Bukhari 6:236</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>"He always lives to make intercession" for those who come to God through him. — Hebrews 7:25</div>
+        </div></div>
+      </details>
+      <details class="acc-item">
+        <summary>How does Jesus return?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ Islamic tradition</span>Jesus returns as a Muslim who fights for Islam, breaks the cross, and confirms Muhammad's message.</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>Jesus returns as King of kings to judge the living and the dead. — Revelation 19:11–21</div>
+        </div></div>
+      </details>
+      <details class="acc-item">
+        <summary>Whose example is supreme?</summary>
+        <div class="acc-body"><div class="acc-grid">
+          <div class="acc-cell q"><span class="lbl">☪️ The Quran</span>"In the messenger of Allah you have a beautiful pattern of conduct." — Surah 33:21 (of Muhammad)</div>
+          <div class="acc-cell b"><span class="lbl">✝️ The Bible</span>Jesus was "tempted in every way as we are — yet without sin." — Hebrews 4:15</div>
+        </div></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EVIDENCE ================= -->
+<section id="evidence">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Weighing the Claims</div>
+      <h2>The evidence question</h2>
+      <p>Christianity plants its flag on a historical event: the resurrection. Gary Habermas's "minimal facts" approach — the standard evangelical apologetic — builds only on data the large majority of scholars, including skeptics, accept.</p>
+    </div>
+
+    <div class="facts">
+      <div class="fact reveal">
+        <span class="num">01</span>
+        <h3>Jesus died by crucifixion</h3>
+        <p>Attested by Christian, Roman (Tacitus), and Jewish (Josephus) sources — accepted by virtually all historians of antiquity.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">02</span>
+        <h3>The disciples believed they saw him risen</h3>
+        <p>They proclaimed appearances of the risen Jesus and were transformed from hiding to bold public witness — many at cost of their lives.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">03</span>
+        <h3>Paul, the persecutor, converted</h3>
+        <p>A hostile enemy of the church became its greatest missionary, explaining it as an encounter with the risen Christ.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">04</span>
+        <h3>James, the skeptic, converted</h3>
+        <p>Jesus' own brother didn't believe during his ministry — then became a leader of the Jerusalem church after a claimed appearance.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">05</span>
+        <h3>The tomb was empty</h3>
+        <p>Habermas's "+1": roughly 75% of scholars writing on the subject grant the empty tomb — first reported by women, an unlikely invention in that culture.</p>
+      </div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 40px;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">Qureshi's five historical questions</h2>
+      <p>In <em>No God but One</em>, former Muslim Nabeel Qureshi asks which faith's central claims survive historical scrutiny.</p>
+    </div>
+    <div class="q5">
+      <div class="q5-item reveal"><div class="qn">1</div><div><h3>Did Jesus die by crucifixion?</h3><p>The evidence is overwhelming and near-universally granted — yet the Quran denies it (Surah 4:157), writing six centuries later.</p></div></div>
+      <div class="q5-item reveal"><div class="qn">2</div><div><h3>Did Jesus rise from the dead?</h3><p>The minimal facts above demand explanation; Qureshi argues the resurrection explains them better than any naturalistic alternative.</p></div></div>
+      <div class="q5-item reveal"><div class="qn">3</div><div><h3>Did Jesus claim to be God?</h3><p>From the earliest sources — Mark's "Son of Man" sayings, Paul's pre-existing creeds — Jesus is presented with divine identity, not as a later legend.</p></div></div>
+      <div class="q5-item reveal"><div class="qn">4</div><div><h3>Is Muhammad a prophet of God?</h3><p>Qureshi examines the traditional arguments (character, miracles, prophecies) and finds them resting on late, devotional sources rather than early testimony.</p></div></div>
+      <div class="q5-item reveal"><div class="qn">5</div><div><h3>Is the Quran the Word of God?</h3><p>He weighs the literary-miracle claim, alleged scientific foreknowledge, and perfect preservation — and finds each argument weaker than presented.</p></div></div>
+    </div>
+
+    <div class="contrast-strip reveal" style="margin-top: 36px; max-width: 860px; margin-left: auto; margin-right: auto;">
+      <p><strong>His conclusion:</strong> "The central claims of Christianity are explicitly rejected by Islam" — both cannot be true — and the historical evidence, he argues, decisively favors the Christian claims. Christianity uniquely stakes everything on a checkable public event: "If Christ has not been raised, your faith is futile" (1 Cor. 15:17).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUESTIONS TO ASK ================= -->
+<section id="questions" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">For the Conversation</div>
+      <h2>Questions to ask your Muslim friends</h2>
+      <p>Drawn from David Wood (Acts 17 Apologetics) and Nabeel Qureshi, these questions use the <em>Quran itself</em> as the starting point — not attacks, but genuine puzzles worth thinking through together. Ask them with curiosity, not as "gotchas."</p>
+    </div>
+
+    <div class="accordion reveal">
+      <details class="qa-card" open>
+        <summary><span class="qn">1</span>If the Bible was corrupted, why does the Quran tell Christians to judge by it?</summary>
+        <div class="qa-body">
+          <p>Surah 5:47 commands: <em>"Let the People of the Gospel judge by what Allah has revealed therein."</em> Surah 5:68 says the People of the Book "have nothing" until they observe the Torah and the Gospel. And Surah 10:94 tells doubters to <em>"ask those who have been reading the Scripture before you."</em></p>
+          <p>These commands were given in the 7th century — about the Gospel Christians possessed <em>then</em>. But complete New Testament manuscripts (Codex Sinaiticus, Codex Vaticanus, c. AD 325–350) predate Muhammad and match today's text. The Gospel of Muhammad's day is the Gospel of ours.</p>
+          <div class="why"><strong>Why it matters:</strong> This is David Wood's "Islamic Dilemma." If the Bible is God's preserved Word, Islam is false (the Bible contradicts the Quran on the cross, resurrection, and Jesus' deity). If the Bible is <em>not</em> God's preserved Word, Islam is still false (the Quran said to judge by it). Either way, the Quran's own endorsement creates the problem.</div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">2</span>If "none can change the words of Allah," how was the Gospel corrupted?</summary>
+        <div class="qa-body">
+          <p>Surah 18:27 declares: <em>"There is no changing His words."</em> Surah 6:115 repeats it: <em>"None can change His words."</em> Yet the Quran also calls the Torah and the Gospel revelations Allah sent down (Surah 5:44–46).</p>
+          <p>So the question is gentle but pointed: if the Gospel is Allah's word, and no one can change Allah's words, who changed the Gospel — and when, and where is the uncorrupted manuscript trail?</p>
+          <div class="why"><strong>Why it matters:</strong> The corruption claim (<em>tahrif</em>) is the load-bearing wall of the Islamic case against Christianity. There is no manuscript evidence of a "different" pre-Islamic Gospel, and the Quran's own preservation promise works against the claim.</div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">3</span>Does the Quran describe the Trinity Christians actually believe?</summary>
+        <div class="qa-body">
+          <p>In Surah 5:116, Allah asks Jesus: <em>"Did you say to the people, 'Take me and my mother as two gods besides Allah?'"</em> — apparently understanding the Trinity as Allah, Jesus, and <strong>Mary</strong>. Surah 5:73 condemns saying "Allah is the third of three."</p>
+          <p>But no Christian creed has ever taught that Mary is part of the Trinity, or that there are three gods. Christians believe in <em>one</em> God in three persons — a doctrine settled centuries before Muhammad.</p>
+          <div class="why"><strong>Why it matters:</strong> If the Quran is the perfect speech of the all-knowing God, why does it refute a Trinity no Christian believes? A human author in 7th-century Arabia encountering fringe groups might make that mistake; it's harder to explain in a perfect revelation.</div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">4</span>Why does the Quran give Jesus titles it gives no one else — including Muhammad?</summary>
+        <div class="qa-body">
+          <p>In the Quran, Jesus alone is virgin-born (Surah 3:47), called <em>"the Word of Allah and a Spirit from Him"</em> (Surah 4:171), sinless ("a pure boy," Surah 19:19), a healer of the blind and leper who raises the dead (Surah 3:49), alive in heaven now, and returning at the end of history.</p>
+          <p>Muhammad, by contrast, is told to ask forgiveness for his sin (Surah 47:19; 48:2) and performs no miracle in the Quran itself (Surah 29:50–51).</p>
+          <div class="why"><strong>Why it matters:</strong> This was a turning point in Nabeel Qureshi's own journey. If Jesus is uniquely the Word of God, sinless, and alive — even by the Quran's account — isn't he worth investigating on his own terms, in the Gospels?</div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">5</span>How does the Quran's crucifixion denial outweigh all the historical evidence?</summary>
+        <div class="qa-body">
+          <p>Surah 4:157 says of Jesus: <em>"they killed him not, nor crucified him, but so it was made to appear to them."</em> One verse, written six centuries after the event, six hundred miles from Jerusalem.</p>
+          <p>Against it stand the earliest Christian creeds (within a few years of the event), all four Gospels, Roman historians (Tacitus), Jewish sources (Josephus, the Talmud) — which is why virtually every historian of antiquity, of any religion or none, affirms the crucifixion.</p>
+          <div class="why"><strong>Why it matters:</strong> If the "substitution" reading is right, Allah made everyone <em>believe</em> Jesus died — which would make God the author of history's biggest deception, and the unwitting founder of Christianity.</div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">6</span>Can you know, today, that you'll be in Paradise?</summary>
+        <div class="qa-body">
+          <p>Surah 23:102–103 says destiny hangs on the scales of deeds. Surah 19:71 adds a sobering note: <em>"There is not one of you but shall pass over it (Hell)."</em> Even Muhammad said, "I do not know what will be done with me" (cf. Surah 46:9; Sahih al-Bukhari 5.266).</p>
+          <p>So the personal question: how many good deeds are enough? And if the prophet himself lacked assurance, can anyone have it?</p>
+          <div class="why"><strong>Why it matters:</strong> This is usually the most heart-level question of all. The gospel's answer is different in kind: assurance rests on Christ's finished work, not the believer's fluctuating record — "that you may <em>know</em> that you have eternal life" (1 John 5:13).</div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">7</span>If salvation is by deeds, why did God provide a sacrifice for Abraham?</summary>
+        <div class="qa-body">
+          <p>Both faiths tell the story: Abraham is willing to sacrifice his son, and God provides a substitute — <em>"We ransomed him with a momentous sacrifice"</em> (Surah 37:107). Muslims commemorate it every year at Eid al-Adha.</p>
+          <p>Ask: what did that ransom picture? Why does God's own story establish the principle of a substitute dying in another's place — the very principle Islam denies when it rejects the cross ("no bearer of burdens shall bear the burden of another," Surah 35:18)?</p>
+          <div class="why"><strong>Why it matters:</strong> The gospel's claim is that Abraham's ram pointed forward to God's true provision — "Behold, the Lamb of God, who takes away the sin of the world" (John 1:29).</div>
+        </div>
+      </details>
+    </div>
+
+    <div class="contrast-strip reveal" style="max-width: 860px; margin: 32px auto 0;">
+      <p><strong>A word on posture:</strong> David Wood's debates can be sharp, but the goal in friendship is different — "in your hearts honor Christ the Lord as holy, always being prepared to make a defense… yet do it with <em>gentleness and respect</em>" (1 Peter 3:15). Ask, listen, and let your friend actually wrestle. Most Muslims have never been asked these questions kindly.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ANSWERING OBJECTIONS ================= -->
+<section id="objections">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">When the Questions Come Back</div>
+      <h2>Answering Islamic questions about Christianity</h2>
+      <p>Fair is fair — Muslims have sincere questions for Christians too. Here are the six you'll hear most, with responses drawn from NAMB Apologetics, Answering Islam, and classic evangelical apologetics.</p>
+    </div>
+
+    <div class="accordion reveal">
+      <details class="qa-card" open>
+        <summary><span class="qn">1</span>"The Bible has been corrupted."</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>The original Torah and Injīl were changed over time; that's why the Quran was needed to restore the true message.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>Ask the clarifying questions: corrupted <em>when</em>, <em>where</em>, and <em>by whom</em>? We possess 5,800+ Greek New Testament manuscripts, some within decades of the originals, plus complete Bibles (Sinaiticus, Vaticanus) from ~300 years <em>before</em> Muhammad. Manuscripts scattered across three continents could not have been uniformly altered — and they match.</p>
+            <p>Then note the dilemma: the Quran itself calls the Gospel God's revelation (Surah 5:46), tells Christians to judge by it (5:47), and says none can change Allah's words (18:27). Corruption before Muhammad contradicts the Quran; corruption after Muhammad is refuted by the manuscripts.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">2</span>"The Trinity means you worship three gods."</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>Saying God is "three" is shirk — associating partners with Allah, the unforgivable sin (Surah 4:48). How can 1 + 1 + 1 = 1?</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>Start with agreement: Christians also confess <em>one</em> God — "Hear, O Israel: the LORD our God, the LORD is one" (Deut. 6:4; affirmed by Jesus in Mark 12:29). The Trinity is not three gods, and it is not God + Jesus + Mary (the view Surah 5:116 refutes).</p>
+            <p>The key distinction is <strong>being vs. person</strong>: one divine being, three persons who share it. The math isn't 1+1+1=3 gods but 1×1×1 — one "what," three "whos." Then let Scripture speak: at Jesus' baptism the Father speaks, the Son stands in the water, the Spirit descends (Matt. 3:16–17). And only a triune God can be eternally loving in himself — love needs a beloved (John 17:24).</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">3</span>"Jesus never said, 'I am God — worship me.'"</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>Show me one verse where Jesus says those exact words. He called himself the Son of Man and prayed to God — a prophet, not God.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>Jesus claimed deity the way a first-century Jew would — by doing what only God does and taking what only God owns. He forgave sins against God ("Why does this man speak like that? He is blaspheming!" — Mark 2:5–7), claimed to be Lord of the Sabbath (Mark 2:28), said "before Abraham was, <em>I AM</em>" (John 8:58 — they picked up stones), and accepted worship, including Thomas's "My Lord and my God!" (John 20:28) without correction.</p>
+            <p>Even "Son of Man" is a divine claim: in Daniel 7:13–14 the Son of Man rides the clouds, receives worship, and rules forever — the very passage Jesus quoted at his trial, which the high priest called blasphemy (Mark 14:62–64). The title Muslims think is humble is the strongest claim of all.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">4</span>"How can God have a son? Does God have a wife?"</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>"How can He have a son when He has no consort?" (Surah 6:101). It is not befitting for Allah to beget (Surah 19:35, 92).</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>Agree immediately: the idea that God took a wife and produced offspring is blasphemous — and Christians reject it as firmly as Muslims do. "Son of God" is not biological; it describes an eternal relationship of love and likeness within God, not an event.</p>
+            <p>Note that the Quran's objection targets pagan notions of divine offspring (which existed in Arabia), not the Christian doctrine. Scripture uses "son" the way Arabic uses <em>ibn</em> in phrases like <em>ibn al-sabil</em> ("son of the road" = traveler) — relationship, not procreation. The Son is the eternal Word (John 1:1) — and interestingly, the Quran also calls Jesus God's Word (Surah 4:171).</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">5</span>"How could God die on a cross? Who was running the universe?"</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>God cannot die. If Jesus was God and Jesus died, then God died — which is absurd. And why would a just God punish an innocent man anyway?</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>Death in Scripture is not cessation of existence — it's the separation of the person from the body. On the cross the divine nature didn't stop existing or stop sustaining the universe; the eternal Son, having taken on a human nature, experienced human death in that nature (Phil. 2:6–8). The Incarnation means one person, two natures.</p>
+            <p>On justice: the cross is not God punishing an unwilling third party. It is the Judge himself stepping down to absorb the sentence — "God was in Christ reconciling the world to himself" (2 Cor. 5:19). The one who pays the debt is the one owed it. That's not injustice; it's mercy at cost to the merciful — something the scales of deeds can never offer.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">6</span>"Paul corrupted Christianity — Jesus' real message was Islam."</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>Jesus preached submission to God; Paul, who never met him, invented the deity of Christ, the cross, and salvation by grace.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>The core gospel predates Paul. In 1 Corinthians 15:3–7 Paul quotes a creed he "received" — Christ died for our sins, was buried, was raised, appeared — which scholars (including skeptics) date to within about five years of the crucifixion, before Paul's major ministry. Paul also submitted his message to Peter, James, and John in Jerusalem, "and they added nothing to me" (Gal. 2:1–9).</p>
+            <p>And the earliest sources of all — Mark's Gospel and the pre-Pauline hymns (Phil. 2:6–11) — already present a divine, crucified, risen Jesus. There is no early "Islamic Jesus" layer beneath the New Testament; that Jesus first appears in the 7th century.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="contrast-strip reveal" style="max-width: 860px; margin: 32px auto 0;">
+      <p><strong>Remember the goal:</strong> winning an argument is not winning a person. Answer honestly, admit what you don't know, and keep pointing back to the person of Jesus — the one figure both books cannot stop talking about.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ATHEISM ================= -->
+<section id="atheism" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">The Sixth Worldview</div>
+      <h2>Atheism ↔ Christianity</h2>
+      <p>Atheism is a worldview too — it makes claims about reality, morality, and meaning that can be examined like any other. Here's the head-to-head, followed by atheism's biggest objections to Christianity and the questions apologists ask back.</p>
+    </div>
+
+    <div class="duel reveal">
+      <div class="duel-card christian">
+        <div class="faith-label">✝️ Christianity</div>
+        <h4>A universe with an Author</h4>
+        <p>Reality begins with mind, not matter: "In the beginning, God created" (Gen. 1:1). The universe had a cause; its fine-tuning reflects design; moral law reflects a moral Lawgiver; and human reason works because we're made in the image of a rational God.</p>
+        <p>Meaning, dignity, and hope are <em>discovered</em>, not invented — grounded in something that outlasts the sun.</p>
+        <span class="cite">Gen. 1:1</span><span class="cite">Rom. 1:20</span><span class="cite">Rom. 2:14–15</span>
+      </div>
+      <div class="duel-card atheist">
+        <div class="faith-label">⚛️ Atheism</div>
+        <h4>A universe without one</h4>
+        <p>Matter and energy are the whole story. The universe either always existed, arose from a quantum vacuum, or is one of countless multiverse bubbles. Life emerged by chemistry, minds by evolution, and morality by social instinct.</p>
+        <p>As Richard Dawkins puts it, the universe has "no design, no purpose, no evil, no good, nothing but blind, pitiless indifference." Meaning is a human project — real to us, invisible to the cosmos.</p>
+        <span class="cite">Dawkins, <em>River Out of Eden</em></span>
+      </div>
+    </div>
+    <div class="contrast-strip reveal" style="margin-top: 26px;">
+      <p><strong>The hinge:</strong> Frank Turek's point in <em>I Don't Have Enough Faith to Be an Atheist</em> — both views take steps beyond the lab. The question is which worldview better explains the data everyone shares: a universe that began, laws that are finely tuned, minds that reason, and morals that feel binding.</p>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 70px;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">Atheism's objections — and responses</h2>
+      <p>The four objections you'll hear most, with responses drawn from The Gospel Coalition and CrossExamined.</p>
+    </div>
+    <div class="accordion reveal">
+      <details class="qa-card" open>
+        <summary><span class="qn">1</span>"A good God wouldn't allow so much evil and suffering."</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>If God is all-good and all-powerful, evil shouldn't exist. It does. So God is either not good, not powerful, or not there.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>First, the hidden premise: calling anything genuinely <em>evil</em> assumes an objective standard of good — and a standard above humanity is exactly what atheism denies. The objection borrows the very yardstick it's trying to throw away.</p>
+            <p>Second, Christian theodicy: God permits evil he intends to defeat — free creatures can genuinely love only if they can genuinely refuse (the free-will theodicy), and God's track record is turning the worst evil into the greatest good: the cross itself (Acts 2:23). Christianity is the one worldview where God doesn't watch suffering from a distance — he entered it.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">2</span>"Okay — then who made God?"</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>If everything needs a cause, God needs one too. Saying "God just exists" is special pleading.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>The Kalam argument never claims "everything needs a cause" — it claims everything that <em>begins to exist</em> needs one. The universe began (Big Bang cosmology, the second law of thermodynamics); God, by definition, did not. An eternal, uncaused being isn't special pleading — it's the terminus every chain of causes logically requires. Even the atheist needs something eternal; the question is whether it's mindless matter or a mind.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">3</span>"Science has explained God away."</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>Lightning, disease, evolution — every gap God used to fill, science filled instead. Faith is what you have before you have data.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>Christians agree God isn't a gap-filler — he's the reason there's an ordered, mathematically describable universe for science to study at all. Modern science was largely built by theists (Kepler, Newton, Faraday, Maxwell, Lemaître — a priest — proposed the Big Bang) who expected laws because they expected a Lawgiver.</p>
+            <p>And science keeps uncovering things it can't explain from inside: why the constants of physics are fine-tuned for life to one part in trillions, why there's something rather than nothing, and why blind neurons should produce reasoning we can trust. Explaining <em>how</em> the engine runs doesn't explain away the engineer.</p>
+          </div>
+        </div>
+      </details>
+
+      <details class="qa-card">
+        <summary><span class="qn">4</span>"Faith is belief without evidence."</summary>
+        <div class="qa-body">
+          <div class="obj-cell ask"><span class="obj-label">The objection</span>Religion asks you to believe things on authority; science asks you to check. Faith and reason are opposites.</div>
+          <div class="obj-cell answer"><span class="obj-label">A response</span>
+            <p>That defines faith in a way the Bible doesn't. Biblical faith is <em>trust based on evidence</em> — Luke opens his Gospel citing eyewitness investigation (Luke 1:1–4); Paul stakes everything on a checkable public event with named living witnesses (1 Cor. 15:3–8); Jesus offered his wounds to a doubter (John 20:27). "Come now, let us reason together," says the LORD (Isa. 1:18).</p>
+            <p>Everyone exercises trust beyond direct proof — in memory, in other minds, in the uniformity of nature. The question is never faith vs. no faith; it's which object of trust holds the evidence.</p>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 70px;">
+      <h2 style="font-size: clamp(1.5rem, 3vw, 2rem);">Four questions to ask your atheist friends</h2>
+      <p>The classic apologetic arguments, phrased as friendly questions.</p>
+    </div>
+    <div class="facts">
+      <div class="fact reveal">
+        <span class="num">01</span>
+        <h3>Why is there something rather than nothing?</h3>
+        <p>Whatever begins to exist has a cause; the universe began to exist. What caused it — and why does "nothing" never seem to mean nothing in the naturalistic answers?</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">02</span>
+        <h3>Why is the universe fine-tuned for life?</h3>
+        <p>Change the cosmological constant or the strong force a hair and no stars, chemistry, or life exist. Design, necessity, or an unobservable multiverse — which takes more faith?</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">03</span>
+        <h3>Is anything really wrong?</h3>
+        <p>If morality is only evolution's survival software, was the Holocaust just unfashionable? Objective moral duties need a ground taller than us — the moral argument in one question.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">04</span>
+        <h3>Why trust a brain that evolution built for survival, not truth?</h3>
+        <p>If thoughts are just chemistry selected for fitness, why trust the chemistry that produced atheism? Reason itself testifies to a rational source (Darwin's own "horrid doubt").</p>
+      </div>
+    </div>
+
+    <div class="contrast-strip reveal" style="max-width: 860px; margin: 32px auto 0;">
+      <p><strong>And the same posture applies:</strong> most atheists left a church that answered questions badly, or never met a Christian who welcomed hard ones. Curiosity beats combat — "always being prepared to make a defense… with gentleness and respect" (1 Pet. 3:15).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SOURCES ================= -->
+<section id="sources">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Go Deeper</div>
+      <h2>Sources & further reading</h2>
+      <p>This site condenses material from these evangelical apologetics resources. Read them in full — they say it better.</p>
+    </div>
+    <div class="sources">
+      <a class="src reveal" href="https://www.thegospelcoalition.org/article/the-message-of-islam-vs-the-gospel-of-jesus/" target="_blank" rel="noopener">
+        <div class="site">The Gospel Coalition</div>
+        <h3>The Message of Islam vs. the Gospel of Jesus</h3>
+        <p>The heart of the grace-versus-works contrast between the two faiths.</p>
+      </a>
+      <a class="src reveal" href="https://www.thegospelcoalition.org/essay/the-resurrection/" target="_blank" rel="noopener">
+        <div class="site">The Gospel Coalition</div>
+        <h3>The Resurrection (Concise Theology essay)</h3>
+        <p>Why the resurrection is the make-or-break claim of Christianity.</p>
+      </a>
+      <a class="src reveal" href="https://au.thegospelcoalition.org/article/resurrection-evidence-blind-faith/" target="_blank" rel="noopener">
+        <div class="site">TGC Australia</div>
+        <h3>Jesus' Resurrection: Evidence or Blind Faith?</h3>
+        <p>Christianity stands or falls on evidence — and appeals to eyewitnesses.</p>
+      </a>
+      <a class="src reveal" href="https://www.namb.net/apologetics/resource/comparison-chart-islam-and-christianity/" target="_blank" rel="noopener">
+        <div class="site">NAMB Apologetics</div>
+        <h3>Comparison Chart: Islam and Christianity</h3>
+        <p>A category-by-category doctrinal chart from the North American Mission Board.</p>
+      </a>
+      <a class="src reveal" href="https://thecripplegate.com/differences-between-the-jesus-of-the-quran-the-jesus-of-the-bible/" target="_blank" rel="noopener">
+        <div class="site">The Cripplegate</div>
+        <h3>The Jesus of the Qur'an vs. the Jesus of the Bible</h3>
+        <p>Nine verse-by-verse contrasts — the backbone of our "Two Portraits" section.</p>
+      </a>
+      <a class="src reveal" href="https://journal.rts.edu/review/no-god-one-allah-jesus-former-muslim-investigates-evidence-islam-christianity/" target="_blank" rel="noopener">
+        <div class="site">Reformed Theological Seminary</div>
+        <h3>Nabeel Qureshi — No God but One: Allah or Jesus?</h3>
+        <p>A former Muslim weighs the evidence for both faiths' central claims.</p>
+      </a>
+      <a class="src reveal" href="https://crossexamined.org/the-minimal-facts-of-the-resurrection/" target="_blank" rel="noopener">
+        <div class="site">CrossExamined</div>
+        <h3>The Minimal Facts of the Resurrection</h3>
+        <p>Gary Habermas's "4+1" facts that even skeptical scholars grant.</p>
+      </a>
+      <a class="src reveal" href="https://www.everystudent.com/features/religions-of-the-world.html" target="_blank" rel="noopener">
+        <div class="site">EveryStudent.com</div>
+        <h3>Connecting with the Divine: World Religions Compared</h3>
+        <p>Hinduism, Buddhism, Islam, and Christianity on God and salvation.</p>
+      </a>
+      <a class="src reveal" href="https://www.thegospelcoalition.org/essay/the-problem-of-evil/" target="_blank" rel="noopener">
+        <div class="site">The Gospel Coalition</div>
+        <h3>The Problem of Evil</h3>
+        <p>The free-will and natural-law theodicies behind our atheism section.</p>
+      </a>
+      <a class="src reveal" href="https://crossexamined.org/category/atheism/" target="_blank" rel="noopener">
+        <div class="site">CrossExamined</div>
+        <h3>Frank Turek — Atheism Resources</h3>
+        <p>Kalam, fine-tuning, and the moral argument from the author of <em>I Don't Have Enough Faith to Be an Atheist</em>.</p>
+      </a>
+      <a class="src reveal" href="https://acts17.com/" target="_blank" rel="noopener">
+        <div class="site">Acts 17 Apologetics</div>
+        <h3>David Wood — Acts 17 Apologetics</h3>
+        <p>Debates, videos, and the "Islamic Dilemma" — the source of our Questions section.</p>
+      </a>
+      <a class="src reveal" href="https://www.youtube.com/watch?v=nNAS0aaViM4" target="_blank" rel="noopener">
+        <div class="site">David Wood (video)</div>
+        <h3>The Quran, the Bible, and the Islamic Dilemma</h3>
+        <p>Wood's flagship argument from Surah 5:47, 5:68, 10:94, and 18:27.</p>
+      </a>
+      <a class="src reveal" href="https://www.namb.net/apologetics/resource/engaging-muslims-part-2-five-common-objections/" target="_blank" rel="noopener">
+        <div class="site">NAMB Apologetics</div>
+        <h3>Engaging Muslims: Five Common Objections</h3>
+        <p>How to respond graciously to the questions Muslims ask Christians.</p>
+      </a>
+      <a class="src reveal" href="https://answering-islam.org/" target="_blank" rel="noopener">
+        <div class="site">Answering Islam</div>
+        <h3>Answering Islam — A Christian-Muslim Dialog</h3>
+        <p>The long-running library of detailed responses on both sides of the dialogue.</p>
+      </a>
+      <a class="src reveal" href="https://www.biola.edu/blogs/think-biblically/2023/the-qur-an-and-the-christian" target="_blank" rel="noopener">
+        <div class="site">Biola University</div>
+        <h3>The Qur'an and the Christian</h3>
+        <p>How Christians can understand and engage the Quran thoughtfully.</p>
+      </a>
+    </div>
+
+    <div class="note reveal" style="margin-top: 48px;">
+      <strong>A note on perspective.</strong> This site was built from evangelical Christian apologetics sources, and its framing reflects that viewpoint. We've aimed to state each religion's own teaching accurately and respectfully — quoting the Quran and Islamic tradition directly — while being honest that the analysis and conclusions come from a Christian vantage point. The best next step in any direction is to read the primary texts and the linked sources yourself.
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Faith, Compared · Built from evangelical apologetics sources · For study and discussion — always verify with the original texts. · <a href="philosophy.html" style="color: var(--accent-2); text-decoration: none;">What really matters →</a></p>
+  </div>
+</footer>
+
+<button id="toTop" title="Back to top">↑</button>
+
+<div class="modal-overlay" id="relModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modalClose" title="Close">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="religions.js"></script>
+<script>
+  // ---- comparison matrix column toggles ----
+  const toggles = document.querySelectorAll('#toggles .toggle');
+  function refreshCols() {
+    const active = new Set([...toggles].filter(t => t.classList.contains('active')).map(t => t.dataset.col));
+    document.querySelectorAll('#matrixTable [data-col]').forEach(cell => {
+      cell.classList.toggle('col-hidden', !active.has(cell.dataset.col));
+    });
+  }
+  toggles.forEach(t => t.addEventListener('click', () => {
+    const activeCount = [...toggles].filter(x => x.classList.contains('active')).length;
+    if (t.classList.contains('active') && activeCount === 1) return; // keep at least one
+    t.classList.toggle('active');
+    refreshCols();
+  }));
+  refreshCols();
+
+  // ---- deep dive tabs ----
+  const tabs = document.querySelectorAll('#ddTabs .tab');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  }));
+
+  // ---- reveal on scroll ----
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .rcard, .fact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+
+  // ---- back to top ----
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 700), { passive: true });
+  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>
