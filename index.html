@@ -35,6 +35,7 @@
       <a href="#restoration">Which Christianity?</a>
       <a href="#atheism">Atheism</a>
       <a href="#sources">Sources</a>
+      <a href="#contact">Contact</a>
       <a href="philosophy.html" style="color: var(--accent-2);">What Matters →</a>
     </div>
   </div>
@@ -1176,6 +1177,36 @@
   </div>
 </section>
 
+<!-- ================= CONTACT ================= -->
+<section id="contact" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Get in Touch</div>
+      <h2>Leave a comment</h2>
+      <p>Questions, corrections, disagreements, or just thoughts — all are welcome. Your message goes straight to the site's author.</p>
+    </div>
+    <form id="contactForm" class="contact-form reveal" novalidate>
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="form-row">
+        <label>Name
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>Email
+          <input type="email" name="email" required placeholder="you@example.com">
+        </label>
+      </div>
+      <label>Comment
+        <textarea name="message" rows="6" required placeholder="Your comment or question…"></textarea>
+      </label>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" id="contactSend">Send comment →</button>
+        <a class="btn btn-ghost" href="mailto:aneeshdafwork@gmail.com?subject=Comment%20on%20comparereligion.com">Or email directly</a>
+      </div>
+      <p class="form-status" id="formStatus" role="status"></p>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -1235,6 +1266,42 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').catch(() => {});
   }
+
+  // ---- contact form (FormSubmit relay) ----
+  const contactForm = document.getElementById('contactForm');
+  const formStatus = document.getElementById('formStatus');
+  const contactSend = document.getElementById('contactSend');
+  contactForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!contactForm.reportValidity()) return;
+    if (contactForm._honey.value) return; // bot
+    contactSend.disabled = true;
+    contactSend.textContent = 'Sending…';
+    formStatus.classList.remove('error');
+    formStatus.textContent = '';
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/aneeshdafwork@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: contactForm.name.value,
+          email: contactForm.email.value,
+          message: contactForm.message.value,
+          _subject: 'New comment on comparereligion.com'
+        })
+      });
+      if (!res.ok) throw new Error('send failed');
+      contactForm.reset();
+      contactSend.textContent = 'Sent ✓';
+      formStatus.textContent = 'Thank you — your comment is on its way.';
+      setTimeout(() => { contactSend.disabled = false; contactSend.textContent = 'Send comment →'; }, 4000);
+    } catch (err) {
+      contactSend.disabled = false;
+      contactSend.textContent = 'Send comment →';
+      formStatus.classList.add('error');
+      formStatus.textContent = 'Something went wrong — please use the "email directly" button instead.';
+    }
+  });
 </script>
 </body>
 </html>

@@ -362,6 +362,23 @@
 .compare-hint { text-align: center; color: var(--muted); font-size: .88rem; margin: -16px 0 26px; transition: color .2s; }
 .compare-hint.warn { color: var(--accent-2); font-weight: 600; }
 
+/* ===== contact form ===== */
+.contact-form { max-width: 720px; margin: 0 auto; display: grid; gap: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 640px) { .form-row { grid-template-columns: 1fr; } }
+.contact-form label { display: grid; gap: 8px; font-size: .85rem; font-weight: 600; color: var(--muted); }
+.contact-form input, .contact-form textarea {
+  background: rgba(255,255,255,.05); border: 1px solid var(--card-border); border-radius: 12px;
+  padding: 14px 16px; color: var(--text); font-family: inherit; font-size: .95rem;
+  transition: border-color .2s; resize: vertical;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: rgba(124,140,255,.6); }
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(154,163,184,.55); }
+.form-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.form-actions .btn { border: none; }
+.form-status { font-size: .9rem; color: var(--green); min-height: 1.3em; }
+.form-status.error { color: var(--rose); }
+
 /* ===== quote cards (philosophy page) ===== */
 .quote-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
 .quote-card { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 22px 24px; }
