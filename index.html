@@ -1200,7 +1200,6 @@
       </label>
       <div class="form-actions">
         <button type="submit" class="btn btn-primary" id="contactSend">Send comment →</button>
-        <a class="btn btn-ghost" href="mailto:aneeshdafwork@gmail.com?subject=Comment%20on%20comparereligion.com">Or email directly</a>
       </div>
       <p class="form-status" id="formStatus" role="status"></p>
     </form>
@@ -1280,7 +1279,7 @@
     formStatus.classList.remove('error');
     formStatus.textContent = '';
     try {
-      const res = await fetch('https://formsubmit.co/ajax/aneeshdafwork@gmail.com', {
+      const res = await fetch('https://formsubmit.co/ajax/3af65db5073e39fb154eb3268d8f0105', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
@@ -1299,7 +1298,7 @@
       contactSend.disabled = false;
       contactSend.textContent = 'Send comment →';
       formStatus.classList.add('error');
-      formStatus.textContent = 'Something went wrong — please use the "email directly" button instead.';
+      formStatus.textContent = 'Something went wrong — please try again in a moment.';
     }
   });
 </script>
