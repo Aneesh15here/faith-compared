@@ -1,10 +1,20 @@
 {
-  "updated": "2026-07-08T11:26:38Z",
-  "total": 1,
+  "updated": "2026-07-09T06:53:58Z",
+  "total": 10,
   "countries": [
     {
       "code": "AU",
       "name": "Australia",
+      "count": 7
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "count": 2
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
       "count": 1
     }
   ]
