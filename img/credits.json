@@ -1,0 +1,156 @@
+{
+ "christianity": {
+  "subject": "Christ the Redeemer (statue)",
+  "article": "https://en.wikipedia.org/wiki/Christ_the_Redeemer_(statue)",
+  "file": "Christ_the_Redeemer_-_Cristo_Redentor.jpg",
+  "artist": "Arne M\u00fcseler",
+  "license": "CC BY-SA 3.0 de"
+ },
+ "islam": {
+  "subject": "Kaaba",
+  "article": "https://en.wikipedia.org/wiki/Kaaba",
+  "file": "3840px-The_Ka'ba,_Great_Mosque_of_Mecca,_Saudi_Arabia_(4).jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "judaism": {
+  "subject": "Western Wall",
+  "article": "https://en.wikipedia.org/wiki/Western_Wall",
+  "file": "Westernwall2.jpg",
+  "artist": "Golasso",
+  "license": "CC BY-SA 4.0"
+ },
+ "hinduism": {
+  "subject": "Meenakshi Temple",
+  "article": "https://en.wikipedia.org/wiki/Meenakshi_Temple",
+  "file": "3840px-An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "buddhism": {
+  "subject": "Borobudur",
+  "article": "https://en.wikipedia.org/wiki/Borobudur",
+  "file": "3840px-Pradaksina.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "sikhism": {
+  "subject": "Golden Temple",
+  "article": "https://en.wikipedia.org/wiki/Golden_Temple",
+  "file": "3840px-The_Golden_Temple_of_Amrithsar_7.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "bahai": {
+  "subject": "Lotus Temple",
+  "article": "https://en.wikipedia.org/wiki/Lotus_Temple",
+  "file": "LotusDelhi.jpg",
+  "artist": "Vandelizer",
+  "license": "CC BY 2.0"
+ },
+ "jainism": {
+  "subject": "Ranakpur Jain temple",
+  "article": "https://en.wikipedia.org/wiki/Ranakpur_Jain_temple",
+  "file": "Chaumukha_Jain_temple_at_Ranakpur_in_Aravalli_range_near_Udaipur_Rajasthan_India.jpg",
+  "artist": "Nagarjun Kandukuru",
+  "license": "CC BY 2.0"
+ },
+ "zoroastrianism": {
+  "subject": "Fire temple",
+  "article": "https://en.wikipedia.org/wiki/Fire_temple",
+  "file": "Zoroastrian_Fire_Temple,_Yazd_(2).jpg",
+  "artist": "Uploaded to Flickr by Adam Jones(Copied to Wikimedia by nagualdesign)",
+  "license": "CC BY-SA 2.0"
+ },
+ "taoism": {
+  "subject": "Wudang Mountains",
+  "article": "https://en.wikipedia.org/wiki/Wudang_Mountains",
+  "file": "Wudang_Mountain_(54131425234).jpg",
+  "artist": "xiquinhosilva",
+  "license": "CC BY 2.0"
+ },
+ "confucianism": {
+  "subject": "Temple of Confucius, Qufu",
+  "article": "https://en.wikipedia.org/wiki/Temple_of_Confucius%2C_Qufu",
+  "file": "\u66f2\u961c\u5b54\u5edf\u5927\u6210\u6bbf.jpg",
+  "artist": "kanegen",
+  "license": "CC BY 2.0"
+ },
+ "shinto": {
+  "subject": "Itsukushima Shrine",
+  "article": "https://en.wikipedia.org/wiki/Itsukushima_Shrine",
+  "file": "3840px-Itsukushima_Shrine_Torii_Gate_(13890465459).jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "indigenous": {
+  "subject": "Uluru",
+  "article": "https://en.wikipedia.org/wiki/Uluru",
+  "file": "ULURU.jpg",
+  "artist": "Ek2030372672",
+  "license": "CC BY-SA 4.0"
+ },
+ "lds": {
+  "subject": "Salt Lake Temple",
+  "article": "https://en.wikipedia.org/wiki/Salt_Lake_Temple",
+  "file": "Salt_Lake_Temple,_Utah_-_Sept_2004.jpg",
+  "artist": "Diliff",
+  "license": "CC BY 2.5"
+ },
+ "jw": {
+  "subject": "Kingdom Hall",
+  "article": "https://en.wikipedia.org/wiki/Kingdom_Hall",
+  "file": "3840px-JW_Rocky2.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "atheism": {
+  "subject": "Milky Way",
+  "article": "https://en.wikipedia.org/wiki/Milky_Way",
+  "file": "3840px-ESO-VLT-Laser-phot-33a-07.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "hagia": {
+  "subject": "Hagia Sophia",
+  "article": "https://en.wikipedia.org/wiki/Hagia_Sophia",
+  "file": "Hagia_Sophia_(228968325).jpeg",
+  "artist": "Adli Wahid",
+  "license": "CC BY-SA 3.0"
+ },
+ "stpeters": {
+  "subject": "St. Peter's Basilica",
+  "article": "https://en.wikipedia.org/wiki/St._Peter's_Basilica",
+  "file": "3840px-Basilica_di_San_Pietro_in_Vaticano_September_2015-1a.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "athens": {
+  "subject": "The School of Athens",
+  "article": "https://en.wikipedia.org/wiki/The_School_of_Athens",
+  "file": "\"The_School_of_Athens\"_by_Raffaello_Sanzio_da_Urbino.jpg",
+  "artist": "Raphael",
+  "license": "Public domain"
+ },
+ "celsus": {
+  "subject": "Library of Celsus",
+  "article": "https://en.wikipedia.org/wiki/Library_of_Celsus",
+  "file": "3840px-Ephesus_Celsus_Library_Fa\u00e7ade.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "earth": {
+  "subject": "Earth",
+  "article": "https://en.wikipedia.org/wiki/Earth",
+  "file": "3840px-Meteosat-12-fci-march-equinox-2025-noon.jpg",
+  "artist": "Unknown",
+  "license": "see source"
+ },
+ "scientology": {
+  "subject": "Church of Scientology building, Los Angeles",
+  "article": "https://en.wikipedia.org/wiki/Church_of_Scientology",
+  "file": "Church_of_Scientology_building_in_Los_Angeles,_Fountain_Avenue.jpg",
+  "artist": "PictorialEvidence",
+  "license": "CC BY-SA 3.0"
+ }
+}

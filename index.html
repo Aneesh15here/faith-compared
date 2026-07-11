@@ -20,41 +20,47 @@
 <body>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
+<div id="progress"></div>
 
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="#top">Faith<span>,</span> Compared</a>
+    <a class="logo" href="#/">Faith<span>,</span> Compared</a>
     <div class="nav-links">
-      <a href="#overview">Overview</a>
-      <a href="#religions">All Religions</a>
-      <a href="#compare">Compare Lab</a>
-      <a href="#deepdive">Christianity ↔ Islam</a>
-      <a href="#evidence">Evidence</a>
-      <a href="#questions">Questions</a>
-      <a href="#objections">Objections</a>
-      <a href="#restoration">Which Christianity?</a>
-      <a href="#atheism">Atheism</a>
-      <a href="#sources">Sources</a>
-      <a href="#contact">Contact</a>
+      <a href="#/" data-r="home">Home</a>
+      <a href="#/religions" data-r="religions">All Religions</a>
+      <a href="#/compare" data-r="compare">Compare Lab</a>
+      <a href="#/islam" data-r="islam">Christianity ↔ Islam</a>
+      <a href="#/evidence" data-r="evidence">Evidence</a>
+      <a href="#/questions" data-r="questions">Questions</a>
+      <a href="#/objections" data-r="objections">Objections</a>
+      <a href="#/restoration" data-r="restoration">Which Christianity?</a>
+      <a href="#/atheism" data-r="atheism">Atheism</a>
+      <a href="#/sources" data-r="sources">Sources</a>
+      <a href="#/contact" data-r="contact">Contact</a>
       <a href="philosophy.html" style="color: var(--accent-2);">What Matters →</a>
     </div>
   </div>
 </nav>
 
+<main>
+
+<!-- ================= HOME / THE JOURNEY ================= -->
+<div class="view active" data-route="home">
+
 <header class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-veil"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="spark">✦</span> An apologetics explorer</div>
-    <h1>Sixteen worldviews.<br><span class="grad">One honest comparison.</span></h1>
-    <p>A clear, friendly guide to what the world's religions actually teach — from the great five to Sikhism, Jainism, Shinto, and beyond — with a comparison lab to set any traditions side by side, apologetics deep dives into Christianity, Islam, and unbelief, and a look at what really matters in life.</p>
+    <h1>Seventeen worldviews.<br><span class="grad">One honest comparison.</span></h1>
+    <p>A clear, friendly guide to what the world's religions actually teach — from the great five to Sikhism, Scientology, Shinto, and beyond — with a comparison lab to set any traditions side by side, apologetics deep dives into Christianity, Islam, and unbelief, and a look at what really matters in life.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="#compare">Open the comparison lab →</a>
-      <a class="btn btn-ghost" href="#deepdive">Christianity vs. Islam</a>
+      <a class="btn btn-primary" href="#/religions">Begin the journey →</a>
+      <a class="btn btn-ghost" href="#/compare">Comparison lab</a>
       <a class="btn btn-ghost" href="philosophy.html">What really matters?</a>
     </div>
   </div>
 </header>
-
-<main>
 
 <!-- ================= OVERVIEW ================= -->
 <section id="overview">
@@ -101,29 +107,110 @@
         <div class="tagline">No god, self-made meaning</div>
         <p>The natural universe is all there is. The "problem" is ignorance and superstition; the path is reason, science, and human flourishing. Meaning is not found but made.</p>
       </div>
+      <div class="rcard reveal">
+        <span class="emoji">🔺</span>
+        <h3>Scientology</h3>
+        <div class="tagline">The Bridge to Total Freedom</div>
+        <p>You are a thetan — an immortal spirit clouded by "engrams" from countless past lives. The path is paid auditing up the Bridge, from "Clear" through the Operating Thetan levels.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- journey chapters -->
+<section id="chapters">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Choose Your Path</div>
+      <h2>The journey, in ten chapters</h2>
+      <p>Step into any chapter — each opens as its own page. Come back here anytime with the ← crumb at the top of every chapter.</p>
+    </div>
+    <div class="chapters reveal">
+      <a class="chapter" href="#/religions" style="--cimg:url('img/earth.jpg')">
+        <span class="ch-no">CHAPTER 01</span><h3>The Whole Map</h3>
+        <p>All seventeen worldviews — origins, scriptures, beliefs, practices.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/compare" style="--cimg:url('img/athens.jpg')">
+        <span class="ch-no">CHAPTER 02</span><h3>The Comparison Lab</h3>
+        <p>Pick any traditions and set them side by side, category by category.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/islam" style="--cimg:url('img/hagia.jpg')">
+        <span class="ch-no">CHAPTER 03</span><h3>Christianity ↔ Islam</h3>
+        <p>The five great divides — God, Jesus, Scripture, salvation, assurance.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/evidence" style="--cimg:url('img/christianity.jpg')">
+        <span class="ch-no">CHAPTER 04</span><h3>Weighing the Evidence</h3>
+        <p>The minimal facts of the resurrection and Qureshi's five questions.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/questions" style="--cimg:url('img/islam.jpg')">
+        <span class="ch-no">CHAPTER 05</span><h3>Questions to Ask</h3>
+        <p>Seven Quran-based questions for your Muslim friends, asked kindly.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/objections" style="--cimg:url('img/celsus.jpg')">
+        <span class="ch-no">CHAPTER 06</span><h3>Answering Objections</h3>
+        <p>The six questions Muslims ask Christians most — with responses.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/restoration" style="--cimg:url('img/stpeters.jpg')">
+        <span class="ch-no">CHAPTER 07</span><h3>Which Christianity?</h3>
+        <p>Catholic, Orthodox, Protestant — and the restorationist movements.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/atheism" style="--cimg:url('img/atheism.jpg')">
+        <span class="ch-no">CHAPTER 08</span><h3>Atheism ↔ Christianity</h3>
+        <p>The problem of evil, "who made God?", fine-tuning, and moral law.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/sources" style="--cimg:url('img/athens.jpg')">
+        <span class="ch-no">CHAPTER 09</span><h3>Sources & Reading</h3>
+        <p>Every apologetics resource this site condenses, linked in full.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+      <a class="chapter" href="#/contact" style="--cimg:url('img/earth.jpg')">
+        <span class="ch-no">CHAPTER 10</span><h3>Join the Conversation</h3>
+        <p>Questions, corrections, or a story to share — send a comment.</p>
+        <span class="ch-arrow">Enter →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</div><!-- /home view -->
+
 <!-- ================= ALL RELIGIONS ================= -->
-<section id="religions" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="religions" class="view" data-route="religions">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/earth.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 01</span><h2 class="tb-title">The Whole Map</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">The Whole Map</div>
       <h2>All the world's major religions</h2>
-      <p>Sixteen living traditions — from the two-billion-strong to the ancient-but-small, plus the indigenous ways older than writing. Tap any card for the full profile: origins, scriptures, beliefs, and practices.</p>
+      <p>Seventeen living traditions — from the two-billion-strong to the ancient-but-small, plus the indigenous ways older than writing. Hover any tile to preview it; tap for the full profile: origins, scriptures, beliefs, and practices.</p>
     </div>
     <div class="cards-5" id="religionGrid"></div>
   </div>
 </section>
 
 <!-- ================= COMPARISON LAB ================= -->
-<section id="compare">
+<section id="compare" class="view" data-route="compare">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/athens.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 02</span><h2 class="tb-title">The Comparison Lab</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Build Your Own</div>
       <h2>The comparison lab</h2>
-      <p>Pick any three to five traditions and see them side by side across ten categories — God, founder, scripture, the human problem, the path, the afterlife, and more.</p>
+      <p>Pick any two to five traditions and see them side by side across ten categories — God, founder, scripture, the human problem, the path, the afterlife, and more. A head-to-head of just two makes the sharpest contrast.</p>
     </div>
     <div class="toggles reveal" id="compareChips"></div>
     <p class="compare-hint" id="compareHint"></p>
@@ -134,7 +221,7 @@
 </section>
 
 <!-- ================= MATRIX ================= -->
-<section id="matrix" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="matrix" class="view" data-route="compare">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Side by Side</div>
@@ -149,6 +236,7 @@
       <button class="toggle" data-col="hinduism">🕉️ Hinduism</button>
       <button class="toggle" data-col="buddhism">☸️ Buddhism</button>
       <button class="toggle active" data-col="atheism">⚛️ Atheism</button>
+      <button class="toggle" data-col="scientology">🔺 Scientology</button>
     </div>
 
     <div class="matrix-scroll reveal">
@@ -162,6 +250,7 @@
             <th data-col="hinduism">🕉️ Hinduism</th>
             <th data-col="buddhism">☸️ Buddhism</th>
             <th data-col="atheism">⚛️ Atheism</th>
+            <th data-col="scientology">🔺 Scientology</th>
           </tr>
         </thead>
         <tbody>
@@ -173,6 +262,7 @@
             <td data-col="hinduism">Brahman, the supreme reality, manifesting through many deities (Brahma, Vishnu, Shiva, and others). Both personal and impersonal understandings exist.</td>
             <td data-col="buddhism">No creator God. Ultimate questions about deity are set aside; the focus is enlightenment, not worship of a divine being.</td>
             <td data-col="atheism">None. The physical universe is all there is, was, or will be; belief in God is seen as a human invention.</td>
+            <td data-col="scientology">No personal God defined — the "Eighth Dynamic" is infinity. Each person is a thetan, an immortal spiritual being trillions of years old.</td>
           </tr>
           <tr>
             <th>Founder</th>
@@ -182,6 +272,7 @@
             <td data-col="hinduism">No single founder; developed over millennia in the Indian subcontinent from the Vedic tradition.</td>
             <td data-col="buddhism">Siddhartha Gautama, the Buddha (c. 5th century BC), who taught the path he found to enlightenment.</td>
             <td data-col="atheism">No founder — a stream of thought running from Epicurus through the Enlightenment to the "New Atheists" (Dawkins, Hitchens, Harris, Dennett).</td>
+            <td data-col="scientology">L. Ron Hubbard (1911–1986), a science-fiction writer — Dianetics in 1950, the Church of Scientology in 1954.</td>
           </tr>
           <tr>
             <th>Scripture</th>
@@ -191,6 +282,7 @@
             <td data-col="hinduism">The Vedas, Upanishads, Bhagavad Gita, and epics — a vast, layered corpus.</td>
             <td data-col="buddhism">The Pali Canon (Tripitaka) and later sutras, varying by school.</td>
             <td data-col="atheism">None. Science and reason are the trusted guides; no text carries authority beyond its evidence.</td>
+            <td data-col="scientology">Hubbard's writings and lectures — Dianetics, the Scientology canon, and confidential upper-level (OT) materials.</td>
           </tr>
           <tr>
             <th>Human problem</th>
@@ -200,6 +292,7 @@
             <td data-col="hinduism">Ignorance (avidya) and karma bind the soul to samsara — the cycle of death and rebirth.</td>
             <td data-col="buddhism">Suffering (dukkha), caused by craving and attachment (the Second Noble Truth).</td>
             <td data-col="atheism">No cosmic problem — only practical ones: ignorance, superstition, and poorly organized societies.</td>
+            <td data-col="scientology">Engrams — traumatic mental recordings from this life and countless past lives — cloud the thetan and block its potential.</td>
           </tr>
           <tr>
             <th>The solution</th>
@@ -209,6 +302,7 @@
             <td data-col="hinduism"><strong>Liberation.</strong> Through the paths of devotion (bhakti), knowledge (jnana), or works (karma yoga), escape rebirth into moksha.</td>
             <td data-col="buddhism"><strong>The Eightfold Path.</strong> Right view, intention, speech, action, livelihood, effort, mindfulness, concentration — extinguishing desire into nirvana.</td>
             <td data-col="atheism"><strong>Reason & progress.</strong> Science, education, and secular ethics improve the human condition; each person builds their own meaning.</td>
+            <td data-col="scientology"><strong>Auditing.</strong> Clear the engrams with an E-meter and climb the "Bridge to Total Freedom" — from "Clear" up the Operating Thetan levels, each stage purchased as courses.</td>
           </tr>
           <tr>
             <th>Who is Jesus?</th>
@@ -218,6 +312,7 @@
             <td data-col="hinduism">Sometimes honored as a guru or avatar among many; not unique.</td>
             <td data-col="buddhism">A wise, enlightened moral teacher; no divine status.</td>
             <td data-col="atheism">A first-century preacher (most grant he existed and was crucified); the miracles and resurrection are considered legend.</td>
+            <td data-col="scientology">Not divine, not a savior — Hubbard put Jesus "a shade above Clear," and upper-level materials treat the Christ story as an "implant."</td>
           </tr>
           <tr>
             <th>Afterlife</th>
@@ -227,6 +322,7 @@
             <td data-col="hinduism">Reincarnation according to karma until moksha — absorption into or communion with Brahman.</td>
             <td data-col="buddhism">Rebirth driven by karma until nirvana — the cessation of the cycle, not eternal personal life.</td>
             <td data-col="atheism">None. Death is the permanent end of consciousness; we live on only in memory and consequence.</td>
+            <td data-col="scientology">The thetan drops the body and picks up a new one — an ongoing cycle of rebirth; no heaven or hell.</td>
           </tr>
           <tr>
             <th>Assurance</th>
@@ -236,6 +332,7 @@
             <td data-col="hinduism">None in a single lifetime — liberation may take countless rebirths.</td>
             <td data-col="buddhism">None promised — progress toward nirvana can span many lifetimes.</td>
             <td data-col="atheism">Not applicable — there is nothing after death to be assured of; the task is a meaningful life now.</td>
+            <td data-col="scientology">None — there is always another level of the Bridge ahead, and each one costs; even top Operating Thetans keep auditing.</td>
           </tr>
         </tbody>
       </table>
@@ -244,7 +341,12 @@
 </section>
 
 <!-- ================= DEEP DIVE ================= -->
-<section id="deepdive">
+<section id="deepdive" class="view" data-route="islam">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/hagia.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 03</span><h2 class="tb-title">Christianity ↔ Islam</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Deep Dive</div>
@@ -378,7 +480,7 @@
 </section>
 
 <!-- ================= JESUS PORTRAITS ================= -->
-<section id="jesus" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="jesus" class="view" data-route="islam" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Zooming In</div>
@@ -440,7 +542,12 @@
 </section>
 
 <!-- ================= EVIDENCE ================= -->
-<section id="evidence">
+<section id="evidence" class="view" data-route="evidence">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/christianity.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 04</span><h2 class="tb-title">Weighing the Evidence</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Weighing the Claims</div>
@@ -495,7 +602,12 @@
 </section>
 
 <!-- ================= QUESTIONS TO ASK ================= -->
-<section id="questions" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="questions" class="view" data-route="questions">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/islam.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 05</span><h2 class="tb-title">Questions to Ask</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">For the Conversation</div>
@@ -575,7 +687,12 @@
 </section>
 
 <!-- ================= ANSWERING OBJECTIONS ================= -->
-<section id="objections">
+<section id="objections" class="view" data-route="objections">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/celsus.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 06</span><h2 class="tb-title">Answering Objections</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">When the Questions Come Back</div>
@@ -658,7 +775,12 @@
 </section>
 
 <!-- ================= LDS & JW ================= -->
-<section id="restoration" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="restoration" class="view" data-route="restoration">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/stpeters.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 07</span><h2 class="tb-title">Which Christianity?</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">One Jesus, Four Claims</div>
@@ -960,7 +1082,12 @@
 </section>
 
 <!-- ================= ATHEISM ================= -->
-<section id="atheism" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="atheism" class="view" data-route="atheism">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/atheism.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 08</span><h2 class="tb-title">Atheism ↔ Christianity</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">The Sixth Worldview</div>
@@ -1071,7 +1198,12 @@
 </section>
 
 <!-- ================= SOURCES ================= -->
-<section id="sources">
+<section id="sources" class="view" data-route="sources">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/athens.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 09</span><h2 class="tb-title">Sources & Further Reading</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Go Deeper</div>
@@ -1178,7 +1310,12 @@
 </section>
 
 <!-- ================= CONTACT ================= -->
-<section id="contact" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+<section id="contact" class="view" data-route="contact">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('img/earth.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
+      <span class="tb-no">Chapter 10</span><h2 class="tb-title">Join the Conversation</h2>
+    </div>
+  </div>
   <div class="wrap">
     <div class="section-head reveal">
       <div class="kicker">Get in Touch</div>
@@ -1301,6 +1438,29 @@
       formStatus.textContent = 'Something went wrong — please try again in a moment.';
     }
   });
+
+  // ---- journey router (in & out of chapters) ----
+  const JOURNEY_ROUTES = ['home', 'religions', 'compare', 'islam', 'evidence', 'questions', 'objections', 'restoration', 'atheism', 'sources', 'contact'];
+  function journeyRoute() {
+    const h = location.hash.replace(/^#\/?/, '');
+    return JOURNEY_ROUTES.includes(h) ? h : 'home';
+  }
+  function showJourney() {
+    const r = journeyRoute();
+    document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.dataset.route === r));
+    document.querySelectorAll('.nav-links a[data-r]').forEach(a => a.classList.toggle('nav-active', a.dataset.r === r));
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  window.addEventListener('hashchange', showJourney);
+  showJourney();
+
+  // ---- scroll progress bar ----
+  const progressBar = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    progressBar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+  }, { passive: true });
 </script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>

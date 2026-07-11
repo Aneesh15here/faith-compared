@@ -181,6 +181,18 @@ const RELIGIONS = [
     branches: "Centrally governed from Warwick, NY; no denominations."
   },
   {
+    id: "scientology", name: "Scientology", emoji: "🔺", tagline: "The Bridge to Total Freedom",
+    adherents: "Disputed — tens of thousands to a few hundred thousand", founded: "1954 · Los Angeles, USA", founder: "L. Ron Hubbard (1911–1986)",
+    origins: "Science-fiction writer L. Ron Hubbard published the self-help system Dianetics in 1950, then reorganized it as a religion, founding the Church of Scientology in 1954. It grew through celebrity advocacy and aggressive expansion, and remains controversial — recognized as a religion in some countries, contested in others.",
+    scripture: "Hubbard's writings and lectures — Dianetics, the Scientology canon, and confidential upper-level (OT) materials",
+    god: "No defined personal God — the \"Eighth Dynamic\" (infinity) is left for each person to reach; every person is a thetan, an immortal spiritual being trillions of years old.",
+    problem: "Engrams — traumatic mental recordings from this life and countless past lives — cloud the thetan and block its native potential.",
+    path: "Auditing with an E-meter to erase engrams, climbing the \"Bridge to Total Freedom\" from \"Clear\" up the Operating Thetan levels — each stage purchased as courses.",
+    afterlife: "The thetan drops the body and picks up a new one — an ongoing cycle of rebirth; no heaven or hell.",
+    practices: "Auditing sessions, training courses, ethics programs, staff or Sea Org service.",
+    branches: "Church of Scientology; independent \"Free Zone\" Scientologists."
+  },
+  {
     id: "atheism", name: "Atheism & Secular Humanism", emoji: "⚛️", tagline: "No god, self-made meaning",
     adherents: "~1.2 billion religiously unaffiliated", founded: "Ancient roots (Epicurus, Cārvāka); modern form from the Enlightenment", founder: "None — a stream of thinkers from Epicurus to the New Atheists",
     origins: "Ancient minority strands (Epicurus in Greece, Cārvāka in India) became a mass option through the Enlightenment, Darwin, and the secularization of Europe in the 19th–20th centuries; the \"New Atheism\" of Dawkins, Hitchens, Harris, and Dennett gave it fresh public voice after 2001.",
@@ -214,17 +226,22 @@ const relModal = document.getElementById('relModal');
 const relModalBody = document.getElementById('modalBody');
 
 RELIGIONS.forEach(r => {
-  const card = document.createElement('div');
-  card.className = 'rcard';
-  card.innerHTML = `<span class="emoji">${r.emoji}</span><h3>${r.name}</h3>` +
-    `<div class="tagline">${r.tagline}</div><p>${r.god}</p>` +
-    `<span class="meta">${r.adherents} · ${r.founded.split('·')[0].trim()}</span>`;
+  const card = document.createElement('button');
+  card.type = 'button';
+  card.className = 'tile';
+  card.innerHTML = `<img src="img/${r.id}.jpg" alt="${r.name}" loading="lazy">` +
+    `<div class="tile-body"><div class="t-tag">${r.tagline}</div>` +
+    `<h3><span class="t-emoji">${r.emoji}</span> ${r.name}</h3>` +
+    `<p>${r.god}</p>` +
+    `<span class="meta">${r.adherents} · ${r.founded.split('·')[0].trim()}</span>` +
+    `<span class="t-go">Open the full profile →</span></div>`;
   card.addEventListener('click', () => openRelModal(r));
   relGrid.appendChild(card);
 });
 
 function openRelModal(r) {
-  relModalBody.innerHTML = `<span class="m-emoji">${r.emoji}</span><h3>${r.name}</h3>` +
+  relModalBody.innerHTML = `<div class="m-hero"><img src="img/${r.id}.jpg" alt="${r.name}"></div>` +
+    `<span class="m-emoji">${r.emoji}</span><h3>${r.name}</h3>` +
     `<div class="m-tagline">${r.tagline} · ${r.adherents}</div><dl>` +
     FIELDS.map(([k, label]) => `<div><dt>${label}</dt><dd>${r[k]}</dd></div>`).join('') +
     `</dl>`;
@@ -239,8 +256,8 @@ document.getElementById('modalClose').addEventListener('click', closeRelModal);
 relModal.addEventListener('click', e => { if (e.target === relModal) closeRelModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape' && !relModal.hidden) closeRelModal(); });
 
-// ===== comparison lab (pick 3–5, see them side by side) =====
-const MIN_PICK = 3, MAX_PICK = 5;
+// ===== comparison lab (pick 2–5, see them side by side) =====
+const MIN_PICK = 2, MAX_PICK = 5;
 const picked = new Set(['christianity', 'islam', 'hinduism']);
 const chipsBox = document.getElementById('compareChips');
 const compareHint = document.getElementById('compareHint');
@@ -275,7 +292,7 @@ function flashHint(msg) {
 }
 function setHint() {
   compareHint.textContent = picked.size < MIN_PICK
-    ? `Pick ${MIN_PICK - picked.size} more — the lab compares at least ${MIN_PICK} traditions at once.`
+    ? `Pick ${MIN_PICK - picked.size} more — the lab compares ${MIN_PICK} to ${MAX_PICK} traditions at once.`
     : `Comparing ${picked.size} traditions. Tap chips to swap (${MIN_PICK}–${MAX_PICK}).`;
 }
 function renderCompare() {
