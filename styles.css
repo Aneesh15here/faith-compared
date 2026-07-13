@@ -1,10 +1,10 @@
   :root {
-    --bg: #0a0c14;
-    --bg-soft: #101425;
-    --card: rgba(255,255,255,0.045);
-    --card-border: rgba(255,255,255,0.09);
-    --text: #eef1f8;
-    --muted: #9aa3b8;
+    --bg: #12172a;
+    --bg-soft: rgba(28, 34, 58, 0.82);
+    --card: rgba(255,255,255,0.085);
+    --card-border: rgba(255,255,255,0.16);
+    --text: #f4f7fd;
+    --muted: #c2cadd;
     --accent: #7c8cff;
     --accent-2: #f5b352;
     --green: #4ade80;
@@ -41,8 +41,8 @@
   nav {
     position: sticky; top: 0; z-index: 50;
     backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-    background: rgba(10,12,20,0.72);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(18,23,42,0.78);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
   .logo { font-family: var(--font-display); font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; text-decoration: none; color: var(--text); }
@@ -317,9 +317,18 @@
   .note strong { color: var(--text); }
   footer { border-top: 1px solid rgba(255,255,255,.06); padding: 44px 0; text-align: center; color: var(--muted); font-size: .85rem; }
 
-  /* reveal on scroll */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+  /* reveal on scroll — "pop up along the trail" */
+  .reveal { opacity: 0; transform: translateY(34px) scale(.94); transition: opacity .6s ease, transform .7s cubic-bezier(.22,1.28,.36,1); }
   .reveal.in { opacity: 1; transform: none; }
+  /* staggered cascade so tiles pop one after another */
+  .reveal:nth-child(1) { transition-delay: .02s; }
+  .reveal:nth-child(2) { transition-delay: .09s; }
+  .reveal:nth-child(3) { transition-delay: .16s; }
+  .reveal:nth-child(4) { transition-delay: .23s; }
+  .reveal:nth-child(5) { transition-delay: .30s; }
+  .reveal:nth-child(6) { transition-delay: .37s; }
+  .reveal:nth-child(7) { transition-delay: .44s; }
+  .reveal:nth-child(8) { transition-delay: .51s; }
 
   /* back to top */
   #toTop {
@@ -390,8 +399,14 @@
 /* =============== JOURNEY REDESIGN ==================== */
 /* ===================================================== */
 
-/* scroll progress bar */
-#progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; z-index: 100; background: linear-gradient(90deg, #6a7dff, #c7b3ff, #f5b352); }
+/* scroll progress bar — the trail you've walked */
+#progress { position: fixed; top: 0; left: 0; height: 4px; width: 0; z-index: 100; background: linear-gradient(90deg, #6a7dff, #c7b3ff, #f5b352); box-shadow: 0 0 12px rgba(245,179,82,.5); }
+#trailHiker {
+  position: fixed; top: -5px; left: 0; z-index: 101; font-size: 1.15rem; line-height: 1;
+  transform: translateX(-50%); pointer-events: none;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,.55)); transition: left .12s linear;
+}
+@media (prefers-reduced-motion: reduce) { #trailHiker { transition: none; } }
 
 /* view router */
 .view { display: none; }
@@ -493,3 +508,132 @@
 /* view-section spacing + active nav link */
 section.view { padding-top: 0; }
 .nav-links a.nav-active { color: var(--text); background: rgba(255,255,255,.08); }
+
+/* ===================================================== */
+/* ============= ADVENTURE TRAIL WALK ================== */
+/* ===================================================== */
+
+/* the numbered lists become "stops" strung along a walking trail */
+.q5 { position: relative; }
+.q5-item { position: relative; z-index: 1; transition: transform .45s cubic-bezier(.22,1.2,.36,1), border-color .3s, box-shadow .35s; }
+/* dashed path segment climbing into each stop from the one before */
+.q5-item::before {
+  content: ''; position: absolute; left: 42px; top: -16px; width: 2px; height: 18px; z-index: 0;
+  background: repeating-linear-gradient(180deg, rgba(245,179,82,.65) 0 5px, transparent 5px 11px);
+}
+.q5-item:first-child::before { display: none; }
+/* the number badge as a glowing trail marker sitting on the path */
+.q5-item .qn { box-shadow: 0 0 0 4px var(--bg), 0 0 18px rgba(245,179,82,.4); }
+.q5-item:hover { transform: translateX(4px); border-color: rgba(245,179,82,.5); box-shadow: 0 14px 40px rgba(0,0,0,.35); }
+@media (max-width: 640px) { .q5-item::before { left: 39px; } }
+
+/* winding approach — stops swing in from alternating sides, like a switchback trail */
+.q5 .q5-item.reveal:nth-child(odd)  { transform: translateX(-48px) translateY(14px) scale(.95); }
+.q5 .q5-item.reveal:nth-child(even) { transform: translateX(48px)  translateY(14px) scale(.95); }
+.q5 .q5-item.reveal.in { transform: none; }
+
+/* fact / quote / source tiles get a touch more spring + hover lift */
+.fact, .quote-card { transition: transform .4s cubic-bezier(.22,1.2,.36,1), border-color .3s, box-shadow .35s; }
+.fact:hover, .quote-card:hover { transform: translateY(-6px); border-color: rgba(124,140,255,.45); box-shadow: 0 16px 44px rgba(0,0,0,.4); }
+
+/* section headings drift up into view */
+.section-head.reveal { transform: translateY(30px) scale(.97); }
+.section-head.reveal.in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .section-head.reveal,
+  .q5 .q5-item.reveal:nth-child(odd), .q5 .q5-item.reveal:nth-child(even) {
+    transform: none !important; opacity: 1 !important; transition: none !important;
+  }
+  .q5-item:hover, .fact:hover, .quote-card:hover { transform: none; }
+}
+
+/* ===================================================== */
+/* ============ ATMOSPHERE — A NIGHT SKY =============== */
+/* ===================================================== */
+
+/* drifting starfield behind everything — evokes the big questions */
+body::before {
+  content: ''; position: fixed; inset: -10% 0; z-index: 0; pointer-events: none;
+  background-image:
+    radial-gradient(1.4px 1.4px at 18% 24%, rgba(255,255,255,.95), transparent 60%),
+    radial-gradient(1px 1px at 68% 14%, rgba(199,179,255,.85), transparent 60%),
+    radial-gradient(1.2px 1.2px at 42% 62%, rgba(255,255,255,.9), transparent 60%),
+    radial-gradient(1px 1px at 84% 54%, rgba(142,160,255,.85), transparent 60%),
+    radial-gradient(1px 1px at 12% 82%, rgba(255,255,255,.75), transparent 60%),
+    radial-gradient(1.5px 1.5px at 58% 40%, rgba(255,255,255,.95), transparent 60%),
+    radial-gradient(1px 1px at 90% 88%, rgba(245,179,82,.75), transparent 60%),
+    radial-gradient(1px 1px at 32% 12%, rgba(255,255,255,.7), transparent 60%),
+    radial-gradient(1.1px 1.1px at 76% 76%, rgba(255,255,255,.8), transparent 60%),
+    radial-gradient(1px 1px at 6% 46%, rgba(199,179,255,.7), transparent 60%);
+  background-repeat: repeat; background-size: 340px 340px;
+  opacity: .55;
+  animation: starDrift 140s linear infinite, twinkle-field 7s ease-in-out infinite alternate;
+}
+/* slow-moving colour nebula for depth */
+body::after {
+  content: ''; position: fixed; inset: -25%; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(38% 42% at 22% 26%, rgba(124,140,255,.11), transparent 70%),
+    radial-gradient(34% 40% at 82% 30%, rgba(245,179,82,.075), transparent 70%),
+    radial-gradient(42% 46% at 62% 84%, rgba(167,139,250,.10), transparent 72%);
+  filter: blur(28px);
+  animation: nebula-shift 46s ease-in-out infinite alternate;
+}
+@keyframes starDrift { from { background-position: 0 0; } to { background-position: 340px -680px; } }
+@keyframes twinkle-field { 0% { opacity: .38; } 100% { opacity: .62; } }
+@keyframes nebula-shift {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to   { transform: translate3d(2.5%, -3%, 0) scale(1.09); }
+}
+
+/* keep readable strips genuinely dark where dense text lives */
+.matrix-scroll, .modal { position: relative; }
+
+/* soft top-lit glass sheen on the content tiles you read + linger on */
+.rcard, .fact, .q5-item, .quote-card, .src {
+  background-color: rgba(255,255,255,.05);
+  background-image: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,0) 58%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 2px 4px rgba(0,0,0,.14);
+}
+.rcard:hover, .fact:hover, .quote-card:hover, .src:hover {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.11), 0 20px 48px rgba(0,0,0,.42), 0 0 34px rgba(124,140,255,.16);
+}
+
+/* headings catch a faint starlight */
+h1, h2 { text-shadow: 0 2px 30px rgba(124,140,255,.18); }
+
+/* kickers get flanking rules, like a compass marking a waypoint */
+.section-head .kicker { display: inline-flex; align-items: center; gap: 12px; }
+.section-head .kicker::before, .section-head .kicker::after {
+  content: ''; width: 28px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+.section-head .kicker::after { background: linear-gradient(90deg, var(--accent), transparent); }
+
+/* ===== reflection — a place to pause and ponder ===== */
+.reflection {
+  max-width: 780px; margin: 0 auto; text-align: center; position: relative;
+  padding: 40px 28px;
+}
+.reflection::before {
+  content: '❝'; display: block; font-family: var(--font-display);
+  font-size: 2.6rem; line-height: 1; color: var(--accent-2); opacity: .55; margin-bottom: 8px;
+}
+.reflection p {
+  font-family: var(--font-display); font-weight: 600; font-style: italic;
+  font-size: clamp(1.4rem, 3.2vw, 2.15rem); line-height: 1.42; color: var(--text);
+  letter-spacing: -.01em;
+}
+.reflection .r-sub {
+  font-family: var(--font-body); font-style: normal; font-size: .78rem;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 20px;
+}
+.reflection::after {
+  content: ''; display: block; width: 60px; height: 2px; margin: 22px auto 0;
+  background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before, body::after { animation: none; }
+}

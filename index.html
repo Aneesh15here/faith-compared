@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=12">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -21,6 +21,7 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 <div id="progress"></div>
+<div id="trailHiker">🚶</div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -38,6 +39,7 @@
       <a href="#/sources" data-r="sources">Sources</a>
       <a href="#/contact" data-r="contact">Contact</a>
       <a href="philosophy.html" style="color: var(--accent-2);">What Matters →</a>
+      <a href="happiness.html" style="color: var(--accent-2);">Happiness →</a>
     </div>
   </div>
 </nav>
@@ -1347,7 +1349,7 @@
 
 <footer>
   <div class="wrap">
-    <p>Faith, Compared · Built from evangelical apologetics sources · For study and discussion — always verify with the original texts. · <a href="philosophy.html" style="color: var(--accent-2); text-decoration: none;">What really matters →</a> · <a href="stats.html" style="color: var(--accent-2); text-decoration: none;">Visitor map 🌍</a></p>
+    <p>Faith, Compared · Built from evangelical apologetics sources · For study and discussion — always verify with the original texts. · <a href="philosophy.html" style="color: var(--accent-2); text-decoration: none;">What really matters →</a> · <a href="happiness.html" style="color: var(--accent-2); text-decoration: none;">Happiness &amp; faith →</a> · <a href="stats.html" style="color: var(--accent-2); text-decoration: none;">Visitor map 🌍</a></p>
   </div>
 </footer>
 
@@ -1454,12 +1456,15 @@
   window.addEventListener('hashchange', showJourney);
   showJourney();
 
-  // ---- scroll progress bar ----
+  // ---- scroll progress bar + trail hiker ----
   const progressBar = document.getElementById('progress');
+  const hiker = document.getElementById('trailHiker');
   window.addEventListener('scroll', () => {
     const h = document.documentElement;
     const max = h.scrollHeight - h.clientHeight;
-    progressBar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    progressBar.style.width = pct + '%';
+    if (hiker) hiker.style.left = pct + '%';
   }, { passive: true });
 </script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
