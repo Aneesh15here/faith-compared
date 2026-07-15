@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Visitor Map — Faith, Compared</title>
-<meta name="description" content="Where in the world people are reading Faith, Compared — a live visitor heat map." />
+<title>आगंतुक मानचित्र — आस्था, तुलना</title>
+<meta name="description" content="विश्व में कहाँ-कहाँ लोग ‘आस्था, तुलना’ पढ़ रहे हैं — एक सजीव आगंतुक हीट-मैप।" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=12">
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="../styles.css?v=12">
+<link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
 <style>
   .map-card {
     background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius);
@@ -46,23 +46,23 @@
 
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="index.html">Faith<span>,</span> Compared</a>
+    <a class="logo" href="index.html">आस्था<span>,</span> तुलना</a>
     <div class="nav-links">
-      <a href="index.html#religions">All Religions</a>
-      <a href="index.html#compare">Compare Lab</a>
-      <a href="philosophy.html">What Matters</a>
-      <a href="index.html#contact">Contact</a>
-      <a href="index.html" style="color: var(--accent-2);">← Home</a>
-      <a href="hi/stats.html" style="color: var(--accent);">हिं</a>
+      <a href="index.html#religions">सभी धर्म</a>
+      <a href="index.html#compare">तुलना प्रयोगशाला</a>
+      <a href="philosophy.html">क्या मायने रखता है</a>
+      <a href="index.html#contact">संपर्क</a>
+      <a href="index.html" style="color: var(--accent-2);">← मुखपृष्ठ</a>
+      <a href="../stats.html" style="color: var(--accent);">EN</a>
     </div>
   </div>
 </nav>
 
 <header class="hero" id="top" style="padding: 90px 0 50px;">
   <div class="wrap">
-    <div class="eyebrow"><span class="spark">✦</span> Readers around the world</div>
-    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">The <span class="grad">visitor map</span></h1>
-    <p>Where people are reading Faith, Compared — country-level only, collected anonymously without cookies, refreshed daily.</p>
+    <div class="eyebrow"><span class="spark">✦</span> दुनिया भर के पाठक</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">आगंतुक <span class="grad">मानचित्र</span></h1>
+    <p>लोग ‘आस्था, तुलना’ कहाँ पढ़ रहे हैं — केवल देश-स्तर पर, बिना कुकीज़ के गुमनाम रूप से एकत्रित, प्रतिदिन ताज़ा किया गया।</p>
   </div>
 </header>
 
@@ -70,42 +70,42 @@
 <section style="padding-top: 0;">
   <div class="wrap">
     <div class="stat-tiles reveal">
-      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">Total visits</div></div>
-      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">Countries</div></div>
-      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">Last updated</div></div>
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">कुल विज़िट</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">देश</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">अंतिम अद्यतन</div></div>
     </div>
 
     <div class="map-card reveal">
-      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="World map shaded by number of visits per country"></svg></div>
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="प्रति देश विज़िट की संख्या से रंगा विश्व मानचित्र"></svg></div>
       <div class="legend-row" id="legendRow" hidden>
-        <span>1 visit</span>
+        <span>1 विज़िट</span>
         <div class="legend-grad" id="legendGrad"></div>
         <span id="legendMax">—</span>
-        <span style="margin-left:auto;">No visits: dark</span>
+        <span style="margin-left:auto;">कोई विज़िट नहीं: गहरा</span>
       </div>
-      <p class="empty-note" id="emptyNote" hidden>No visitor data yet — analytics were just installed. The map lights up as readers arrive. 🌍</p>
+      <p class="empty-note" id="emptyNote" hidden>अभी कोई आगंतुक डेटा नहीं — एनालिटिक्स अभी-अभी स्थापित हुआ। पाठकों के आते ही मानचित्र जगमगाने लगेगा। 🌍</p>
     </div>
 
     <div class="map-card reveal" style="margin-top: 24px;">
-      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">By country</h2>
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">देश अनुसार</h2>
       <div style="overflow-x:auto;">
-        <table class="ranks" id="rankTable" aria-label="Visits by country">
-          <thead><tr><th>#</th><th>Country</th><th class="num">Visits</th><th style="width:35%;">Share</th></tr></thead>
+        <table class="ranks" id="rankTable" aria-label="देश अनुसार विज़िट">
+          <thead><tr><th>#</th><th>देश</th><th class="num">विज़िट</th><th style="width:35%;">हिस्सा</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
-      <p class="empty-note" id="emptyTable" hidden>Nothing to rank yet.</p>
+      <p class="empty-note" id="emptyTable" hidden>अभी क्रम में रखने को कुछ नहीं।</p>
     </div>
 
     <div class="note reveal" style="margin-top: 32px;">
-      <strong>Privacy:</strong> analytics are powered by <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> — no cookies, no fingerprinting, no personal data. Only the visit itself and its country are counted.
+      <strong>निजता:</strong> एनालिटिक्स <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> से संचालित है — न कुकीज़, न फ़िंगरप्रिंटिंग, न कोई व्यक्तिगत डेटा। केवल विज़िट और उसका देश गिना जाता है।
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap"><p>Visitor Map · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">Faith, Compared</a></p></div>
+  <div class="wrap"><p>आगंतुक मानचित्र · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">आस्था, तुलना</a></p></div>
 </footer>
 
 <div class="map-tooltip" id="mapTip"></div>
@@ -142,7 +142,7 @@
 
   let data = { updated: null, total: 0, countries: [] };
   try {
-    const res = await fetch('data/countries.json', { cache: 'no-store' });
+    const res = await fetch('../data/countries.json', { cache: 'no-store' });
     if (res.ok) data = await res.json();
   } catch (e) { /* keep empty state */ }
 
@@ -159,9 +159,9 @@
   };
 
   // stat tiles
-  $('statTotal').textContent = (data.total || 0).toLocaleString();
+  $('statTotal').textContent = (data.total || 0).toLocaleString('en-IN');
   $('statCountries').textContent = (data.countries || []).length;
-  $('statUpdated').textContent = data.updated ? new Date(data.updated).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }) : 'awaiting first data';
+  $('statUpdated').textContent = data.updated ? new Date(data.updated).toLocaleDateString('hi-IN', { month: 'short', day: 'numeric', year: 'numeric' }) : 'पहले डेटा की प्रतीक्षा';
 
   const empty = !(data.countries || []).length;
   $('emptyNote').hidden = !empty;
@@ -176,14 +176,14 @@
 
   // legend
   $('legendGrad').style.background = `linear-gradient(90deg, ${ramp(0.15)}, ${ramp(1)})`;
-  $('legendMax').textContent = `${maxCount.toLocaleString()} visits`;
+  $('legendMax').textContent = `${maxCount.toLocaleString('en-IN')} विज़िट`;
 
   // ranks table
   const tbody = document.querySelector('#rankTable tbody');
   (data.countries || []).forEach((c, i) => {
     const tr = document.createElement('tr');
     const share = data.total ? (c.count / data.total * 100) : 0;
-    tr.innerHTML = `<td>${i + 1}</td><td>${c.name}</td><td class="num">${c.count.toLocaleString()}</td>` +
+    tr.innerHTML = `<td>${i + 1}</td><td>${c.name}</td><td class="num">${c.count.toLocaleString('en-IN')}</td>` +
       `<td><div class="share-bar" style="width:${Math.max(2, share)}%" title="${share.toFixed(1)}%"></div></td>`;
     tbody.appendChild(tr);
   });
@@ -208,7 +208,7 @@
       tip.style.display = 'block';
       tip.style.left = (event.clientX + 14) + 'px';
       tip.style.top = (event.clientY + 14) + 'px';
-      tip.innerHTML = `<strong>${d.properties.name}</strong><br><span class="tt-count">${c ? c.count.toLocaleString() + ' visit' + (c.count === 1 ? '' : 's') : 'No visits yet'}</span>`;
+      tip.innerHTML = `<strong>${d.properties.name}</strong><br><span class="tt-count">${c ? c.count.toLocaleString('en-IN') + ' विज़िट' : 'अभी कोई विज़िट नहीं'}</span>`;
     })
     .on('mouseleave', () => { tip.style.display = 'none'; });
 
