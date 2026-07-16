@@ -637,3 +637,29 @@ h1, h2 { text-shadow: 0 2px 30px rgba(124,140,255,.18); }
 @media (prefers-reduced-motion: reduce) {
   body::before, body::after { animation: none; }
 }
+
+/* ===================================================== */
+/* ============= LANGUAGE CHOOSER ====================== */
+/* ===================================================== */
+.lang-choose {
+  display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; align-items: center;
+  margin-top: 30px;
+}
+.lang-choose .lang-label {
+  color: var(--muted); font-size: .84rem; font-weight: 500; margin-right: 4px;
+}
+.lang-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 18px; border-radius: 999px; text-decoration: none;
+  border: 1px solid var(--card-border); background: rgba(255,255,255,.055);
+  color: var(--text); font-size: .92rem; font-weight: 600;
+  transition: transform .2s, border-color .2s, background .2s, box-shadow .2s;
+}
+.lang-pill:hover {
+  border-color: rgba(124,140,255,.6); background: rgba(255,255,255,.1);
+  transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3);
+}
+.lang-pill.active {
+  background: linear-gradient(92deg, rgba(106,125,255,.32), rgba(143,111,255,.32));
+  border-color: rgba(124,140,255,.65); box-shadow: 0 0 22px rgba(124,140,255,.2);
+}

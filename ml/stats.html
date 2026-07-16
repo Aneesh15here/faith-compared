@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="ml">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>आगंतुक मानचित्र — आस्था, तुलना</title>
-<meta name="description" content="विश्व में कहाँ-कहाँ लोग ‘आस्था, तुलना’ पढ़ रहे हैं — एक सजीव आगंतुक हीट-मैप।" />
+<title>സന്ദർശക ഭൂപടം — ആസ്ഥ, തുലന</title>
+<meta name="description" content="ലോകത്തിൽ എവിടെയൊക്കെ ആളുകൾ ‘ആസ്ഥ, തുലന’ വായിക്കുന്നു — ഒരു തത്സമയ സന്ദർശക ഹീറ്റ്-മാപ്പ്." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -46,13 +46,13 @@
 
 <nav>
   <div class="wrap nav-inner">
-    <a class="logo" href="index.html">आस्था<span>,</span> तुलना</a>
+    <a class="logo" href="index.html">ആസ്ഥ<span>,</span> തുലന</a>
     <div class="nav-links">
-      <a href="index.html#religions">सभी धर्म</a>
-      <a href="index.html#compare">तुलना प्रयोगशाला</a>
-      <a href="philosophy.html">क्या मायने रखता है</a>
-      <a href="index.html#contact">संपर्क</a>
-      <a href="index.html" style="color: var(--accent-2);">← मुखपृष्ठ</a>
+      <a href="index.html#religions">എല്ലാ മതങ്ങളും</a>
+      <a href="index.html#compare">താരതമ്യ ലാബ്</a>
+      <a href="philosophy.html">എന്ത് പ്രധാനം</a>
+      <a href="index.html#contact">ബന്ധപ്പെടുക</a>
+      <a href="index.html" style="color: var(--accent-2);">← ഹോം</a>
       <a href="../stats.html" style="color: var(--accent);">EN</a>
     </div>
   </div>
@@ -60,9 +60,9 @@
 
 <header class="hero" id="top" style="padding: 90px 0 50px;">
   <div class="wrap">
-    <div class="eyebrow"><span class="spark">✦</span> दुनिया भर के पाठक</div>
-    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">आगंतुक <span class="grad">मानचित्र</span></h1>
-    <p>लोग ‘आस्था, तुलना’ कहाँ पढ़ रहे हैं — केवल देश-स्तर पर, बिना कुकीज़ के गुमनाम रूप से एकत्रित, प्रतिदिन ताज़ा किया गया।</p>
+    <div class="eyebrow"><span class="spark">✦</span> ലോകമെമ്പാടുമുള്ള വായനക്കാർ</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">സന്ദർശക <span class="grad">ഭൂപടം</span></h1>
+    <p>ആളുകൾ ‘ആസ്ഥ, തുലന’ എവിടെ വായിക്കുന്നു — രാജ്യതലം മാത്രം, കുക്കികളില്ലാതെ അജ്ഞാതമായി ശേഖരിച്ചത്, ദിവസവും പുതുക്കുന്നത്.</p>
   </div>
 </header>
 
@@ -70,42 +70,42 @@
 <section style="padding-top: 0;">
   <div class="wrap">
     <div class="stat-tiles reveal">
-      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">कुल विज़िट</div></div>
-      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">देश</div></div>
-      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">अंतिम अद्यतन</div></div>
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">ആകെ സന്ദർശനങ്ങൾ</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">രാജ്യങ്ങൾ</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">അവസാനം പുതുക്കിയത്</div></div>
     </div>
 
     <div class="map-card reveal">
-      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="प्रति देश विज़िट की संख्या से रंगा विश्व मानचित्र"></svg></div>
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="ഓരോ രാജ്യത്തിലെയും സന്ദർശനങ്ങളുടെ എണ്ണം അനുസരിച്ച് നിറം കൊടുത്ത ലോക ഭൂപടം"></svg></div>
       <div class="legend-row" id="legendRow" hidden>
-        <span>1 विज़िट</span>
+        <span>1 സന്ദർശനം</span>
         <div class="legend-grad" id="legendGrad"></div>
         <span id="legendMax">—</span>
-        <span style="margin-left:auto;">कोई विज़िट नहीं: गहरा</span>
+        <span style="margin-left:auto;">സന്ദർശനങ്ങളില്ല: ഇരുണ്ടത്</span>
       </div>
-      <p class="empty-note" id="emptyNote" hidden>अभी कोई आगंतुक डेटा नहीं — एनालिटिक्स अभी-अभी स्थापित हुआ। पाठकों के आते ही मानचित्र जगमगाने लगेगा। 🌍</p>
+      <p class="empty-note" id="emptyNote" hidden>ഇതുവരെ സന്ദർശക ഡാറ്റയില്ല — അനലിറ്റിക്‌സ് ഇപ്പോൾ സ്ഥാപിച്ചതേയുള്ളൂ. വായനക്കാർ എത്തുമ്പോൾ ഭൂപടം പ്രകാശിക്കും. 🌍</p>
     </div>
 
     <div class="map-card reveal" style="margin-top: 24px;">
-      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">देश अनुसार</h2>
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">രാജ്യം അനുസരിച്ച്</h2>
       <div style="overflow-x:auto;">
-        <table class="ranks" id="rankTable" aria-label="देश अनुसार विज़िट">
-          <thead><tr><th>#</th><th>देश</th><th class="num">विज़िट</th><th style="width:35%;">हिस्सा</th></tr></thead>
+        <table class="ranks" id="rankTable" aria-label="രാജ്യം അനുസരിച്ചുള്ള സന്ദർശനങ്ങൾ">
+          <thead><tr><th>#</th><th>രാജ്യം</th><th class="num">സന്ദർശനങ്ങൾ</th><th style="width:35%;">പങ്ക്</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
-      <p class="empty-note" id="emptyTable" hidden>अभी क्रम में रखने को कुछ नहीं।</p>
+      <p class="empty-note" id="emptyTable" hidden>ഇതുവരെ ക്രമപ്പെടുത്താൻ ഒന്നുമില്ല.</p>
     </div>
 
     <div class="note reveal" style="margin-top: 32px;">
-      <strong>निजता:</strong> एनालिटिक्स <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> से संचालित है — न कुकीज़, न फ़िंगरप्रिंटिंग, न कोई व्यक्तिगत डेटा। केवल विज़िट और उसका देश गिना जाता है।
+      <strong>സ്വകാര്യത:</strong> അനലിറ്റിക്‌സ് <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> ഉപയോഗിക്കുന്നു — കുക്കികളില്ല, ഫിംഗർപ്രിന്റിംഗില്ല, വ്യക്തിഗത ഡാറ്റയില്ല. സന്ദർശനവും അതിന്റെ രാജ്യവും മാത്രം എണ്ണുന്നു.
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="wrap"><p>आगंतुक मानचित्र · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">आस्था, तुलना</a></p></div>
+  <div class="wrap"><p>സന്ദർശക ഭൂപടം · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">ആസ്ഥ, തുലന</a></p></div>
 </footer>
 
 <div class="map-tooltip" id="mapTip"></div>
@@ -117,7 +117,6 @@
   const $ = id => document.getElementById(id);
   const norm = s => s.toLowerCase().replace(/[’'.]/g, '').replace(/&/g, 'and').trim();
 
-  // world-atlas name → common analytics name (both normalized)
   const ALIASES = {
     'united states of america': 'united states',
     'dem rep congo': 'congo (kinshasa)', 'congo': 'congo (brazzaville)',
@@ -146,7 +145,6 @@
     if (res.ok) data = await res.json();
   } catch (e) { /* keep empty state */ }
 
-  // lookup: several normalized keys per country → count
   const counts = new Map();
   for (const c of (data.countries || [])) {
     const keys = new Set([norm(c.name || ''), (c.code || '').toLowerCase()]);
@@ -158,27 +156,23 @@
            counts.get(Object.keys(ALIASES).find(k => ALIASES[k] === n) || '') || null;
   };
 
-  // stat tiles
   $('statTotal').textContent = (data.total || 0).toLocaleString('en-IN');
   $('statCountries').textContent = (data.countries || []).length;
-  $('statUpdated').textContent = data.updated ? new Date(data.updated).toLocaleDateString('hi-IN', { month: 'short', day: 'numeric', year: 'numeric' }) : 'पहले डेटा की प्रतीक्षा';
+  $('statUpdated').textContent = data.updated ? new Date(data.updated).toLocaleDateString('ml-IN', { month: 'short', day: 'numeric', year: 'numeric' }) : 'ആദ്യ ഡാറ്റയ്ക്കായി കാത്തിരിക്കുന്നു';
 
   const empty = !(data.countries || []).length;
   $('emptyNote').hidden = !empty;
   $('legendRow').hidden = empty;
   $('emptyTable').hidden = !empty;
 
-  // sequential ramp: one hue (site indigo), dark → bright on the dark surface
   const maxCount = Math.max(1, ...(data.countries || []).map(c => c.count));
   const ramp = t => d3.interpolateRgb('#252c55', '#aebcff')(t);
   const scale = d3.scaleSqrt().domain([1, maxCount]).range([0.15, 1]);
   const fillFor = c => c ? ramp(scale(c.count)) : '#151a2d';
 
-  // legend
   $('legendGrad').style.background = `linear-gradient(90deg, ${ramp(0.15)}, ${ramp(1)})`;
-  $('legendMax').textContent = `${maxCount.toLocaleString('en-IN')} विज़िट`;
+  $('legendMax').textContent = `${maxCount.toLocaleString('en-IN')} സന്ദർശനങ്ങൾ`;
 
-  // ranks table
   const tbody = document.querySelector('#rankTable tbody');
   (data.countries || []).forEach((c, i) => {
     const tr = document.createElement('tr');
@@ -188,7 +182,6 @@
     tbody.appendChild(tr);
   });
 
-  // world map
   const world = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r => r.json());
   const countries = topojson.feature(world, world.objects.countries).features;
   const projection = d3.geoNaturalEarth1().fitSize([960, 500], { type: 'Sphere' });
@@ -208,11 +201,10 @@
       tip.style.display = 'block';
       tip.style.left = (event.clientX + 14) + 'px';
       tip.style.top = (event.clientY + 14) + 'px';
-      tip.innerHTML = `<strong>${d.properties.name}</strong><br><span class="tt-count">${c ? c.count.toLocaleString('en-IN') + ' विज़िट' : 'अभी कोई विज़िट नहीं'}</span>`;
+      tip.innerHTML = `<strong>${d.properties.name}</strong><br><span class="tt-count">${c ? c.count.toLocaleString('en-IN') + ' സന്ദർശനങ്ങൾ' : 'ഇതുവരെ സന്ദർശനങ്ങളില്ല'}</span>`;
     })
     .on('mouseleave', () => { tip.style.display = 'none'; });
 
-  // reveal-on-scroll (match site behavior)
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
