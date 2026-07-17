@@ -30,8 +30,6 @@ jobs:
             if [ "$HTTP_CODE" -lt 400 ]; then
               break
             fi
-            echo "Error response body:"
-            cat /tmp/locations.json
             if [ "$attempt" -lt 5 ]; then
               sleep $((attempt * 10))
             fi
