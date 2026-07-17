@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=16">
+<link rel="stylesheet" href="styles.css?v=17">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -75,6 +75,7 @@
       <a class="lang-pill" href="ml/index.html" lang="ml">മലയാളം</a>
       <a class="lang-pill" href="ta/index.html" lang="ta">தமிழ்</a>
     </div>
+    <a class="btn btn-ghost continue-pill" id="continuePill" href="#/">Continue where you left off →</a>
   </div>
 </header>
 
@@ -132,6 +133,29 @@
     </div>
   </div>
 </section>
+
+<!-- constellation of faiths -->
+<div class="constellation" id="constellation" aria-hidden="true">
+  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+    <path class="c-line" d="M40,95 L105,45 L180,105 L255,60 L330,110 L400,40 L470,95 L540,55 L610,108 L680,50 L750,100 L820,62 L860,90"/>
+    <text class="c-star" x="32" y="100">✝️</text>
+    <text class="c-star" x="97" y="50">☪️</text>
+    <text class="c-star" x="172" y="110">🕉️</text>
+    <text class="c-star" x="247" y="65">☸️</text>
+    <text class="c-star" x="322" y="115">✡️</text>
+    <text class="c-star" x="392" y="45">🪯</text>
+    <text class="c-star" x="462" y="100">✴️</text>
+    <text class="c-star" x="532" y="60">🤚</text>
+    <text class="c-star" x="602" y="113">🔥</text>
+    <text class="c-star" x="672" y="55">☯️</text>
+    <text class="c-star" x="742" y="105">📜</text>
+    <text class="c-star" x="812" y="67">⛩️</text>
+    <text class="c-star" x="852" y="95">🌍</text>
+    <circle class="c-dot" cx="885" cy="80" r="2.5"/>
+    <circle class="c-dot" cx="15" cy="80" r="2.5"/>
+  </svg>
+  <p class="c-cap">Seventeen lights in the same sky — each a way humanity has tried to name what is above us.</p>
+</div>
 
 <!-- journey chapters -->
 <section id="chapters">
@@ -206,6 +230,56 @@
   </div>
 </section>
 
+<!-- ================= GUIDED QUIZ ================= -->
+<section id="quiz" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Find Your Starting Point</div>
+      <h2>Answer the four questions yourself</h2>
+      <p>Origin, meaning, morality, destiny — every worldview answers them, and so do you, whether you've said it out loud or not. Pick the answer closest to your gut on each, and we'll show you which traditions sit nearest to you — and where the journey might start.</p>
+    </div>
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-q" data-q="origin">
+        <h3><span class="qk">01 · Origin</span>Where did everything come from?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">A personal Creator made the universe on purpose</button>
+          <button class="quiz-opt" data-tags="eastern">An impersonal divine reality underlies everything</button>
+          <button class="quiz-opt" data-tags="natural">Matter, energy, and chance — nothing more is needed</button>
+          <button class="quiz-opt" data-tags="unsure">Honestly, I don't know</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="meaning">
+        <h3><span class="qk">02 · Meaning</span>Where does life's purpose come from?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">It's given — discovered in relationship with God</button>
+          <button class="quiz-opt" data-tags="eastern">It's realized — awakening to what the self really is</button>
+          <button class="quiz-opt" data-tags="natural">It's made — each person builds their own</button>
+          <button class="quiz-opt" data-tags="unsure">I'm still working that out</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="morality">
+        <h3><span class="qk">03 · Morality</span>Why is anything really right or wrong?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">A moral Lawgiver stands behind the moral law</button>
+          <button class="quiz-opt" data-tags="eastern">Actions carry consequences — karma, harmony, balance</button>
+          <button class="quiz-opt" data-tags="natural">Morality evolved — it's human agreement, not cosmic law</button>
+          <button class="quiz-opt" data-tags="unsure">It feels real, but I can't say why</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="destiny">
+        <h3><span class="qk">04 · Destiny</span>What happens when we die?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">Resurrection and judgment — this life isn't the end</button>
+          <button class="quiz-opt" data-tags="eastern">Rebirth — the soul returns until it is finally free</button>
+          <button class="quiz-opt" data-tags="natural">Death is the end of consciousness</button>
+          <button class="quiz-opt" data-tags="unsure">Nobody can really know</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CLOSING INVITATION ================= -->
 <section class="gospel-cta">
   <div class="wrap">
@@ -216,6 +290,14 @@
       <div class="cta-row">
         <a class="btn btn-primary" href="#/evidence">See the evidence →</a>
         <a class="btn btn-ghost" href="#/contact">Reach out with a question</a>
+      </div>
+      <details>
+        <summary>🙏 A simple prayer, if you're ready</summary>
+        <p>"God, if you are there, I want to know you. I believe Jesus died for my sin and rose from the dead. Forgive me, and lead me from here. Amen."</p>
+        <p class="p-note">If you prayed that and meant it, you've just started the oldest conversation there is. Find a Bible (start with the Gospel of John), find a church that teaches it, and feel free to <a href="#/contact" style="color: var(--accent-2);">tell us</a> — we'd love to point you to good next steps.</p>
+      </details>
+      <div class="share-row">
+        <button class="share-btn" data-share="site">📤 Share this site</button>
       </div>
       <p class="gospel-note">Whatever you believe today, you're welcome to keep exploring.</p>
     </div>
@@ -229,6 +311,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/earth.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 01</span><h2 class="tb-title">The Whole Map</h2>
+      <span class="tb-verse">“From one man he made every nation of mankind… that they should seek God, and perhaps feel their way toward him.”<span class="vref">Acts 17:26–27</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -241,6 +324,43 @@
       <p><strong>By the numbers:</strong> as of 2020, Christians are the world's largest group at 28.8% of the global population, Muslims are second and fastest-growing at 25.6%, and the religiously unaffiliated are third at 24.2% — Muslims alone grew by 347 million over the decade, more than every other tradition combined (Pew Research Center, "The World's Religious Groups: How Their Sizes Changed from 2010 to 2020," June 2025).</p>
     </div>
     <div class="cards-5" id="religionGrid"></div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">The Map in Time</div>
+      <h2>Four thousand years on one line</h2>
+      <p>Every tradition above, placed where it entered history — from the Indus Valley to 1950s Los Angeles. Scroll sideways; tap any name for its full profile.</p>
+    </div>
+    <div class="timeline-scroll reveal">
+      <div class="timeline" id="timeline"></div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">Speak the Languages</div>
+      <h2>A small glossary of big words</h2>
+      <p>Twenty terms that unlock the traditions above — each in one breath.</p>
+    </div>
+    <div class="gloss-grid reveal">
+      <div class="gloss"><span class="g-term">Trinity</span><span class="g-trad">Christianity</span><p>One God in three persons — Father, Son, Holy Spirit — one being, eternally in relationship.</p></div>
+      <div class="gloss"><span class="g-term">Grace</span><span class="g-trad">Christianity</span><p>Undeserved favor: salvation as a free gift received by faith, not earned by works.</p></div>
+      <div class="gloss"><span class="g-term">Incarnation</span><span class="g-trad">Christianity</span><p>God the Son becoming fully human in Jesus — one person, two natures.</p></div>
+      <div class="gloss"><span class="g-term">Tawhid</span><span class="g-trad">Islam</span><p>The absolute oneness of Allah — Islam's central doctrine, excluding any partner or incarnation.</p></div>
+      <div class="gloss"><span class="g-term">Shirk</span><span class="g-trad">Islam</span><p>Associating partners with Allah — in Islam, the gravest possible sin.</p></div>
+      <div class="gloss"><span class="g-term">Tahrif</span><span class="g-trad">Islam</span><p>The claim that earlier scriptures (Torah, Gospel) were textually corrupted over time.</p></div>
+      <div class="gloss"><span class="g-term">Torah</span><span class="g-trad">Judaism</span><p>The five books of Moses — the covenant law at the heart of Jewish life.</p></div>
+      <div class="gloss"><span class="g-term">Teshuvah</span><span class="g-trad">Judaism</span><p>"Return" — repentance; turning back to God and to the right path.</p></div>
+      <div class="gloss"><span class="g-term">Brahman</span><span class="g-trad">Hinduism</span><p>The supreme, all-pervading reality behind all gods and all things.</p></div>
+      <div class="gloss"><span class="g-term">Moksha</span><span class="g-trad">Hinduism · Jainism</span><p>Liberation — the soul's final release from the cycle of rebirth.</p></div>
+      <div class="gloss"><span class="g-term">Karma</span><span class="g-trad">Dharmic faiths</span><p>The moral law of cause and effect: actions shape this life and the next.</p></div>
+      <div class="gloss"><span class="g-term">Samsara</span><span class="g-trad">Dharmic faiths</span><p>The wheel of death and rebirth that the Eastern paths seek to escape.</p></div>
+      <div class="gloss"><span class="g-term">Dukkha</span><span class="g-trad">Buddhism</span><p>Suffering, unsatisfactoriness — the First Noble Truth about existence.</p></div>
+      <div class="gloss"><span class="g-term">Nirvana</span><span class="g-trad">Buddhism</span><p>The "blowing out" of craving — the end of the cycle, not a heaven.</p></div>
+      <div class="gloss"><span class="g-term">Ik Onkar</span><span class="g-trad">Sikhism</span><p>"One God" — the opening declaration of the Guru Granth Sahib.</p></div>
+      <div class="gloss"><span class="g-term">Wu wei</span><span class="g-trad">Taoism</span><p>Effortless action — living in unforced harmony with the Tao.</p></div>
+      <div class="gloss"><span class="g-term">Kami</span><span class="g-trad">Shinto</span><p>The sacred presences in nature, ancestors, and places that Shinto honors.</p></div>
+      <div class="gloss"><span class="g-term">Thetan</span><span class="g-trad">Scientology</span><p>The immortal spiritual being Scientology says each person truly is.</p></div>
+      <div class="gloss"><span class="g-term">Theodicy</span><span class="g-trad">Philosophy</span><p>An answer to the problem of evil: why a good God permits suffering.</p></div>
+      <div class="gloss"><span class="g-term">Sola scriptura</span><span class="g-trad">Protestantism</span><p>"Scripture alone" as the final authority — the Reformation's rallying cry.</p></div>
+    </div>
     <div class="next-chapter reveal">
       <span class="nc-progress">Chapter 01 of 12</span>
       <a class="nc-link" href="#/compare">Next: The Comparison Lab →<span class="nc-sub">Seventeen traditions is a lot to hold at once — pick any two to five and see them side by side.</span></a>
@@ -253,6 +373,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/athens.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 02</span><h2 class="tb-title">The Comparison Lab</h2>
+      <span class="tb-verse">“Test everything; hold fast what is good.”<span class="vref">1 Thessalonians 5:21</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -386,6 +507,52 @@
         </tbody>
       </table>
     </div>
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">In Their Own Words</div>
+      <h2>One question, nine scriptures: what happens when we die?</h2>
+      <p>Summaries are ours; these are the sources themselves, each speaking for itself on the question every tradition must answer.</p>
+    </div>
+    <div class="quote-grid reveal">
+      <div class="quote-card">
+        <div class="who">✝️ The Bible</div>
+        <blockquote>"Jesus said to her, 'I am the resurrection and the life. Whoever believes in me, though he die, yet shall he live.'"<span class="ref">John 11:25</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☪️ The Quran</div>
+        <blockquote>"Every soul will taste death. Then to Us will you be returned."<span class="ref">Surah 29:57</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">✡️ The Tanakh</div>
+        <blockquote>"Many of those who sleep in the dust of the earth shall awake, some to everlasting life, and some to shame."<span class="ref">Daniel 12:2</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🕉️ The Bhagavad Gita</div>
+        <blockquote>"As a person puts on new garments, giving up old ones, the soul accepts new material bodies, giving up the old."<span class="ref">Gita 2:22</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☸️ The Dhammapada</div>
+        <blockquote>"Not in the sky, not in mid-ocean… is found that place on earth where abiding one may escape from death."<span class="ref">Dhammapada 128</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🪯 Guru Granth Sahib</div>
+        <blockquote>"Those who meditate on the Name… their comings and goings in reincarnation end."<span class="ref">Japji Sahib</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🤚 The Agamas</div>
+        <blockquote>"The soul, freed from all karma, rises straight up to the summit of the universe, to abide there forever."<span class="ref">Jain teaching (Tattvartha Sutra 10)</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☯️ Zhuangzi</div>
+        <blockquote>"Life and death are one thread, the same line viewed from different sides."<span class="ref">Zhuangzi (attr.)</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">⚛️ Bertrand Russell</div>
+        <blockquote>"When I die I shall rot, and nothing of my ego will survive."<span class="ref">"What I Believe" (1925)</span></blockquote>
+      </div>
+    </div>
+    <div class="share-row reveal">
+      <button class="share-btn" data-share="compare">📤 Share this comparison</button>
+    </div>
     <div class="next-chapter reveal">
       <span class="nc-progress">Chapter 02 of 12</span>
       <a class="nc-link" href="#/islam">Next: Christianity ↔ Islam →<span class="nc-sub">Of everything on the grid, one contrast touches more people than any other — 54.4% of the world between just these two traditions.</span></a>
@@ -398,6 +565,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/hagia.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 03</span><h2 class="tb-title">Christianity ↔ Islam</h2>
+      <span class="tb-verse">“"Come now, let us reason together," says the LORD.”<span class="vref">Isaiah 1:18</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -603,9 +771,46 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/christianity.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 04</span><h2 class="tb-title">Weighing the Evidence</h2>
+      <span class="tb-verse">“If Christ has not been raised, your faith is futile.”<span class="vref">1 Corinthians 15:17</span></span>
     </div>
   </div>
   <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">First — How Do We Know Anything?</div>
+      <h2>Five ways humans claim to know</h2>
+      <p>Before weighing any evidence, it helps to name the scales. Every religious claim — and every secular one — rests on some mix of these five ways of knowing. The question for any worldview is which ones it invites you to use, and which it asks you to set aside.</p>
+    </div>
+    <div class="facts" style="margin-bottom: 60px;">
+      <div class="fact reveal">
+        <span class="num">①</span>
+        <h3>Revelation</h3>
+        <p>God discloses what we couldn't discover — scripture, prophecy, incarnation. Powerful if true; the question is always <em>which</em> claimed revelation, and why.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">②</span>
+        <h3>Reason</h3>
+        <p>Logic and argument — the Kalam, the moral argument, coherence tests like Zacharias' four questions. Universal, but reason needs premises to reason <em>from</em>.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">③</span>
+        <h3>Experience</h3>
+        <p>The burning bosom, the answered prayer, the mystical encounter. Real and moving — but every tradition reports them, so experience alone can't referee between rivals.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">④</span>
+        <h3>Authority & testimony</h3>
+        <p>Trusting teachers, traditions, communities. Unavoidable (most of what anyone knows is testimony) — which makes the <em>reliability</em> of witnesses the real question.</p>
+      </div>
+      <div class="fact reveal">
+        <span class="num">⑤</span>
+        <h3>History</h3>
+        <p>Public, checkable events — manuscripts, archaeology, hostile witnesses. The slowest way of knowing, but the only one that lets rival claims be cross-examined.</p>
+      </div>
+    </div>
+    <div class="contrast-strip reveal" style="margin-bottom: 70px; max-width: 860px; margin-left: auto; margin-right: auto;">
+      <p><strong>Why this chapter leans on №5:</strong> experience and authority are where most faiths rest their case, and they can't settle a dispute between traditions that all report them. History can — which is why Christianity's decision to stake everything on a checkable public event ("if Christ has not been raised, your faith is futile") is so unusual, and why this chapter examines exactly that claim.</p>
+    </div>
+
     <div class="section-head reveal">
       <div class="kicker">Weighing the Claims</div>
       <h2>The evidence question</h2>
@@ -671,6 +876,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/islam.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 05</span><h2 class="tb-title">Questions to Ask</h2>
+      <span class="tb-verse">“Let your speech always be gracious, seasoned with salt.”<span class="vref">Colossians 4:6</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -760,6 +966,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/celsus.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 06</span><h2 class="tb-title">Answering Objections</h2>
+      <span class="tb-verse">“Always being prepared to make a defense… yet with gentleness and respect.”<span class="vref">1 Peter 3:15</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -852,6 +1059,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/stpeters.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 07</span><h2 class="tb-title">Which Christianity?</h2>
+      <span class="tb-verse">“Even if we or an angel from heaven should preach a different gospel — let him be accursed.”<span class="vref">Galatians 1:8</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -1167,6 +1375,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/atheism.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 08</span><h2 class="tb-title">Atheism ↔ Christianity</h2>
+      <span class="tb-verse">“The heavens declare the glory of God; the skies proclaim the work of his hands.”<span class="vref">Psalm 19:1</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -1276,6 +1485,28 @@
       </div>
     </div>
 
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">The Steelman</div>
+      <h2>The strongest case against Christianity — stated fairly</h2>
+      <p>An argument you can only win against a weak version of the other side isn't worth winning. So here is the best objection to Christianity as its sharpest advocates actually make it — followed by the honest response.</p>
+    </div>
+    <div class="duel reveal">
+      <div class="duel-card atheist">
+        <div class="faith-label">⚖️ The objection, at full strength</div>
+        <h4>Divine hiddenness + honest disagreement</h4>
+        <p>If a perfectly loving God exists who wants relationship with every person, why are there billions of sincere seekers — devout Muslims, thoughtful Hindus, kind atheists — who looked honestly and did not find <em>him</em>? Nonresistant unbelief exists. A loving parent doesn't hide from a child who is genuinely searching.</p>
+        <p>And the world's religious map tracks geography, not evidence: born in Riyadh you'd likely be Muslim, in Varanasi Hindu, in Kansas Baptist. That pattern looks like culture transmitting belief — not one true God revealing himself equally to all.</p>
+        <p>(This is philosopher J. L. Schellenberg's hiddenness argument joined to the demographics objection — the strongest form of the case, stronger than "who made God?")</p>
+      </div>
+      <div class="duel-card christian">
+        <div class="faith-label">✝️ An honest response</div>
+        <h4>Sought and seeking are not symmetrical</h4>
+        <p>Christianity's own claim is not that God is obvious, but that he is <em>personal</em> — and persons can be known only on terms that leave room for love. Overwhelming proof would compel assent the way a math theorem does; it cannot invite trust. Scripture itself says God "is not far from each one of us" yet must be <em>sought</em> (Acts 17:27) — and promises that seeking is not wasted: "you will find me when you seek me with all your heart" (Jer. 29:13).</p>
+        <p>On geography: the objection cuts every worldview equally — atheism also clusters by birthplace (secular Scandinavia, Communist-schooled China). Where you start says nothing about which map is true; that still has to be tested on evidence. And the pattern is breaking: Christianity is now majority-Global-South, growing fastest precisely where it wasn't inherited.</p>
+        <p>What the objection gets right — and the church should own — is that unanswered seekers deserve better than slogans. If that's you, the honest next step isn't pretending certainty either way; it's the standing offer: "If anyone's will is to do God's will, he shall know" (John 7:17). Test it like a hypothesis you live.</p>
+      </div>
+    </div>
+
     <div class="contrast-strip reveal" style="max-width: 860px; margin: 32px auto 0;">
       <p><strong>And the same posture applies:</strong> most atheists left a church that answered questions badly, or never met a Christian who welcomed hard ones. Curiosity beats combat — "always being prepared to make a defense… with gentleness and respect" (1 Pet. 3:15).</p>
     </div>
@@ -1291,6 +1522,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/athens.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 11</span><h2 class="tb-title">Sources & Further Reading</h2>
+      <span class="tb-verse">“They examined the Scriptures daily to see if these things were so.”<span class="vref">Acts 17:11</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -1407,6 +1639,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('img/earth.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Back to the journey</a>
       <span class="tb-no">Chapter 12</span><h2 class="tb-title">Join the Conversation</h2>
+      <span class="tb-verse">“Ask, and it will be given to you; seek, and you will find.”<span class="vref">Matthew 7:7</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -1591,6 +1824,138 @@
   }
   window.addEventListener('hashchange', showJourney);
   showJourney();
+
+  // ---- constellation reveal ----
+  const consl = document.getElementById('constellation');
+  if (consl) new IntersectionObserver((es, o) => es.forEach(e => {
+    if (e.isIntersecting) { consl.classList.add('in'); o.disconnect(); }
+  }), { threshold: 0.4 }).observe(consl);
+
+  // ---- timeline of traditions ----
+  const TL_YEARS = { indigenous: -3000, hinduism: -1900, judaism: -1650, zoroastrianism: -1100, shinto: -660, jainism: -550, confucianism: -500, buddhism: -450, taoism: -400, atheism: -300, christianity: 30, islam: 610, sikhism: 1499, lds: 1830, bahai: 1863, jw: 1870, scientology: 1954 };
+  (function () {
+    const tl = document.getElementById('timeline');
+    if (!tl || typeof RELIGIONS === 'undefined') return;
+    const min = -3300, max = 2250;
+    const x = y => ((y - min) / (max - min)) * 100;
+    [-3000, -2000, -1000, 0, 1000, 2000].forEach(y => {
+      const t = document.createElement('div'); t.className = 'tl-tick'; t.style.left = x(y) + '%';
+      t.textContent = y < 0 ? Math.abs(y) + ' BC' : (y === 0 ? 'AD 1' : 'AD ' + y);
+      tl.appendChild(t);
+    });
+    const axis = document.createElement('div'); axis.className = 'tl-axis'; tl.appendChild(axis);
+    RELIGIONS.filter(r => TL_YEARS[r.id] !== undefined)
+      .sort((a, b) => TL_YEARS[a.id] - TL_YEARS[b.id])
+      .forEach((r, i) => {
+        const d = document.createElement('button'); d.type = 'button';
+        d.className = 'tl-item ' + (i % 2 ? 'down' : 'up');
+        d.style.left = x(TL_YEARS[r.id]) + '%';
+        d.innerHTML = `<span class="tl-emoji">${r.emoji}</span><span class="tl-name">${r.name}</span><span class="tl-date">${r.founded.split('·')[0].trim()}</span>`;
+        d.addEventListener('click', () => openRelModal(r));
+        tl.appendChild(d);
+      });
+  })();
+
+  // ---- guided quiz ----
+  (function () {
+    const box = document.getElementById('quizBox');
+    if (!box) return;
+    const picks = {};
+    const RESULTS = {
+      theist: {
+        label: 'the theistic family',
+        traditions: 'Christianity · Islam · Judaism · Sikhism · Baháʼí',
+        blurb: 'You lean toward a personal Creator who gives life its purpose and its law. These five traditions agree on that — and divide, sharply, on how God is known and how we are made right with him.',
+        link: '#/islam', linkText: 'Start with the sharpest live contrast: Christianity ↔ Islam →'
+      },
+      eastern: {
+        label: 'the Eastern / Dharmic paths',
+        traditions: 'Hinduism · Buddhism · Jainism · Taoism · Sikhism',
+        blurb: 'You lean toward an underlying spiritual order — karma, rebirth, liberation — rather than a personal lawgiver. These traditions map that terrain in beautifully different ways.',
+        link: '#/religions', linkText: 'Read their full profiles in The Whole Map →'
+      },
+      natural: {
+        label: 'naturalism / secular humanism',
+        traditions: 'Atheism · Agnosticism · Secular humanism',
+        blurb: 'You lean toward a universe of matter, energy, and self-made meaning. That is a worldview too — and it has its own strongest arguments, and its own hardest questions.',
+        link: '#/atheism', linkText: 'See both sides at full strength: Atheism ↔ Christianity →'
+      },
+      unsure: {
+        label: 'honest uncertainty',
+        traditions: 'The seeker’s position',
+        blurb: 'Not knowing — and saying so — is a more honest starting point than most. The good news: these questions can actually be investigated, not just felt about.',
+        link: '#/evidence', linkText: 'Start where the checking is possible: Weighing the Evidence →'
+      }
+    };
+    box.querySelectorAll('.quiz-opt').forEach(btn => btn.addEventListener('click', () => {
+      const q = btn.closest('.quiz-q');
+      q.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel');
+      picks[q.dataset.q] = btn.dataset.tags;
+      if (Object.keys(picks).length === 4) showResult();
+    }));
+    function showResult() {
+      const counts = {};
+      Object.values(picks).forEach(t => counts[t] = (counts[t] || 0) + 1);
+      const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+      const top = RESULTS[ranked[0][0]];
+      const second = ranked[1] && ranked[1][1] === ranked[0][1] ? RESULTS[ranked[1][0]] : null;
+      const out = document.getElementById('quizResult');
+      out.innerHTML =
+        `<h3>Your answers sit closest to ${top.label}${second ? ' — with a strong pull toward ' + second.label : ''}</h3>` +
+        `<div class="qr-row"><strong>Nearest traditions:</strong> ${top.traditions}${second ? ' · ' + second.traditions : ''}</div>` +
+        `<div class="qr-row">${top.blurb}</div>` +
+        `<div class="qr-row" style="margin-top:16px;"><a class="btn btn-primary" href="${top.link}">${top.linkText}</a></div>` +
+        `<div class="qr-row" style="font-size:.82rem; opacity:.75;">Wherever you land today, all four questions deserve answers that are actually true — that’s what the rest of this site is for.</div>`;
+      out.classList.add('show');
+      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  })();
+
+  // ---- reading progress: visited chapters + continue pill ----
+  (function () {
+    const KEY = 'fc-progress';
+    let st = {}; try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { }
+    st.visited = st.visited || [];
+    const CH_NO = { religions: '01', compare: '02', islam: '03', evidence: '04', questions: '05', objections: '06', restoration: '07', atheism: '08', sources: '11', contact: '12' };
+    const routeOf = a => { const h = a.getAttribute('href'); return h.startsWith('#/') ? h.slice(2) : h; };
+    document.querySelectorAll('.chapter').forEach(a => {
+      const b = document.createElement('span'); b.className = 'ch-done'; b.textContent = '✓'; a.appendChild(b);
+    });
+    function paint() {
+      document.querySelectorAll('.chapter').forEach(a => a.classList.toggle('visited', st.visited.includes(routeOf(a))));
+    }
+    function record() {
+      const r = journeyRoute();
+      if (r !== 'home') {
+        st.last = r;
+        if (!st.visited.includes(r)) st.visited.push(r);
+        try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { }
+        paint();
+      }
+    }
+    paint();
+    window.addEventListener('hashchange', record); record();
+    const pill = document.getElementById('continuePill');
+    if (pill && st.last && CH_NO[st.last]) {
+      pill.href = '#/' + st.last;
+      pill.textContent = '▶ Continue where you left off — Chapter ' + CH_NO[st.last] + ' →';
+      pill.classList.add('show');
+    }
+  })();
+
+  // ---- share buttons ----
+  (function () {
+    const MSGS = {
+      site: { title: 'Faith, Compared', text: 'Seventeen worldviews. One honest comparison. Explore what the world’s religions actually teach:', url: 'https://comparereligion.com/' },
+      compare: { title: 'Faith, Compared — Comparison Lab', text: 'Set any of the world’s religions side by side and compare what they actually teach:', url: 'https://comparereligion.com/#/compare' }
+    };
+    document.querySelectorAll('.share-btn').forEach(b => b.addEventListener('click', async () => {
+      const m = MSGS[b.dataset.share] || MSGS.site;
+      if (navigator.share) { try { await navigator.share(m); } catch (e) { } }
+      else { window.open('https://wa.me/?text=' + encodeURIComponent(m.text + ' ' + m.url), '_blank', 'noopener'); }
+    }));
+  })();
 
   // ---- scroll progress bar + trail hiker ----
   const progressBar = document.getElementById('progress');
