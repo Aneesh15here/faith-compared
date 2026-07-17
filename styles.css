@@ -445,7 +445,10 @@
 .view.active { display: block; animation: viewIn .6s cubic-bezier(.22,.8,.3,1) both; }
 @keyframes viewIn { from { opacity: 0; transform: translateY(34px) scale(.988); } to { opacity: 1; transform: none; } }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.14) translateY(-2%); } }
-@keyframes earthBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+@keyframes earthBreathe {
+  0%, 100% { transform: scale(.96); opacity: .33; }   /* zoomed out — the whole globe, far away */
+  50%      { transform: scale(1.26); opacity: .47; }  /* zoomed in — drifting toward the viewer */
+}
 @keyframes heroScrollDrift { from { transform: scale(1); filter: brightness(1) saturate(1); } to { transform: scale(1.16); filter: brightness(.5) saturate(1.2); } }
 
 /* immersive home hero — layered so pointer-tilt (JS, .hero-stage), scroll-linked
@@ -467,7 +470,7 @@
 @supports (animation-timeline: view()) {
   .hero { view-timeline-name: --heroTimeline; view-timeline-axis: block; }
 }
-.hero-bg { position: absolute; inset: -8%; background: url('img/earth.jpg') center/cover no-repeat; opacity: .38; animation: earthBreathe 20s ease-in-out infinite; will-change: transform; }
+.hero-bg { position: absolute; inset: -8%; background: url('img/earth.jpg') center/cover no-repeat; opacity: .38; animation: earthBreathe 26s ease-in-out infinite; will-change: transform, opacity; }
 .hero-veil { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(10,12,20,.3) 0%, rgba(10,12,20,.78) 55%, var(--bg) 100%); }
 .hero .wrap { position: relative; z-index: 2; }
 
