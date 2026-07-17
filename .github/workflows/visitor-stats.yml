@@ -23,10 +23,15 @@ jobs:
             exit 0
           fi
           mkdir -p data
-          curl -sf \
+          HTTP_CODE=$(curl -s -o /tmp/locations.json -w "%{http_code}" \
             -H "Authorization: Bearer $TOKEN" \
-            "https://comparereligion.goatcounter.com/api/v0/stats/locations?start=2026-07-01T00:00:00Z&end=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-            -o /tmp/locations.json
+            "https://comparereligion.goatcounter.com/api/v0/stats/locations?start=2026-07-01T00:00:00Z&end=$(date -u +%Y-%m-%dT%H:%M:%SZ)")
+          echo "HTTP status: $HTTP_CODE"
+          if [ "$HTTP_CODE" -ge 400 ]; then
+            echo "Error response body:"
+            cat /tmp/locations.json
+            exit 1
+          fi
           jq '{
             updated: (now | todate),
             total: ([.stats[]?.count] | add // 0),
