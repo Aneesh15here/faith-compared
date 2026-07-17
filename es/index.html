@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fe, Comparada — Un explorador de apologética</title>
+<meta name="description" content="Una comparación interactiva, informada por la apologética, de las principales religiones del mundo, con un estudio a fondo del cristianismo y el islam." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=17">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0a0c14">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Fe, Comparada">
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div id="progress"></div>
+<div id="trailHiker">🚶</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#/">Fe<span>,</span> Comparada</a>
+    <div class="nav-links">
+      <a href="#/" data-r="home">Inicio</a>
+      <a href="#/religions" data-r="religions">Todas las religiones</a>
+      <a href="#/compare" data-r="compare">Laboratorio</a>
+      <a href="#/islam" data-r="islam">Cristianismo ↔ Islam</a>
+      <a href="#/evidence" data-r="evidence">Evidencia</a>
+      <a href="#/questions" data-r="questions">Preguntas</a>
+      <a href="#/objections" data-r="objections">Objeciones</a>
+      <a href="#/restoration" data-r="restoration">¿Qué cristianismo?</a>
+      <a href="#/atheism" data-r="atheism">Ateísmo</a>
+      <a href="#/sources" data-r="sources">Fuentes</a>
+      <a href="#/contact" data-r="contact">Contacto</a>
+      <a href="philosophy.html" style="color: var(--accent-2);">Lo que importa →</a>
+      <a href="happiness.html" style="color: var(--accent-2);">Felicidad →</a>
+      <a href="../index.html" style="color: var(--accent);">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= INICIO / EL VIAJE ================= -->
+<div class="view active" data-route="home">
+
+<header class="hero" id="top">
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-scroll">
+      <div class="hero-bg"></div>
+    </div>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> Un explorador de apologética</div>
+    <h1 class="kinetic">Diecisiete cosmovisiones.<br><span class="grad">Una comparación honesta.</span></h1>
+    <p>Una guía clara y amable de lo que las religiones del mundo enseñan realmente — desde las cinco grandes hasta el sijismo, la cienciología, el sintoísmo y más allá — con un laboratorio de comparación para poner cualquier tradición lado a lado, estudios apologéticos a fondo del cristianismo, el islam y la increencia, y una mirada a lo que de verdad importa en la vida.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#/religions">Comienza el viaje →</a>
+      <a class="btn btn-ghost" href="#/compare">Laboratorio de comparación</a>
+      <a class="btn btn-ghost" href="philosophy.html">¿Qué importa de verdad?</a>
+    </div>
+    <div class="lang-choose">
+      <span class="lang-label">🌐 Lee en tu idioma:</span>
+      <a class="lang-pill" href="../index.html" lang="en">English</a>
+      <a class="lang-pill active" href="index.html" lang="es">Español</a>
+      <a class="lang-pill" href="../hi/index.html" lang="hi">हिन्दी</a>
+      <a class="lang-pill" href="../ml/index.html" lang="ml">മലയാളം</a>
+      <a class="lang-pill" href="../ta/index.html" lang="ta">தமிழ்</a>
+      <a class="lang-pill" href="../zh/index.html" lang="zh">中文</a>
+      <a class="lang-pill" href="../ja/index.html" lang="ja">日本語</a>
+    </div>
+    <a class="btn btn-ghost continue-pill" id="continuePill" href="#/">Continúa donde lo dejaste →</a>
+  </div>
+</header>
+
+<!-- ================= PANORAMA ================= -->
+<section id="overview">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Las Cinco Grandes — Más Una</div>
+      <h2>Toda cosmovisión responde tres preguntas</h2>
+      <p>¿Quién (o qué) es Dios? ¿Qué anda mal en el mundo? ¿Y cómo se arregla? Toda cosmovisión — incluido el ateísmo — responde las tres. Aquí está cada respuesta en un suspiro.</p>
+    </div>
+    <div class="cards-5">
+      <div class="rcard reveal">
+        <span class="emoji">✝️</span>
+        <h3>Cristianismo</h3>
+        <div class="tagline">Rescate por gracia</div>
+        <p>Un Dios en tres personas — Padre, Hijo, Espíritu — que busca a las personas. El problema de la humanidad es el pecado; la solución es un regalo gratuito: el perdón mediante la muerte y resurrección de Jesús, recibido por fe.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">☪️</span>
+        <h3>Islam</h3>
+        <div class="tagline">Sumisión a Alá</div>
+        <p>Un Dios trascendente y absolutamente singular. El problema de la humanidad es no someterse; el camino son los Cinco Pilares y que las buenas obras pesen más que las malas en el juicio final.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">✡️</span>
+        <h3>Judaísmo</h3>
+        <div class="tagline">Fidelidad al pacto</div>
+        <p>Un Dios que hizo pacto con Israel a través de Abraham y Moisés. La vida se vive en fidelidad a la Torá — oración, sábado y estudio — esperando la era mesiánica.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">🕉️</span>
+        <h3>Hinduismo</h3>
+        <div class="tagline">Liberación (moksha)</div>
+        <p>Lo divino (Brahman) se manifiesta en muchas formas. El problema es el karma que ata las almas al ciclo de renacimiento; la devoción, la meditación o el ritual pueden llevar a la liberación.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">☸️</span>
+        <h3>Budismo</h3>
+        <div class="tagline">Cesación (nirvana)</div>
+        <p>No hay Dios creador; el Buda alcanzó la iluminación, no la divinidad. El sufrimiento viene del deseo y el apego; el Óctuple Sendero conduce al nirvana, el fin del anhelo.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">⚛️</span>
+        <h3>Ateísmo</h3>
+        <div class="tagline">Sin dios, sentido propio</div>
+        <p>El universo natural es todo lo que hay. El "problema" es la ignorancia y la superstición; el camino es la razón, la ciencia y el florecimiento humano. El sentido no se encuentra: se construye.</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">🔺</span>
+        <h3>Cienciología</h3>
+        <div class="tagline">El Puente a la Libertad Total</div>
+        <p>Eres un thetán — un espíritu inmortal nublado por "engramas" de incontables vidas pasadas. El camino es la auditación pagada por el Puente, de "Clear" a los niveles de Thetán Operante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- constelación de las fes -->
+<div class="constellation" id="constellation" aria-hidden="true">
+  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+    <path class="c-line" d="M40,95 L105,45 L180,105 L255,60 L330,110 L400,40 L470,95 L540,55 L610,108 L680,50 L750,100 L820,62 L860,90"/>
+    <text class="c-star" x="32" y="100">✝️</text>
+    <text class="c-star" x="97" y="50">☪️</text>
+    <text class="c-star" x="172" y="110">🕉️</text>
+    <text class="c-star" x="247" y="65">☸️</text>
+    <text class="c-star" x="322" y="115">✡️</text>
+    <text class="c-star" x="392" y="45">🪯</text>
+    <text class="c-star" x="462" y="100">✴️</text>
+    <text class="c-star" x="532" y="60">🤚</text>
+    <text class="c-star" x="602" y="113">🔥</text>
+    <text class="c-star" x="672" y="55">☯️</text>
+    <text class="c-star" x="742" y="105">📜</text>
+    <text class="c-star" x="812" y="67">⛩️</text>
+    <text class="c-star" x="852" y="95">🌍</text>
+    <circle class="c-dot" cx="885" cy="80" r="2.5"/>
+    <circle class="c-dot" cx="15" cy="80" r="2.5"/>
+  </svg>
+  <p class="c-cap">Diecisiete luces en el mismo cielo — cada una, una manera en que la humanidad ha intentado nombrar lo que está sobre nosotros.</p>
+</div>
+
+<!-- capítulos del viaje -->
+<section id="chapters">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Elige Tu Camino</div>
+      <h2>El viaje, en doce capítulos</h2>
+      <p>Toda cosmovisión responde las mismas tres preguntas. Este sitio recorre el paisaje completo, se acerca al contraste vivo más agudo del planeta (el cristianismo y el islam, más de la mitad del mundo entre ambos), pone a prueba la evidencia histórica, mira hacia dentro a la diversidad del propio cristianismo, enfrenta las mejores objeciones del ateísmo — y luego se aleja hacia las preguntas humanas universales del sentido y la felicidad, donde los datos siguen señalando a la misma persona que este mapa entero ha estado rodeando. Entra en cualquier capítulo — cada uno se abre como su propia página — o sigue el enlace de "siguiente en la historia" al final de cada uno.</p>
+    </div>
+    <div class="chapters reveal">
+      <a class="chapter" href="#/religions" style="--cimg:url('../img/earth.jpg')">
+        <span class="ch-no">CAPÍTULO 01</span><h3>El Mapa Completo</h3>
+        <p>Las diecisiete cosmovisiones — orígenes, escrituras, creencias, prácticas.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/compare" style="--cimg:url('../img/athens.jpg')">
+        <span class="ch-no">CAPÍTULO 02</span><h3>El Laboratorio de Comparación</h3>
+        <p>Elige cualquier tradición y ponlas lado a lado, categoría por categoría.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/islam" style="--cimg:url('../img/hagia.jpg')">
+        <span class="ch-no">CAPÍTULO 03</span><h3>Cristianismo ↔ Islam</h3>
+        <p>Las cinco grandes divisiones — Dios, Jesús, la Escritura, la salvación, la certeza.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/evidence" style="--cimg:url('../img/christianity.jpg')">
+        <span class="ch-no">CAPÍTULO 04</span><h3>Sopesando la Evidencia</h3>
+        <p>Los hechos mínimos de la resurrección y las cinco preguntas de Qureshi.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/questions" style="--cimg:url('../img/islam.jpg')">
+        <span class="ch-no">CAPÍTULO 05</span><h3>Preguntas para Hacer</h3>
+        <p>Siete preguntas basadas en el Corán para tus amigos musulmanes, hechas con amabilidad.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/objections" style="--cimg:url('../img/celsus.jpg')">
+        <span class="ch-no">CAPÍTULO 06</span><h3>Respondiendo Objeciones</h3>
+        <p>Las seis preguntas que los musulmanes más hacen a los cristianos — con respuestas.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/restoration" style="--cimg:url('../img/stpeters.jpg')">
+        <span class="ch-no">CAPÍTULO 07</span><h3>¿Qué Cristianismo?</h3>
+        <p>Católico, ortodoxo, protestante — y los movimientos restauracionistas.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/atheism" style="--cimg:url('../img/atheism.jpg')">
+        <span class="ch-no">CAPÍTULO 08</span><h3>Ateísmo ↔ Cristianismo</h3>
+        <p>El problema del mal, "¿quién hizo a Dios?", el ajuste fino y la ley moral.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="philosophy.html" style="--cimg:url('../img/athens.jpg')">
+        <span class="ch-no">CAPÍTULO 09</span><h3>Lo Que Importa de Verdad</h3>
+        <p>Alejándonos de la religión hacia las preguntas que toda cosmovisión comparte.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="happiness.html" style="--cimg:url('../img/christianity.jpg')">
+        <span class="ch-no">CAPÍTULO 10</span><h3>Felicidad y Fe</h3>
+        <p>Lo que encuentra la ciencia del bienestar — y de dónde se dice que viene el gozo.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/sources" style="--cimg:url('../img/athens.jpg')">
+        <span class="ch-no">CAPÍTULO 11</span><h3>Fuentes y Lectura</h3>
+        <p>Cada recurso apologético que este sitio condensa, enlazado completo.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+      <a class="chapter" href="#/contact" style="--cimg:url('../img/earth.jpg')">
+        <span class="ch-no">CAPÍTULO 12</span><h3>Únete a la Conversación</h3>
+        <p>Preguntas, correcciones o una historia que compartir — envía un comentario.</p>
+        <span class="ch-arrow">Entrar →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CUESTIONARIO GUIADO ================= -->
+<section id="quiz" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Encuentra Tu Punto de Partida</div>
+      <h2>Responde tú mismo las cuatro preguntas</h2>
+      <p>Origen, sentido, moralidad, destino — toda cosmovisión las responde, y tú también, lo hayas dicho en voz alta o no. Elige en cada una la respuesta más cercana a tu instinto, y te mostraremos qué tradiciones quedan más cerca de ti — y por dónde podría empezar el viaje.</p>
+    </div>
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-q" data-q="origin">
+        <h3><span class="qk">01 · Origen</span>¿De dónde salió todo?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">Un Creador personal hizo el universo a propósito</button>
+          <button class="quiz-opt" data-tags="eastern">Una realidad divina impersonal subyace a todo</button>
+          <button class="quiz-opt" data-tags="natural">Materia, energía y azar — no hace falta nada más</button>
+          <button class="quiz-opt" data-tags="unsure">Honestamente, no lo sé</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="meaning">
+        <h3><span class="qk">02 · Sentido</span>¿De dónde viene el propósito de la vida?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">Es dado — se descubre en relación con Dios</button>
+          <button class="quiz-opt" data-tags="eastern">Se realiza — despertando a lo que el yo realmente es</button>
+          <button class="quiz-opt" data-tags="natural">Se construye — cada persona edifica el suyo</button>
+          <button class="quiz-opt" data-tags="unsure">Todavía lo estoy resolviendo</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="morality">
+        <h3><span class="qk">03 · Moralidad</span>¿Por qué algo es realmente bueno o malo?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">Un Legislador moral está detrás de la ley moral</button>
+          <button class="quiz-opt" data-tags="eastern">Las acciones tienen consecuencias — karma, armonía, equilibrio</button>
+          <button class="quiz-opt" data-tags="natural">La moral evolucionó — es acuerdo humano, no ley cósmica</button>
+          <button class="quiz-opt" data-tags="unsure">Se siente real, pero no sé decir por qué</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="destiny">
+        <h3><span class="qk">04 · Destino</span>¿Qué pasa cuando morimos?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">Resurrección y juicio — esta vida no es el final</button>
+          <button class="quiz-opt" data-tags="eastern">Renacimiento — el alma vuelve hasta ser finalmente libre</button>
+          <button class="quiz-opt" data-tags="natural">La muerte es el fin de la conciencia</button>
+          <button class="quiz-opt" data-tags="unsure">Nadie puede saberlo realmente</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INVITACIÓN FINAL ================= -->
+<section class="gospel-cta">
+  <div class="wrap">
+    <div class="gospel-card reveal">
+      <div class="kicker">Antes de Irte</div>
+      <h2>La comparación es el mapa — una Persona es el destino</h2>
+      <p>Diecisiete cosmovisiones, tres preguntas cada una. Pero la respuesta del cristianismo no es tanto una filosofía que sopesar como una persona que conocer: "Dios muestra su amor por nosotros en que, siendo aún pecadores, Cristo murió por nosotros" (Romanos 5:8). Si algo aquí te planteó una pregunta real, nos encantaría escucharla — sin presión, sin marcador, solo una conversación honesta.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#/evidence">Ver la evidencia →</a>
+        <a class="btn btn-ghost" href="#/contact">Escríbenos tu pregunta</a>
+      </div>
+      <details>
+        <summary>🙏 Una oración sencilla, si estás listo</summary>
+        <p>"Dios, si estás ahí, quiero conocerte. Creo que Jesús murió por mi pecado y resucitó de entre los muertos. Perdóname, y guíame desde aquí. Amén."</p>
+        <p class="p-note">Si hiciste esa oración de corazón, acabas de empezar la conversación más antigua que existe. Busca una Biblia (empieza por el Evangelio de Juan), busca una iglesia que la enseñe, y no dudes en <a href="#/contact" style="color: var(--accent-2);">contárnoslo</a> — nos encantaría orientarte hacia buenos próximos pasos.</p>
+      </details>
+      <div class="share-row">
+        <button class="share-btn" data-share="site">📤 Comparte este sitio</button>
+      </div>
+      <p class="gospel-note">Creas lo que creas hoy, eres bienvenido a seguir explorando.</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /home view -->
+
+<!-- ================= TODAS LAS RELIGIONES ================= -->
+<section id="religions" class="view" data-route="religions">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
+      <span class="tb-no">Capítulo 01</span><h2 class="tb-title">El Mapa Completo</h2>
+      <span class="tb-verse">“De un solo hombre hizo todas las naciones… para que buscaran a Dios, y quizá, palpando, lo hallaran.”<span class="vref">Hechos 17:26–27</span></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">El Mapa Completo</div>
+      <h2>Todas las grandes religiones del mundo</h2>
+      <p>Diecisiete tradiciones vivas — desde las de dos mil millones de fieles hasta las antiguas pero pequeñas, más los caminos indígenas anteriores a la escritura. Pasa el cursor sobre cualquier tarjeta para una vista previa; tócala para el perfil completo: orígenes, escrituras, creencias y prácticas.</p>
+    </div>
+    <div class="contrast-strip reveal">
+      <p><strong>En cifras:</strong> a 2020, los cristianos son el grupo más grande del mundo con el 28.8% de la población global, los musulmanes son el segundo y el de mayor crecimiento con el 25.6%, y los sin afiliación religiosa son terceros con el 24.2% — solo los musulmanes crecieron 347 millones en la década, más que todas las demás tradiciones juntas (Pew Research Center, "The World's Religious Groups: How Their Sizes Changed from 2010 to 2020", junio de 2025).</p>
+    </div>
+    <div class="cards-5" id="religionGrid"></div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">El Mapa en el Tiempo</div>
+      <h2>Cuatro mil años en una sola línea</h2>
+      <p>Cada tradición de arriba, situada donde entró en la historia — del valle del Indo al Los Ángeles de los años 50. Desplázate hacia los lados; toca cualquier nombre para su perfil completo.</p>
+    </div>
+    <div class="timeline-scroll reveal">
+      <div class="timeline" id="timeline"></div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">Habla los Idiomas</div>
+      <h2>Un pequeño glosario de palabras grandes</h2>
+      <p>Veinte términos que abren las tradiciones de arriba — cada uno en un suspiro.</p>
+    </div>
+    <div class="gloss-grid reveal">
+      <div class="gloss"><span class="g-term">Trinidad</span><span class="g-trad">Cristianismo</span><p>Un Dios en tres personas — Padre, Hijo, Espíritu Santo — un ser, eternamente en relación.</p></div>
+      <div class="gloss"><span class="g-term">Gracia</span><span class="g-trad">Cristianismo</span><p>Favor inmerecido: la salvación como regalo gratuito recibido por fe, no ganado por obras.</p></div>
+      <div class="gloss"><span class="g-term">Encarnación</span><span class="g-trad">Cristianismo</span><p>Dios Hijo haciéndose plenamente humano en Jesús — una persona, dos naturalezas.</p></div>
+      <div class="gloss"><span class="g-term">Tawhid</span><span class="g-trad">Islam</span><p>La unidad absoluta de Alá — la doctrina central del islam, que excluye todo socio o encarnación.</p></div>
+      <div class="gloss"><span class="g-term">Shirk</span><span class="g-trad">Islam</span><p>Asociar socios a Alá — en el islam, el pecado más grave posible.</p></div>
+      <div class="gloss"><span class="g-term">Tahrif</span><span class="g-trad">Islam</span><p>La afirmación de que las escrituras anteriores (Torá, Evangelio) fueron corrompidas textualmente con el tiempo.</p></div>
+      <div class="gloss"><span class="g-term">Torá</span><span class="g-trad">Judaísmo</span><p>Los cinco libros de Moisés — la ley del pacto en el corazón de la vida judía.</p></div>
+      <div class="gloss"><span class="g-term">Teshuvá</span><span class="g-trad">Judaísmo</span><p>"Retorno" — arrepentimiento; volver a Dios y al camino recto.</p></div>
+      <div class="gloss"><span class="g-term">Brahman</span><span class="g-trad">Hinduismo</span><p>La realidad suprema y omnipresente detrás de todos los dioses y todas las cosas.</p></div>
+      <div class="gloss"><span class="g-term">Moksha</span><span class="g-trad">Hinduismo · Jainismo</span><p>Liberación — la salida final del alma del ciclo de renacimiento.</p></div>
+      <div class="gloss"><span class="g-term">Karma</span><span class="g-trad">Fes dhármicas</span><p>La ley moral de causa y efecto: las acciones moldean esta vida y la siguiente.</p></div>
+      <div class="gloss"><span class="g-term">Samsara</span><span class="g-trad">Fes dhármicas</span><p>La rueda de muerte y renacimiento de la que los caminos orientales buscan escapar.</p></div>
+      <div class="gloss"><span class="g-term">Dukkha</span><span class="g-trad">Budismo</span><p>Sufrimiento, insatisfacción — la Primera Noble Verdad sobre la existencia.</p></div>
+      <div class="gloss"><span class="g-term">Nirvana</span><span class="g-trad">Budismo</span><p>El "apagarse" del anhelo — el fin del ciclo, no un cielo.</p></div>
+      <div class="gloss"><span class="g-term">Ik Onkar</span><span class="g-trad">Sijismo</span><p>"Un solo Dios" — la declaración inicial del Guru Granth Sahib.</p></div>
+      <div class="gloss"><span class="g-term">Wu wei</span><span class="g-trad">Taoísmo</span><p>Acción sin esfuerzo — vivir en armonía no forzada con el Tao.</p></div>
+      <div class="gloss"><span class="g-term">Kami</span><span class="g-trad">Sintoísmo</span><p>Las presencias sagradas en la naturaleza, los ancestros y los lugares que el sintoísmo honra.</p></div>
+      <div class="gloss"><span class="g-term">Thetán</span><span class="g-trad">Cienciología</span><p>El ser espiritual inmortal que la cienciología dice que cada persona realmente es.</p></div>
+      <div class="gloss"><span class="g-term">Teodicea</span><span class="g-trad">Filosofía</span><p>Una respuesta al problema del mal: por qué un Dios bueno permite el sufrimiento.</p></div>
+      <div class="gloss"><span class="g-term">Sola scriptura</span><span class="g-trad">Protestantismo</span><p>"Solo la Escritura" como autoridad final — el grito de la Reforma.</p></div>
+    </div>
+    <div class="next-chapter reveal">
+      <span class="nc-progress">Capítulo 01 de 12</span>
+      <a class="nc-link" href="#/compare">Siguiente: El Laboratorio de Comparación →<span class="nc-sub">Diecisiete tradiciones son muchas para sostener a la vez — elige de dos a cinco y míralas lado a lado.</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LABORATORIO DE COMPARACIÓN ================= -->
+<section id="compare" class="view" data-route="compare">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/athens.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
+      <span class="tb-no">Capítulo 02</span><h2 class="tb-title">El Laboratorio de Comparación</h2>
+      <span class="tb-verse">“Examinadlo todo; retened lo bueno.”<span class="vref">1 Tesalonicenses 5:21</span></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Construye el Tuyo</div>
+      <h2>El laboratorio de comparación</h2>
+      <p>Elige de dos a cinco tradiciones y míralas lado a lado en diez categorías — Dios, fundador, escritura, el problema humano, el camino, la otra vida y más. Un mano a mano de solo dos produce el contraste más nítido.</p>
+    </div>
+    <div class="toggles reveal" id="compareChips"></div>
+    <p class="compare-hint" id="compareHint"></p>
+    <div class="matrix-scroll reveal" id="compareOut" hidden>
+      <table class="matrix" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MATRIZ ================= -->
+<section id="matrix" class="view" data-route="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">Lado a Lado</div>
+      <h2>La clásica cuadrícula de seis</h2>
+      <p>La matriz apologética curada para las seis cosmovisiones tratadas a fondo abajo — Dios, la escritura, el problema humano, la solución, Jesús y la otra vida. Para las quince tradiciones, usa el laboratorio de arriba.</p>
+    </div>
+
+    <div class="toggles reveal" id="toggles">
+      <button class="toggle active" data-col="christianity">✝️ Cristianismo</button>
+      <button class="toggle active" data-col="islam">☪️ Islam</button>
+      <button class="toggle active" data-col="judaism">✡️ Judaísmo</button>
+      <button class="toggle" data-col="hinduism">🕉️ Hinduismo</button>
+      <button class="toggle" data-col="buddhism">☸️ Budismo</button>
+      <button class="toggle active" data-col="atheism">⚛️ Ateísmo</button>
+      <button class="toggle" data-col="scientology">🔺 Cienciología</button>
+    </div>
+
+    <div class="matrix-scroll reveal">
+      <table class="matrix" id="matrixTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th data-col="christianity">✝️ Cristianismo</th>
+            <th data-col="islam">☪️ Islam</th>
+            <th data-col="judaism">✡️ Judaísmo</th>
+            <th data-col="hinduism">🕉️ Hinduismo</th>
+            <th data-col="buddhism">☸️ Budismo</th>
+            <th data-col="atheism">⚛️ Ateísmo</th>
+            <th data-col="scientology">🔺 Cienciología</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Dios</th>
+            <td data-col="christianity">Un Dios en tres personas (Trinidad). Personal, relacional — "Dios es amor" (1 Juan 4:8). Él inicia la relación con la humanidad.</td>
+            <td data-col="islam">Un Dios (Alá), unidad absoluta (tawhid). Creador y juez trascendente; los humanos se relacionan con él como siervos. La Trinidad y la encarnación se niegan explícitamente.</td>
+            <td data-col="judaism">Un Dios (el Shemá, Dt. 6:4). Personal y de pacto; se reveló a Abraham, Moisés y los profetas.</td>
+            <td data-col="hinduism">Brahman, la realidad suprema, manifestada en muchas deidades (Brahma, Visnú, Shiva y otras). Existen comprensiones personales e impersonales.</td>
+            <td data-col="buddhism">Sin Dios creador. Las preguntas últimas sobre la deidad se dejan de lado; el foco es la iluminación, no la adoración de un ser divino.</td>
+            <td data-col="atheism">Ninguno. El universo físico es todo lo que hay, fue o será; la creencia en Dios se ve como invención humana.</td>
+            <td data-col="scientology">Sin Dios personal definido — la "Octava Dinámica" es el infinito. Cada persona es un thetán, un ser espiritual inmortal de billones de años.</td>
+          </tr>
+          <tr>
+            <th>Fundador</th>
+            <td data-col="christianity">Jesús de Nazaret (c. 4 a.C.–30/33 d.C.) — afirmó ser Dios encarnado, fue crucificado, y sus seguidores proclamaron su resurrección corporal.</td>
+            <td data-col="islam">Mahoma (570–632 d.C.) — considerado el profeta final, el "sello de los profetas" (Sura 33:40), que recibió el Corán.</td>
+            <td data-col="judaism">Abraham (pacto) y Moisés (Torá), c. 2000–1300 a.C.</td>
+            <td data-col="hinduism">Sin fundador único; se desarrolló durante milenios en el subcontinente indio desde la tradición védica.</td>
+            <td data-col="buddhism">Siddhartha Gautama, el Buda (c. siglo V a.C.), que enseñó el camino que halló hacia la iluminación.</td>
+            <td data-col="atheism">Sin fundador — una corriente de pensamiento de Epicuro a la Ilustración y los "Nuevos Ateos" (Dawkins, Hitchens, Harris, Dennett).</td>
+            <td data-col="scientology">L. Ron Hubbard (1911–1986), escritor de ciencia ficción — Dianética en 1950, la Iglesia de la Cienciología en 1954.</td>
+          </tr>
+          <tr>
+            <th>Escritura</th>
+            <td data-col="christianity">La Biblia (Antiguo + Nuevo Testamento): 66 libros de ~40 autores en ~1,500 años, tratados por los apologistas como documentos de testigos oculares verificables históricamente.</td>
+            <td data-col="islam">El Corán, recitado por Mahoma durante 23 años; más los hadices. Los musulmanes sostienen que las escrituras anteriores (Torá, Evangelio/Inyil) se corrompieron con el tiempo.</td>
+            <td data-col="judaism">El Tanaj (Torá, Profetas, Escritos) y la tradición rabínica (Talmud).</td>
+            <td data-col="hinduism">Los Vedas, los Upanishads, el Bhagavad Gita y las épicas — un corpus vasto y estratificado.</td>
+            <td data-col="buddhism">El Canon Pali (Tripitaka) y sutras posteriores, según la escuela.</td>
+            <td data-col="atheism">Ninguna. La ciencia y la razón son las guías de confianza; ningún texto tiene autoridad más allá de su evidencia.</td>
+            <td data-col="scientology">Los escritos y conferencias de Hubbard — Dianética, el canon de la cienciología y los materiales confidenciales de nivel superior (OT).</td>
+          </tr>
+          <tr>
+            <th>Problema humano</th>
+            <td data-col="christianity">El pecado — rebelión moral que separa a cada persona de un Dios santo. Nadie puede ser lo bastante bueno para arreglarlo por sí mismo.</td>
+            <td data-col="islam">No caído, sino débil y olvidadizo; la gente no se somete a la voluntad de Alá. No hay doctrina del pecado original.</td>
+            <td data-col="judaism">El pecado como ruptura del pacto; el arrepentimiento (teshuvá), la oración y las buenas obras restauran la relación.</td>
+            <td data-col="hinduism">La ignorancia (avidyā) y el karma atan el alma al samsara — el ciclo de muerte y renacimiento.</td>
+            <td data-col="buddhism">El sufrimiento (dukkha), causado por el anhelo y el apego (la Segunda Noble Verdad).</td>
+            <td data-col="atheism">Sin problema cósmico — solo prácticos: ignorancia, superstición y sociedades mal organizadas.</td>
+            <td data-col="scientology">Los engramas — grabaciones mentales traumáticas de esta vida y de incontables vidas pasadas — nublan al thetán y bloquean su potencial.</td>
+          </tr>
+          <tr>
+            <th>La solución</th>
+            <td data-col="christianity"><strong>Gracia.</strong> La salvación es un regalo — la muerte de Jesús paga el pecado, su resurrección asegura la vida. Se recibe por fe, no se gana (Ef. 2:8–9).</td>
+            <td data-col="islam"><strong>Obras + misericordia.</strong> Sigue los Cinco Pilares; en el juicio se pesan tus obras. Alá puede perdonar a quien quiera, pero no se provee expiación.</td>
+            <td data-col="judaism"><strong>Fidelidad al pacto.</strong> Vive la Torá; Dios es misericordioso con el que se arrepiente.</td>
+            <td data-col="hinduism"><strong>Liberación.</strong> Por los caminos de la devoción (bhakti), el conocimiento (jñana) o las obras (karma yoga), escapar del renacimiento hacia moksha.</td>
+            <td data-col="buddhism"><strong>El Óctuple Sendero.</strong> Recta visión, intención, palabra, acción, medio de vida, esfuerzo, atención y concentración — extinguir el deseo en el nirvana.</td>
+            <td data-col="atheism"><strong>Razón y progreso.</strong> La ciencia, la educación y la ética secular mejoran la condición humana; cada quien construye su propio sentido.</td>
+            <td data-col="scientology"><strong>Auditación.</strong> Borrar los engramas con un E-metro y subir el "Puente a la Libertad Total" — de "Clear" a los niveles de Thetán Operante, cada etapa comprada como cursos.</td>
+          </tr>
+          <tr>
+            <th>¿Quién es Jesús?</th>
+            <td data-col="christianity">El Hijo eterno de Dios — "el Verbo era Dios" (Juan 1:1) — plenamente Dios y plenamente hombre, crucificado y corporalmente resucitado, cabeza de la iglesia, que vuelve como juez.</td>
+            <td data-col="islam">Un profeta venerado (Isa), nacido de virgen y hacedor de milagros — pero creado, no divino (Sura 3:59), no crucificado (Sura 4:157) y no el Hijo de Dios (Sura 19:35).</td>
+            <td data-col="judaism">Un maestro judío del siglo I; no el Mesías, cuya llegada aún se espera.</td>
+            <td data-col="hinduism">A veces honrado como un gurú o avatar entre muchos; no único.</td>
+            <td data-col="buddhism">Un maestro moral sabio e iluminado; sin estatus divino.</td>
+            <td data-col="atheism">Un predicador del siglo I (la mayoría concede que existió y fue crucificado); los milagros y la resurrección se consideran leyenda.</td>
+            <td data-col="scientology">Ni divino ni salvador — Hubbard puso a Jesús "un poco por encima de Clear", y los materiales superiores tratan la historia de Cristo como un "implante".</td>
+          </tr>
+          <tr>
+            <th>La otra vida</th>
+            <td data-col="christianity">Resurrección corporal y juicio final; vida eterna con Dios para los que están en Cristo, separación de Dios para quienes lo rechazan.</td>
+            <td data-col="islam">Resurrección y juicio; el Paraíso (Yanna) o el Infierno (Yahannam) según la balanza de obras y el decreto de Alá.</td>
+            <td data-col="judaism">Las visiones varían — del mundo venidero (Olam Habá) a la resurrección en la era mesiánica.</td>
+            <td data-col="hinduism">Reencarnación según el karma hasta moksha — absorción en Brahman o comunión con él.</td>
+            <td data-col="buddhism">Renacimiento impulsado por el karma hasta el nirvana — la cesación del ciclo, no vida personal eterna.</td>
+            <td data-col="atheism">Ninguna. La muerte es el fin permanente de la conciencia; solo vivimos en la memoria y las consecuencias.</td>
+            <td data-col="scientology">El thetán suelta el cuerpo y toma otro — un ciclo continuo de renacimiento; sin cielo ni infierno.</td>
+          </tr>
+          <tr>
+            <th>¿Certeza?</th>
+            <td data-col="christianity">Sí — porque la salvación descansa en la obra terminada de Cristo, no en el desempeño personal: "estas cosas os he escrito… para que sepáis" (1 Juan 5:13).</td>
+            <td data-col="islam">No — el destino final depende de la balanza y de la voluntad soberana de Alá; no se promete certeza antes del juicio.</td>
+            <td data-col="judaism">El énfasis recae en vivir fielmente ahora más que en la certeza sobre el más allá.</td>
+            <td data-col="hinduism">Ninguna en una sola vida — la liberación puede tomar incontables renacimientos.</td>
+            <td data-col="buddhism">No se promete — el progreso hacia el nirvana puede abarcar muchas vidas.</td>
+            <td data-col="atheism">No aplica — no hay nada tras la muerte de qué estar seguro; la tarea es una vida con sentido ahora.</td>
+            <td data-col="scientology">Ninguna — siempre hay otro nivel del Puente por delante, y cada uno cuesta; hasta los Thetanes Operantes más altos siguen auditándose.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">En Sus Propias Palabras</div>
+      <h2>Una pregunta, nueve escrituras: ¿qué pasa cuando morimos?</h2>
+      <p>Los resúmenes son nuestros; estas son las fuentes mismas, cada una hablando por sí sola sobre la pregunta que toda tradición debe responder.</p>
+    </div>
+    <div class="quote-grid reveal">
+      <div class="quote-card">
+        <div class="who">✝️ La Biblia</div>
+        <blockquote>"Jesús le dijo: 'Yo soy la resurrección y la vida. El que cree en mí, aunque muera, vivirá.'"<span class="ref">Juan 11:25</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☪️ El Corán</div>
+        <blockquote>"Toda alma probará la muerte. Luego, a Nosotros seréis devueltos."<span class="ref">Sura 29:57</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">✡️ El Tanaj</div>
+        <blockquote>"Muchos de los que duermen en el polvo de la tierra despertarán: unos para vida eterna, otros para vergüenza."<span class="ref">Daniel 12:2</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🕉️ El Bhagavad Gita</div>
+        <blockquote>"Como una persona se pone ropas nuevas dejando las viejas, el alma acepta cuerpos nuevos, dejando los viejos."<span class="ref">Gita 2:22</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☸️ El Dhammapada</div>
+        <blockquote>"Ni en el cielo, ni en medio del océano… se halla lugar en la tierra donde morando uno escape de la muerte."<span class="ref">Dhammapada 128</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🪯 Guru Granth Sahib</div>
+        <blockquote>"Quienes meditan en el Nombre… sus idas y venidas en la reencarnación terminan."<span class="ref">Japji Sahib</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🤚 Los Agamas</div>
+        <blockquote>"El alma, libre de todo karma, asciende recta a la cima del universo, para morar allí por siempre."<span class="ref">Enseñanza jainista (Tattvartha Sutra 10)</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☯️ Zhuangzi</div>
+        <blockquote>"La vida y la muerte son un solo hilo, la misma línea vista desde lados distintos."<span class="ref">Zhuangzi (atrib.)</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">⚛️ Bertrand Russell</div>
+        <blockquote>"Cuando muera me pudriré, y nada de mi yo sobrevivirá."<span class="ref">"What I Believe" (1925)</span></blockquote>
+      </div>
+    </div>
+    <div class="share-row reveal">
+      <button class="share-btn" data-share="compare">📤 Comparte esta comparación</button>
+    </div>
+    <div class="next-chapter reveal">
+      <span class="nc-progress">Capítulo 02 de 12</span>
+      <a class="nc-link" href="#/islam">Siguiente: Cristianismo ↔ Islam →<span class="nc-sub">De todo lo que hay en la cuadrícula, un contraste toca a más gente que ningún otro — el 54.4% del mundo entre estas dos tradiciones.</span></a>
+    </div>
+  </div>
+</section>
