@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=13">
+<link rel="stylesheet" href="../styles.css?v=14">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="../icons/icon-180.png">
@@ -51,11 +51,15 @@
 <div class="view active" data-route="home">
 
 <header class="hero" id="top">
-  <div class="hero-bg"></div>
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-scroll">
+      <div class="hero-bg"></div>
+    </div>
+  </div>
   <div class="hero-veil"></div>
   <div class="wrap">
     <div class="eyebrow"><span class="spark">✦</span> ஒரு அப்பாலஜெடிக்ஸ் ஆய்வாளர்</div>
-    <h1>பதினேழு உலகக் கண்ணோட்டங்கள்.<br><span class="grad">ஒரு நேர்மையான ஒப்பீடு.</span></h1>
+    <h1 class="kinetic">பதினேழு உலகக் கண்ணோட்டங்கள்.<br><span class="grad">ஒரு நேர்மையான ஒப்பீடு.</span></h1>
     <p>உலக மதங்கள் உண்மையில் என்ன கற்பிக்கின்றன என்பதற்கு ஒரு தெளிவான, நட்பான வழிகாட்டி — பெரிய ஐந்து முதல் சீக்கியம், சயண்டாலஜி, ஷின்டோ, அதற்கும் அப்பால் வரை — எந்த மரபுகளையும் அருகருகே வைக்க ஒரு ஒப்பீட்டு ஆய்வகம், கிறிஸ்தவம், இஸ்லாம், அவிசுவாசம் பற்றிய அப்பாலஜெடிக்ஸ் ஆழமான ஆய்வுகள், வாழ்க்கையில் உண்மையில் எது முக்கியம் என்பதற்கான ஒரு பார்வையுடன்.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="#/religions">பயணத்தைத் தொடங்கு →</a>
@@ -186,6 +190,22 @@
         <p>கேள்விகள், திருத்தங்கள், அல்லது பகிர ஒரு கதை — ஒரு கருத்தை அனுப்பு.</p>
         <span class="ch-arrow">நுழை →</span>
       </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= இறுதி அழைப்பு ================= -->
+<section class="gospel-cta">
+  <div class="wrap">
+    <div class="gospel-card reveal">
+      <div class="kicker">செல்வதற்கு முன்</div>
+      <h2>ஒப்பீடு வரைபடம் — சேருமிடம் ஒரு நபர்</h2>
+      <p>பதினேழு உலகக் கண்ணோட்டங்கள், ஒவ்வொன்றுக்கும் மூன்று கேள்விகள். ஆனால் கிறிஸ்தவத்தின் பதில் நிறுத்துக்கோலால் அளக்கவேண்டிய ஒரு தத்துவம் அல்ல, சந்திக்கவேண்டிய ஒரு நபர்: "நாம் பாவிகளாயிருக்கையிலே கிறிஸ்து நமக்காக மரித்ததினாலே, தேவன் நம்மேல் வைத்த தமது அன்பை விளங்கப்பண்ணுகிறார்" (ரோமர் 5:8). இங்கே ஏதேனும் உங்களுக்குள் ஒரு உண்மையான கேள்வியை எழுப்பியிருந்தால், அதைக் கேட்க நாங்கள் விரும்புகிறோம் — அழுத்தமில்லை, மதிப்பெண் பட்டியல் இல்லை, வெறும் நேர்மையான உரையாடல் மட்டும்.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#/evidence">சான்றைப் பார் →</a>
+        <a class="btn btn-ghost" href="#/contact">ஒரு கேள்வியுடன் தொடர்பு கொள்ளுங்கள்</a>
+      </div>
+      <p class="gospel-note">இன்று நீங்கள் எதை நம்பினாலும், தேடலைத் தொடர உங்களை வரவேற்கிறோம்.</p>
     </div>
   </div>
 </section>
@@ -1396,6 +1416,51 @@
     tab.classList.add('active');
     document.getElementById(tab.dataset.panel).classList.add('active');
   }));
+
+  // ---- kinetic heading: wrap words for staggered reveal (progressive enhancement).
+  // Only direct text of the heading is wrapped — .grad is left alone because nesting
+  // transformed inline-block spans inside a background-clip:text element breaks the
+  // gradient-text clip in some engines; .grad gets its own plain fade in CSS instead. ----
+  document.querySelectorAll('h1.kinetic').forEach(h => {
+    [...h.childNodes].forEach(node => {
+      if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
+      const frag = document.createDocumentFragment();
+      node.textContent.split(/(\s+)/).forEach(chunk => {
+        if (!chunk) return;
+        if (/^\s+$/.test(chunk)) { frag.appendChild(document.createTextNode(chunk)); return; }
+        const span = document.createElement('span');
+        span.className = 'kw';
+        span.textContent = chunk;
+        frag.appendChild(span);
+      });
+      node.replaceWith(frag);
+    });
+    h.querySelectorAll('.kw').forEach((el, i) => el.style.setProperty('--i', i));
+  });
+
+  // ---- hero pointer-tilt parallax (fine-pointer devices only; scroll-driven
+  // CSS handles the zoom effect for everyone, touch included) ----
+  const heroStage = document.getElementById('heroStage');
+  const heroEl = document.querySelector('.hero');
+  if (heroStage && heroEl && matchMedia('(hover: hover) and (pointer: fine)').matches
+      && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let tiltRaf = null;
+    heroEl.addEventListener('pointermove', ev => {
+      const r = heroEl.getBoundingClientRect();
+      const px = (ev.clientX - r.left) / r.width - 0.5;
+      const py = (ev.clientY - r.top) / r.height - 0.5;
+      if (tiltRaf) return;
+      tiltRaf = requestAnimationFrame(() => {
+        heroStage.style.setProperty('--tiltX', (px * 6).toFixed(2) + 'deg');
+        heroStage.style.setProperty('--tiltY', (py * -6).toFixed(2) + 'deg');
+        tiltRaf = null;
+      });
+    });
+    heroEl.addEventListener('pointerleave', () => {
+      heroStage.style.setProperty('--tiltX', '0deg');
+      heroStage.style.setProperty('--tiltY', '0deg');
+    });
+  }
 
   // ---- reveal on scroll ----
   const io = new IntersectionObserver(entries => {

@@ -106,19 +106,51 @@
   .hero .cta-row { animation: heroIn .9s .44s ease both; }
   @media (prefers-reduced-motion: reduce) {
     .eyebrow, .eyebrow::before, .eyebrow::after, .eyebrow .spark, h1, h1 .grad, .hero p, .hero .cta-row { animation: none; }
+    h1.kinetic .grad { opacity: 1; }
   }
+
+  /* kinetic typography — words wrapped in .kw by JS (progressive enhancement,
+     see the "kinetic heading" script; a plain h1 with no JS just renders flat).
+     Note: .grad is deliberately left untouched by the per-word wrapping —
+     nesting transformed inline-block spans inside a background-clip:text
+     element breaks the gradient-text clip in some engines, so .grad instead
+     gets its own plain opacity fade below. */
+  h1.kinetic { animation: none; opacity: 1; }
+  .kinetic .kw {
+    display: inline-block; opacity: 0; filter: blur(6px);
+    transform: translateY(.5em) rotateX(-35deg);
+    animation: kineticIn .8s cubic-bezier(.22,.8,.3,1) both;
+    animation-delay: calc(var(--i, 0) * 45ms + 120ms);
+  }
+  @keyframes kineticIn { to { opacity: 1; filter: blur(0); transform: none; } }
+  @keyframes gradFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes gradOpsz { 0%, 100% { font-variation-settings: 'opsz' 30; } 50% { font-variation-settings: 'opsz' 144; } }
+  h1 .grad { animation: gradShift 7s linear infinite, gradOpsz 6s ease-in-out infinite; }
+  h1.kinetic .grad { opacity: 0; animation: gradFadeIn .9s .5s ease both, gradShift 7s linear infinite, gradOpsz 6s ease-in-out infinite; }
+
   .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn {
+    position: relative; overflow: hidden; isolation: isolate;
     display: inline-flex; align-items: center; gap: 8px;
     padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: .95rem;
     text-decoration: none; transition: transform .2s, box-shadow .2s; cursor: pointer; border: none; font-family: inherit;
   }
+  .btn::after {
+    content: ''; position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+    mix-blend-mode: overlay; transform: translateX(-120%);
+    transition: opacity .35s, transform .7s cubic-bezier(.22,.8,.3,1);
+  }
+  .btn:hover::after { opacity: 1; transform: translateX(120%); }
   .btn-primary {
     background: linear-gradient(92deg, #6a7dff, #8f6fff); color: #fff;
     box-shadow: 0 8px 30px rgba(106,125,255,.35);
   }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(106,125,255,.5); }
-  .btn-ghost { background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--card-border); }
+  .btn-ghost {
+    background: rgba(255,255,255,.06); color: var(--text); border: 1px solid var(--card-border);
+    backdrop-filter: blur(14px) saturate(160%); -webkit-backdrop-filter: blur(14px) saturate(160%);
+  }
   .btn-ghost:hover { background: rgba(255,255,255,.1); transform: translateY(-2px); }
 
   /* sections */
@@ -413,10 +445,29 @@
 .view.active { display: block; animation: viewIn .6s cubic-bezier(.22,.8,.3,1) both; }
 @keyframes viewIn { from { opacity: 0; transform: translateY(34px) scale(.988); } to { opacity: 1; transform: none; } }
 @keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.14) translateY(-2%); } }
+@keyframes earthBreathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.09); } }
+@keyframes heroScrollDrift { from { transform: scale(1); filter: brightness(1) saturate(1); } to { transform: scale(1.16); filter: brightness(.5) saturate(1.2); } }
 
-/* immersive home hero */
-.hero { position: relative; min-height: 88vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-.hero-bg { position: absolute; inset: -8%; background: url('img/earth.jpg') center/cover no-repeat; opacity: .38; animation: kenburns 28s ease-in-out infinite alternate; }
+/* immersive home hero — layered so pointer-tilt (JS, .hero-stage), scroll-linked
+   zoom (native CSS scroll-timeline, .hero-scroll) and the idle breathing loop
+   (.hero-bg) each own their own transform and compose together automatically. */
+.hero { position: relative; min-height: 88vh; display: flex; align-items: center; justify-content: center; overflow: hidden; perspective: 1400px; }
+.hero-stage {
+  position: absolute; inset: 0;
+  transform: rotateX(var(--tiltY, 0deg)) rotateY(var(--tiltX, 0deg));
+  transition: transform .5s cubic-bezier(.22,.8,.3,1);
+  will-change: transform;
+}
+.hero-scroll {
+  position: absolute; inset: 0;
+  animation: heroScrollDrift linear both;
+  animation-timeline: --heroTimeline;
+  animation-range: cover 0% cover 100%;
+}
+@supports (animation-timeline: view()) {
+  .hero { view-timeline-name: --heroTimeline; view-timeline-axis: block; }
+}
+.hero-bg { position: absolute; inset: -8%; background: url('img/earth.jpg') center/cover no-repeat; opacity: .38; animation: earthBreathe 20s ease-in-out infinite; will-change: transform; }
 .hero-veil { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(10,12,20,.3) 0%, rgba(10,12,20,.78) 55%, var(--bg) 100%); }
 .hero .wrap { position: relative; z-index: 2; }
 
@@ -493,10 +544,31 @@
 /* journey footer nav (next chapter) */
 .next-chapter { display: flex; justify-content: space-between; gap: 14px; max-width: 1180px; margin: 0 auto; padding: 0 24px 80px; flex-wrap: wrap; }
 
+/* closing gospel invitation (home page) */
+.gospel-cta { padding: 40px 0 100px; }
+.gospel-card {
+  position: relative; overflow: hidden; text-align: center; max-width: 780px; margin: 0 auto;
+  padding: 56px 40px; border-radius: 26px; border: 1px solid rgba(245,179,82,.28);
+  background: radial-gradient(ellipse at 50% 0%, rgba(124,140,255,.14) 0%, rgba(255,255,255,.05) 55%, rgba(255,255,255,.04) 100%);
+}
+.gospel-card::before {
+  content: ''; position: absolute; inset: 0; opacity: .5; pointer-events: none;
+  background: radial-gradient(circle at 15% 20%, rgba(245,179,82,.16), transparent 40%),
+              radial-gradient(circle at 85% 85%, rgba(124,140,255,.16), transparent 45%);
+}
+.gospel-card > * { position: relative; z-index: 1; }
+.gospel-card .kicker { justify-content: center; }
+.gospel-card h2 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); margin-bottom: 18px; }
+.gospel-card p { color: var(--muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 30px; }
+.gospel-card .cta-row { margin-bottom: 18px; }
+.gospel-note { font-size: .85rem; color: #9aa3b8; }
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-bg, .topic-banner .tb-img { animation: none; }
+  .hero-bg, .topic-banner .tb-img, .hero-scroll { animation: none; }
+  .hero-stage { transition: none; transform: none; }
   .view.active { animation: none; }
   .tile, .tile img, .tile-body, .chapter { transition: none; }
+  .kinetic .kw { animation: none; opacity: 1; transform: none; filter: none; }
 }
 @media (max-width: 640px) {
   .tile { height: 310px; }
@@ -642,19 +714,30 @@ h1, h2 { text-shadow: 0 2px 30px rgba(124,140,255,.18); }
 /* ============= LANGUAGE CHOOSER ====================== */
 /* ===================================================== */
 .lang-choose {
-  display: flex; flex-wrap: wrap; gap: 9px; justify-content: center; align-items: center;
-  margin-top: 30px;
+  display: inline-flex; flex-wrap: wrap; gap: 6px; justify-content: center; align-items: center;
+  margin-top: 30px; padding: 7px; border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 12px 40px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.09);
 }
 .lang-choose .lang-label {
-  color: var(--muted); font-size: .84rem; font-weight: 500; margin-right: 4px;
+  color: var(--muted); font-size: .84rem; font-weight: 500; margin: 0 8px 0 10px;
 }
 .lang-pill {
+  position: relative; overflow: hidden; isolation: isolate;
   display: inline-flex; align-items: center; gap: 7px;
   padding: 8px 18px; border-radius: 999px; text-decoration: none;
   border: 1px solid var(--card-border); background: rgba(255,255,255,.055);
   color: var(--text); font-size: .92rem; font-weight: 600;
   transition: transform .2s, border-color .2s, background .2s, box-shadow .2s;
 }
+.lang-pill::before {
+  content: ''; position: absolute; inset: 0; z-index: 1; opacity: 0; pointer-events: none;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.4) 50%, transparent 70%);
+  mix-blend-mode: overlay; transition: opacity .3s;
+}
+.lang-pill:hover::before { opacity: 1; }
 .lang-pill:hover {
   border-color: rgba(124,140,255,.6); background: rgba(255,255,255,.1);
   transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.3);
