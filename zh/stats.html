@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>访客地图 — 信仰对照</title>
+<meta name="description" content="世界各地阅读《信仰对照》的位置 — 实时访客热力图。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=17">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0a0c14">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<style>
+  .map-card {
+    background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius);
+    padding: 20px; position: relative;
+  }
+  #worldMap { width: 100%; height: auto; display: block; }
+  #worldMap .country { stroke: rgba(255,255,255,.08); stroke-width: .5; transition: opacity .15s; cursor: default; }
+  #worldMap .country:hover { opacity: .8; stroke: rgba(255,255,255,.5); }
+  .map-tooltip {
+    position: fixed; pointer-events: none; z-index: 90; display: none;
+    background: #1a2138; border: 1px solid var(--card-border); border-radius: 10px;
+    padding: 8px 12px; font-size: .84rem; color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,.45);
+  }
+  .map-tooltip .tt-count { color: var(--muted); }
+  .legend-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: .78rem; color: var(--muted); }
+  .legend-grad { flex: 0 0 180px; height: 10px; border-radius: 5px; border: 1px solid var(--card-border); }
+  .stat-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .stat-tile { background: var(--card); border: 1px solid var(--card-border); border-radius: 16px; padding: 20px 22px; }
+  .stat-tile .v { font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; color: var(--text); }
+  .stat-tile .k { font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  table.ranks { width: 100%; border-collapse: collapse; font-size: .9rem; }
+  .ranks th, .ranks td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.06); }
+  .ranks thead th { font-size: .74rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .ranks td.num, .ranks th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .share-bar { height: 6px; border-radius: 3px; background: var(--accent); min-width: 2px; }
+  .empty-note { text-align: center; color: var(--muted); padding: 28px 16px 8px; font-size: .95rem; }
+</style>
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">信仰<span>·</span>对照</a>
+    <div class="nav-links">
+      <a href="index.html#religions">所有宗教</a>
+      <a href="index.html#compare">对比实验室</a>
+      <a href="philosophy.html">什么最重要</a>
+      <a href="index.html#contact">联系我们</a>
+      <a href="index.html" style="color: var(--accent-2);">← 首页</a>
+      <a href="../stats.html" style="color: var(--accent);">EN</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> 世界各地的读者</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">访客<span class="grad">地图</span></h1>
+    <p>人们在世界何处阅读《信仰对照》——仅收集国家级别的匿名数据，不使用 Cookie，每日更新。</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">总访问量</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">国家数</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">最后更新</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="按各国访问次数着色的世界地图"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 次访问</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">无访问：深色</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>尚无访客数据 — 分析工具刚刚安装。当读者到来时，地图将会点亮。🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">按国家</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="按国家统计的访问次数">
+          <thead><tr><th>#</th><th>国家</th><th class="num">访问次数</th><th style="width:35%;">占比</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>暂无可排名的数据。</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>隐私：</strong>分析功能由 <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> 提供 — 无 Cookie，无指纹追踪，无个人数据。仅统计访问本身及其所在国家。
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><p>访客地图 · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">信仰对照</a></p></div>
+</footer>
+
+<div class="map-tooltip" id="mapTip"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script>
+(async () => {
+  const $ = id => document.getElementById(id);
+  const norm = s => s.toLowerCase().replace(/[’'.]/g, '').replace(/&/g, 'and').trim();
+
+  const ALIASES = {
+    'united states of america': 'united states',
+    'dem rep congo': 'congo (kinshasa)', 'congo': 'congo (brazzaville)',
+    'central african rep': 'central african republic',
+    'dominican rep': 'dominican republic',
+    's sudan': 'south sudan', 'w sahara': 'western sahara',
+    'eq guinea': 'equatorial guinea', 'solomon is': 'solomon islands',
+    'falkland is': 'falkland islands', 'timor-leste': 'east timor',
+    'bosnia and herz': 'bosnia and herzegovina', 'macedonia': 'north macedonia',
+    'czechia': 'czech republic', 'eswatini': 'swaziland',
+    'united kingdom': 'united kingdom of great britain and northern ireland',
+    'russia': 'russian federation', 'south korea': 'korea, republic of',
+    'north korea': 'korea, democratic people’s republic of',
+    'iran': 'iran, islamic republic of', 'syria': 'syrian arab republic',
+    'vietnam': 'viet nam', 'laos': 'lao people’s democratic republic',
+    'bolivia': 'bolivia, plurinational state of',
+    'venezuela': 'venezuela, bolivarian republic of',
+    'tanzania': 'tanzania, united republic of',
+    'moldova': 'moldova, republic of', 'brunei': 'brunei darussalam',
+    'taiwan': 'taiwan, province of china', 'cote divoire': 'côte d’ivoire'
+  };
+
+  let data = { updated: null, total: 0, countries: [] };
+  try {
+    const res = await fetch('../data/countries.json', { cache: 'no-store' });
+    if (res.ok) data = await res.json();
+  } catch (e) { /* keep empty state */ }
+
+  const counts = new Map();
+  for (const c of (data.countries || [])) {
+    const keys = new Set([norm(c.name || ''), (c.code || '').toLowerCase()]);
+    for (const k of keys) if (k) counts.set(k, c);
+  }
+  const findFor = feature => {
+    const n = norm(feature.properties.name);
+    return counts.get(n) || counts.get(ALIASES[n]) ||
+           counts.get(Object.keys(ALIASES).find(k => ALIASES[k] === n) || '') || null;
+  };
+
+  $('statTotal').textContent = (data.total || 0).toLocaleString('zh-CN');
+  $('statCountries').textContent = (data.countries || []).length;
+  $('statUpdated').textContent = data.updated ? new Date(data.updated).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric', year: 'numeric' }) : '等待首批数据';
+
+  const empty = !(data.countries || []).length;
+  $('emptyNote').hidden = !empty;
+  $('legendRow').hidden = empty;
+  $('emptyTable').hidden = !empty;
+
+  const maxCount = Math.max(1, ...(data.countries || []).map(c => c.count));
+  const ramp = t => d3.interpolateRgb('#252c55', '#aebcff')(t);
+  const scale = d3.scaleSqrt().domain([1, maxCount]).range([0.15, 1]);
+  const fillFor = c => c ? ramp(scale(c.count)) : '#151a2d';
+
+  $('legendGrad').style.background = `linear-gradient(90deg, ${ramp(0.15)}, ${ramp(1)})`;
+  $('legendMax').textContent = `${maxCount.toLocaleString('zh-CN')} 次访问`;
+
+  const tbody = document.querySelector('#rankTable tbody');
+  (data.countries || []).forEach((c, i) => {
+    const tr = document.createElement('tr');
+    const share = data.total ? (c.count / data.total * 100) : 0;
+    tr.innerHTML = `<td>${i + 1}</td><td>${c.name}</td><td class="num">${c.count.toLocaleString('zh-CN')}</td>` +
+      `<td><div class="share-bar" style="width:${Math.max(2, share)}%" title="${share.toFixed(1)}%"></div></td>`;
+    tbody.appendChild(tr);
+  });
+
+  const world = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r => r.json());
+  const countries = topojson.feature(world, world.objects.countries).features;
+  const projection = d3.geoNaturalEarth1().fitSize([960, 500], { type: 'Sphere' });
+  const path = d3.geoPath(projection);
+  const svg = d3.select('#worldMap');
+  const tip = $('mapTip');
+
+  svg.append('path').attr('d', path({ type: 'Sphere' }))
+    .attr('fill', 'none').attr('stroke', 'rgba(255,255,255,.08)');
+
+  svg.selectAll('path.country').data(countries).join('path')
+    .attr('class', 'country')
+    .attr('d', path)
+    .attr('fill', d => fillFor(findFor(d)))
+    .on('mousemove', (event, d) => {
+      const c = findFor(d);
+      tip.style.display = 'block';
+      tip.style.left = (event.clientX + 14) + 'px';
+      tip.style.top = (event.clientY + 14) + 'px';
+      tip.innerHTML = `<strong>${d.properties.name}</strong><br><span class="tt-count">${c ? c.count.toLocaleString('zh-CN') + ' 次访问' : '暂无访问'}</span>`;
+    })
+    .on('mouseleave', () => { tip.style.display = 'none'; });
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+})();
+</script>
+<script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>
