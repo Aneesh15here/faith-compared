@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>信仰を比べる — 弁証学エクスプローラー</title>
+<meta name="description" content="世界の主要な宗教を弁証学の視点から比較する対話型サイト。キリスト教とイスラム教の徹底比較付き。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css?v=17">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#0a0c14">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="信仰を比べる">
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div id="progress"></div>
+<div id="trailHiker">🚶</div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="logo" href="#/">信仰<span>を</span>比べる</a>
+    <div class="nav-links">
+      <a href="#/" data-r="home">ホーム</a>
+      <a href="#/religions" data-r="religions">すべての宗教</a>
+      <a href="#/compare" data-r="compare">比較ラボ</a>
+      <a href="#/islam" data-r="islam">キリスト教 ↔ イスラム教</a>
+      <a href="#/evidence" data-r="evidence">証拠</a>
+      <a href="#/questions" data-r="questions">問いかけ</a>
+      <a href="#/objections" data-r="objections">反論への答え</a>
+      <a href="#/restoration" data-r="restoration">どのキリスト教？</a>
+      <a href="#/atheism" data-r="atheism">無神論</a>
+      <a href="#/sources" data-r="sources">出典</a>
+      <a href="#/contact" data-r="contact">お問い合わせ</a>
+      <a href="philosophy.html" style="color: var(--accent-2);">本当に大切なこと →</a>
+      <a href="happiness.html" style="color: var(--accent-2);">幸福 →</a>
+      <a href="../index.html" style="color: var(--accent);">EN</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= HOME / THE JOURNEY ================= -->
+<div class="view active" data-route="home">
+
+<header class="hero" id="top">
+  <div class="hero-stage" id="heroStage">
+    <div class="hero-scroll">
+      <div class="hero-bg"></div>
+    </div>
+  </div>
+  <div class="hero-veil"></div>
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> 弁証学的な探求の旅</div>
+    <h1 class="kinetic">十七の世界観。<br><span class="grad">ひとつの誠実な比較。</span></h1>
+    <p>世界の宗教が実際に何を教えているのか — 五大宗教からシク教、サイエントロジー、神道まで — をわかりやすく友好的に案内するガイド。どの伝統でも自由に選んで並べられる比較ラボ、キリスト教・イスラム教・無信仰への弁証学的な深掘り、そして人生において本当に大切なことへの考察も収録。</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#/religions">旅を始める →</a>
+      <a class="btn btn-ghost" href="#/compare">比較ラボ</a>
+      <a class="btn btn-ghost" href="philosophy.html">本当に大切なことは？</a>
+    </div>
+    <div class="lang-choose">
+      <span class="lang-label">🌐 言語を選ぶ：</span>
+      <a class="lang-pill" href="../index.html">English</a>
+      <a class="lang-pill" href="../es/index.html" lang="es">Español</a>
+      <a class="lang-pill" href="../hi/index.html" lang="hi">हिन्दी</a>
+      <a class="lang-pill" href="../ml/index.html" lang="ml">മലയാളം</a>
+      <a class="lang-pill" href="../ta/index.html" lang="ta">தமிழ்</a>
+      <a class="lang-pill" href="../zh/index.html" lang="zh">中文</a>
+      <a class="lang-pill active" href="index.html" lang="ja">日本語</a>
+    </div>
+    <a class="btn btn-ghost continue-pill" id="continuePill" href="#/">前回の続きから →</a>
+  </div>
+</header>
+
+<!-- ================= OVERVIEW ================= -->
+<section id="overview">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">五大宗教 — プラス1</div>
+      <h2>どの世界観も三つの問いに答えている</h2>
+      <p>神（あるいは究極の実在）とは何か。世界の何が間違っているのか。そしてそれはどう正されるのか。無神論を含め、あらゆる世界観がこの三つに答えている。ここでは、それぞれの答えをひと息で。</p>
+    </div>
+    <div class="cards-5">
+      <div class="rcard reveal">
+        <span class="emoji">✝️</span>
+        <h3>キリスト教</h3>
+        <div class="tagline">恵みによる救い</div>
+        <p>父・子・聖霊という三位一体の唯一の神が、人を追い求める。人類の問題は罪であり、解決策はイエスの死と復活による赦しという無償の贈り物 — 信仰によって受け取るもの。</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">☪️</span>
+        <h3>イスラム教</h3>
+        <div class="tagline">アッラーへの服従</div>
+        <p>超越的で絶対的に唯一の神。人類の問題は服従の欠如であり、道は五行と、最後の審判で悪行を上回る善行にある。</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">✡️</span>
+        <h3>ユダヤ教</h3>
+        <div class="tagline">契約への忠実</div>
+        <p>アブラハムとモーセを通してイスラエルと契約を結んだ唯一の神。人生は律法（トーラー）への忠実 — 祈り、安息日、学び — の中で営まれ、メシアの時代を待ち望む。</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">🕉️</span>
+        <h3>ヒンドゥー教</h3>
+        <div class="tagline">解脱（モークシャ）</div>
+        <p>神性（ブラフマン）は多くの姿で現れる。問題はカルマが魂を輪廻に縛りつけていることであり、信愛・瞑想・儀礼が解脱へと導く。</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">☸️</span>
+        <h3>仏教</h3>
+        <div class="tagline">滅（涅槃）</div>
+        <p>創造神は存在しない。仏陀が得たのは悟りであり、神性ではない。苦は欲望と執着から生じ、八正道が渇愛の終わり — 涅槃 — へと導く。</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">⚛️</span>
+        <h3>無神論</h3>
+        <div class="tagline">神はなく、意味は自分で作る</div>
+        <p>自然の宇宙がすべて。「問題」は無知と迷信であり、道は理性・科学・人間の繁栄。意味は発見されるのではなく、作られるもの。</p>
+      </div>
+      <div class="rcard reveal">
+        <span class="emoji">🔺</span>
+        <h3>サイエントロジー</h3>
+        <div class="tagline">完全な自由への橋</div>
+        <p>あなたは「セイタン」— 無数の過去世の「エングラム」に曇らされた不滅の霊。道は有料の「オーディティング」を通じて、「クリア」から「オペレーティング・セイタン」の各段階まで「橋」を上ること。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- constellation of faiths -->
+<div class="constellation" id="constellation" aria-hidden="true">
+  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+    <path class="c-line" d="M40,95 L105,45 L180,105 L255,60 L330,110 L400,40 L470,95 L540,55 L610,108 L680,50 L750,100 L820,62 L860,90"/>
+    <text class="c-star" x="32" y="100">✝️</text>
+    <text class="c-star" x="97" y="50">☪️</text>
+    <text class="c-star" x="172" y="110">🕉️</text>
+    <text class="c-star" x="247" y="65">☸️</text>
+    <text class="c-star" x="322" y="115">✡️</text>
+    <text class="c-star" x="392" y="45">🪯</text>
+    <text class="c-star" x="462" y="100">✴️</text>
+    <text class="c-star" x="532" y="60">🤚</text>
+    <text class="c-star" x="602" y="113">🔥</text>
+    <text class="c-star" x="672" y="55">☯️</text>
+    <text class="c-star" x="742" y="105">📜</text>
+    <text class="c-star" x="812" y="67">⛩️</text>
+    <text class="c-star" x="852" y="95">🌍</text>
+    <circle class="c-dot" cx="885" cy="80" r="2.5"/>
+    <circle class="c-dot" cx="15" cy="80" r="2.5"/>
+  </svg>
+  <p class="c-cap">同じ空に浮かぶ十七の光 — それぞれが、私たちの上にあるものに人類が名を与えようとした試み。</p>
+</div>
+
+<!-- journey chapters -->
+<section id="chapters">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">道を選ぶ</div>
+      <h2>十二章からなる旅</h2>
+      <p>どの世界観も同じ三つの問いに答えている。このサイトは全体の地形を歩き、今日の世界で最も鋭い対比 — キリスト教とイスラム教、合わせて地球人口の半分以上 — にズームインし、歴史的証拠を検証し、キリスト教自身の多様性を見つめ、無神論からの最も強い反論に向き合い、そして人生の意味と幸福という誰もが共有する問いへと視野を広げる。データは繰り返し、この地図がずっと巡ってきた一人の人物を指し示している。どの章にも直接入れる — それぞれが独立したページになっている — し、各章末の「物語の続き」リンクをたどって進むこともできる。</p>
+    </div>
+    <div class="chapters reveal">
+      <a class="chapter" href="#/religions" style="--cimg:url('../img/earth.jpg')">
+        <span class="ch-no">第01章</span><h3>世界の全体地図</h3>
+        <p>十七の世界観すべて — 起源、聖典、信仰、実践。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/compare" style="--cimg:url('../img/athens.jpg')">
+        <span class="ch-no">第02章</span><h3>比較ラボ</h3>
+        <p>好きな伝統を選び、項目ごとに並べて比較する。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/islam" style="--cimg:url('../img/hagia.jpg')">
+        <span class="ch-no">第03章</span><h3>キリスト教 ↔ イスラム教</h3>
+        <p>五つの大きな分岐点 — 神、イエス、聖典、救い、確信。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/evidence" style="--cimg:url('../img/christianity.jpg')">
+        <span class="ch-no">第04章</span><h3>証拠を検討する</h3>
+        <p>復活に関する最小限の事実と、クレシの五つの問い。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/questions" style="--cimg:url('../img/islam.jpg')">
+        <span class="ch-no">第05章</span><h3>問いかけるべきこと</h3>
+        <p>ムスリムの友人に優しく尋ねる、クルアーンに基づく七つの問い。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/objections" style="--cimg:url('../img/celsus.jpg')">
+        <span class="ch-no">第06章</span><h3>反論に答える</h3>
+        <p>ムスリムがキリスト教徒に最もよく尋ねる六つの問いと、その答え。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/restoration" style="--cimg:url('../img/stpeters.jpg')">
+        <span class="ch-no">第07章</span><h3>どのキリスト教？</h3>
+        <p>カトリック、正教会、プロテスタント — そして復元主義運動。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/atheism" style="--cimg:url('../img/atheism.jpg')">
+        <span class="ch-no">第08章</span><h3>無神論 ↔ キリスト教</h3>
+        <p>悪の問題、「では神は誰が作ったのか」、微調整、道徳律。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="philosophy.html" style="--cimg:url('../img/athens.jpg')">
+        <span class="ch-no">第09章</span><h3>本当に大切なこと</h3>
+        <p>宗教から視野を広げ、あらゆる世界観が共有する問いへ。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="happiness.html" style="--cimg:url('../img/christianity.jpg')">
+        <span class="ch-no">第10章</span><h3>幸福と信仰</h3>
+        <p>幸福の科学が見出したこと — そして喜びの源とされるもの。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/sources" style="--cimg:url('../img/athens.jpg')">
+        <span class="ch-no">第11章</span><h3>出典と参考文献</h3>
+        <p>このサイトが要約したすべての弁証学資料へのリンク。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+      <a class="chapter" href="#/contact" style="--cimg:url('../img/earth.jpg')">
+        <span class="ch-no">第12章</span><h3>対話に参加する</h3>
+        <p>質問、訂正、分かち合いたい話 — コメントを送ってください。</p>
+        <span class="ch-arrow">入る →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GUIDED QUIZ ================= -->
+<section id="quiz" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">出発点を見つける</div>
+      <h2>自分自身で四つの問いに答えてみる</h2>
+      <p>起源、意味、道徳、運命 — どの世界観もこれらに答えており、あなた自身も、口に出したことがなくても、すでに答えを持っている。それぞれ直感に一番近いものを選べば、あなたに最も近い伝統と、旅の出発点になりそうな場所を示す。</p>
+    </div>
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-q" data-q="origin">
+        <h3><span class="qk">01・起源</span>すべてはどこから来たのか？</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">人格を持つ創造主が意図をもって宇宙を作った</button>
+          <button class="quiz-opt" data-tags="eastern">非人格的な神的実在がすべての根底にある</button>
+          <button class="quiz-opt" data-tags="natural">物質、エネルギー、偶然 — それ以上は必要ない</button>
+          <button class="quiz-opt" data-tags="unsure">正直、わからない</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="meaning">
+        <h3><span class="qk">02・意味</span>人生の目的はどこから来るのか？</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">与えられるもの — 神との関係の中で見出される</button>
+          <button class="quiz-opt" data-tags="eastern">悟るもの — 自己が本当は何であるかに目覚める</button>
+          <button class="quiz-opt" data-tags="natural">作るもの — 一人ひとりが自分で築く</button>
+          <button class="quiz-opt" data-tags="unsure">まだ模索中</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="morality">
+        <h3><span class="qk">03・道徳</span>なぜ物事に本当に善悪があるのか？</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">道徳律の背後には道徳の立法者がいる</button>
+          <button class="quiz-opt" data-tags="eastern">行いには結果が伴う — カルマ、調和、均衡</button>
+          <button class="quiz-opt" data-tags="natural">道徳は進化した — 宇宙的法則ではなく人間の合意</button>
+          <button class="quiz-opt" data-tags="unsure">実感はあるが、理由は説明できない</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="destiny">
+        <h3><span class="qk">04・運命</span>死んだらどうなるのか？</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">復活と審判 — この人生で終わりではない</button>
+          <button class="quiz-opt" data-tags="eastern">輪廻 — 魂は最終的に自由になるまで戻り続ける</button>
+          <button class="quiz-opt" data-tags="natural">死は意識の終わり</button>
+          <button class="quiz-opt" data-tags="unsure">誰にも本当のところはわからない</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLOSING INVITATION ================= -->
+<section class="gospel-cta">
+  <div class="wrap">
+    <div class="gospel-card reveal">
+      <div class="kicker">最後に</div>
+      <h2>比較は地図に過ぎない — 目的地は一人の人物</h2>
+      <p>十七の世界観、それぞれ三つの問い。しかしキリスト教の答えは、比較検討する哲学というより、出会うべき人物だ。「私たちがまだ罪人であったとき、キリストが私たちのために死んでくださったことにより、神は私たちに対する愛を示された」（ローマ人への手紙5:8）。ここで何か本当に心に残る問いが生まれたなら、ぜひ聞かせてほしい — 圧力もなく、採点もなく、ただ率直な対話を。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#/evidence">証拠を見る →</a>
+        <a class="btn btn-ghost" href="#/contact">質問を送る</a>
+      </div>
+      <details>
+        <summary>🙏 準備ができたら、シンプルな祈り</summary>
+        <p>「神様、もしあなたが実在するなら、あなたを知りたいです。イエスが私の罪のために死に、よみがえられたことを信じます。私を赦し、ここから導いてください。アーメン。」</p>
+        <p class="p-note">もしこれを本気で祈ったなら、それは史上最も古い対話の始まりだ。聖書（まずヨハネの福音書から）を手に取り、それを教える教会を探し、よければ<a href="#/contact" style="color: var(--accent-2);">私たちに教えてほしい</a> — 次の一歩を一緒に考えたい。</p>
+      </details>
+      <div class="share-row">
+        <button class="share-btn" data-share="site">📤 このサイトを共有</button>
+      </div>
+      <p class="gospel-note">今何を信じていても、探求を続けることを歓迎する。</p>
+    </div>
+  </div>
+</section>
+
+</div><!-- /home view -->
