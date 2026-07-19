@@ -231,6 +231,56 @@
   </div>
 </section>
 
+<!-- ================= GUIDED QUIZ ================= -->
+<section id="quiz" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">உங்கள் தொடக்கப் புள்ளியைக் கண்டறியுங்கள்</div>
+      <h2>இந்த நான்கு கேள்விகளுக்கு நீங்களே பதிலளியுங்கள்</h2>
+      <p>தோற்றம், அர்த்தம், ஒழுக்கம், முடிவு — ஒவ்வொரு உலகக் கண்ணோட்டமும் இவற்றுக்குப் பதிலளிக்கிறது, நீங்களும் அப்படித்தான், அதை உரக்கச் சொல்லியிருந்தாலும் இல்லாவிட்டாலும். ஒவ்வொன்றிலும் உங்கள் மனதுக்கு நெருக்கமான பதிலைத் தேர்ந்தெடுங்கள் — எந்த மரபுகள் உங்களுக்கு அருகில் உள்ளன, பயணம் எங்கிருந்து தொடங்கலாம் என்பதைக் காட்டுவோம்.</p>
+    </div>
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-q" data-q="origin">
+        <h3><span class="qk">01 · தோற்றம்</span>எல்லாம் எங்கிருந்து வந்தது?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">ஒரு நபராகிய படைப்பாளர் நோக்கத்துடன் பிரபஞ்சத்தை உருவாக்கினார்</button>
+          <button class="quiz-opt" data-tags="eastern">ஒரு நபரல்லாத தெய்வீக யதார்த்தம் எல்லாவற்றுக்கும் அடிப்படையாக உள்ளது</button>
+          <button class="quiz-opt" data-tags="natural">பொருள், சக்தி, தற்செயல் — வேறு எதுவும் தேவையில்லை</button>
+          <button class="quiz-opt" data-tags="unsure">உண்மையைச் சொன்னால், எனக்குத் தெரியாது</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="meaning">
+        <h3><span class="qk">02 · அர்த்தம்</span>வாழ்க்கையின் நோக்கம் எங்கிருந்து வருகிறது?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">அது கொடுக்கப்படுகிறது — கடவுளுடனான உறவில் கண்டறியப்படுகிறது</button>
+          <button class="quiz-opt" data-tags="eastern">அது உணரப்படுகிறது — சுயம் உண்மையில் என்ன என்பதை விழிப்படைதல்</button>
+          <button class="quiz-opt" data-tags="natural">அது உருவாக்கப்படுகிறது — ஒவ்வொருவரும் தன்னுடையதைக் கட்டுகிறார்</button>
+          <button class="quiz-opt" data-tags="unsure">இன்னும் அதைச் சிந்தித்துக் கொண்டிருக்கிறேன்</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="morality">
+        <h3><span class="qk">03 · ஒழுக்கம்</span>ஏதேனும் ஏன் உண்மையிலேயே சரி அல்லது தவறு?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">ஒழுக்க சட்டத்தின் பின்னால் ஒரு ஒழுக்க சட்டமியற்றுபவர் நிற்கிறார்</button>
+          <button class="quiz-opt" data-tags="eastern">செயல்களுக்கு விளைவுகள் உண்டு — கர்மா, இணக்கம், சமநிலை</button>
+          <button class="quiz-opt" data-tags="natural">ஒழுக்கம் பரிணமித்தது — அது மனித ஒப்பந்தமே, அண்டச் சட்டம் அல்ல</button>
+          <button class="quiz-opt" data-tags="unsure">அது உண்மையாகத் தோன்றுகிறது, ஆனால் ஏன் என்று சொல்ல முடியவில்லை</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="destiny">
+        <h3><span class="qk">04 · முடிவு</span>நாம் இறக்கும்போது என்ன நடக்கும்?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">உயிர்த்தெழுதலும் நியாயத்தீர்ப்பும் — இந்த வாழ்க்கை முடிவல்ல</button>
+          <button class="quiz-opt" data-tags="eastern">மறுபிறவி — ஆன்மா இறுதியில் விடுதலை பெறும்வரை திரும்பும்</button>
+          <button class="quiz-opt" data-tags="natural">மரணம் நனவின் முடிவு</button>
+          <button class="quiz-opt" data-tags="unsure">யாராலும் உண்மையில் தெரிந்துகொள்ள முடியாது</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= இறுதி அழைப்பு ================= -->
 <section class="gospel-cta">
   <div class="wrap">
@@ -241,6 +291,14 @@
       <div class="cta-row">
         <a class="btn btn-primary" href="#/evidence">சான்றைப் பார் →</a>
         <a class="btn btn-ghost" href="#/contact">ஒரு கேள்வியுடன் தொடர்பு கொள்ளுங்கள்</a>
+      </div>
+      <details>
+        <summary>🙏 நீங்கள் தயாராக இருந்தால், ஒரு எளிய ஜெபம்</summary>
+        <p>"தேவனே, நீர் இருந்தால், உம்மை அறிய விரும்புகிறேன். இயேசு என் பாவத்திற்காக மரித்து, மரணத்திலிருந்து உயிர்த்தெழுந்தார் என்று நம்புகிறேன். என்னை மன்னித்து, இங்கிருந்து என்னை நடத்தும். ஆமென்."</p>
+        <p class="p-note">அதை நீங்கள் மனதார ஜெபித்திருந்தால், இருக்கும் மிகப் பழமையான உரையாடலை நீங்கள் இப்போது தொடங்கிவிட்டீர்கள். ஒரு பைபிளைக் கண்டறியுங்கள் (யோவான் சுவிசேஷத்திலிருந்து தொடங்குங்கள்), அதைக் கற்பிக்கும் ஒரு சபையைக் கண்டறியுங்கள், <a href="#/contact" style="color: var(--accent-2);">எங்களிடம் சொல்லவும்</a> — அடுத்த நல்ல படிகளைக் காட்ட நாங்கள் விரும்புகிறோம்.</p>
+      </details>
+      <div class="share-row">
+        <button class="share-btn" data-share="site">📤 இந்த தளத்தைப் பகிரவும்</button>
       </div>
       <p class="gospel-note">இன்று நீங்கள் எதை நம்பினாலும், தேடலைத் தொடர உங்களை வரவேற்கிறோம்.</p>
     </div>
