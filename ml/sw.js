@@ -1,11 +1,11 @@
-const CACHE = 'faith-compared-ml-v5';
+const CACHE = 'faith-compared-ml-v6';
 const SHELL = [
   './index.html',
   './philosophy.html',
   './happiness.html',
   './stats.html',
   './religions.js',
-  '../styles.css?v=17',
+  '../styles.css?v=18',
   '../manifest.webmanifest',
   '../icons/icon-192.png',
   '../icons/icon-512.png'

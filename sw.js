@@ -1,10 +1,10 @@
-const CACHE = 'faith-compared-v17';
+const CACHE = 'faith-compared-v18';
 const SHELL = [
   './index.html',
   './philosophy.html',
   './happiness.html',
   './stats.html',
-  './styles.css',
+  './styles.css?v=18',
   './religions.js',
   './manifest.webmanifest',
   './icons/icon-192.png',
