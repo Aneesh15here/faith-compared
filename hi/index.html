@@ -76,6 +76,7 @@
       <a class="lang-pill" href="../zh/index.html" lang="zh">中文</a>
       <a class="lang-pill" href="../ja/index.html" lang="ja">日本語</a>
     </div>
+    <a class="btn btn-ghost continue-pill" id="continuePill" href="#/">जहाँ आपने छोड़ा था वहीं से जारी रखें →</a>
   </div>
 </header>
 
@@ -133,6 +134,29 @@
     </div>
   </div>
 </section>
+
+<!-- सत्रह आस्थाओं का तारामंडल -->
+<div class="constellation" id="constellation" aria-hidden="true">
+  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+    <path class="c-line" d="M40,95 L105,45 L180,105 L255,60 L330,110 L400,40 L470,95 L540,55 L610,108 L680,50 L750,100 L820,62 L860,90"/>
+    <text class="c-star" x="32" y="100">✝️</text>
+    <text class="c-star" x="97" y="50">☪️</text>
+    <text class="c-star" x="172" y="110">🕉️</text>
+    <text class="c-star" x="247" y="65">☸️</text>
+    <text class="c-star" x="322" y="115">✡️</text>
+    <text class="c-star" x="392" y="45">🪯</text>
+    <text class="c-star" x="462" y="100">✴️</text>
+    <text class="c-star" x="532" y="60">🤚</text>
+    <text class="c-star" x="602" y="113">🔥</text>
+    <text class="c-star" x="672" y="55">☯️</text>
+    <text class="c-star" x="742" y="105">📜</text>
+    <text class="c-star" x="812" y="67">⛩️</text>
+    <text class="c-star" x="852" y="95">🌍</text>
+    <circle class="c-dot" cx="885" cy="80" r="2.5"/>
+    <circle class="c-dot" cx="15" cy="80" r="2.5"/>
+  </svg>
+  <p class="c-cap">एक ही आकाश में सत्रह प्रकाश-बिंदु — हर एक, वह तरीक़ा जिससे मनुष्यता ने हमारे ऊपर जो कुछ है उसे नाम देने की कोशिश की है।</p>
+</div>
 
 <!-- यात्रा के अध्याय -->
 <section id="chapters">
@@ -207,6 +231,56 @@
   </div>
 </section>
 
+<!-- ================= गाइडेड क्विज़ ================= -->
+<section id="quiz" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">अपना आरंभ बिंदु खोजें</div>
+      <h2>ख़ुद चार प्रश्नों के उत्तर दें</h2>
+      <p>उत्पत्ति, अर्थ, नैतिकता, नियति — हर विश्वदृष्टि इनका उत्तर देती है, और आप भी देते हैं, चाहे आपने इसे ज़ोर से कहा हो या नहीं। हर प्रश्न पर वह उत्तर चुनें जो आपके मन के सबसे निकट हो, और हम आपको दिखाएँगे कि कौन-सी परंपराएँ आपके सबसे नज़दीक हैं — और यात्रा कहाँ से शुरू हो सकती है।</p>
+    </div>
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-q" data-q="origin">
+        <h3><span class="qk">01 · उत्पत्ति</span>सब कुछ कहाँ से आया?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">एक व्यक्तिगत सृष्टिकर्ता ने जानबूझकर ब्रह्मांड बनाया</button>
+          <button class="quiz-opt" data-tags="eastern">एक अवैयक्तिक दिव्य वास्तविकता सब कुछ के आधार में है</button>
+          <button class="quiz-opt" data-tags="natural">पदार्थ, ऊर्जा और संयोग — इससे अधिक कुछ नहीं चाहिए</button>
+          <button class="quiz-opt" data-tags="unsure">ईमानदारी से, मुझे नहीं पता</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="meaning">
+        <h3><span class="qk">02 · अर्थ</span>जीवन का उद्देश्य कहाँ से आता है?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">यह दिया जाता है — ईश्वर के साथ संबंध में खोजा जाता है</button>
+          <button class="quiz-opt" data-tags="eastern">यह साकार होता है — स्वयं की वास्तविकता के प्रति जागृति से</button>
+          <button class="quiz-opt" data-tags="natural">यह गढ़ा जाता है — हर व्यक्ति अपना स्वयं का बनाता है</button>
+          <button class="quiz-opt" data-tags="unsure">मैं अभी भी इसे समझने की कोशिश कर रहा हूँ</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="morality">
+        <h3><span class="qk">03 · नैतिकता</span>कोई चीज़ सच में सही या ग़लत क्यों है?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">एक नैतिक विधाता नैतिक नियम के पीछे खड़ा है</button>
+          <button class="quiz-opt" data-tags="eastern">कर्मों के परिणाम होते हैं — कर्म, सामंजस्य, संतुलन</button>
+          <button class="quiz-opt" data-tags="natural">नैतिकता विकसित हुई — यह मानवीय सहमति है, ब्रह्मांडीय नियम नहीं</button>
+          <button class="quiz-opt" data-tags="unsure">यह वास्तविक लगती है, पर मैं कारण नहीं बता सकता</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="destiny">
+        <h3><span class="qk">04 · नियति</span>मृत्यु के बाद क्या होता है?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">पुनरुत्थान और न्याय — यह जीवन अंत नहीं है</button>
+          <button class="quiz-opt" data-tags="eastern">पुनर्जन्म — आत्मा तब तक लौटती है जब तक वह अंततः मुक्त न हो जाए</button>
+          <button class="quiz-opt" data-tags="natural">मृत्यु चेतना का अंत है</button>
+          <button class="quiz-opt" data-tags="unsure">कोई सचमुच नहीं जान सकता</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= समापन आमंत्रण ================= -->
 <section class="gospel-cta">
   <div class="wrap">
@@ -217,6 +291,14 @@
       <div class="cta-row">
         <a class="btn btn-primary" href="#/evidence">प्रमाण देखें →</a>
         <a class="btn btn-ghost" href="#/contact">प्रश्न लेकर संपर्क करें</a>
+      </div>
+      <details>
+        <summary>🙏 एक सरल प्रार्थना, यदि आप तैयार हों</summary>
+        <p>"हे परमेश्वर, यदि आप वहाँ हैं, तो मैं आपको जानना चाहता हूँ। मैं विश्वास करता हूँ कि यीशु मेरे पाप के लिए मरे और मृतकों में से जी उठे। मुझे क्षमा करें, और यहाँ से मेरा मार्गदर्शन करें। आमीन।"</p>
+        <p class="p-note">यदि आपने यह प्रार्थना सच्चे मन से की है, तो आपने अभी-अभी सबसे पुरानी बातचीत शुरू की है जो कभी हुई है। एक बाइबल खोजें (यूहन्ना के सुसमाचार से शुरू करें), एक ऐसा गिरजाघर खोजें जो इसे सिखाता हो, और बेझिझक <a href="#/contact" style="color: var(--accent-2);">हमें बताएँ</a> — हमें अच्छे अगले क़दम बताकर खुशी होगी।</p>
+      </details>
+      <div class="share-row">
+        <button class="share-btn" data-share="site">📤 यह साइट साझा करें</button>
       </div>
       <p class="gospel-note">आज आप जो भी मानते हों, खोज जारी रखने के लिए आपका स्वागत है।</p>
     </div>
