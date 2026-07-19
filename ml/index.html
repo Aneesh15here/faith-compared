@@ -76,6 +76,7 @@
       <a class="lang-pill" href="../zh/index.html" lang="zh">中文</a>
       <a class="lang-pill" href="../ja/index.html" lang="ja">日本語</a>
     </div>
+    <a class="btn btn-ghost continue-pill" id="continuePill" href="#/">നിങ്ങൾ നിർത്തിയിടത്ത് നിന്ന് തുടരുക →</a>
   </div>
 </header>
 
@@ -133,6 +134,29 @@
     </div>
   </div>
 </section>
+
+<!-- constellation of faiths -->
+<div class="constellation" id="constellation" aria-hidden="true">
+  <svg viewBox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+    <path class="c-line" d="M40,95 L105,45 L180,105 L255,60 L330,110 L400,40 L470,95 L540,55 L610,108 L680,50 L750,100 L820,62 L860,90"/>
+    <text class="c-star" x="32" y="100">✝️</text>
+    <text class="c-star" x="97" y="50">☪️</text>
+    <text class="c-star" x="172" y="110">🕉️</text>
+    <text class="c-star" x="247" y="65">☸️</text>
+    <text class="c-star" x="322" y="115">✡️</text>
+    <text class="c-star" x="392" y="45">🪯</text>
+    <text class="c-star" x="462" y="100">✴️</text>
+    <text class="c-star" x="532" y="60">🤚</text>
+    <text class="c-star" x="602" y="113">🔥</text>
+    <text class="c-star" x="672" y="55">☯️</text>
+    <text class="c-star" x="742" y="105">📜</text>
+    <text class="c-star" x="812" y="67">⛩️</text>
+    <text class="c-star" x="852" y="95">🌍</text>
+    <circle class="c-dot" cx="885" cy="80" r="2.5"/>
+    <circle class="c-dot" cx="15" cy="80" r="2.5"/>
+  </svg>
+  <p class="c-cap">ഒരേ ആകാശത്തിലെ പതിനേഴു വെളിച്ചങ്ങൾ — നമുക്കു മുകളിലുള്ളതിനെ പേരിടാൻ മനുഷ്യരാശി ശ്രമിച്ച ഓരോ വഴിയും.</p>
+</div>
 
 <!-- യാത്രയുടെ അധ്യായങ്ങൾ -->
 <section id="chapters">
@@ -207,6 +231,56 @@
   </div>
 </section>
 
+<!-- ================= ഗൈഡഡ് ക്വിസ് ================= -->
+<section id="quiz" style="background: var(--bg-soft); border-block: 1px solid rgba(255,255,255,.05);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">നിങ്ങളുടെ തുടക്കബിന്ദു കണ്ടെത്തുക</div>
+      <h2>നാലു ചോദ്യങ്ങൾക്ക് നിങ്ങൾ തന്നെ ഉത്തരം നൽകൂ</h2>
+      <p>ഉദ്ഭവം, അർത്ഥം, ധാർമികത, വിധി — ഓരോ ലോകവീക്ഷണവും ഇവയ്ക്ക് ഉത്തരം നൽകുന്നു, നിങ്ങളും അങ്ങനെ തന്നെ, ഉറക്കെ പറഞ്ഞാലും ഇല്ലെങ്കിലും. ഓരോന്നിലും നിങ്ങളുടെ ഉള്ളിൽ തോന്നുന്നതിനോട് ഏറ്റവും അടുത്ത ഉത്തരം തിരഞ്ഞെടുക്കുക, ഏതു പാരമ്പര്യങ്ങളാണ് നിങ്ങളോട് ഏറ്റവും അടുത്തതെന്നും യാത്ര എവിടെ തുടങ്ങാമെന്നും ഞങ്ങൾ കാണിക്കാം.</p>
+    </div>
+    <div class="quiz reveal" id="quizBox">
+      <div class="quiz-q" data-q="origin">
+        <h3><span class="qk">01 · ഉദ്ഭവം</span>എല്ലാം എവിടെ നിന്നു വന്നു?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">ഒരു വ്യക്തിപരമായ സ്രഷ്ടാവ് ഉദ്ദേശ്യത്തോടെ പ്രപഞ്ചം ഉണ്ടാക്കി</button>
+          <button class="quiz-opt" data-tags="eastern">ഒരു അവ്യക്തിക ദിവ്യയാഥാർത്ഥ്യം എല്ലാറ്റിന്റെയും അടിസ്ഥാനമാണ്</button>
+          <button class="quiz-opt" data-tags="natural">ദ്രവ്യം, ഊർജം, യാദൃച്ഛികത — അതിലധികം ഒന്നും വേണ്ട</button>
+          <button class="quiz-opt" data-tags="unsure">സത്യം പറഞ്ഞാൽ, എനിക്കറിയില്ല</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="meaning">
+        <h3><span class="qk">02 · അർത്ഥം</span>ജീവിതലക്ഷ്യം എവിടെ നിന്നു വരുന്നു?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">അത് നൽകപ്പെടുന്നതാണ് — ദൈവവുമായുള്ള ബന്ധത്തിൽ കണ്ടെത്തുന്നത്</button>
+          <button class="quiz-opt" data-tags="eastern">അത് സാക്ഷാത്കരിക്കപ്പെടുന്നതാണ് — ആത്മാവ് യഥാർത്ഥത്തിൽ എന്താണെന്ന് ഉണരുന്നത്</button>
+          <button class="quiz-opt" data-tags="natural">അത് ഉണ്ടാക്കപ്പെടുന്നതാണ് — ഓരോരുത്തരും സ്വന്തമായി പണിയുന്നത്</button>
+          <button class="quiz-opt" data-tags="unsure">ഞാൻ ഇപ്പോഴും അതു കണ്ടെത്തിക്കൊണ്ടിരിക്കുകയാണ്</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="morality">
+        <h3><span class="qk">03 · ധാർമികത</span>എന്തുകൊണ്ട് എന്തെങ്കിലും ശരിയോ തെറ്റോ ആകുന്നു?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">ധാർമിക നിയമത്തിനു പിന്നിൽ ഒരു ധാർമിക നിയമദാതാവുണ്ട്</button>
+          <button class="quiz-opt" data-tags="eastern">പ്രവൃത്തികൾക്ക് പരിണതഫലങ്ങളുണ്ട് — കർമം, സമന്വയം, സന്തുലനം</button>
+          <button class="quiz-opt" data-tags="natural">ധാർമികത പരിണമിച്ചതാണ് — അത് പ്രാപഞ്ചിക നിയമമല്ല, മാനുഷിക ധാരണയാണ്</button>
+          <button class="quiz-opt" data-tags="unsure">അത് യഥാർത്ഥമായി തോന്നുന്നു, പക്ഷേ എന്തുകൊണ്ടെന്ന് പറയാനാവില്ല</button>
+        </div>
+      </div>
+      <div class="quiz-q" data-q="destiny">
+        <h3><span class="qk">04 · വിധി</span>നാം മരിക്കുമ്പോൾ എന്തു സംഭവിക്കുന്നു?</h3>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-tags="theist">പുനരുത്ഥാനവും ന്യായവിധിയും — ഈ ജീവിതം അവസാനമല്ല</button>
+          <button class="quiz-opt" data-tags="eastern">പുനർജന്മം — ആത്മാവ് ഒടുവിൽ സ്വതന്ത്രമാകുന്നതുവരെ മടങ്ങിവരുന്നു</button>
+          <button class="quiz-opt" data-tags="natural">മരണം ബോധത്തിന്റെ അവസാനമാണ്</button>
+          <button class="quiz-opt" data-tags="unsure">ആർക്കും ശരിക്കും അറിയാൻ കഴിയില്ല</button>
+        </div>
+      </div>
+      <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= സമാപന ക്ഷണം ================= -->
 <section class="gospel-cta">
   <div class="wrap">
@@ -217,6 +291,14 @@
       <div class="cta-row">
         <a class="btn btn-primary" href="#/evidence">തെളിവ് കാണുക →</a>
         <a class="btn btn-ghost" href="#/contact">ഒരു ചോദ്യവുമായി ബന്ധപ്പെടുക</a>
+      </div>
+      <details>
+        <summary>🙏 ഒരു ലളിതമായ പ്രാർത്ഥന, നിങ്ങൾ തയ്യാറാണെങ്കിൽ</summary>
+        <p>"ദൈവമേ, നീ ഉണ്ടെങ്കിൽ, എനിക്കു നിന്നെ അറിയണം. യേശു എന്റെ പാപത്തിനുവേണ്ടി മരിച്ചു, മരിച്ചവരിൽ നിന്ന് ഉയിർത്തെഴുന്നേറ്റു എന്നു ഞാൻ വിശ്വസിക്കുന്നു. എന്നോടു ക്ഷമിക്കണമേ, ഇവിടെ നിന്ന് എന്നെ നയിക്കണമേ. ആമേൻ."</p>
+        <p class="p-note">നിങ്ങൾ അത് അർത്ഥത്തോടെ പ്രാർത്ഥിച്ചെങ്കിൽ, ഏറ്റവും പഴയ സംഭാഷണം നിങ്ങൾ ഇപ്പോൾ തുടങ്ങിക്കഴിഞ്ഞു. ഒരു ബൈബിൾ കണ്ടെത്തുക (യോഹന്നാന്റെ സുവിശേഷത്തിൽ തുടങ്ങുക), അതു പഠിപ്പിക്കുന്ന ഒരു സഭ കണ്ടെത്തുക, കൂടാതെ <a href="#/contact" style="color: var(--accent-2);">ഞങ്ങളോടു പറയാൻ</a> മടിക്കേണ്ട — നല്ല അടുത്ത ചുവടുകൾ കാണിച്ചുതരാൻ ഞങ്ങൾക്കു സന്തോഷമേയുള്ളൂ.</p>
+      </details>
+      <div class="share-row">
+        <button class="share-btn" data-share="site">📤 ഈ സൈറ്റ് പങ്കിടുക</button>
       </div>
       <p class="gospel-note">ഇന്ന് നിങ്ങൾ എന്തു വിശ്വസിച്ചാലും, അന്വേഷണം തുടരാൻ നിങ്ങളെ സ്വാഗതം ചെയ്യുന്നു.</p>
     </div>
@@ -230,6 +312,7 @@
   <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
     <div class="tb-content"><a class="crumb" href="#/">← യാത്രയിലേക്കു മടങ്ങുക</a>
       <span class="tb-no">അധ്യായം 01</span><h2 class="tb-title">പൂർണ ഭൂപടം</h2>
+      <span class="tb-verse">“അവൻ ഒരു മനുഷ്യനിൽനിന്ന് സകല ജാതികളെയും ഉളവാക്കി… അവർ ദൈവത്തെ അന്വേഷിച്ച്, പരതിനോക്കി അവനെ കണ്ടെത്തുവാൻ ഇടയാകട്ടെ എന്നു വെച്ചു.”<span class="vref">അപ്പോസ്തലപ്രവൃത്തികൾ 17:26-27</span></span>
     </div>
   </div>
   <div class="wrap">
@@ -242,6 +325,43 @@
       <p><strong>സംഖ്യകളുടെ വെളിച്ചത്തിൽ:</strong> 2020 വരെ, ക്രിസ്ത്യാനികൾ ലോകത്തിലെ ഏറ്റവും വലിയ വിഭാഗമാണ് — ആഗോള ജനസംഖ്യയുടെ 28.8%; മുസ്‌ലിംകൾ രണ്ടാം സ്ഥാനത്തും ഏറ്റവും വേഗത്തിൽ വളരുന്നവരുമായി, 25.6%; മതപരമായി ബന്ധമില്ലാത്തവർ മൂന്നാം സ്ഥാനത്ത്, 24.2%. മുസ്‌ലിംകളുടെ എണ്ണം മാത്രം ഈ ദശകത്തിൽ 34.7 കോടി വർധിച്ചു, മറ്റെല്ലാ പാരമ്പര്യങ്ങളും ചേർന്നുള്ള വളർച്ചയെക്കാൾ കൂടുതൽ (പ്യൂ റിസർച്ച് സെന്റർ, "ദ വേൾഡ്‌സ് റിലീജിയസ് ഗ്രൂപ്‌സ്: ഹൗ ദെയർ സൈസസ് ചേഞ്ച്ഡ് ഫ്രം 2010 ടു 2020," ജൂൺ 2025).</p>
     </div>
     <div class="cards-5" id="religionGrid"></div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">കാലത്തിലെ ഭൂപടം</div>
+      <h2>നാലായിരം വർഷങ്ങൾ ഒരു രേഖയിൽ</h2>
+      <p>മുകളിലുള്ള ഓരോ പാരമ്പര്യവും, അത് ചരിത്രത്തിൽ പ്രവേശിച്ച സ്ഥാനത്ത് — സിന്ധുനദീതട സംസ്കാരം മുതൽ 1950-കളിലെ ലോസ് ഏഞ്ചലസ് വരെ. വശത്തേക്ക് സ്ക്രോൾ ചെയ്യുക; ഏതെങ്കിലും പേരിൽ ടാപ്പ് ചെയ്ത് പൂർണ വിവരണം കാണുക.</p>
+    </div>
+    <div class="timeline-scroll reveal">
+      <div class="timeline" id="timeline"></div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">ഭാഷകൾ സംസാരിക്കുക</div>
+      <h2>വലിയ വാക്കുകളുടെ ഒരു ചെറിയ പദകോശം</h2>
+      <p>മുകളിലുള്ള പാരമ്പര്യങ്ങൾ തുറക്കുന്ന ഇരുപതു പദങ്ങൾ — ഓരോന്നും ഒറ്റ ശ്വാസത്തിൽ.</p>
+    </div>
+    <div class="gloss-grid reveal">
+      <div class="gloss"><span class="g-term">ത്രിത്വം</span><span class="g-trad">ക്രിസ്തുമതം</span><p>ഒരു ദൈവം മൂന്നു വ്യക്തികളിൽ — പിതാവ്, പുത്രൻ, പരിശുദ്ധാത്മാവ് — ഒരു സത്ത, നിത്യബന്ധത്തിൽ.</p></div>
+      <div class="gloss"><span class="g-term">കൃപ</span><span class="g-trad">ക്രിസ്തുമതം</span><p>അർഹതയില്ലാത്ത അനുഗ്രഹം: വിശ്വാസത്താൽ സ്വീകരിക്കുന്ന, പ്രവൃത്തികളാൽ നേടാത്ത സൗജന്യ രക്ഷ.</p></div>
+      <div class="gloss"><span class="g-term">അവതാരം</span><span class="g-trad">ക്രിസ്തുമതം</span><p>ദൈവപുത്രൻ യേശുവിൽ പൂർണമായി മനുഷ്യനാകുന്നത് — ഒരു വ്യക്തി, രണ്ടു സ്വഭാവങ്ങൾ.</p></div>
+      <div class="gloss"><span class="g-term">തൗഹീദ്</span><span class="g-trad">ഇസ്‌ലാം</span><p>അല്ലാഹുവിന്റെ സമ്പൂർണ ഏകത്വം — ഇസ്‌ലാമിന്റെ കേന്ദ്ര സിദ്ധാന്തം, പങ്കാളിയോ അവതാരമോ ഒഴിവാക്കുന്നത്.</p></div>
+      <div class="gloss"><span class="g-term">ഷിർക്ക്</span><span class="g-trad">ഇസ്‌ലാം</span><p>അല്ലാഹുവിനോട് പങ്കാളികളെ ചേർക്കുന്നത് — ഇസ്‌ലാമിൽ ഏറ്റവും ഗുരുതരമായ പാപം.</p></div>
+      <div class="gloss"><span class="g-term">തഹ്‌രീഫ്</span><span class="g-trad">ഇസ്‌ലാം</span><p>മുൻകാല വേദഗ്രന്ഥങ്ങൾ (തോറ, സുവിശേഷം) കാലക്രമേണ വാചികമായി വികലമാക്കപ്പെട്ടു എന്ന വാദം.</p></div>
+      <div class="gloss"><span class="g-term">തോറ</span><span class="g-trad">യഹൂദമതം</span><p>മോശയുടെ അഞ്ചു പുസ്തകങ്ങൾ — യഹൂദ ജീവിതത്തിന്റെ ഹൃദയത്തിലുള്ള ഉടമ്പടി നിയമം.</p></div>
+      <div class="gloss"><span class="g-term">തെശുവ</span><span class="g-trad">യഹൂദമതം</span><p>"മടക്കം" — അനുതാപം; ദൈവത്തിലേക്കും ശരിയായ പാതയിലേക്കും തിരിച്ചുവരവ്.</p></div>
+      <div class="gloss"><span class="g-term">ബ്രഹ്മം</span><span class="g-trad">ഹിന്ദുമതം</span><p>എല്ലാ ദേവന്മാർക്കും വസ്തുക്കൾക്കും പിന്നിലുള്ള പരമവും സർവവ്യാപിയുമായ യാഥാർത്ഥ്യം.</p></div>
+      <div class="gloss"><span class="g-term">മോക്ഷം</span><span class="g-trad">ഹിന്ദുമതം · ജൈനമതം</span><p>വിമോചനം — പുനർജന്മ ചക്രത്തിൽ നിന്ന് ആത്മാവിന്റെ അന്തിമ മോചനം.</p></div>
+      <div class="gloss"><span class="g-term">കർമം</span><span class="g-trad">ധാർമിക മതങ്ങൾ</span><p>കാരണ-കാര്യബന്ധത്തിന്റെ ധാർമിക നിയമം: പ്രവൃത്തികൾ ഈ ജീവിതത്തെയും അടുത്തതിനെയും രൂപപ്പെടുത്തുന്നു.</p></div>
+      <div class="gloss"><span class="g-term">സംസാരം</span><span class="g-trad">ധാർമിക മതങ്ങൾ</span><p>കിഴക്കൻ പാതകൾ രക്ഷപ്പെടാൻ ശ്രമിക്കുന്ന മരണ-പുനർജന്മ ചക്രം.</p></div>
+      <div class="gloss"><span class="g-term">ദുഃഖ</span><span class="g-trad">ബുദ്ധമതം</span><p>ദുഃഖം, അസംതൃപ്തി — അസ്തിത്വത്തെക്കുറിച്ചുള്ള ആദ്യ ആര്യസത്യം.</p></div>
+      <div class="gloss"><span class="g-term">നിർവാണം</span><span class="g-trad">ബുദ്ധമതം</span><p>ആശയുടെ "കെടുത്തൽ" — ചക്രത്തിന്റെ അന്ത്യം, ഒരു സ്വർഗമല്ല.</p></div>
+      <div class="gloss"><span class="g-term">ഇക് ഓങ്കാർ</span><span class="g-trad">സിഖ് മതം</span><p>"ഏക ദൈവം" — ഗുരു ഗ്രന്ഥ് സാഹിബിന്റെ ആരംഭ പ്രഖ്യാപനം.</p></div>
+      <div class="gloss"><span class="g-term">വൂ വെയ്</span><span class="g-trad">താവോയിസം</span><p>പ്രയത്നരഹിത പ്രവൃത്തി — താവോയുമായി നിർബന്ധിതമല്ലാത്ത സമന്വയത്തിൽ ജീവിക്കുന്നത്.</p></div>
+      <div class="gloss"><span class="g-term">കമി</span><span class="g-trad">ഷിന്റോ</span><p>പ്രകൃതിയിലും പൂർവികരിലും സ്ഥലങ്ങളിലും ഷിന്റോ ബഹുമാനിക്കുന്ന പുണ്യസാന്നിധ്യങ്ങൾ.</p></div>
+      <div class="gloss"><span class="g-term">തീറ്റൻ</span><span class="g-trad">സയന്റോളജി</span><p>ഓരോ വ്യക്തിയും യഥാർത്ഥത്തിൽ ആണെന്ന് സയന്റോളജി പറയുന്ന അമർത്യ ആത്മീയ ജീവി.</p></div>
+      <div class="gloss"><span class="g-term">തിയോഡിസി</span><span class="g-trad">തത്ത്വശാസ്ത്രം</span><p>തിന്മയുടെ പ്രശ്നത്തിനുള്ള ഒരു ഉത്തരം: നല്ല ദൈവം എന്തുകൊണ്ട് കഷ്ടത അനുവദിക്കുന്നു.</p></div>
+      <div class="gloss"><span class="g-term">സോള സ്ക്രിപ്തുറ</span><span class="g-trad">പ്രൊട്ടസ്റ്റന്റിസം</span><p>"വേദഗ്രന്ഥം മാത്രം" അന്തിമ അധികാരമായി — നവീകരണത്തിന്റെ മുദ്രാവാക്യം.</p></div>
+    </div>
     <div class="next-chapter reveal">
       <span class="nc-progress">12-ൽ അധ്യായം 01</span>
       <a class="nc-link" href="#/compare">അടുത്തത്: താരതമ്യ ലാബ് →<span class="nc-sub">പതിനേഴു പാരമ്പര്യങ്ങൾ ഒരുമിച്ചു മനസ്സിലാക്കാൻ ഏറെയാണ് — ഏതെങ്കിലും രണ്ടു മുതൽ അഞ്ചു വരെ തിരഞ്ഞെടുത്ത് അടുത്തടുത്തായി കാണുക.</span></a>
