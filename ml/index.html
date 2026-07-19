@@ -1826,6 +1826,138 @@
   window.addEventListener('hashchange', showJourney);
   showJourney();
 
+  // ---- constellation reveal ----
+  const consl = document.getElementById('constellation');
+  if (consl) new IntersectionObserver((es, o) => es.forEach(e => {
+    if (e.isIntersecting) { consl.classList.add('in'); o.disconnect(); }
+  }), { threshold: 0.4 }).observe(consl);
+
+  // ---- timeline of traditions ----
+  const TL_YEARS = { indigenous: -3000, hinduism: -1900, judaism: -1650, zoroastrianism: -1100, shinto: -660, jainism: -550, confucianism: -500, buddhism: -450, taoism: -400, atheism: -300, christianity: 30, islam: 610, sikhism: 1499, lds: 1830, bahai: 1863, jw: 1870, scientology: 1954 };
+  (function () {
+    const tl = document.getElementById('timeline');
+    if (!tl || typeof RELIGIONS === 'undefined') return;
+    const min = -3300, max = 2250;
+    const x = y => ((y - min) / (max - min)) * 100;
+    [-3000, -2000, -1000, 0, 1000, 2000].forEach(y => {
+      const t = document.createElement('div'); t.className = 'tl-tick'; t.style.left = x(y) + '%';
+      t.textContent = y < 0 ? Math.abs(y) + ' ബിസി' : (y === 0 ? 'എഡി 1' : 'എഡി ' + y);
+      tl.appendChild(t);
+    });
+    const axis = document.createElement('div'); axis.className = 'tl-axis'; tl.appendChild(axis);
+    RELIGIONS.filter(r => TL_YEARS[r.id] !== undefined)
+      .sort((a, b) => TL_YEARS[a.id] - TL_YEARS[b.id])
+      .forEach((r, i) => {
+        const d = document.createElement('button'); d.type = 'button';
+        d.className = 'tl-item ' + (i % 2 ? 'down' : 'up');
+        d.style.left = x(TL_YEARS[r.id]) + '%';
+        d.innerHTML = `<span class="tl-emoji">${r.emoji}</span><span class="tl-name">${r.name}</span><span class="tl-date">${r.founded.split('·')[0].trim()}</span>`;
+        d.addEventListener('click', () => openRelModal(r));
+        tl.appendChild(d);
+      });
+  })();
+
+  // ---- guided quiz ----
+  (function () {
+    const box = document.getElementById('quizBox');
+    if (!box) return;
+    const picks = {};
+    const RESULTS = {
+      theist: {
+        label: 'ദൈവവിശ്വാസ കുടുംബം',
+        traditions: 'ക്രിസ്തുമതം · ഇസ്‌ലാം · യഹൂദമതം · സിഖ് മതം · ബഹായി മതം',
+        blurb: 'ജീവിതത്തിന് ഉദ്ദേശ്യവും നിയമവും നൽകുന്ന ഒരു വ്യക്തിപരമായ സ്രഷ്ടാവിലേക്ക് നിങ്ങൾ ചായുന്നു. ഈ അഞ്ചു പാരമ്പര്യങ്ങൾ അതിൽ യോജിക്കുന്നു — ദൈവത്തെ എങ്ങനെ അറിയാം, ദൈവത്തോട് നാം എങ്ങനെ ശരിയാക്കപ്പെടുന്നു എന്നിവയിൽ മൂർച്ചയായി ഭിന്നിക്കുന്നു.',
+        link: '#/islam', linkText: 'ഏറ്റവും മൂർച്ചയുള്ള ജീവസ്സുറ്റ വൈരുദ്ധ്യത്തിൽ തുടങ്ങുക: ക്രിസ്തുമതം ↔ ഇസ്‌ലാം →'
+      },
+      eastern: {
+        label: 'കിഴക്കൻ / ധാർമിക പാതകൾ',
+        traditions: 'ഹിന്ദുമതം · ബുദ്ധമതം · ജൈനമതം · താവോയിസം · സിഖ് മതം',
+        blurb: 'ഒരു വ്യക്തിപര നിയമദാതാവിനെക്കാൾ, കർമം, പുനർജന്മം, വിമോചനം എന്നിങ്ങനെയുള്ള ഒരു അടിസ്ഥാന ആത്മീയ ക്രമത്തിലേക്ക് നിങ്ങൾ ചായുന്നു. ഈ പാരമ്പര്യങ്ങൾ ആ ഭൂപ്രകൃതി മനോഹരമായി വ്യത്യസ്ത രീതികളിൽ വരയ്ക്കുന്നു.',
+        link: '#/religions', linkText: 'അവയുടെ പൂർണ വിവരണങ്ങൾ പൂർണ ഭൂപടത്തിൽ വായിക്കുക →'
+      },
+      natural: {
+        label: 'പ്രകൃതിവാദം / മതേതര മാനവികത',
+        traditions: 'നിരീശ്വരവാദം · അജ്ഞേയവാദം · മതേതര മാനവികത',
+        blurb: 'ദ്രവ്യം, ഊർജം, സ്വയം നിർമിത അർത്ഥം എന്നിവയുടെ പ്രപഞ്ചത്തിലേക്ക് നിങ്ങൾ ചായുന്നു. അതും ഒരു ലോകവീക്ഷണമാണ് — അതിനും അതിന്റേതായ ശക്തമായ വാദങ്ങളും കഠിനമായ ചോദ്യങ്ങളുമുണ്ട്.',
+        link: '#/atheism', linkText: 'ഇരുവശവും പൂർണ ശക്തിയിൽ കാണുക: നിരീശ്വരവാദം ↔ ക്രിസ്തുമതം →'
+      },
+      unsure: {
+        label: 'സത്യസന്ധമായ അനിശ്ചിതത്വം',
+        traditions: 'അന്വേഷകന്റെ നിലപാട്',
+        blurb: 'അറിയാതിരിക്കുക — അതു പറയുകയും ചെയ്യുക — മിക്കവരെക്കാളും കൂടുതൽ സത്യസന്ധമായ ഒരു തുടക്കബിന്ദുവാണ്. നല്ല വാർത്ത: ഈ ചോദ്യങ്ങൾ യഥാർത്ഥത്തിൽ അന്വേഷിക്കാൻ കഴിയും, വെറുതെ അനുഭവപ്പെടാൻ മാത്രമല്ല.',
+        link: '#/evidence', linkText: 'പരിശോധന സാധ്യമായിടത്ത് തുടങ്ങുക: തെളിവു തൂക്കിനോക്കൽ →'
+      }
+    };
+    box.querySelectorAll('.quiz-opt').forEach(btn => btn.addEventListener('click', () => {
+      const q = btn.closest('.quiz-q');
+      q.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('sel'));
+      btn.classList.add('sel');
+      picks[q.dataset.q] = btn.dataset.tags;
+      if (Object.keys(picks).length === 4) showResult();
+    }));
+    function showResult() {
+      const counts = {};
+      Object.values(picks).forEach(t => counts[t] = (counts[t] || 0) + 1);
+      const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
+      const top = RESULTS[ranked[0][0]];
+      const second = ranked[1] && ranked[1][1] === ranked[0][1] ? RESULTS[ranked[1][0]] : null;
+      const out = document.getElementById('quizResult');
+      out.innerHTML =
+        `<h3>നിങ്ങളുടെ ഉത്തരങ്ങൾ ${top.label}-നോട് ഏറ്റവും അടുത്താണ്${second ? ' — ' + second.label + '-ലേക്കും ശക്തമായ ചായ്‌വോടെ' : ''}</h3>` +
+        `<div class="qr-row"><strong>ഏറ്റവും അടുത്ത പാരമ്പര്യങ്ങൾ:</strong> ${top.traditions}${second ? ' · ' + second.traditions : ''}</div>` +
+        `<div class="qr-row">${top.blurb}</div>` +
+        `<div class="qr-row" style="margin-top:16px;"><a class="btn btn-primary" href="${top.link}">${top.linkText}</a></div>` +
+        `<div class="qr-row" style="font-size:.82rem; opacity:.75;">നിങ്ങൾ ഇന്ന് എവിടെ എത്തിയാലും, നാലു ചോദ്യങ്ങളും യഥാർത്ഥത്തിൽ സത്യമായ ഉത്തരങ്ങൾ അർഹിക്കുന്നു — അതിനുവേണ്ടിയാണ് ഈ സൈറ്റിന്റെ ബാക്കി ഭാഗം.</div>`;
+      out.classList.add('show');
+      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  })();
+
+  // ---- reading progress: visited chapters + continue pill ----
+  (function () {
+    const KEY = 'fc-progress-ml';
+    let st = {}; try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { }
+    st.visited = st.visited || [];
+    const CH_NO = { religions: '01', compare: '02', islam: '03', evidence: '04', questions: '05', objections: '06', restoration: '07', atheism: '08', sources: '11', contact: '12' };
+    const routeOf = a => { const h = a.getAttribute('href'); return h.startsWith('#/') ? h.slice(2) : h; };
+    document.querySelectorAll('.chapter').forEach(a => {
+      const b = document.createElement('span'); b.className = 'ch-done'; b.textContent = '✓'; a.appendChild(b);
+    });
+    function paint() {
+      document.querySelectorAll('.chapter').forEach(a => a.classList.toggle('visited', st.visited.includes(routeOf(a))));
+    }
+    function record() {
+      const r = journeyRoute();
+      if (r !== 'home') {
+        st.last = r;
+        if (!st.visited.includes(r)) st.visited.push(r);
+        try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { }
+        paint();
+      }
+    }
+    paint();
+    window.addEventListener('hashchange', record); record();
+    const pill = document.getElementById('continuePill');
+    if (pill && st.last && CH_NO[st.last]) {
+      pill.href = '#/' + st.last;
+      pill.textContent = '▶ നിങ്ങൾ നിർത്തിയിടത്ത് നിന്ന് തുടരുക — അധ്യായം ' + CH_NO[st.last] + ' →';
+      pill.classList.add('show');
+    }
+  })();
+
+  // ---- share buttons ----
+  (function () {
+    const MSGS = {
+      site: { title: 'Faith, Compared', text: 'പതിനേഴു ലോകവീക്ഷണങ്ങൾ. ഒരു സത്യസന്ധമായ താരതമ്യം. ലോകമതങ്ങൾ യഥാർത്ഥത്തിൽ എന്തു പഠിപ്പിക്കുന്നു എന്ന് അന്വേഷിക്കുക:', url: 'https://comparereligion.com/ml/' },
+      compare: { title: 'Faith, Compared — താരതമ്യ ലാബ്', text: 'ലോകമതങ്ങൾ ഏതെങ്കിലും അടുത്തടുത്തായി വെച്ച് അവ യഥാർത്ഥത്തിൽ എന്തു പഠിപ്പിക്കുന്നു എന്നു താരതമ്യം ചെയ്യുക:', url: 'https://comparereligion.com/ml/#/compare' }
+    };
+    document.querySelectorAll('.share-btn').forEach(b => b.addEventListener('click', async () => {
+      const m = MSGS[b.dataset.share] || MSGS.site;
+      if (navigator.share) { try { await navigator.share(m); } catch (e) { } }
+      else { window.open('https://wa.me/?text=' + encodeURIComponent(m.text + ' ' + m.url), '_blank', 'noopener'); }
+    }));
+  })();
+
   // ---- scroll progress bar + trail hiker ----
   const progressBar = document.getElementById('progress');
   const hiker = document.getElementById('trailHiker');
