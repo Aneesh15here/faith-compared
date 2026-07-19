@@ -306,3 +306,257 @@
 </section>
 
 </div><!-- /home view -->
+
+<!-- ================= ALL RELIGIONS ================= -->
+<section id="religions" class="view" data-route="religions">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← 旅に戻る</a>
+      <span class="tb-no">第01章</span><h2 class="tb-title">世界の全体地図</h2>
+      <span class="tb-verse">「神は、一つの血筋からあらゆる国の人々を造り出して…人々が神を探し求め、神を見いだすようにされたのです。」<span class="vref">使徒の働き17:26-27</span></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">世界の全体地図</div>
+      <h2>世界の主要な宗教すべて</h2>
+      <p>二十億人規模の宗教から、古くて小さな宗教、文字より古い先住民の信仰まで、十七の生きた伝統。タイルにカーソルを合わせるとプレビュー、タップすれば起源・聖典・信仰・実践の完全なプロフィールが見られる。</p>
+    </div>
+    <div class="contrast-strip reveal">
+      <p><strong>数字で見ると：</strong>2020年時点で、キリスト教徒は世界人口の28.8%で最大のグループ、イスラム教徒は25.6%で第2位かつ最も急成長しており、無宗教層は24.2%で第3位 — イスラム教徒だけでこの10年で3億4700万人増加し、これは他のすべての伝統の合計増加数を上回る（ピュー・リサーチ・センター「世界の宗教グループ：2010年から2020年にかけての規模の変化」2025年6月）。</p>
+    </div>
+    <div class="cards-5" id="religionGrid"></div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">時間の中の地図</div>
+      <h2>一本の線に載る四千年</h2>
+      <p>上記の各伝統を、歴史に登場した位置に配置。インダス文明から1950年代のロサンゼルスまで。横にスクロールし、名前をタップすれば完全なプロフィールへ。</p>
+    </div>
+    <div class="timeline-scroll reveal">
+      <div class="timeline" id="timeline"></div>
+    </div>
+
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">言葉を知る</div>
+      <h2>重要な用語の小事典</h2>
+      <p>上記の伝統を読み解く二十の用語 — それぞれひと息で。</p>
+    </div>
+    <div class="gloss-grid reveal">
+      <div class="gloss"><span class="g-term">三位一体</span><span class="g-trad">キリスト教</span><p>父・子・聖霊という三つの位格からなる唯一の神 — 一つの存在が永遠に関係の中にある。</p></div>
+      <div class="gloss"><span class="g-term">恵み（グレース）</span><span class="g-trad">キリスト教</span><p>受けるに値しない好意：救いは行いで得るのではなく、信仰によって受け取る無償の贈り物。</p></div>
+      <div class="gloss"><span class="g-term">受肉</span><span class="g-trad">キリスト教</span><p>神の子がイエスにおいて完全な人間となったこと — 一つの人格に二つの性質。</p></div>
+      <div class="gloss"><span class="g-term">タウヒード</span><span class="g-trad">イスラム教</span><p>アッラーの絶対的な唯一性 — イスラム教の中心教義で、いかなる相方や受肉も排除する。</p></div>
+      <div class="gloss"><span class="g-term">シルク</span><span class="g-trad">イスラム教</span><p>アッラーに相方を配すること — イスラム教において最も重い罪。</p></div>
+      <div class="gloss"><span class="g-term">タハリーフ</span><span class="g-trad">イスラム教</span><p>以前の聖典（トーラー、福音書）が時とともに文言を改ざんされたという主張。</p></div>
+      <div class="gloss"><span class="g-term">トーラー</span><span class="g-trad">ユダヤ教</span><p>モーセ五書 — ユダヤ人の生活の中心にある契約の律法。</p></div>
+      <div class="gloss"><span class="g-term">テシュヴァー</span><span class="g-trad">ユダヤ教</span><p>「立ち返り」— 悔い改め。神と正しい道へ戻ること。</p></div>
+      <div class="gloss"><span class="g-term">ブラフマン</span><span class="g-trad">ヒンドゥー教</span><p>あらゆる神々と万物の背後にある至高の遍在的実在。</p></div>
+      <div class="gloss"><span class="g-term">モークシャ</span><span class="g-trad">ヒンドゥー教・ジャイナ教</span><p>解脱 — 魂が輪廻の輪から最終的に解き放たれること。</p></div>
+      <div class="gloss"><span class="g-term">カルマ</span><span class="g-trad">ダルマ系宗教</span><p>因果の道徳律：行いが今生と来世を形づくる。</p></div>
+      <div class="gloss"><span class="g-term">サンサーラ</span><span class="g-trad">ダルマ系宗教</span><p>東洋の諸道が逃れようとする、死と再生の輪。</p></div>
+      <div class="gloss"><span class="g-term">ドゥッカ</span><span class="g-trad">仏教</span><p>苦、不満足性 — 存在に関する四諦の第一、苦諦。</p></div>
+      <div class="gloss"><span class="g-term">涅槃</span><span class="g-trad">仏教</span><p>渇愛の「吹き消し」— 天国ではなく、輪廻の終わり。</p></div>
+      <div class="gloss"><span class="g-term">イク・オンカール</span><span class="g-trad">シク教</span><p>「唯一の神」— グル・グラント・サーヒブの冒頭の宣言。</p></div>
+      <div class="gloss"><span class="g-term">無為</span><span class="g-trad">道教</span><p>力まぬ行い — 道（タオ）と無理なく調和して生きること。</p></div>
+      <div class="gloss"><span class="g-term">カミ</span><span class="g-trad">神道</span><p>神道が敬う、自然・祖先・場所に宿る神聖な存在。</p></div>
+      <div class="gloss"><span class="g-term">セイタン</span><span class="g-trad">サイエントロジー</span><p>サイエントロジーが説く、各人が本当はそうであるとする不滅の霊的存在。</p></div>
+      <div class="gloss"><span class="g-term">神義論</span><span class="g-trad">哲学</span><p>悪の問題への答え：善なる神がなぜ苦しみを許すのか。</p></div>
+      <div class="gloss"><span class="g-term">聖書のみ（Sola scriptura）</span><span class="g-trad">プロテスタント</span><p>「聖書のみ」を最終権威とする — 宗教改革の合言葉。</p></div>
+    </div>
+    <div class="next-chapter reveal">
+      <span class="nc-progress">第01章 / 全12章</span>
+      <a class="nc-link" href="#/compare">次へ：比較ラボ →<span class="nc-sub">十七の伝統を一度に把握するのは大変 — 二つから五つを選んで並べてみよう。</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARISON LAB ================= -->
+<section id="compare" class="view" data-route="compare">
+  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/athens.jpg')"></div>
+    <div class="tb-content"><a class="crumb" href="#/">← 旅に戻る</a>
+      <span class="tb-no">第02章</span><h2 class="tb-title">比較ラボ</h2>
+      <span class="tb-verse">「すべてのことを試して、良いものを守りなさい。」<span class="vref">テサロニケ人への手紙第一 5:21</span></span>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">自分で組み立てる</div>
+      <h2>比較ラボ</h2>
+      <p>二つから五つの伝統を選び、神、創始者、聖典、人間の問題、道、来世など十のカテゴリーで並べて比較する。二つだけの一騎打ちが最も鋭い対比になる。</p>
+    </div>
+    <div class="toggles reveal" id="compareChips"></div>
+    <p class="compare-hint" id="compareHint"></p>
+    <div class="matrix-scroll reveal" id="compareOut" hidden>
+      <table class="matrix" id="compareTable"></table>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MATRIX ================= -->
+<section id="matrix" class="view" data-route="compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="kicker">並べて比較</div>
+      <h2>定番の六者対比グリッド</h2>
+      <p>以下で深く扱う六つの世界観についての厳選された弁証学マトリクス — 神、聖典、人間の問題、解決策、イエス、来世。十五すべての伝統については上の比較ラボを使ってほしい。</p>
+    </div>
+
+    <div class="toggles reveal" id="toggles">
+      <button class="toggle active" data-col="christianity">✝️ キリスト教</button>
+      <button class="toggle active" data-col="islam">☪️ イスラム教</button>
+      <button class="toggle active" data-col="judaism">✡️ ユダヤ教</button>
+      <button class="toggle" data-col="hinduism">🕉️ ヒンドゥー教</button>
+      <button class="toggle" data-col="buddhism">☸️ 仏教</button>
+      <button class="toggle active" data-col="atheism">⚛️ 無神論</button>
+      <button class="toggle" data-col="scientology">🔺 サイエントロジー</button>
+    </div>
+
+    <div class="matrix-scroll reveal">
+      <table class="matrix" id="matrixTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th data-col="christianity">✝️ キリスト教</th>
+            <th data-col="islam">☪️ イスラム教</th>
+            <th data-col="judaism">✡️ ユダヤ教</th>
+            <th data-col="hinduism">🕉️ ヒンドゥー教</th>
+            <th data-col="buddhism">☸️ 仏教</th>
+            <th data-col="atheism">⚛️ 無神論</th>
+            <th data-col="scientology">🔺 サイエントロジー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>神</th>
+            <td data-col="christianity">三位一体の唯一の神。人格的で関係的 — 「神は愛です」（ヨハネの手紙第一 4:8）。神の方から人類との関係を始める。</td>
+            <td data-col="islam">唯一の神（アッラー）、絶対的な単一性（タウヒード）。超越的な創造主かつ審判者。人はしもべとして神と関わる。三位一体と受肉は明確に否定される。</td>
+            <td data-col="judaism">唯一の神（シェマー、申命記6:4）。人格的で契約的 — アブラハム、モーセ、預言者たちに自らを啓示した。</td>
+            <td data-col="hinduism">至高の実在ブラフマンが、多くの神々（ブラフマー、ヴィシュヌ、シヴァなど）を通して現れる。人格的な理解と非人格的な理解の両方が存在する。</td>
+            <td data-col="buddhism">創造神はいない。神性についての究極の問いは脇に置かれ、焦点は神的存在への礼拝ではなく悟りにある。</td>
+            <td data-col="atheism">なし。物理的宇宙がすべてであり、神への信仰は人間の発明と見なされる。</td>
+            <td data-col="scientology">定義された人格神はない — 「第八ダイナミック」は無限。各人は何兆年も生きる不滅の霊的存在、セイタンである。</td>
+          </tr>
+          <tr>
+            <th>創始者</th>
+            <td data-col="christianity">ナザレのイエス（紀元前4年頃-紀元後30/33年）— 神の受肉を主張し、十字架にかけられ、弟子たちは彼の身体的復活を宣言した。</td>
+            <td data-col="islam">ムハンマド（570-632年）— 最後の預言者、「預言者たちの封印」（クルアーン33:40）とされ、クルアーンを受けた。</td>
+            <td data-col="judaism">アブラハム（契約）とモーセ（トーラー）、紀元前2000-1300年頃。</td>
+            <td data-col="hinduism">単一の創始者はいない。インド亜大陸でヴェーダの伝統から数千年かけて発展した。</td>
+            <td data-col="buddhism">シッダールタ・ゴータマ、仏陀（紀元前5世紀頃）— 自ら見出した悟りへの道を説いた。</td>
+            <td data-col="atheism">創始者はいない — エピクロスから啓蒙時代を経て「新無神論者」（ドーキンス、ヒッチェンズ、ハリス、デネット）へと続く思想の流れ。</td>
+            <td data-col="scientology">L・ロン・ハバード（1911-1986年）、SF作家 — 1950年に『ダイアネティックス』、1954年にサイエントロジー教会を設立。</td>
+          </tr>
+          <tr>
+            <th>聖典</th>
+            <td data-col="christianity">聖書（旧約・新約）：約1500年にわたり約40人の著者による66巻。弁証学者は歴史的に検証可能な目撃証言の文書として扱う。</td>
+            <td data-col="islam">ムハンマドが23年かけて詠誦したクルアーン、加えてハディース。ムスリムは以前の聖典（トーラー、福音書/インジール）は時とともに改ざんされたと考える。</td>
+            <td data-col="judaism">タナハ（トーラー、預言者、諸書）とラビの伝統（タルムード）。</td>
+            <td data-col="hinduism">ヴェーダ、ウパニシャッド、バガヴァッド・ギーター、叙事詩群 — 広大で重層的な文書群。</td>
+            <td data-col="buddhism">パーリ仏典（三蔵）と、宗派によって異なる後代の経典。</td>
+            <td data-col="atheism">なし。科学と理性が信頼される導き手であり、証拠を超えた権威を持つ文書はない。</td>
+            <td data-col="scientology">ハバードの著作と講義 — 『ダイアネティックス』、サイエントロジー正典、そして機密の上級（OT）資料。</td>
+          </tr>
+          <tr>
+            <th>人間の問題</th>
+            <td data-col="christianity">罪 — すべての人を聖なる神から引き離す道徳的反逆。自力でそれを正せるほど善い者は誰もいない。</td>
+            <td data-col="islam">堕落してはいないが、弱く忘れっぽい。人はアッラーの意志に服従することに失敗する。原罪の教義はない。</td>
+            <td data-col="judaism">罪とは契約を破ること。悔い改め（テシュヴァー）、祈り、善行が関係を回復する。</td>
+            <td data-col="hinduism">無知（アヴィディヤー）とカルマが魂をサンサーラ（死と再生の輪）に縛りつける。</td>
+            <td data-col="buddhism">苦（ドゥッカ）、渇愛と執着によって生じる（四諦の第二、集諦）。</td>
+            <td data-col="atheism">宇宙的な問題はない — あるのは実際的な問題だけ：無知、迷信、組織化されていない社会。</td>
+            <td data-col="scientology">エングラム — 今生と無数の過去世からのトラウマ的な精神記録 — がセイタンを曇らせ、その可能性を阻む。</td>
+          </tr>
+          <tr>
+            <th>解決策</th>
+            <td data-col="christianity"><strong>恵み。</strong>救いは無償の贈り物 — イエスの死が罪の代価を払い、その復活が命を確かなものにする。行いではなく信仰によって受け取る（エペソ人への手紙2:8-9）。</td>
+            <td data-col="islam"><strong>行いと慈悲。</strong>五行に従う。審判の日に行いが計られる。アッラーは望む者を赦すことができるが、贖罪は用意されていない。</td>
+            <td data-col="judaism"><strong>契約への忠実。</strong>トーラーを生きる。神は悔い改める者に慈悲深い。</td>
+            <td data-col="hinduism"><strong>解脱。</strong>信愛（バクティ）、知識（ジュニャーナ）、行い（カルマ・ヨーガ）の道を通して再生から逃れ、モークシャへ。</td>
+            <td data-col="buddhism"><strong>八正道。</strong>正見、正思、正語、正業、正命、正精進、正念、正定 — 欲望を消し涅槃へ。</td>
+            <td data-col="atheism"><strong>理性と進歩。</strong>科学、教育、世俗倫理が人間の状況を改善する。各人が自分の意味を築く。</td>
+            <td data-col="scientology"><strong>オーディティング。</strong>E-メーターでエングラムを除去し、「完全な自由への橋」を上る — 「クリア」からオペレーティング・セイタンの各段階へ、各段階はコースとして購入する。</td>
+          </tr>
+          <tr>
+            <th>イエスとは誰か</th>
+            <td data-col="christianity">神の永遠の子 — 「言葉は神であった」（ヨハネ1:1）— 完全に神でありながら完全に人。十字架にかけられ身体的に復活し、教会の頭であり、審判者として再び来られる。</td>
+            <td data-col="islam">敬われる預言者（イーサー）、処女から生まれ奇跡を行ったが、被造物であり神性はなく（クルアーン3:59）、十字架にかけられておらず（クルアーン4:157）、神の子でもない（クルアーン19:35）。</td>
+            <td data-col="judaism">1世紀のユダヤ人の教師。メシアではなく、その到来はまだ待たれている。</td>
+            <td data-col="hinduism">数多くいるグルやアヴァターラの一人として敬われることもある。特別な存在ではない。</td>
+            <td data-col="buddhism">賢く悟った道徳の教師。神的な地位はない。</td>
+            <td data-col="atheism">1世紀の説教者（実在し十字架にかけられたことは概ね認められる）。奇跡と復活は伝説とみなされる。</td>
+            <td data-col="scientology">神性はなく、救い主でもない — ハバードはイエスを「クリアよりやや上」と位置づけ、上級資料はキリストの物語を「インプラント」として扱う。</td>
+          </tr>
+          <tr>
+            <th>来世</th>
+            <td data-col="christianity">身体の復活と最後の審判。キリストにある者には神との永遠の命、拒む者には神からの分離。</td>
+            <td data-col="islam">復活と審判。行いの計りとアッラーの決定に基づき、天国（ジャンナ）か地獄（ジャハンナム）へ。</td>
+            <td data-col="judaism">見解は様々 — 来たるべき世（オラム・ハバ）からメシアの時代における復活まで。</td>
+            <td data-col="hinduism">モークシャに至るまでカルマに応じて輪廻転生 — ブラフマンへの合一あるいは交わり。</td>
+            <td data-col="buddhism">涅槃に至るまでカルマに駆動される再生 — 永遠の個人的な命ではなく、輪廻の終息。</td>
+            <td data-col="atheism">なし。死は意識の永久的な終わりであり、記憶と結果の中にのみ生き続ける。</td>
+            <td data-col="scientology">セイタンは肉体を離れ新しい肉体を得る — 続く輪廻のサイクル。天国も地獄もない。</td>
+          </tr>
+          <tr>
+            <th>確信</th>
+            <td data-col="christianity">ある — 救いは個人の行いではなくキリストの成し遂げた業に基づくから：「あなたがたが…知るように、これらのことを書き送った」（ヨハネの手紙第一 5:13）。</td>
+            <td data-col="islam">ない — 最終的な運命は計りとアッラーの主権的な意志にかかっている。審判前の確実性は約束されていない。</td>
+            <td data-col="judaism">来世についての確信よりも、今忠実に生きることに重点が置かれる。</td>
+            <td data-col="hinduism">一生では得られない — 解脱には無数の再生がかかることもある。</td>
+            <td data-col="buddhism">約束はない — 涅槃への進歩は多くの生涯にわたることがある。</td>
+            <td data-col="atheism">該当なし — 死後には確信すべきものは何もない。課題は今、意味ある人生を送ること。</td>
+            <td data-col="scientology">ない — 橋には常に次の段階があり、それぞれに費用がかかる。最高位のオペレーティング・セイタンでさえオーディティングを続ける。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section-head reveal" style="margin-top: 80px;">
+      <div class="kicker">それぞれの言葉で</div>
+      <h2>一つの問い、九つの聖典：死んだらどうなるのか</h2>
+      <p>要約は私たちのものだが、これらは出典そのもの — すべての伝統が答えねばならない問いについて、それぞれが自ら語っている。</p>
+    </div>
+    <div class="quote-grid reveal">
+      <div class="quote-card">
+        <div class="who">✝️ 聖書</div>
+        <blockquote>「イエスは彼女に言われた。『わたしはよみがえりです。いのちです。わたしを信じる者は、死んでも生きるのです。』」<span class="ref">ヨハネの福音書11:25</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☪️ クルアーン</div>
+        <blockquote>「すべての魂は死を味わう。それから、あなたがたはわれに帰される。」<span class="ref">クルアーン29:57</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">✡️ タナハ</div>
+        <blockquote>「地のちりの中に眠っている者のうち、多くの者が目を覚ます。ある者は永遠のいのちに、ある者は恥辱に。」<span class="ref">ダニエル書12:2</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🕉️ バガヴァッド・ギーター</div>
+        <blockquote>「人が古い衣を脱ぎ新しい衣をまとうように、魂は古い肉体を捨て新しい肉体を受け取る。」<span class="ref">ギーター2:22</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☸️ ダンマパダ</div>
+        <blockquote>「空にも、大海の中にも…死を逃れられる場所はこの地上に見出せない。」<span class="ref">ダンマパダ128</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🪯 グル・グラント・サーヒブ</div>
+        <blockquote>「御名を瞑想する者たちは…輪廻における往来を終える。」<span class="ref">ジャプジー・サーヒブ</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">🤚 アーガマ</div>
+        <blockquote>「あらゆるカルマから解放された魂は、宇宙の頂へとまっすぐ昇り、そこに永遠に留まる。」<span class="ref">ジャイナ教の教え（タットヴァールタ・スートラ10）</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">☯️ 荘子</div>
+        <blockquote>「生と死は一本の糸、異なる側から見た同じ線である。」<span class="ref">荘子（伝）</span></blockquote>
+      </div>
+      <div class="quote-card">
+        <div class="who">⚛️ バートランド・ラッセル</div>
+        <blockquote>「私が死ねば朽ち果て、私の自我の何も生き残らない。」<span class="ref">『私が信じるもの』（1925年）</span></blockquote>
+      </div>
+    </div>
+    <div class="share-row reveal">
+      <button class="share-btn" data-share="compare">📤 この比較を共有</button>
+    </div>
+    <div class="next-chapter reveal">
+      <span class="nc-progress">第02章 / 全12章</span>
+      <a class="nc-link" href="#/islam">次へ：キリスト教 ↔ イスラム教 →<span class="nc-sub">この表の中でも、世界人口の54.4%が関わる対比は他にない。</span></a>
+    </div>
+  </div>
+</section>
