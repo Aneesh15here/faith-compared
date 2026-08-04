@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-03T06:33:52Z",
-  "total": 50,
+  "updated": "2026-08-04T06:03:32Z",
+  "total": 52,
   "countries": [
     {
       "code": "AU",
@@ -10,7 +10,7 @@
     {
       "code": "US",
       "name": "United States",
-      "count": 14
+      "count": 16
     },
     {
       "code": "CA",
