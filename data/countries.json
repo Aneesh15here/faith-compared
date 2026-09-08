@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-07T08:16:43Z",
-  "total": 62,
+  "updated": "2026-09-08T08:03:27Z",
+  "total": 63,
   "countries": [
     {
       "code": "AU",
@@ -25,6 +25,11 @@
     {
       "code": "FR",
       "name": "France",
+      "count": 1
+    },
+    {
+      "code": "MD",
+      "name": "Republic of Moldova",
       "count": 1
     },
     {
