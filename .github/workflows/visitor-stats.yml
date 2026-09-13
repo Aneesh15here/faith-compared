@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  GOATCOUNTER_START: '2026-07-01T00:00:00Z'
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -23,7 +26,7 @@ jobs:
             exit 0
           fi
           mkdir -p data
-          URL="https://comparereligion.goatcounter.com/api/v0/stats/locations?start=2026-07-01T00:00:00Z&end=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          URL="https://comparereligion.goatcounter.com/api/v0/stats/locations?start=${GOATCOUNTER_START}&end=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
           for attempt in 1 2 3 4 5; do
             HTTP_CODE=$(curl -s -o /tmp/locations.json -w "%{http_code}" -H "Authorization: Bearer $TOKEN" "$URL")
             echo "Attempt $attempt: HTTP status $HTTP_CODE"
@@ -42,10 +45,26 @@ jobs:
             updated: (now | todate),
             total: ([.stats[]?.count] | add // 0),
             countries: [ .stats[]? | { code: .id, name: .name, count: .count } ] | sort_by(-.count)
-          }' /tmp/locations.json > data/countries.json
-          cat data/countries.json
+          }' /tmp/locations.json > /tmp/countries.new.json
+          cat /tmp/countries.new.json
+
+          # Commit only on material change (total or per-country counts), not timestamp-only churn.
+          if [ -f data/countries.json ]; then
+            OLD_SIG=$(jq -c '{total, countries: [.countries[]? | {code, count}] | sort_by(.code)}' data/countries.json)
+          else
+            OLD_SIG=""
+          fi
+          NEW_SIG=$(jq -c '{total, countries: [.countries[]? | {code, count}] | sort_by(.code)}' /tmp/countries.new.json)
+          if [ "$OLD_SIG" = "$NEW_SIG" ]; then
+            echo "No material stats change — skipping commit."
+            echo "skip=true" >> "$GITHUB_ENV"
+          else
+            cp /tmp/countries.new.json data/countries.json
+            echo "skip=false" >> "$GITHUB_ENV"
+          fi
 
       - name: Commit updated stats
+        if: env.skip != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

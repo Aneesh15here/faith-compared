@@ -1,0 +1,45 @@
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> 世界中の読者</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">訪問者<span class="grad">マップ</span></h1>
+    <p>「Faith, Compared」がどこで読まれているか — 国レベルのみ、匿名で、Cookieを使わずに収集し、毎日更新しています。</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">総訪問数</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">国の数</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">最終更新</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="国ごとの訪問数で色分けされた世界地図"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 訪問</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">訪問なし: 暗色</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>まだ訪問者データがありません — アナリティクスを導入したばかりです。読者が訪れるとマップが点灯します。🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">国別</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="国別の訪問数">
+          <thead><tr><th>#</th><th>国</th><th class="num">訪問数</th><th style="width:35%;">割合</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>まだランキングするデータがありません。</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>プライバシー:</strong> アナリティクスは<a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a>によって提供されています — Cookieなし、フィンガープリンティングなし、個人データなし。訪問そのものと、その国だけがカウントされます。
+    </div>
+  </div>
+</section>
+</main>

@@ -1,77 +1,61 @@
 # Faith, Compared
 
-Static multi-language site for [comparereligion.com](https://comparereligion.com): an apologetics-informed comparison of major worldviews, with a narrative journey, comparison lab, and sister essays on meaning and happiness.
+Multi-language apologetics site for [comparereligion.com](https://comparereligion.com): worldview comparison, journey chapters, and sister essays on meaning and happiness.
 
-**Purpose:** help readers understand what Christianity and other worldviews actually teach — clearly enough to evaluate claims and share the site with others.
+**Purpose:** help readers understand what Christianity and other worldviews teach — clearly enough to evaluate claims and share the site.
 
-Hosted as plain HTML/CSS/JS on GitHub Pages (`CNAME` → `comparereligion.com`). No build step required today.
+## Architecture (Eleventy)
 
-## Layout
+One shared shell + locale content. Build emits the same URL map as before (`/`, `/es/`, `/hi/`, …).
 
 | Path | Role |
 | --- | --- |
-| `index.html` | English journey (hash routes `#/religions`, `#/compare`, …) |
-| `philosophy.html`, `happiness.html`, `stats.html` | Sister pages |
-| `es/`, `hi/`, `ja/`, `ml/`, `ta/`, `zh/` | Full locale copies |
-| `styles.css` | Shared stylesheet (`?v=N` cache buster) |
-| `religions.js` | Per-locale religion data + compare/modal UI |
-| `js/app.js`, `js/site.js`, `js/i18n/*.js` | Shared journey logic, chrome (mobile nav / SW), strings |
-| `sw.js` | Root service worker (all locales register `/sw.js`) |
-| `img/` | Heroes and religion art (JPEG + WebP derivatives) |
-| `vendor/` | Vendored stats-page libs (d3, topojson, world atlas) |
+| `src/pages/<lang>/*.njk` | Page stubs (permalink + layout) |
+| `src/_includes/content/<lang>/` | Locale body + nav fragments |
+| `src/_includes/layouts/` | Shared journey / essay / stats shells |
+| `src/_data/` | `site`, `locales`, `ui` chrome strings |
+| `js/app.js`, `js/site.js`, `js/i18n/*` | Shared journey logic, mobile nav / SW, strings (Clarity track) |
+| `src/assets/sw.js` → `/sw.js` | Single root service worker |
+| `src/assets/js/religions/<lang>.js` | Per-locale religion data + modal (keeps `<picture>` / a11y) |
+| `vendor/` | Stats libs with SRI |
+| `_site/` | Build output (GitHub Pages artifact) |
 
-## Editing content
+Translators: see [CONTENT.md](./CONTENT.md).
 
-1. Prefer editing **English** first (`index.html` and sister pages), then mirror copy changes in each locale folder.
-2. Religion profiles and the comparison lab live in each locale’s `religions.js`.
-3. Quiz / share / contact UI strings live in `js/i18n/<lang>.js` — keep those in sync when you change button labels.
-4. Journey chapter routes must use the `#/route` form (leading slash). Legacy `#route` links are redirected in `js/app.js`.
+## Develop locally
 
-## Cache bumps (CSS / service worker)
+```bash
+npm install
+npm start          # http://localhost:8080
+# or
+npm run build && python3 -m http.server -d _site 8080
+```
 
-When you change shared CSS or shell assets:
+Verify: English + one locale home, `#/religions` tiles, philosophy/happiness/stats, phone-width nav drawer (Escape + focus return), only root `/sw.js`.
 
-1. Bump `styles.css?v=N` in every HTML file that links it.
-2. Bump `CACHE` in root `sw.js` (e.g. `faith-compared-v19` → `v20`) and the matching `styles.css?v=` entry in the `SHELL` list.
-3. Locale `*/sw.js` files are thin stubs that `importScripts('/sw.js')` — do not maintain separate cache names there.
+## Deploy (GitHub Pages)
 
-Activate only deletes other `faith-compared-*` caches, so visiting one language no longer wipes another.
+`.github/workflows/pages.yml` runs `npm ci && npm run build` and publishes `_site` (includes `CNAME`).
+
+**One-time:** Settings → Pages → Source → **GitHub Actions**.
+
+## Cache bumps
+
+Edit `cacheVersion` in `src/_data/site.js` and the `CACHE` / `SHELL` list in `src/assets/sw.js` (keep `styles.css?v=` in sync).
 
 ## Contact form (FormSubmit)
 
-The contact form posts to FormSubmit’s AJAX endpoint. Protections in the page:
-
-- Hidden honeypot fields (`_honey`, `_gotcha`)
-- Client-side required fields
-
-**Operator checklist** (FormSubmit dashboard / email confirmation):
-
-1. Confirm the FormSubmit email mapping for this site is activated.
-2. Restrict submissions to `comparereligion.com` (and `www` if used) via FormSubmit’s domain allowlist if available on your plan.
-3. Enable FormSubmit’s captcha option for this form when offered — no site backend is required.
-4. Rotate the public form hash if abuse appears; update the URL in `js/app.js`.
-
-## Analytics
-
-GoatCounter (`comparereligion.goatcounter.com`) — cookie-light, no fingerprinting. The visitor map on `stats.html` reads `data/countries.json` (updated by `.github/workflows/visitor-stats.yml`).
-
-## Images
-
-Canonical files are `img/<id>.jpg` (≤1200w). Prefer WebP via `<picture>` / `image-set` (see `religions.js` and chapter `--cimg` / `.tb-img` styles). Do not recompress binaries casually — keep `img/credits.json` in sync when sources change.
-
-## Local preview
-
-Any static server from the repo root:
-
-```bash
-python3 -m http.server 8080
-```
-
-Open `http://localhost:8080/`. Service worker and absolute `/sw.js` registration expect to be served from the site root.
+Honeypots `_honey` + `_gotcha` ship in templates. Operator checklist (domain allowlist, captcha, hash rotation): same as Clarity README guidance — endpoint URL lives in `js/app.js`.
 
 ## CI
 
-`.github/workflows/link-check.yml` runs [lychee](https://github.com/lycheeverse/lychee) on HTML and asserts internal journey links use `#/…`.
+- `pages.yml` — build + deploy
+- `link-check.yml` — hash-link assertions + lychee on built `_site`
+- `visitor-stats.yml` — GoatCounter → `data/countries.json` (commits only on material count changes)
+
+## Images
+
+Prefer WebP via `<picture>` / `image-set`. Do not recompress `img/` binaries in content PRs. See `img/credits.json`.
 
 ## License
 

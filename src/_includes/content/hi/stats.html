@@ -1,0 +1,45 @@
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> दुनिया भर के पाठक</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">आगंतुक <span class="grad">मानचित्र</span></h1>
+    <p>लोग ‘आस्था, तुलना’ कहाँ पढ़ रहे हैं — केवल देश-स्तर पर, बिना कुकीज़ के गुमनाम रूप से एकत्रित, प्रतिदिन ताज़ा किया गया।</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">कुल विज़िट</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">देश</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">अंतिम अद्यतन</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="प्रति देश विज़िट की संख्या से रंगा विश्व मानचित्र"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 विज़िट</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">कोई विज़िट नहीं: गहरा</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>अभी कोई आगंतुक डेटा नहीं — एनालिटिक्स अभी-अभी स्थापित हुआ। पाठकों के आते ही मानचित्र जगमगाने लगेगा। 🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">देश अनुसार</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="देश अनुसार विज़िट">
+          <thead><tr><th>#</th><th>देश</th><th class="num">विज़िट</th><th style="width:35%;">हिस्सा</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>अभी क्रम में रखने को कुछ नहीं।</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>निजता:</strong> एनालिटिक्स <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> से संचालित है — न कुकीज़, न फ़िंगरप्रिंटिंग, न कोई व्यक्तिगत डेटा। केवल विज़िट और उसका देश गिना जाता है।
+    </div>
+  </div>
+</section>
+</main>

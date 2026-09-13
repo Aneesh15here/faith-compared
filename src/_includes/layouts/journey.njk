@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ (locales | selectattr('code', 'equalto', locale) | first).hreflang }}" dir="{{ (locales | selectattr('code', 'equalto', locale) | first).dir }}">
+<head>
+{% set loc = locales | selectattr('code', 'equalto', locale) | first %}
+{% set chrome = ui[locale] or ui.en %}
+{% set pageFile = 'index.html' %}
+{% set homeHref = 'index.html#/' %}
+{% set navInclude = 'content/' + locale + '/nav-index.html' %}
+{% set religionsSrc = 'religions.js' %}
+{% set loadApp = true %}
+{% set footerExtras %}
+ · <a href="philosophy.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.nav.philosophy }}</a>
+ · <a href="happiness.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.nav.happiness }}</a>
+ · <a href="stats.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.nav.stats }} 🌍</a>
+{% endset %}
+{% include "partials/head.njk" %}
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div id="progress"></div>
+<div id="trailHiker" aria-hidden="true">🚶</div>
+{% include "partials/nav.njk" %}
+<main>
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<button id="toTop" title="Back to top">↑</button>
+<div class="modal-overlay" id="relModal" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="relModalTitle">
+    <button class="modal-close" id="modalClose" title="Close" aria-label="Close">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+{% include "partials/scripts.njk" %}
+</body>
+</html>
