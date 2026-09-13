@@ -87,7 +87,8 @@
       e.preventDefault();
       if (!contactForm.reportValidity()) return;
       const honey = contactForm.querySelector('[name="_honey"]');
-      if (honey && honey.value) return;
+      const gotcha = contactForm.querySelector('[name="_gotcha"]');
+      if ((honey && honey.value) || (gotcha && gotcha.value)) return;
       contactSend.disabled = true;
       contactSend.textContent = c.sending || 'Sending…';
       formStatus.classList.remove('error');

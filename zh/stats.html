@@ -4,11 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>访客地图 — 信仰对照</title>
-<meta name="description" content="世界各地阅读《信仰对照》的位置 — 实时访客热力图。" />
+<meta name="description" content="世界各地阅读《信仰对照》的位置 — 实时访客热力图。">
+<link rel="canonical" href="https://comparereligion.com/zh/stats.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faith, Compared">
+<meta property="og:title" content="访客地图 — 信仰对照">
+<meta property="og:description" content="世界各地阅读《信仰对照》的位置 — 实时访客热力图。">
+<meta property="og:url" content="https://comparereligion.com/zh/stats.html">
+<meta property="og:image" content="https://comparereligion.com/img/earth.webp">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="访客地图 — 信仰对照">
+<meta name="twitter:description" content="世界各地阅读《信仰对照》的位置 — 实时访客热力图。">
+<meta name="twitter:image" content="https://comparereligion.com/img/earth.webp">
+<link rel="alternate" hreflang="en" href="https://comparereligion.com/stats.html">
+<link rel="alternate" hreflang="es" href="https://comparereligion.com/es/stats.html">
+<link rel="alternate" hreflang="hi" href="https://comparereligion.com/hi/stats.html">
+<link rel="alternate" hreflang="ja" href="https://comparereligion.com/ja/stats.html">
+<link rel="alternate" hreflang="ml" href="https://comparereligion.com/ml/stats.html">
+<link rel="alternate" hreflang="ta" href="https://comparereligion.com/ta/stats.html">
+<link rel="alternate" hreflang="zh" href="https://comparereligion.com/zh/stats.html">
+<link rel="alternate" hreflang="x-default" href="https://comparereligion.com/stats.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=18">
+<link rel="stylesheet" href="../styles.css?v=19">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="../icons/icon-180.png">
@@ -48,10 +69,10 @@
   <div class="wrap nav-inner">
     <a class="logo" href="index.html">信仰<span>·</span>对照</a>
     <div class="nav-links">
-      <a href="index.html#religions">所有宗教</a>
-      <a href="index.html#compare">对比实验室</a>
+      <a href="index.html#/religions">所有宗教</a>
+      <a href="index.html#/compare">对比实验室</a>
       <a href="philosophy.html">什么最重要</a>
-      <a href="index.html#contact">联系我们</a>
+      <a href="index.html#/contact">联系我们</a>
       <a href="index.html" style="color: var(--accent-2);">← 首页</a>
       <a href="../stats.html" style="color: var(--accent);">EN</a>
     </div>
@@ -110,8 +131,8 @@
 
 <div class="map-tooltip" id="mapTip"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script src="../vendor/d3.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+<script src="../vendor/topojson-client.min.js" integrity="sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67" crossorigin="anonymous"></script>
 <script>
 (async () => {
   const $ = id => document.getElementById(id);
@@ -182,7 +203,7 @@
     tbody.appendChild(tr);
   });
 
-  const world = await fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then(r => r.json());
+  const world = await fetch('../vendor/countries-110m.json').then(r => r.json());
   const countries = topojson.feature(world, world.objects.countries).features;
   const projection = d3.geoNaturalEarth1().fitSize([960, 500], { type: 'Sphere' });
   const path = d3.geoPath(projection);
@@ -207,10 +228,10 @@
 
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 })();
 </script>
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/site.js"></script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
