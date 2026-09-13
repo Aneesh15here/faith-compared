@@ -60,5 +60,6 @@ jobs:
             --exclude 'https://www\.johnlennox\.org/'
             --exclude 'https://www\.pnas\.org/'
             --exclude 'https://www\.science\.org/'
+            --exclude 'https://peterattiamd\.com/'
             './_site/**/*.html'
           fail: true
