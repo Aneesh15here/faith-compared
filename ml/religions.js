@@ -229,7 +229,7 @@ RELIGIONS.forEach(r => {
   const card = document.createElement('button');
   card.type = 'button';
   card.className = 'tile';
-  card.innerHTML = `<img src="../img/${r.id}.jpg" alt="${r.name}" loading="lazy">` +
+  card.innerHTML = `<picture><source type="image/webp" srcset="../img/${r.id}-640.webp 640w, ../img/${r.id}-960.webp 960w, ../img/${r.id}.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:1000px) 50vw, 320px"><img src="../img/${r.id}.jpg" srcset="../img/${r.id}-640.jpg 640w, ../img/${r.id}-960.jpg 960w, ../img/${r.id}.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1000px) 50vw, 320px" alt="${r.name}" loading="lazy" width="640" height="400"></picture>` +
     `<div class="tile-body"><div class="t-tag">${r.tagline}</div>` +
     `<h3><span class="t-emoji" aria-hidden="true">${r.emoji}</span> ${r.name}</h3>` +
     `<p>${r.god}</p>` +
@@ -247,7 +247,7 @@ function getModalFocusable() {
 }
 function openRelModal(r) {
   modalLastFocus = document.activeElement;
-  relModalBody.innerHTML = `<div class="m-hero"><img src="img/${r.id}.jpg" alt="${r.name}"></div>` +
+  relModalBody.innerHTML = `<div class="m-hero"><picture><source type="image/webp" srcset="../img/${r.id}-640.webp 640w, ../img/${r.id}-960.webp 960w, ../img/${r.id}.webp 1200w" sizes="(max-width:600px) 100vw, 560px"><img src="../img/${r.id}.jpg" srcset="../img/${r.id}-640.jpg 640w, ../img/${r.id}-960.jpg 960w, ../img/${r.id}.jpg 1200w" sizes="(max-width:600px) 100vw, 560px" alt="${r.name}" width="800" height="200"></picture></div>` +
     `<span class="m-emoji" aria-hidden="true">${r.emoji}</span><h3 id="relModalTitle">${r.name}</h3>` +
     `<div class="m-tagline">${r.tagline} · ${r.adherents}</div><dl>` +
     FIELDS.map(([k, label]) => `<div><dt>${label}</dt><dd>${r[k]}</dd></div>`).join('') +
