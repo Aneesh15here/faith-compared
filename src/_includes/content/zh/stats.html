@@ -1,0 +1,45 @@
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> 世界各地的读者</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">访客<span class="grad">地图</span></h1>
+    <p>人们在世界何处阅读《信仰对照》——仅收集国家级别的匿名数据，不使用 Cookie，每日更新。</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">总访问量</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">国家数</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">最后更新</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="按各国访问次数着色的世界地图"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 次访问</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">无访问：深色</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>尚无访客数据 — 分析工具刚刚安装。当读者到来时，地图将会点亮。🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">按国家</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="按国家统计的访问次数">
+          <thead><tr><th>#</th><th>国家</th><th class="num">访问次数</th><th style="width:35%;">占比</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>暂无可排名的数据。</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>隐私：</strong>分析功能由 <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> 提供 — 无 Cookie，无指纹追踪，无个人数据。仅统计访问本身及其所在国家。
+    </div>
+  </div>
+</section>
+</main>

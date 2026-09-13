@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ (locales | selectattr('code', 'equalto', locale) | first).hreflang }}" dir="{{ (locales | selectattr('code', 'equalto', locale) | first).dir }}">
+<head>
+{% set loc = locales | selectattr('code', 'equalto', locale) | first %}
+{% set chrome = ui[locale] or ui.en %}
+{% set pageFile = essay + '.html' %}
+{% set homeHref = 'index.html' %}
+{% set navInclude = 'content/' + locale + '/nav-' + essay + '.html' %}
+{% set loadApp = false %}
+{% set footerExtras %}
+ · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.backToJourney }}</a>
+ · <a href="stats.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.nav.stats }} 🌍</a>
+{% endset %}
+{% include "partials/head.njk" %}
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<div id="progress"></div>
+<div id="trailHiker" aria-hidden="true">🚶</div>
+{% include "partials/nav.njk" %}
+{{ content | safe }}
+{% include "partials/footer.njk" %}
+<button id="toTop" title="Back to top">↑</button>
+{% include "partials/scripts.njk" %}
+</body>
+</html>

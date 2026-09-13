@@ -1,0 +1,45 @@
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> உலகெங்கிலும் உள்ள வாசகர்கள்</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">பார்வையாளர் <span class="grad">வரைபடம்</span></h1>
+    <p>மக்கள் ‘நம்பிக்கை, ஒப்பீடு’ எங்கே வாசிக்கிறார்கள் — நாட்டு அளவில் மட்டும், குக்கீகள் இல்லாமல் அநாமதேயமாகச் சேகரிக்கப்பட்டது, தினமும் புதுப்பிக்கப்படுகிறது.</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">மொத்த வருகைகள்</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">நாடுகள்</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">கடைசியாக புதுப்பிக்கப்பட்டது</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="ஒவ்வொரு நாட்டிலும் வருகைகளின் எண்ணிக்கையால் நிறமிடப்பட்ட உலக வரைபடம்"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 வருகை</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">வருகைகள் இல்லை: இருண்டது</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>இதுவரை பார்வையாளர் தரவு இல்லை — அனலிட்டிக்ஸ் இப்போதுதான் நிறுவப்பட்டது. வாசகர்கள் வரும்போது வரைபடம் ஒளிரும். 🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">நாடு வாரியாக</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="நாடு வாரியான வருகைகள்">
+          <thead><tr><th>#</th><th>நாடு</th><th class="num">வருகைகள்</th><th style="width:35%;">பங்கு</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>இதுவரை வரிசைப்படுத்த ஒன்றுமில்லை.</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>தனியுரிமை:</strong> அனலிட்டிக்ஸ் <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> மூலம் இயக்கப்படுகிறது — குக்கீகள் இல்லை, கைரேகை இல்லை, தனிப்பட்ட தரவு இல்லை. வருகையும் அதன் நாடும் மட்டுமே எண்ணப்படுகின்றன.
+    </div>
+  </div>
+</section>
+</main>

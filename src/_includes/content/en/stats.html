@@ -1,0 +1,45 @@
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> Readers around the world</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">The <span class="grad">visitor map</span></h1>
+    <p>Where people are reading Faith, Compared — country-level only, collected anonymously without cookies, refreshed daily.</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">Total visits</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">Countries</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">Last updated</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="World map shaded by number of visits per country"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 visit</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">No visits: dark</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>No visitor data yet — analytics were just installed. The map lights up as readers arrive. 🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">By country</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="Visits by country">
+          <thead><tr><th>#</th><th>Country</th><th class="num">Visits</th><th style="width:35%;">Share</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>Nothing to rank yet.</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>Privacy:</strong> analytics are powered by <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> — no cookies, no fingerprinting, no personal data. Only the visit itself and its country are counted.
+    </div>
+  </div>
+</section>
+</main>

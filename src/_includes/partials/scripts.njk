@@ -1,0 +1,14 @@
+<script>
+window.FC = window.FC || {};
+window.FC.lang = {{ locale | dump | safe }};
+window.FC.imgBase = '/img/';
+</script>
+{% if religionsSrc %}<script src="{{ religionsSrc }}"></script>{% endif %}
+{% for item in scriptSrcs or [] %}
+<script src="{{ item.src }}"{% if item.integrity %} integrity="{{ item.integrity }}" crossorigin="anonymous"{% endif %}></script>
+{% endfor %}
+{% if statsMapSrc %}<script src="{{ statsMapSrc }}?v={{ site.cacheVersion }}"></script>{% endif %}
+<script src="/js/i18n/{{ locale }}.js"></script>
+<script src="/js/site.js"></script>
+{% if loadApp %}<script src="/js/app.js"></script>{% endif %}
+<script data-goatcounter="{{ site.goatcounter }}" async src="https://gc.zgo.at/count.js"></script>

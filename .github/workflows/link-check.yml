@@ -12,18 +12,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
       - name: Assert journey hash links use #/
         run: |
           set -euo pipefail
-          # Fail if any HTML still uses index.html#route without the slash
-          if grep -RInE 'index\.html#[a-zA-Z]' --include='*.html' . \
+          if grep -RInE 'index\.html#[a-zA-Z]' --include='*.html' _site \
             | grep -vE 'index\.html#/'; then
             echo "::error::Found legacy index.html#route links; use index.html#/route"
             exit 1
           fi
-          # Fail on bare href="#religions" style journey links (allow in-page anchors)
           ROUTES='religions|compare|islam|evidence|questions|objections|restoration|atheism|sources|contact|home'
-          if grep -RInE "href=\"#(${ROUTES})\"" --include='*.html' .; then
+          if grep -RInE "href=\"#(${ROUTES})\"" --include='*.html' _site; then
             echo "::error::Found href=\"#route\" without slash; use href=\"#/route\""
             exit 1
           fi
@@ -37,8 +43,13 @@ jobs:
           args: >-
             --verbose
             --no-progress
+<<<<<<< HEAD
             --include-fragments=none
             --root-dir .
+=======
+            --include-fragments
+            --root-dir _site
+>>>>>>> d2c3e84 (Build locales with Eleventy on Clarity shared shell)
             --scheme http
             --scheme https
             --scheme file
@@ -51,7 +62,11 @@ jobs:
             --exclude 'https://fonts\.gstatic\.com/'
             --exclude 'https://www\.theocca\.org/'
             --exclude 'https://www\.johnlennox\.org/'
+<<<<<<< HEAD
             --exclude 'https://www\.pnas\.org/'
             --exclude 'https://www\.science\.org/'
             './**/*.html'
+=======
+            './_site/**/*.html'
+>>>>>>> d2c3e84 (Build locales with Eleventy on Clarity shared shell)
           fail: true

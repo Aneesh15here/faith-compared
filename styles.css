@@ -518,10 +518,10 @@
 .hero-bg {
   position: absolute;
   inset: -8%;
-  background: url('img/earth.jpg') center/cover no-repeat;
+  background: url('/img/earth.jpg') center/cover no-repeat;
   background-image: image-set(
-    url('img/earth.webp') type('image/webp'),
-    url('img/earth.jpg') type('image/jpeg')
+    url('/img/earth.webp') type('image/webp'),
+    url('/img/earth.jpg') type('image/jpeg')
   );
   opacity: .38;
   animation: earthBreathe 26s ease-in-out infinite;

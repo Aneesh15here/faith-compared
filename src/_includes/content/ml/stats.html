@@ -1,0 +1,45 @@
+<header class="hero" id="top" style="padding: 90px 0 50px;">
+  <div class="wrap">
+    <div class="eyebrow"><span class="spark">✦</span> ലോകമെമ്പാടുമുള്ള വായനക്കാർ</div>
+    <h1 style="font-size: clamp(2rem, 5vw, 3.4rem);">സന്ദർശക <span class="grad">ഭൂപടം</span></h1>
+    <p>ആളുകൾ ‘ആസ്ഥ, തുലന’ എവിടെ വായിക്കുന്നു — രാജ്യതലം മാത്രം, കുക്കികളില്ലാതെ അജ്ഞാതമായി ശേഖരിച്ചത്, ദിവസവും പുതുക്കുന്നത്.</p>
+  </div>
+</header>
+
+<main>
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="v" id="statTotal">—</div><div class="k">ആകെ സന്ദർശനങ്ങൾ</div></div>
+      <div class="stat-tile"><div class="v" id="statCountries">—</div><div class="k">രാജ്യങ്ങൾ</div></div>
+      <div class="stat-tile"><div class="v" id="statUpdated" style="font-size:1.1rem; line-height:2.4rem;">—</div><div class="k">അവസാനം പുതുക്കിയത്</div></div>
+    </div>
+
+    <div class="map-card reveal">
+      <div id="mapHolder"><svg id="worldMap" viewBox="0 0 960 500" role="img" aria-label="ഓരോ രാജ്യത്തിലെയും സന്ദർശനങ്ങളുടെ എണ്ണം അനുസരിച്ച് നിറം കൊടുത്ത ലോക ഭൂപടം"></svg></div>
+      <div class="legend-row" id="legendRow" hidden>
+        <span>1 സന്ദർശനം</span>
+        <div class="legend-grad" id="legendGrad"></div>
+        <span id="legendMax">—</span>
+        <span style="margin-left:auto;">സന്ദർശനങ്ങളില്ല: ഇരുണ്ടത്</span>
+      </div>
+      <p class="empty-note" id="emptyNote" hidden>ഇതുവരെ സന്ദർശക ഡാറ്റയില്ല — അനലിറ്റിക്‌സ് ഇപ്പോൾ സ്ഥാപിച്ചതേയുള്ളൂ. വായനക്കാർ എത്തുമ്പോൾ ഭൂപടം പ്രകാശിക്കും. 🌍</p>
+    </div>
+
+    <div class="map-card reveal" style="margin-top: 24px;">
+      <h2 style="font-size: 1.2rem; margin-bottom: 12px;">രാജ്യം അനുസരിച്ച്</h2>
+      <div style="overflow-x:auto;">
+        <table class="ranks" id="rankTable" aria-label="രാജ്യം അനുസരിച്ചുള്ള സന്ദർശനങ്ങൾ">
+          <thead><tr><th>#</th><th>രാജ്യം</th><th class="num">സന്ദർശനങ്ങൾ</th><th style="width:35%;">പങ്ക്</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="empty-note" id="emptyTable" hidden>ഇതുവരെ ക്രമപ്പെടുത്താൻ ഒന്നുമില്ല.</p>
+    </div>
+
+    <div class="note reveal" style="margin-top: 32px;">
+      <strong>സ്വകാര്യത:</strong> അനലിറ്റിക്‌സ് <a href="https://www.goatcounter.com/" target="_blank" rel="noopener" style="color: var(--accent-2);">GoatCounter</a> ഉപയോഗിക്കുന്നു — കുക്കികളില്ല, ഫിംഗർപ്രിന്റിംഗില്ല, വ്യക്തിഗത ഡാറ്റയില്ല. സന്ദർശനവും അതിന്റെ രാജ്യവും മാത്രം എണ്ണുന്നു.
+    </div>
+  </div>
+</section>
+</main>

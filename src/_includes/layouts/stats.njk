@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ (locales | selectattr('code', 'equalto', locale) | first).hreflang }}" dir="{{ (locales | selectattr('code', 'equalto', locale) | first).dir }}">
+<head>
+{% set loc = locales | selectattr('code', 'equalto', locale) | first %}
+{% set chrome = ui[locale] or ui.en %}
+{% set pageFile = 'stats.html' %}
+{% set homeHref = 'index.html' %}
+{% set navInclude = 'content/' + locale + '/nav-stats.html' %}
+{% set extraCss = '/stats.css' %}
+{% set loadApp = false %}
+{% set statsMapSrc = '/js/stats-map.js' %}
+{% set scriptSrcs = [
+  { src: '/vendor/d3.min.js', integrity: 'sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i' },
+  { src: '/vendor/topojson-client.min.js', integrity: 'sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67' }
+] %}
+{% set footerExtras %}
+ · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.backHome }}</a>
+{% endset %}
+{% include "partials/head.njk" %}
+</head>
+<body>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+{% include "partials/nav.njk" %}
+{{ content | safe }}
+{% include "partials/footer.njk" %}
+{% include "partials/scripts.njk" %}
+</body>
+</html>
