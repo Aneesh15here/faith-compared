@@ -1,4 +1,4 @@
-const CACHE = 'faith-compared-zh-v2';
+const CACHE = 'faith-compared-es-v2';
 const SHELL = [
   './index.html',
   './philosophy.html',

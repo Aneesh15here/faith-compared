@@ -4,11 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>信仰を比べる — 弁証学エクスプローラー</title>
-<meta name="description" content="世界の主要な宗教を弁証学の視点から比較する対話型サイト。キリスト教とイスラム教の徹底比較付き。" />
+<meta name="description" content="世界の主要な宗教を弁証学の視点から比較する対話型サイト。キリスト教とイスラム教の徹底比較付き。">
+<link rel="canonical" href="https://comparereligion.com/ja/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faith, Compared">
+<meta property="og:title" content="信仰を比べる — 弁証学エクスプローラー">
+<meta property="og:description" content="世界の主要な宗教を弁証学の視点から比較する対話型サイト。キリスト教とイスラム教の徹底比較付き。">
+<meta property="og:url" content="https://comparereligion.com/ja/">
+<meta property="og:image" content="https://comparereligion.com/img/earth.webp">
+<meta property="og:locale" content="ja">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="信仰を比べる — 弁証学エクスプローラー">
+<meta name="twitter:description" content="世界の主要な宗教を弁証学の視点から比較する対話型サイト。キリスト教とイスラム教の徹底比較付き。">
+<meta name="twitter:image" content="https://comparereligion.com/img/earth.webp">
+<link rel="alternate" hreflang="en" href="https://comparereligion.com/">
+<link rel="alternate" hreflang="es" href="https://comparereligion.com/es/">
+<link rel="alternate" hreflang="hi" href="https://comparereligion.com/hi/">
+<link rel="alternate" hreflang="ja" href="https://comparereligion.com/ja/">
+<link rel="alternate" hreflang="ml" href="https://comparereligion.com/ml/">
+<link rel="alternate" hreflang="ta" href="https://comparereligion.com/ta/">
+<link rel="alternate" hreflang="zh" href="https://comparereligion.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://comparereligion.com/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=18">
+<link rel="stylesheet" href="../styles.css?v=19">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="../icons/icon-180.png">
@@ -21,7 +42,7 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 <div id="progress"></div>
-<div id="trailHiker">🚶</div>
+<div id="trailHiker" aria-hidden="true">🚶</div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -167,62 +188,62 @@
       <p>どの世界観も同じ三つの問いに答えている。このサイトは全体の地形を歩き、今日の世界で最も鋭い対比 — キリスト教とイスラム教、合わせて地球人口の半分以上 — にズームインし、歴史的証拠を検証し、キリスト教自身の多様性を見つめ、無神論からの最も強い反論に向き合い、そして人生の意味と幸福という誰もが共有する問いへと視野を広げる。データは繰り返し、この地図がずっと巡ってきた一人の人物を指し示している。どの章にも直接入れる — それぞれが独立したページになっている — し、各章末の「物語の続き」リンクをたどって進むこともできる。</p>
     </div>
     <div class="chapters reveal">
-      <a class="chapter" href="#/religions" style="--cimg:url('../img/earth.jpg')">
+      <a class="chapter" href="#/religions" style="--cimg:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))">
         <span class="ch-no">第01章</span><h3>世界の全体地図</h3>
         <p>十七の世界観すべて — 起源、聖典、信仰、実践。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/compare" style="--cimg:url('../img/athens.jpg')">
+      <a class="chapter" href="#/compare" style="--cimg:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))">
         <span class="ch-no">第02章</span><h3>比較ラボ</h3>
         <p>好きな伝統を選び、項目ごとに並べて比較する。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/islam" style="--cimg:url('../img/hagia.jpg')">
+      <a class="chapter" href="#/islam" style="--cimg:image-set(url('../img/hagia.webp') type('image/webp'), url('../img/hagia.jpg') type('image/jpeg'))">
         <span class="ch-no">第03章</span><h3>キリスト教 ↔ イスラム教</h3>
         <p>五つの大きな分岐点 — 神、イエス、聖典、救い、確信。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/evidence" style="--cimg:url('../img/christianity.jpg')">
+      <a class="chapter" href="#/evidence" style="--cimg:image-set(url('../img/christianity.webp') type('image/webp'), url('../img/christianity.jpg') type('image/jpeg'))">
         <span class="ch-no">第04章</span><h3>証拠を検討する</h3>
         <p>復活に関する最小限の事実と、クレシの五つの問い。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/questions" style="--cimg:url('../img/islam.jpg')">
+      <a class="chapter" href="#/questions" style="--cimg:image-set(url('../img/islam.webp') type('image/webp'), url('../img/islam.jpg') type('image/jpeg'))">
         <span class="ch-no">第05章</span><h3>問いかけるべきこと</h3>
         <p>ムスリムの友人に優しく尋ねる、クルアーンに基づく七つの問い。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/objections" style="--cimg:url('../img/celsus.jpg')">
+      <a class="chapter" href="#/objections" style="--cimg:image-set(url('../img/celsus.webp') type('image/webp'), url('../img/celsus.jpg') type('image/jpeg'))">
         <span class="ch-no">第06章</span><h3>反論に答える</h3>
         <p>ムスリムがキリスト教徒に最もよく尋ねる六つの問いと、その答え。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/restoration" style="--cimg:url('../img/stpeters.jpg')">
+      <a class="chapter" href="#/restoration" style="--cimg:image-set(url('../img/stpeters.webp') type('image/webp'), url('../img/stpeters.jpg') type('image/jpeg'))">
         <span class="ch-no">第07章</span><h3>どのキリスト教？</h3>
         <p>カトリック、正教会、プロテスタント — そして復元主義運動。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/atheism" style="--cimg:url('../img/atheism.jpg')">
+      <a class="chapter" href="#/atheism" style="--cimg:image-set(url('../img/atheism.webp') type('image/webp'), url('../img/atheism.jpg') type('image/jpeg'))">
         <span class="ch-no">第08章</span><h3>無神論 ↔ キリスト教</h3>
         <p>悪の問題、「では神は誰が作ったのか」、微調整、道徳律。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="philosophy.html" style="--cimg:url('../img/athens.jpg')">
+      <a class="chapter" href="philosophy.html" style="--cimg:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))">
         <span class="ch-no">第09章</span><h3>本当に大切なこと</h3>
         <p>宗教から視野を広げ、あらゆる世界観が共有する問いへ。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="happiness.html" style="--cimg:url('../img/christianity.jpg')">
+      <a class="chapter" href="happiness.html" style="--cimg:image-set(url('../img/christianity.webp') type('image/webp'), url('../img/christianity.jpg') type('image/jpeg'))">
         <span class="ch-no">第10章</span><h3>幸福と信仰</h3>
         <p>幸福の科学が見出したこと — そして喜びの源とされるもの。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/sources" style="--cimg:url('../img/athens.jpg')">
+      <a class="chapter" href="#/sources" style="--cimg:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))">
         <span class="ch-no">第11章</span><h3>出典と参考文献</h3>
         <p>このサイトが要約したすべての弁証学資料へのリンク。</p>
         <span class="ch-arrow">入る →</span>
       </a>
-      <a class="chapter" href="#/contact" style="--cimg:url('../img/earth.jpg')">
+      <a class="chapter" href="#/contact" style="--cimg:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))">
         <span class="ch-no">第12章</span><h3>対話に参加する</h3>
         <p>質問、訂正、分かち合いたい話 — コメントを送ってください。</p>
         <span class="ch-arrow">入る →</span>
@@ -309,7 +330,7 @@
 
 <!-- ================= ALL RELIGIONS ================= -->
 <section id="religions" class="view" data-route="religions">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅に戻る</a>
       <span class="tb-no">第01章</span><h2 class="tb-title">世界の全体地図</h2>
       <span class="tb-verse">「神は、一つの血筋からあらゆる国の人々を造り出して…人々が神を探し求め、神を見いだすようにされたのです。」<span class="vref">使徒の働き17:26-27</span></span>
@@ -371,7 +392,7 @@
 
 <!-- ================= COMPARISON LAB ================= -->
 <section id="compare" class="view" data-route="compare">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/athens.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅に戻る</a>
       <span class="tb-no">第02章</span><h2 class="tb-title">比較ラボ</h2>
       <span class="tb-verse">「すべてのことを試して、良いものを守りなさい。」<span class="vref">テサロニケ人への手紙第一 5:21</span></span>
@@ -563,7 +584,7 @@
 
 <!-- ================= DEEP DIVE ================= -->
 <section id="deepdive" class="view" data-route="islam">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/hagia.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/hagia.webp') type('image/webp'), url('../img/hagia.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅に戻る</a>
       <span class="tb-no">第03章</span><h2 class="tb-title">キリスト教 ↔ イスラム教</h2>
       <span class="tb-verse">「主は言われる。『さあ、来て、論じ合おう。』」<span class="vref">イザヤ書1:18</span></span>
@@ -769,7 +790,7 @@
 
 <!-- ================= EVIDENCE ================= -->
 <section id="evidence" class="view" data-route="evidence">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/christianity.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/christianity.webp') type('image/webp'), url('../img/christianity.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第04章</span><h2 class="tb-title">証拠を検討する</h2>
       <span class="tb-verse">「もしキリストがよみがえらなかったのなら、あなたがたの信仰は空しいものです。」<span class="vref">コリント人への手紙第一 15:17</span></span>
@@ -874,7 +895,7 @@
 
 <!-- ================= QUESTIONS TO ASK ================= -->
 <section id="questions" class="view" data-route="questions">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/islam.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/islam.webp') type('image/webp'), url('../img/islam.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第05章</span><h2 class="tb-title">問いかける</h2>
       <span class="tb-verse">「あなたがたの言葉が、いつも塩で味付けされた、恵み深いものであるようにしなさい。」<span class="vref">コロサイ人への手紙4:6</span></span>
@@ -964,7 +985,7 @@
 
 <!-- ================= ANSWERING OBJECTIONS ================= -->
 <section id="objections" class="view" data-route="objections">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/celsus.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/celsus.webp') type('image/webp'), url('../img/celsus.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第06章</span><h2 class="tb-title">反論に答える</h2>
       <span class="tb-verse">「常に弁明の備えをしていなさい……ただ穏やかに、敬意を持って。」<span class="vref">ペテロの手紙第一 3:15</span></span>
@@ -1057,7 +1078,7 @@
 
 <!-- ================= LDS & JW ================= -->
 <section id="restoration" class="view" data-route="restoration">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/stpeters.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/stpeters.webp') type('image/webp'), url('../img/stpeters.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第07章</span><h2 class="tb-title">どのキリスト教か？</h2>
       <span class="tb-verse">「たとえ私たちであろうと、天からの御使いであろうと、あなたがたに宣べ伝えた福音に反することを宣べ伝えるなら、その者はのろわれるべきです。」<span class="vref">ガラテヤ人への手紙1:8</span></span>
@@ -1373,7 +1394,7 @@
 
 <!-- ================= ATHEISM ================= -->
 <section id="atheism" class="view" data-route="atheism">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/atheism.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/atheism.webp') type('image/webp'), url('../img/atheism.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第08章</span><h2 class="tb-title">無神論とキリスト教</h2>
       <span class="tb-verse">「天は神の栄光を語り告げ、大空は御手のわざを告げ知らせる。」<span class="vref">詩篇19:1</span></span>
@@ -1520,7 +1541,7 @@
 
 <!-- ================= SOURCES ================= -->
 <section id="sources" class="view" data-route="sources">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/athens.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第11章</span><h2 class="tb-title">出典とさらに学ぶために</h2>
       <span class="tb-verse">「そのことがそのとおりかどうかを、毎日聖書を調べていた。」<span class="vref">使徒の働き17:11</span></span>
@@ -1637,7 +1658,7 @@
 
 <!-- ================= CONTACT ================= -->
 <section id="contact" class="view" data-route="contact">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← 旅路に戻る</a>
       <span class="tb-no">第12章</span><h2 class="tb-title">対話に加わる</h2>
       <span class="tb-verse">「求めなさい。そうすれば与えられます。捜しなさい。そうすれば見出します。」<span class="vref">マタイの福音書7:7</span></span>
@@ -1650,7 +1671,8 @@
       <p>質問、訂正、異論、あるいはただの感想 — どれも歓迎する。あなたのメッセージは、このサイトの作者に直接届く。</p>
     </div>
     <form id="contactForm" class="contact-form reveal" novalidate>
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" name="_gotcha" style="position:absolute;left:-9999px;height:0;width:0;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-row">
         <label>お名前
           <input type="text" name="name" required placeholder="あなたのお名前">
@@ -1681,294 +1703,16 @@
 <button id="toTop" title="トップに戻る">↑</button>
 
 <div class="modal-overlay" id="relModal" hidden>
-  <div class="modal" role="dialog" aria-modal="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="relModalTitle">
     <button class="modal-close" id="modalClose" title="閉じる">✕</button>
     <div id="modalBody"></div>
   </div>
 </div>
 
 <script src="religions.js"></script>
-<script>
-  // ---- comparison matrix column toggles ----
-  const toggles = document.querySelectorAll('#toggles .toggle');
-  function refreshCols() {
-    const active = new Set([...toggles].filter(t => t.classList.contains('active')).map(t => t.dataset.col));
-    document.querySelectorAll('#matrixTable [data-col]').forEach(cell => {
-      cell.classList.toggle('col-hidden', !active.has(cell.dataset.col));
-    });
-  }
-  toggles.forEach(t => t.addEventListener('click', () => {
-    const activeCount = [...toggles].filter(x => x.classList.contains('active')).length;
-    if (t.classList.contains('active') && activeCount === 1) return; // keep at least one
-    t.classList.toggle('active');
-    refreshCols();
-  }));
-  refreshCols();
-
-  // ---- deep dive tabs ----
-  const tabs = document.querySelectorAll('#ddTabs .tab');
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.panel).classList.add('active');
-  }));
-
-  // ---- kinetic heading: wrap words for staggered reveal (progressive enhancement).
-  // Only direct text of the heading is wrapped — .grad is left alone because nesting
-  // transformed inline-block spans inside a background-clip:text element breaks the
-  // gradient-text clip in some engines; .grad gets its own plain fade in CSS instead. ----
-  document.querySelectorAll('h1.kinetic').forEach(h => {
-    [...h.childNodes].forEach(node => {
-      if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
-      const frag = document.createDocumentFragment();
-      node.textContent.split(/(\s+)/).forEach(chunk => {
-        if (!chunk) return;
-        if (/^\s+$/.test(chunk)) { frag.appendChild(document.createTextNode(chunk)); return; }
-        const span = document.createElement('span');
-        span.className = 'kw';
-        span.textContent = chunk;
-        frag.appendChild(span);
-      });
-      node.replaceWith(frag);
-    });
-    h.querySelectorAll('.kw').forEach((el, i) => el.style.setProperty('--i', i));
-  });
-
-  // ---- hero pointer-tilt parallax (fine-pointer devices only; scroll-driven
-  // CSS handles the zoom effect for everyone, touch included) ----
-  const heroStage = document.getElementById('heroStage');
-  const heroEl = document.querySelector('.hero');
-  if (heroStage && heroEl && matchMedia('(hover: hover) and (pointer: fine)').matches
-      && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    let tiltRaf = null;
-    heroEl.addEventListener('pointermove', ev => {
-      const r = heroEl.getBoundingClientRect();
-      const px = (ev.clientX - r.left) / r.width - 0.5;
-      const py = (ev.clientY - r.top) / r.height - 0.5;
-      if (tiltRaf) return;
-      tiltRaf = requestAnimationFrame(() => {
-        heroStage.style.setProperty('--tiltX', (px * 6).toFixed(2) + 'deg');
-        heroStage.style.setProperty('--tiltY', (py * -6).toFixed(2) + 'deg');
-        tiltRaf = null;
-      });
-    });
-    heroEl.addEventListener('pointerleave', () => {
-      heroStage.style.setProperty('--tiltX', '0deg');
-      heroStage.style.setProperty('--tiltY', '0deg');
-    });
-  }
-
-  // ---- reveal on scroll ----
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .rcard, .fact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
-
-  // ---- back to top ----
-  const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 700), { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // ---- PWA service worker ----
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
-
-  // ---- contact form (FormSubmit relay) ----
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-  const contactSend = document.getElementById('contactSend');
-  contactForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    if (contactForm._honey.value) return; // bot
-    contactSend.disabled = true;
-    contactSend.textContent = '送信中…';
-    formStatus.classList.remove('error');
-    formStatus.textContent = '';
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/3af65db5073e39fb154eb3268d8f0105', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: contactForm.name.value,
-          email: contactForm.email.value,
-          message: contactForm.message.value,
-          _subject: 'comparereligion.com への新しいコメント（日本語）'
-        })
-      });
-      if (!res.ok) throw new Error('send failed');
-      contactForm.reset();
-      contactSend.textContent = '送信済み ✓';
-      formStatus.textContent = 'ありがとうございます — コメントが送信されました。';
-      setTimeout(() => { contactSend.disabled = false; contactSend.textContent = 'コメントを送信 →'; }, 4000);
-    } catch (err) {
-      contactSend.disabled = false;
-      contactSend.textContent = 'コメントを送信 →';
-      formStatus.classList.add('error');
-      formStatus.textContent = '問題が発生しました — しばらくしてから再度お試しください。';
-    }
-  });
-
-  // ---- journey router (in & out of chapters) ----
-  const JOURNEY_ROUTES = ['home', 'religions', 'compare', 'islam', 'evidence', 'questions', 'objections', 'restoration', 'atheism', 'sources', 'contact'];
-  function journeyRoute() {
-    const h = location.hash.replace(/^#\/?/, '');
-    return JOURNEY_ROUTES.includes(h) ? h : 'home';
-  }
-  function showJourney() {
-    const r = journeyRoute();
-    document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.dataset.route === r));
-    document.querySelectorAll('.nav-links a[data-r]').forEach(a => a.classList.toggle('nav-active', a.dataset.r === r));
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-  window.addEventListener('hashchange', showJourney);
-  showJourney();
-
-  // ---- constellation reveal ----
-  const consl = document.getElementById('constellation');
-  if (consl) new IntersectionObserver((es, o) => es.forEach(e => {
-    if (e.isIntersecting) { consl.classList.add('in'); o.disconnect(); }
-  }), { threshold: 0.4 }).observe(consl);
-
-  // ---- timeline of traditions ----
-  const TL_YEARS = { indigenous: -3000, hinduism: -1900, judaism: -1650, zoroastrianism: -1100, shinto: -660, jainism: -550, confucianism: -500, buddhism: -450, taoism: -400, atheism: -300, christianity: 30, islam: 610, sikhism: 1499, lds: 1830, bahai: 1863, jw: 1870, scientology: 1954 };
-  (function () {
-    const tl = document.getElementById('timeline');
-    if (!tl || typeof RELIGIONS === 'undefined') return;
-    const min = -3300, max = 2250;
-    const x = y => ((y - min) / (max - min)) * 100;
-    [-3000, -2000, -1000, 0, 1000, 2000].forEach(y => {
-      const t = document.createElement('div'); t.className = 'tl-tick'; t.style.left = x(y) + '%';
-      t.textContent = y < 0 ? '紀元前' + Math.abs(y) + '年' : (y === 0 ? '紀元1年' : '紀元' + y + '年');
-      tl.appendChild(t);
-    });
-    const axis = document.createElement('div'); axis.className = 'tl-axis'; tl.appendChild(axis);
-    RELIGIONS.filter(r => TL_YEARS[r.id] !== undefined)
-      .sort((a, b) => TL_YEARS[a.id] - TL_YEARS[b.id])
-      .forEach((r, i) => {
-        const d = document.createElement('button'); d.type = 'button';
-        d.className = 'tl-item ' + (i % 2 ? 'down' : 'up');
-        d.style.left = x(TL_YEARS[r.id]) + '%';
-        d.innerHTML = `<span class="tl-emoji">${r.emoji}</span><span class="tl-name">${r.name}</span><span class="tl-date">${r.founded.split('·')[0].trim()}</span>`;
-        d.addEventListener('click', () => openRelModal(r));
-        tl.appendChild(d);
-      });
-  })();
-
-  // ---- guided quiz ----
-  (function () {
-    const box = document.getElementById('quizBox');
-    if (!box) return;
-    const picks = {};
-    const RESULTS = {
-      theist: {
-        label: '有神論の系譜',
-        traditions: 'キリスト教 · イスラム教 · ユダヤ教 · シク教 · バハーイー教',
-        blurb: 'あなたは、いのちに目的と律法を与える人格的な創造主に傾いている。これら五つの伝統はその点で一致している — そして神をどう知るか、神の前でどう義とされるかについては、鋭く分かれる。',
-        link: '#/islam', linkText: '最も鮮明な現在の対比から始めよう：キリスト教↔イスラム教 →'
-      },
-      eastern: {
-        label: '東洋 / ダルマの諸道',
-        traditions: 'ヒンドゥー教 · 仏教 · ジャイナ教 · 道教 · シク教',
-        blurb: 'あなたは、人格的な立法者よりも、業・輪廻・解脱といった根底にある霊的秩序に傾いている。これらの伝統は、それぞれ美しく異なる方法でその領域を描き出す。',
-        link: '#/religions', linkText: '「世界の全体地図」でその全プロフィールを読む →'
-      },
-      natural: {
-        label: '自然主義 / 世俗的ヒューマニズム',
-        traditions: '無神論 · 不可知論 · 世俗的ヒューマニズム',
-        blurb: 'あなたは、物質、エネルギー、そして自分たちで作り出す意味からなる宇宙に傾いている。それもまた一つの世界観だ — そしてそれ自身の最も強力な論証と、最も難しい問いを持っている。',
-        link: '#/atheism', linkText: '両者を全力で対決させる：無神論↔キリスト教 →'
-      },
-      unsure: {
-        label: '正直な不確かさ',
-        traditions: '求道者の立場',
-        blurb: '知らないと認めることは、たいていの人の出発点よりも正直だ。朗報は、これらの問いは感じるだけでなく、実際に調べることができるということだ。',
-        link: '#/evidence', linkText: '検証が可能な場所から始めよう：証拠を検討する →'
-      }
-    };
-    box.querySelectorAll('.quiz-opt').forEach(btn => btn.addEventListener('click', () => {
-      const q = btn.closest('.quiz-q');
-      q.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('sel'));
-      btn.classList.add('sel');
-      picks[q.dataset.q] = btn.dataset.tags;
-      if (Object.keys(picks).length === 4) showResult();
-    }));
-    function showResult() {
-      const counts = {};
-      Object.values(picks).forEach(t => counts[t] = (counts[t] || 0) + 1);
-      const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-      const top = RESULTS[ranked[0][0]];
-      const second = ranked[1] && ranked[1][1] === ranked[0][1] ? RESULTS[ranked[1][0]] : null;
-      const out = document.getElementById('quizResult');
-      out.innerHTML =
-        `<h3>あなたの答えは${top.label}に最も近い${second ? ' — そして' + second.label + 'への強い傾きも見られる' : ''}</h3>` +
-        `<div class="qr-row"><strong>最も近い伝統：</strong> ${top.traditions}${second ? ' · ' + second.traditions : ''}</div>` +
-        `<div class="qr-row">${top.blurb}</div>` +
-        `<div class="qr-row" style="margin-top:16px;"><a class="btn btn-primary" href="${top.link}">${top.linkText}</a></div>` +
-        `<div class="qr-row" style="font-size:.82rem; opacity:.75;">今どこにいようとも、これら四つの問いはすべて、本当に真実な答えに値する — それがこのサイトの残りの部分の目的だ。</div>`;
-      out.classList.add('show');
-      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  })();
-
-  // ---- reading progress: visited chapters + continue pill ----
-  (function () {
-    const KEY = 'fc-progress-ja';
-    let st = {}; try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { }
-    st.visited = st.visited || [];
-    const CH_NO = { religions: '01', compare: '02', islam: '03', evidence: '04', questions: '05', objections: '06', restoration: '07', atheism: '08', sources: '11', contact: '12' };
-    const routeOf = a => { const h = a.getAttribute('href'); return h.startsWith('#/') ? h.slice(2) : h; };
-    document.querySelectorAll('.chapter').forEach(a => {
-      const b = document.createElement('span'); b.className = 'ch-done'; b.textContent = '✓'; a.appendChild(b);
-    });
-    function paint() {
-      document.querySelectorAll('.chapter').forEach(a => a.classList.toggle('visited', st.visited.includes(routeOf(a))));
-    }
-    function record() {
-      const r = journeyRoute();
-      if (r !== 'home') {
-        st.last = r;
-        if (!st.visited.includes(r)) st.visited.push(r);
-        try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { }
-        paint();
-      }
-    }
-    paint();
-    window.addEventListener('hashchange', record); record();
-    const pill = document.getElementById('continuePill');
-    if (pill && st.last && CH_NO[st.last]) {
-      pill.href = '#/' + st.last;
-      pill.textContent = '▶ 前回の続きから — 第' + CH_NO[st.last] + '章 →';
-      pill.classList.add('show');
-    }
-  })();
-
-  // ---- share buttons ----
-  (function () {
-    const MSGS = {
-      site: { title: 'Faith, Compared', text: '十七の世界観。一つの誠実な比較。世界の宗教が実際に何を教えているかを見てみよう：', url: 'https://comparereligion.com/ja/' },
-      compare: { title: 'Faith, Compared — 比較ラボ', text: '世界の宗教を並べて、実際に何を教えているかを比較しよう：', url: 'https://comparereligion.com/ja/#/compare' }
-    };
-    document.querySelectorAll('.share-btn').forEach(b => b.addEventListener('click', async () => {
-      const m = MSGS[b.dataset.share] || MSGS.site;
-      if (navigator.share) { try { await navigator.share(m); } catch (e) { } }
-      else { window.open('https://wa.me/?text=' + encodeURIComponent(m.text + ' ' + m.url), '_blank', 'noopener'); }
-    }));
-  })();
-
-  // ---- scroll progress bar + trail hiker ----
-  const progressBar = document.getElementById('progress');
-  const hiker = document.getElementById('trailHiker');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-    progressBar.style.width = pct + '%';
-    if (hiker) hiker.style.left = pct + '%';
-  }, { passive: true });
-</script>
+<script src="../js/i18n/ja.js"></script>
+<script src="../js/site.js"></script>
+<script src="../js/app.js"></script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

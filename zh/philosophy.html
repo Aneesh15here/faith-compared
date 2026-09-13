@@ -4,11 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>什么真正重要 — 信仰对照</title>
-<meta name="description" content="什么使一种生活变得美好？世界各大宗教、伟大的哲学家们，以及哈佛、耶鲁、宾大和普林斯顿的现代研究——放在一起比较。" />
+<meta name="description" content="什么使一种生活变得美好？世界各大宗教、伟大的哲学家们，以及哈佛、耶鲁、宾大和普林斯顿的现代研究——放在一起比较。">
+<link rel="canonical" href="https://comparereligion.com/zh/philosophy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faith, Compared">
+<meta property="og:title" content="什么真正重要 — 信仰对照">
+<meta property="og:description" content="什么使一种生活变得美好？世界各大宗教、伟大的哲学家们，以及哈佛、耶鲁、宾大和普林斯顿的现代研究——放在一起比较。">
+<meta property="og:url" content="https://comparereligion.com/zh/philosophy.html">
+<meta property="og:image" content="https://comparereligion.com/img/earth.webp">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="什么真正重要 — 信仰对照">
+<meta name="twitter:description" content="什么使一种生活变得美好？世界各大宗教、伟大的哲学家们，以及哈佛、耶鲁、宾大和普林斯顿的现代研究——放在一起比较。">
+<meta name="twitter:image" content="https://comparereligion.com/img/earth.webp">
+<link rel="alternate" hreflang="en" href="https://comparereligion.com/philosophy.html">
+<link rel="alternate" hreflang="es" href="https://comparereligion.com/es/philosophy.html">
+<link rel="alternate" hreflang="hi" href="https://comparereligion.com/hi/philosophy.html">
+<link rel="alternate" hreflang="ja" href="https://comparereligion.com/ja/philosophy.html">
+<link rel="alternate" hreflang="ml" href="https://comparereligion.com/ml/philosophy.html">
+<link rel="alternate" hreflang="ta" href="https://comparereligion.com/ta/philosophy.html">
+<link rel="alternate" hreflang="zh" href="https://comparereligion.com/zh/philosophy.html">
+<link rel="alternate" hreflang="x-default" href="https://comparereligion.com/philosophy.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=18">
+<link rel="stylesheet" href="../styles.css?v=19">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="../icons/icon-180.png">
@@ -19,7 +40,7 @@
 </head>
 <body>
 <div id="progress"></div>
-<div id="trailHiker">🚶</div>
+<div id="trailHiker" aria-hidden="true">🚶</div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 
@@ -34,7 +55,7 @@
       <a href="#synthesis">综合</a>
       <a href="#tensions">分歧</a>
       <a href="#conclusion">结论</a>
-      <a href="#sources">资料来源</a>
+      <a href="#/sources">资料来源</a>
       <a href="happiness.html" style="color: var(--accent-2);">幸福 →</a>
       <a href="index.html#/contact">联系我们</a>
       <a href="index.html" style="color: var(--accent-2);">← 返回旅程</a>
@@ -328,7 +349,7 @@
       </div>
     </div>
     <div class="contrast-strip reveal" style="margin-top: 26px;">
-      <p><strong>为什么这个问题无法一直停留在抽象层面：</strong>意义究竟是被发现还是被建构的，最终取决于各传统的核心主张中是否有任何一项真的<em>为真</em>——而这是一个关乎证据、而非关乎个人偏好的问题。这正是本站其余部分所要探讨的问题：参见<a href="index.html#evidence" style="color: var(--accent-2);">证据部分</a>与<a href="index.html#compare" style="color: var(--accent-2);">对比实验室</a>。</p>
+      <p><strong>为什么这个问题无法一直停留在抽象层面：</strong>意义究竟是被发现还是被建构的，最终取决于各传统的核心主张中是否有任何一项真的<em>为真</em>——而这是一个关乎证据、而非关乎个人偏好的问题。这正是本站其余部分所要探讨的问题：参见<a href="index.html#/evidence" style="color: var(--accent-2);">证据部分</a>与<a href="index.html#/compare" style="color: var(--accent-2);">对比实验室</a>。</p>
     </div>
   </div>
 </section>
@@ -470,34 +491,8 @@
 
 <button id="toTop" title="返回顶部">↑</button>
 
-<script>
-  // ---- reveal on scroll ----
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .rcard, .fact, .quote-card, .q5-item').forEach(el => { el.classList.add('reveal'); io.observe(el); });
-
-  // ---- back to top ----
-  const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 700), { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // ---- trail progress + hiker marker ----
-  const progressBar = document.getElementById('progress');
-  const hiker = document.getElementById('trailHiker');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-    progressBar.style.width = pct + '%';
-    hiker.style.left = pct + '%';
-  }, { passive: true });
-
-  // ---- PWA service worker ----
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
-</script>
+<script src="../js/i18n/zh.js"></script>
+<script src="../js/site.js"></script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

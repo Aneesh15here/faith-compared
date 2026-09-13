@@ -4,11 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Fe, Comparada — Un explorador de apologética</title>
-<meta name="description" content="Una comparación interactiva, informada por la apologética, de las principales religiones del mundo, con un estudio a fondo del cristianismo y el islam." />
+<meta name="description" content="Una comparación interactiva, informada por la apologética, de las principales religiones del mundo, con un estudio a fondo del cristianismo y el islam.">
+<link rel="canonical" href="https://comparereligion.com/es/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faith, Compared">
+<meta property="og:title" content="Fe, Comparada — Un explorador de apologética">
+<meta property="og:description" content="Una comparación interactiva, informada por la apologética, de las principales religiones del mundo, con un estudio a fondo del cristianismo y el islam.">
+<meta property="og:url" content="https://comparereligion.com/es/">
+<meta property="og:image" content="https://comparereligion.com/img/earth.webp">
+<meta property="og:locale" content="es">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fe, Comparada — Un explorador de apologética">
+<meta name="twitter:description" content="Una comparación interactiva, informada por la apologética, de las principales religiones del mundo, con un estudio a fondo del cristianismo y el islam.">
+<meta name="twitter:image" content="https://comparereligion.com/img/earth.webp">
+<link rel="alternate" hreflang="en" href="https://comparereligion.com/">
+<link rel="alternate" hreflang="es" href="https://comparereligion.com/es/">
+<link rel="alternate" hreflang="hi" href="https://comparereligion.com/hi/">
+<link rel="alternate" hreflang="ja" href="https://comparereligion.com/ja/">
+<link rel="alternate" hreflang="ml" href="https://comparereligion.com/ml/">
+<link rel="alternate" hreflang="ta" href="https://comparereligion.com/ta/">
+<link rel="alternate" hreflang="zh" href="https://comparereligion.com/zh/">
+<link rel="alternate" hreflang="x-default" href="https://comparereligion.com/">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=18">
+<link rel="stylesheet" href="../styles.css?v=19">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="../icons/icon-180.png">
@@ -21,7 +42,7 @@
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 <div id="progress"></div>
-<div id="trailHiker">🚶</div>
+<div id="trailHiker" aria-hidden="true">🚶</div>
 
 <nav>
   <div class="wrap nav-inner">
@@ -167,62 +188,62 @@
       <p>Toda cosmovisión responde las mismas tres preguntas. Este sitio recorre el paisaje completo, se acerca al contraste vivo más agudo del planeta (el cristianismo y el islam, más de la mitad del mundo entre ambos), pone a prueba la evidencia histórica, mira hacia dentro a la diversidad del propio cristianismo, enfrenta las mejores objeciones del ateísmo — y luego se aleja hacia las preguntas humanas universales del sentido y la felicidad, donde los datos siguen señalando a la misma persona que este mapa entero ha estado rodeando. Entra en cualquier capítulo — cada uno se abre como su propia página — o sigue el enlace de "siguiente en la historia" al final de cada uno.</p>
     </div>
     <div class="chapters reveal">
-      <a class="chapter" href="#/religions" style="--cimg:url('../img/earth.jpg')">
+      <a class="chapter" href="#/religions" style="--cimg:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 01</span><h3>El Mapa Completo</h3>
         <p>Las diecisiete cosmovisiones — orígenes, escrituras, creencias, prácticas.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/compare" style="--cimg:url('../img/athens.jpg')">
+      <a class="chapter" href="#/compare" style="--cimg:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 02</span><h3>El Laboratorio de Comparación</h3>
         <p>Elige cualquier tradición y ponlas lado a lado, categoría por categoría.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/islam" style="--cimg:url('../img/hagia.jpg')">
+      <a class="chapter" href="#/islam" style="--cimg:image-set(url('../img/hagia.webp') type('image/webp'), url('../img/hagia.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 03</span><h3>Cristianismo ↔ Islam</h3>
         <p>Las cinco grandes divisiones — Dios, Jesús, la Escritura, la salvación, la certeza.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/evidence" style="--cimg:url('../img/christianity.jpg')">
+      <a class="chapter" href="#/evidence" style="--cimg:image-set(url('../img/christianity.webp') type('image/webp'), url('../img/christianity.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 04</span><h3>Sopesando la Evidencia</h3>
         <p>Los hechos mínimos de la resurrección y las cinco preguntas de Qureshi.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/questions" style="--cimg:url('../img/islam.jpg')">
+      <a class="chapter" href="#/questions" style="--cimg:image-set(url('../img/islam.webp') type('image/webp'), url('../img/islam.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 05</span><h3>Preguntas para Hacer</h3>
         <p>Siete preguntas basadas en el Corán para tus amigos musulmanes, hechas con amabilidad.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/objections" style="--cimg:url('../img/celsus.jpg')">
+      <a class="chapter" href="#/objections" style="--cimg:image-set(url('../img/celsus.webp') type('image/webp'), url('../img/celsus.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 06</span><h3>Respondiendo Objeciones</h3>
         <p>Las seis preguntas que los musulmanes más hacen a los cristianos — con respuestas.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/restoration" style="--cimg:url('../img/stpeters.jpg')">
+      <a class="chapter" href="#/restoration" style="--cimg:image-set(url('../img/stpeters.webp') type('image/webp'), url('../img/stpeters.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 07</span><h3>¿Qué Cristianismo?</h3>
         <p>Católico, ortodoxo, protestante — y los movimientos restauracionistas.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/atheism" style="--cimg:url('../img/atheism.jpg')">
+      <a class="chapter" href="#/atheism" style="--cimg:image-set(url('../img/atheism.webp') type('image/webp'), url('../img/atheism.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 08</span><h3>Ateísmo ↔ Cristianismo</h3>
         <p>El problema del mal, "¿quién hizo a Dios?", el ajuste fino y la ley moral.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="philosophy.html" style="--cimg:url('../img/athens.jpg')">
+      <a class="chapter" href="philosophy.html" style="--cimg:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 09</span><h3>Lo Que Importa de Verdad</h3>
         <p>Alejándonos de la religión hacia las preguntas que toda cosmovisión comparte.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="happiness.html" style="--cimg:url('../img/christianity.jpg')">
+      <a class="chapter" href="happiness.html" style="--cimg:image-set(url('../img/christianity.webp') type('image/webp'), url('../img/christianity.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 10</span><h3>Felicidad y Fe</h3>
         <p>Lo que encuentra la ciencia del bienestar — y de dónde se dice que viene el gozo.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/sources" style="--cimg:url('../img/athens.jpg')">
+      <a class="chapter" href="#/sources" style="--cimg:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 11</span><h3>Fuentes y Lectura</h3>
         <p>Cada recurso apologético que este sitio condensa, enlazado completo.</p>
         <span class="ch-arrow">Entrar →</span>
       </a>
-      <a class="chapter" href="#/contact" style="--cimg:url('../img/earth.jpg')">
+      <a class="chapter" href="#/contact" style="--cimg:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))">
         <span class="ch-no">CAPÍTULO 12</span><h3>Únete a la Conversación</h3>
         <p>Preguntas, correcciones o una historia que compartir — envía un comentario.</p>
         <span class="ch-arrow">Entrar →</span>
@@ -309,7 +330,7 @@
 
 <!-- ================= TODAS LAS RELIGIONES ================= -->
 <section id="religions" class="view" data-route="religions">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 01</span><h2 class="tb-title">El Mapa Completo</h2>
       <span class="tb-verse">“De un solo hombre hizo todas las naciones… para que buscaran a Dios, y quizá, palpando, lo hallaran.”<span class="vref">Hechos 17:26–27</span></span>
@@ -371,7 +392,7 @@
 
 <!-- ================= LABORATORIO DE COMPARACIÓN ================= -->
 <section id="compare" class="view" data-route="compare">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/athens.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 02</span><h2 class="tb-title">El Laboratorio de Comparación</h2>
       <span class="tb-verse">“Examinadlo todo; retened lo bueno.”<span class="vref">1 Tesalonicenses 5:21</span></span>
@@ -564,7 +585,7 @@
 
 <!-- ================= ESTUDIO A FONDO ================= -->
 <section id="deepdive" class="view" data-route="islam">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/hagia.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/hagia.webp') type('image/webp'), url('../img/hagia.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 03</span><h2 class="tb-title">Cristianismo ↔ Islam</h2>
       <span class="tb-verse">“"Venid ahora, y razonemos juntos", dice el SEÑOR.”<span class="vref">Isaías 1:18</span></span>
@@ -770,7 +791,7 @@
 
 <!-- ================= EVIDENCIA ================= -->
 <section id="evidence" class="view" data-route="evidence">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/christianity.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/christianity.webp') type('image/webp'), url('../img/christianity.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 04</span><h2 class="tb-title">Sopesando la Evidencia</h2>
       <span class="tb-verse">“Si Cristo no ha resucitado, vuestra fe es vana.”<span class="vref">1 Corintios 15:17</span></span>
@@ -871,7 +892,7 @@
 
 <!-- ================= PREGUNTAS PARA HACER ================= -->
 <section id="questions" class="view" data-route="questions">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/islam.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/islam.webp') type('image/webp'), url('../img/islam.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 05</span><h2 class="tb-title">Preguntas para Hacer</h2>
       <span class="tb-verse">“Sea vuestra palabra siempre con gracia, sazonada con sal.”<span class="vref">Colosenses 4:6</span></span>
@@ -961,7 +982,7 @@
 
 <!-- ================= RESPONDIENDO OBJECIONES ================= -->
 <section id="objections" class="view" data-route="objections">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/celsus.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/celsus.webp') type('image/webp'), url('../img/celsus.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 06</span><h2 class="tb-title">Respondiendo Objeciones</h2>
       <span class="tb-verse">“Estad siempre preparados para presentar defensa… pero con mansedumbre y respeto.”<span class="vref">1 Pedro 3:15</span></span>
@@ -1054,7 +1075,7 @@
 
 <!-- ================= LDS Y TJ ================= -->
 <section id="restoration" class="view" data-route="restoration">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/stpeters.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/stpeters.webp') type('image/webp'), url('../img/stpeters.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 07</span><h2 class="tb-title">¿Qué Cristianismo?</h2>
       <span class="tb-verse">“Aun si nosotros, o un ángel del cielo, os anunciara otro evangelio — sea anatema.”<span class="vref">Gálatas 1:8</span></span>
@@ -1366,7 +1387,7 @@
 
 <!-- ================= ATEÍSMO ================= -->
 <section id="atheism" class="view" data-route="atheism">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/atheism.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/atheism.webp') type('image/webp'), url('../img/atheism.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 08</span><h2 class="tb-title">Ateísmo ↔ Cristianismo</h2>
       <span class="tb-verse">“Los cielos cuentan la gloria de Dios; el firmamento anuncia la obra de sus manos.”<span class="vref">Salmo 19:1</span></span>
@@ -1509,7 +1530,7 @@
 
 <!-- ================= FUENTES ================= -->
 <section id="sources" class="view" data-route="sources">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/athens.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/athens.webp') type('image/webp'), url('../img/athens.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 11</span><h2 class="tb-title">Fuentes y Lectura</h2>
       <span class="tb-verse">“Examinaban cada día las Escrituras para ver si estas cosas eran así.”<span class="vref">Hechos 17:11</span></span>
@@ -1626,7 +1647,7 @@
 
 <!-- ================= CONTACTO ================= -->
 <section id="contact" class="view" data-route="contact">
-  <div class="topic-banner"><div class="tb-img" style="background-image:url('../img/earth.jpg')"></div>
+  <div class="topic-banner"><div class="tb-img" style="background-image:image-set(url('../img/earth.webp') type('image/webp'), url('../img/earth.jpg') type('image/jpeg'))"></div>
     <div class="tb-content"><a class="crumb" href="#/">← Volver al viaje</a>
       <span class="tb-no">Capítulo 12</span><h2 class="tb-title">Únete a la Conversación</h2>
       <span class="tb-verse">“Pedid, y se os dará; buscad, y hallaréis.”<span class="vref">Mateo 7:7</span></span>
@@ -1639,7 +1660,8 @@
       <p>Preguntas, correcciones, desacuerdos o simples reflexiones — todo es bienvenido. Tu mensaje va directo al autor del sitio.</p>
     </div>
     <form id="contactForm" class="contact-form reveal" novalidate>
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="text" name="_gotcha" style="position:absolute;left:-9999px;height:0;width:0;opacity:0" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-row">
         <label>Nombre
           <input type="text" name="name" required placeholder="Tu nombre">
@@ -1670,249 +1692,16 @@
 <button id="toTop" title="Volver arriba">↑</button>
 
 <div class="modal-overlay" id="relModal" hidden>
-  <div class="modal" role="dialog" aria-modal="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="relModalTitle">
     <button class="modal-close" id="modalClose" title="Cerrar">✕</button>
     <div id="modalBody"></div>
   </div>
 </div>
 
 <script src="religions.js"></script>
-<script>
-  // ---- comparison matrix column toggles ----
-  const toggles = document.querySelectorAll('#toggles .toggle');
-  function refreshCols() {
-    const active = new Set([...toggles].filter(t => t.classList.contains('active')).map(t => t.dataset.col));
-    document.querySelectorAll('#matrixTable [data-col]').forEach(cell => {
-      cell.classList.toggle('col-hidden', !active.has(cell.dataset.col));
-    });
-  }
-  toggles.forEach(t => t.addEventListener('click', () => {
-    const activeCount = [...toggles].filter(x => x.classList.contains('active')).length;
-    if (t.classList.contains('active') && activeCount === 1) return;
-    t.classList.toggle('active');
-    refreshCols();
-  }));
-  refreshCols();
-
-  // ---- deep dive tabs ----
-  const tabs = document.querySelectorAll('#ddTabs .tab');
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.panel).classList.add('active');
-  }));
-
-  // ---- reveal on scroll ----
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .rcard, .fact').forEach(el => { el.classList.add('reveal'); io.observe(el); });
-
-  // ---- back to top ----
-  const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 700), { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // ---- PWA service worker ----
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
-
-  // ---- contact form (FormSubmit relay) ----
-  const contactForm = document.getElementById('contactForm');
-  const formStatus = document.getElementById('formStatus');
-  const contactSend = document.getElementById('contactSend');
-  contactForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    if (!contactForm.reportValidity()) return;
-    if (contactForm._honey.value) return;
-    contactSend.disabled = true;
-    contactSend.textContent = 'Enviando…';
-    formStatus.classList.remove('error');
-    formStatus.textContent = '';
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/3af65db5073e39fb154eb3268d8f0105', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          name: contactForm.name.value,
-          email: contactForm.email.value,
-          message: contactForm.message.value,
-          _subject: 'Nuevo comentario en comparereligion.com (español)'
-        })
-      });
-      if (!res.ok) throw new Error('send failed');
-      contactForm.reset();
-      contactSend.textContent = 'Enviado ✓';
-      formStatus.textContent = 'Gracias — tu comentario va en camino.';
-      setTimeout(() => { contactSend.disabled = false; contactSend.textContent = 'Enviar comentario →'; }, 4000);
-    } catch (err) {
-      contactSend.disabled = false;
-      contactSend.textContent = 'Enviar comentario →';
-      formStatus.classList.add('error');
-      formStatus.textContent = 'Algo salió mal — inténtalo de nuevo en un momento.';
-    }
-  });
-
-  // ---- journey router ----
-  const JOURNEY_ROUTES = ['home', 'religions', 'compare', 'islam', 'evidence', 'questions', 'objections', 'restoration', 'atheism', 'sources', 'contact'];
-  function journeyRoute() {
-    const h = location.hash.replace(/^#\/?/, '');
-    return JOURNEY_ROUTES.includes(h) ? h : 'home';
-  }
-  function showJourney() {
-    const r = journeyRoute();
-    document.querySelectorAll('.view').forEach(v => v.classList.toggle('active', v.dataset.route === r));
-    document.querySelectorAll('.nav-links a[data-r]').forEach(a => a.classList.toggle('nav-active', a.dataset.r === r));
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  }
-  window.addEventListener('hashchange', showJourney);
-  showJourney();
-
-  // ---- constellation reveal ----
-  const consl = document.getElementById('constellation');
-  if (consl) new IntersectionObserver((es, o) => es.forEach(e => {
-    if (e.isIntersecting) { consl.classList.add('in'); o.disconnect(); }
-  }), { threshold: 0.4 }).observe(consl);
-
-  // ---- timeline of traditions ----
-  const TL_YEARS = { indigenous: -3000, hinduism: -1900, judaism: -1650, zoroastrianism: -1100, shinto: -660, jainism: -550, confucianism: -500, buddhism: -450, taoism: -400, atheism: -300, christianity: 30, islam: 610, sikhism: 1499, lds: 1830, bahai: 1863, jw: 1870, scientology: 1954 };
-  (function () {
-    const tl = document.getElementById('timeline');
-    if (!tl || typeof RELIGIONS === 'undefined') return;
-    const min = -3300, max = 2250;
-    const x = y => ((y - min) / (max - min)) * 100;
-    [-3000, -2000, -1000, 0, 1000, 2000].forEach(y => {
-      const t = document.createElement('div'); t.className = 'tl-tick'; t.style.left = x(y) + '%';
-      t.textContent = y < 0 ? Math.abs(y) + ' a.C.' : (y === 0 ? '1 d.C.' : y + ' d.C.');
-      tl.appendChild(t);
-    });
-    const axis = document.createElement('div'); axis.className = 'tl-axis'; tl.appendChild(axis);
-    RELIGIONS.filter(r => TL_YEARS[r.id] !== undefined)
-      .sort((a, b) => TL_YEARS[a.id] - TL_YEARS[b.id])
-      .forEach((r, i) => {
-        const d = document.createElement('button'); d.type = 'button';
-        d.className = 'tl-item ' + (i % 2 ? 'down' : 'up');
-        d.style.left = x(TL_YEARS[r.id]) + '%';
-        d.innerHTML = `<span class="tl-emoji">${r.emoji}</span><span class="tl-name">${r.name}</span><span class="tl-date">${r.founded.split('·')[0].trim()}</span>`;
-        d.addEventListener('click', () => openRelModal(r));
-        tl.appendChild(d);
-      });
-  })();
-
-  // ---- guided quiz ----
-  (function () {
-    const box = document.getElementById('quizBox');
-    if (!box) return;
-    const picks = {};
-    const RESULTS = {
-      theist: {
-        label: 'la familia teísta',
-        traditions: 'Cristianismo · Islam · Judaísmo · Sijismo · Bahaísmo',
-        blurb: 'Te inclinas hacia un Creador personal que da a la vida su propósito y su ley. Estas cinco tradiciones concuerdan en eso — y se dividen, agudamente, en cómo se conoce a Dios y cómo somos puestos a bien con él.',
-        link: '#/islam', linkText: 'Empieza por el contraste vivo más agudo: Cristianismo ↔ Islam →'
-      },
-      eastern: {
-        label: 'los caminos orientales / dhármicos',
-        traditions: 'Hinduismo · Budismo · Jainismo · Taoísmo · Sijismo',
-        blurb: 'Te inclinas hacia un orden espiritual subyacente — karma, renacimiento, liberación — más que hacia un legislador personal. Estas tradiciones cartografían ese terreno de maneras hermosamente distintas.',
-        link: '#/religions', linkText: 'Lee sus perfiles completos en El Mapa Completo →'
-      },
-      natural: {
-        label: 'el naturalismo / humanismo secular',
-        traditions: 'Ateísmo · Agnosticismo · Humanismo secular',
-        blurb: 'Te inclinas hacia un universo de materia, energía y sentido autoconstruido. Eso también es una cosmovisión — y tiene sus argumentos más fuertes, y sus preguntas más difíciles.',
-        link: '#/atheism', linkText: 'Ve ambos lados a plena fuerza: Ateísmo ↔ Cristianismo →'
-      },
-      unsure: {
-        label: 'la incertidumbre honesta',
-        traditions: 'La posición del buscador',
-        blurb: 'No saber — y decirlo — es un punto de partida más honesto que la mayoría. La buena noticia: estas preguntas pueden investigarse de verdad, no solo sentirse.',
-        link: '#/evidence', linkText: 'Empieza donde se puede comprobar: Sopesando la Evidencia →'
-      }
-    };
-    box.querySelectorAll('.quiz-opt').forEach(btn => btn.addEventListener('click', () => {
-      const q = btn.closest('.quiz-q');
-      q.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('sel'));
-      btn.classList.add('sel');
-      picks[q.dataset.q] = btn.dataset.tags;
-      if (Object.keys(picks).length === 4) showResult();
-    }));
-    function showResult() {
-      const counts = {};
-      Object.values(picks).forEach(t => counts[t] = (counts[t] || 0) + 1);
-      const ranked = Object.entries(counts).sort((a, b) => b[1] - a[1]);
-      const top = RESULTS[ranked[0][0]];
-      const second = ranked[1] && ranked[1][1] === ranked[0][1] ? RESULTS[ranked[1][0]] : null;
-      const out = document.getElementById('quizResult');
-      out.innerHTML =
-        `<h3>Tus respuestas quedan más cerca de ${top.label}${second ? ' — con un fuerte tirón hacia ' + second.label : ''}</h3>` +
-        `<div class="qr-row"><strong>Tradiciones más cercanas:</strong> ${top.traditions}${second ? ' · ' + second.traditions : ''}</div>` +
-        `<div class="qr-row">${top.blurb}</div>` +
-        `<div class="qr-row" style="margin-top:16px;"><a class="btn btn-primary" href="${top.link}">${top.linkText}</a></div>` +
-        `<div class="qr-row" style="font-size:.82rem; opacity:.75;">Aterrices donde aterrices hoy, las cuatro preguntas merecen respuestas que sean realmente verdaderas — para eso está el resto de este sitio.</div>`;
-      out.classList.add('show');
-      out.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-  })();
-
-  // ---- reading progress ----
-  (function () {
-    const KEY = 'fc-progress-es';
-    let st = {}; try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { }
-    st.visited = st.visited || [];
-    const CH_NO = { religions: '01', compare: '02', islam: '03', evidence: '04', questions: '05', objections: '06', restoration: '07', atheism: '08', sources: '11', contact: '12' };
-    const routeOf = a => { const h = a.getAttribute('href'); return h.startsWith('#/') ? h.slice(2) : h; };
-    document.querySelectorAll('.chapter').forEach(a => {
-      const b = document.createElement('span'); b.className = 'ch-done'; b.textContent = '✓'; a.appendChild(b);
-    });
-    function paint() {
-      document.querySelectorAll('.chapter').forEach(a => a.classList.toggle('visited', st.visited.includes(routeOf(a))));
-    }
-    function record() {
-      const r = journeyRoute();
-      if (r !== 'home') {
-        st.last = r;
-        if (!st.visited.includes(r)) st.visited.push(r);
-        try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { }
-        paint();
-      }
-    }
-    paint();
-    window.addEventListener('hashchange', record); record();
-    const pill = document.getElementById('continuePill');
-    if (pill && st.last && CH_NO[st.last]) {
-      pill.href = '#/' + st.last;
-      pill.textContent = '▶ Continúa donde lo dejaste — Capítulo ' + CH_NO[st.last] + ' →';
-      pill.classList.add('show');
-    }
-  })();
-
-  // ---- share buttons ----
-  (function () {
-    const MSGS = {
-      site: { title: 'Fe, Comparada', text: 'Diecisiete cosmovisiones. Una comparación honesta. Explora lo que las religiones del mundo enseñan realmente:', url: 'https://comparereligion.com/es/' },
-      compare: { title: 'Fe, Comparada — Laboratorio', text: 'Pon las religiones del mundo lado a lado y compara lo que enseñan realmente:', url: 'https://comparereligion.com/es/#/compare' }
-    };
-    document.querySelectorAll('.share-btn').forEach(b => b.addEventListener('click', async () => {
-      const m = MSGS[b.dataset.share] || MSGS.site;
-      if (navigator.share) { try { await navigator.share(m); } catch (e) { } }
-      else { window.open('https://wa.me/?text=' + encodeURIComponent(m.text + ' ' + m.url), '_blank', 'noopener'); }
-    }));
-  })();
-
-  // ---- scroll progress bar + trail hiker ----
-  const progressBar = document.getElementById('progress');
-  const hiker = document.getElementById('trailHiker');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-    progressBar.style.width = pct + '%';
-    if (hiker) hiker.style.left = pct + '%';
-  }, { passive: true });
-</script>
+<script src="../js/i18n/es.js"></script>
+<script src="../js/site.js"></script>
+<script src="../js/app.js"></script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

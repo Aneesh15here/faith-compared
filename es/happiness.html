@@ -4,11 +4,32 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Felicidad y Fe — Fe, Comparada</title>
-<meta name="description" content="¿Qué es la felicidad, en realidad? Arthur Brooks de Harvard sobre la ciencia de ser más feliz — los tres macronutrientes, los cuatro pilares, los ídolos falsos — y dónde se distingue el relato cristiano del gozo." />
+<meta name="description" content="¿Qué es la felicidad, en realidad? Arthur Brooks de Harvard sobre la ciencia de ser más feliz — los tres macronutrientes, los cuatro pilares, los ídolos falsos — y dónde se distingue el relato cristiano del gozo.">
+<link rel="canonical" href="https://comparereligion.com/es/happiness.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Faith, Compared">
+<meta property="og:title" content="Felicidad y Fe — Fe, Comparada">
+<meta property="og:description" content="¿Qué es la felicidad, en realidad? Arthur Brooks de Harvard sobre la ciencia de ser más feliz — los tres macronutrientes, los cuatro pilares, los ídolos falsos — y dónde se distingue el relato cristiano del gozo.">
+<meta property="og:url" content="https://comparereligion.com/es/happiness.html">
+<meta property="og:image" content="https://comparereligion.com/img/earth.webp">
+<meta property="og:locale" content="es">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Felicidad y Fe — Fe, Comparada">
+<meta name="twitter:description" content="¿Qué es la felicidad, en realidad? Arthur Brooks de Harvard sobre la ciencia de ser más feliz — los tres macronutrientes, los cuatro pilares, los ídolos falsos — y dónde se distingue el relato cristiano del gozo.">
+<meta name="twitter:image" content="https://comparereligion.com/img/earth.webp">
+<link rel="alternate" hreflang="en" href="https://comparereligion.com/happiness.html">
+<link rel="alternate" hreflang="es" href="https://comparereligion.com/es/happiness.html">
+<link rel="alternate" hreflang="hi" href="https://comparereligion.com/hi/happiness.html">
+<link rel="alternate" hreflang="ja" href="https://comparereligion.com/ja/happiness.html">
+<link rel="alternate" hreflang="ml" href="https://comparereligion.com/ml/happiness.html">
+<link rel="alternate" hreflang="ta" href="https://comparereligion.com/ta/happiness.html">
+<link rel="alternate" hreflang="zh" href="https://comparereligion.com/zh/happiness.html">
+<link rel="alternate" hreflang="x-default" href="https://comparereligion.com/happiness.html">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css?v=18">
+<link rel="stylesheet" href="../styles.css?v=19">
 <link rel="manifest" href="../manifest.webmanifest">
 <meta name="theme-color" content="#0a0c14">
 <link rel="apple-touch-icon" href="../icons/icon-180.png">
@@ -19,7 +40,7 @@
 </head>
 <body>
 <div id="progress"></div>
-<div id="trailHiker">🚶</div>
+<div id="trailHiker" aria-hidden="true">🚶</div>
 <div class="glow glow-1"></div>
 <div class="glow glow-2"></div>
 
@@ -34,7 +55,7 @@
       <a href="#podcasts">Los Pódcasts</a>
       <a href="#traditions">Las Tradiciones</a>
       <a href="#christianity">Donde Se Distingue el Cristianismo</a>
-      <a href="#sources">Fuentes</a>
+      <a href="#/sources">Fuentes</a>
       <a href="philosophy.html" style="color: var(--accent-2);">Lo que importa →</a>
       <a href="index.html" style="color: var(--accent-2);">← Volver al viaje</a>
       <a href="../happiness.html" style="color: var(--accent);">EN</a>
@@ -184,7 +205,7 @@
       <div class="q5-item reveal"><div class="qn">6</div><div><h3>El sufrimiento puede ser sagrado</h3><p>En las conversaciones largas (Tim Ferriss, Rich Roll) es donde más lejos llega: la meta no es una vida sin dolor sino una vida con sentido, y el sentido a menudo se forja en el sufrimiento, no a su alrededor. Aquí es donde la ciencia le pasa el relevo a la fe — el tema que retoman las dos secciones siguientes.</p></div></div>
     </div>
     <div class="contrast-strip reveal" style="max-width: 860px; margin: 36px auto 0;">
-      <p><strong>Dónde oírlo tú mismo:</strong> su propio pódcast <em>Office Hours with Arthur Brooks</em> publica episodios cortos y prácticos; las entrevistas largas (Attia, Rich Roll, The Happiness Lab con Laurie Santos) van más hondo. Todas están enlazadas abajo en <a href="#sources" style="color: var(--accent-2); text-decoration: none;">Fuentes</a>, y esta página se actualiza cuando aparece material nuevo.</p>
+      <p><strong>Dónde oírlo tú mismo:</strong> su propio pódcast <em>Office Hours with Arthur Brooks</em> publica episodios cortos y prácticos; las entrevistas largas (Attia, Rich Roll, The Happiness Lab con Laurie Santos) van más hondo. Todas están enlazadas abajo en <a href="#/sources" style="color: var(--accent-2); text-decoration: none;">Fuentes</a>, y esta página se actualiza cuando aparece material nuevo.</p>
     </div>
   </div>
 </section>
@@ -336,34 +357,8 @@
 
 <button id="toTop" title="Volver arriba">↑</button>
 
-<script>
-  // ---- reveal on scroll ----
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .rcard, .fact, .quote-card, .q5-item').forEach(el => { el.classList.add('reveal'); io.observe(el); });
-
-  // ---- back to top ----
-  const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 700), { passive: true });
-  toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-  // ---- trail progress + hiker marker ----
-  const progressBar = document.getElementById('progress');
-  const hiker = document.getElementById('trailHiker');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    const pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
-    progressBar.style.width = pct + '%';
-    hiker.style.left = pct + '%';
-  }, { passive: true });
-
-  // ---- PWA service worker ----
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js').catch(() => {});
-  }
-</script>
+<script src="../js/i18n/es.js"></script>
+<script src="../js/site.js"></script>
 <script data-goatcounter="https://comparereligion.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

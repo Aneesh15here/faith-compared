@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://comparereligion.com/sitemap.xml

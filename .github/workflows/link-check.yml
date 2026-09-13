@@ -1,0 +1,57 @@
+name: Link check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assert journey hash links use #/
+        run: |
+          set -euo pipefail
+          # Fail if any HTML still uses index.html#route without the slash
+          if grep -RInE 'index\.html#[a-zA-Z]' --include='*.html' . \
+            | grep -vE 'index\.html#/'; then
+            echo "::error::Found legacy index.html#route links; use index.html#/route"
+            exit 1
+          fi
+          # Fail on bare href="#religions" style journey links (allow in-page anchors)
+          ROUTES='religions|compare|islam|evidence|questions|objections|restoration|atheism|sources|contact|home'
+          if grep -RInE "href=\"#(${ROUTES})\"" --include='*.html' .; then
+            echo "::error::Found href=\"#route\" without slash; use href=\"#/route\""
+            exit 1
+          fi
+          echo "Hash link patterns OK"
+
+      - name: Link check (lychee)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Hash routes (#/religions etc.) are SPA navigation, not DOM ids — skip fragment checks.
+          # Hash pattern correctness is asserted in the previous step.
+          args: >-
+            --verbose
+            --no-progress
+            --include-fragments=none
+            --root-dir .
+            --scheme http
+            --scheme https
+            --scheme file
+            --include-mail=false
+            --exclude 'https://wa\.me/'
+            --exclude 'https://formsubmit\.co/'
+            --exclude 'https://gc\.zgo\.at/'
+            --exclude 'https://comparereligion\.goatcounter\.com/'
+            --exclude 'https://fonts\.googleapis\.com/'
+            --exclude 'https://fonts\.gstatic\.com/'
+            --exclude 'https://www\.theocca\.org/'
+            --exclude 'https://www\.johnlennox\.org/'
+            --exclude 'https://www\.pnas\.org/'
+            --exclude 'https://www\.science\.org/'
+            './**/*.html'
+          fail: true
