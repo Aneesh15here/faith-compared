@@ -231,7 +231,7 @@ RELIGIONS.forEach(r => {
   card.className = 'tile';
   card.innerHTML = `<img src="../img/${r.id}.jpg" alt="${r.name}" loading="lazy">` +
     `<div class="tile-body"><div class="t-tag">${r.tagline}</div>` +
-    `<h3><span class="t-emoji">${r.emoji}</span> ${r.name}</h3>` +
+    `<h3><span class="t-emoji" aria-hidden="true">${r.emoji}</span> ${r.name}</h3>` +
     `<p>${r.god}</p>` +
     `<span class="meta">${r.adherents} · ${r.founded.split('·')[0].trim()}</span>` +
     `<span class="t-go">Abrir el perfil completo →</span></div>`;
@@ -239,22 +239,51 @@ RELIGIONS.forEach(r => {
   relGrid.appendChild(card);
 });
 
+let modalLastFocus = null;
+function getModalFocusable() {
+  if (!relModal) return [];
+  return [...relModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')]
+    .filter(el => !el.disabled && el.offsetParent !== null);
+}
 function openRelModal(r) {
-  relModalBody.innerHTML = `<div class="m-hero"><img src="../img/${r.id}.jpg" alt="${r.name}"></div>` +
-    `<span class="m-emoji">${r.emoji}</span><h3>${r.name}</h3>` +
+  modalLastFocus = document.activeElement;
+  relModalBody.innerHTML = `<div class="m-hero"><img src="img/${r.id}.jpg" alt="${r.name}"></div>` +
+    `<span class="m-emoji" aria-hidden="true">${r.emoji}</span><h3 id="relModalTitle">${r.name}</h3>` +
     `<div class="m-tagline">${r.tagline} · ${r.adherents}</div><dl>` +
     FIELDS.map(([k, label]) => `<div><dt>${label}</dt><dd>${r[k]}</dd></div>`).join('') +
     `</dl>`;
+  const dialog = relModal.querySelector('.modal');
+  if (dialog) {
+    dialog.setAttribute('role', 'dialog');
+    dialog.setAttribute('aria-modal', 'true');
+    dialog.setAttribute('aria-labelledby', 'relModalTitle');
+  }
   relModal.hidden = false;
   document.body.style.overflow = 'hidden';
+  const closeBtn = document.getElementById('modalClose');
+  if (closeBtn) closeBtn.focus();
 }
 function closeRelModal() {
   relModal.hidden = true;
   document.body.style.overflow = '';
+  if (modalLastFocus && typeof modalLastFocus.focus === 'function') {
+    modalLastFocus.focus();
+  }
+  modalLastFocus = null;
 }
 document.getElementById('modalClose').addEventListener('click', closeRelModal);
 relModal.addEventListener('click', e => { if (e.target === relModal) closeRelModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape' && !relModal.hidden) closeRelModal(); });
+document.addEventListener('keydown', e => {
+  if (relModal.hidden) return;
+  if (e.key === 'Escape') { closeRelModal(); return; }
+  if (e.key !== 'Tab') return;
+  const items = getModalFocusable();
+  if (!items.length) return;
+  const first = items[0];
+  const last = items[items.length - 1];
+  if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+  else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+});
 
 // ===== laboratorio de comparación (elige 2–5, míralas lado a lado) =====
 const MIN_PICK = 2, MAX_PICK = 5;
