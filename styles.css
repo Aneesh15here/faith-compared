@@ -471,7 +471,18 @@
 @supports (animation-timeline: view()) {
   .hero { view-timeline-name: --heroTimeline; view-timeline-axis: block; }
 }
-.hero-bg { position: absolute; inset: -8%; background: url('img/earth.jpg') center/cover no-repeat; opacity: .38; animation: earthBreathe 26s ease-in-out infinite; will-change: transform, opacity; }
+.hero-bg {
+  position: absolute;
+  inset: -8%;
+  background: url('img/earth.jpg') center/cover no-repeat;
+  background-image: image-set(
+    url('img/earth.webp') type('image/webp'),
+    url('img/earth.jpg') type('image/jpeg')
+  );
+  opacity: .38;
+  animation: earthBreathe 26s ease-in-out infinite;
+  will-change: transform, opacity;
+}
 .hero-veil { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 100%, rgba(10,12,20,.3) 0%, rgba(10,12,20,.78) 55%, var(--bg) 100%); }
 .hero .wrap { position: relative; z-index: 2; }
 
