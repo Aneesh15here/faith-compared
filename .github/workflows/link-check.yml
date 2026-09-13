@@ -40,7 +40,7 @@ jobs:
             --scheme http
             --scheme https
             --scheme file
-            --exclude-mail
+            --include-mail=false
             --exclude 'https://wa\.me/'
             --exclude 'https://formsubmit\.co/'
             --exclude 'https://gc\.zgo\.at/'
