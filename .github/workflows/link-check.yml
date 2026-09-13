@@ -40,6 +40,7 @@ jobs:
         with:
           # Hash routes (#/religions etc.) are SPA navigation, not DOM ids — skip fragment checks.
           # Hash pattern correctness is asserted in the previous step.
+<<<<<<< HEAD
           args: >-
             --verbose
             --no-progress
@@ -48,6 +49,13 @@ jobs:
             --root-dir .
 =======
             --include-fragments
+=======
+          # Args match Clarity #2 (include-mail=false, include-fragments=none, crawler-hostile excludes).
+          args: >-
+            --verbose
+            --no-progress
+            --include-fragments=none
+>>>>>>> b9462d8 (Fix lychee CLI flags to match Clarity link-check)
             --root-dir _site
 >>>>>>> d2c3e84 (Build locales with Eleventy on Clarity shared shell)
             --scheme http
@@ -63,10 +71,15 @@ jobs:
             --exclude 'https://www\.theocca\.org/'
             --exclude 'https://www\.johnlennox\.org/'
 <<<<<<< HEAD
+<<<<<<< HEAD
             --exclude 'https://www\.pnas\.org/'
             --exclude 'https://www\.science\.org/'
             './**/*.html'
 =======
+=======
+            --exclude 'https://www\.pnas\.org/'
+            --exclude 'https://www\.science\.org/'
+>>>>>>> b9462d8 (Fix lychee CLI flags to match Clarity link-check)
             './_site/**/*.html'
 >>>>>>> d2c3e84 (Build locales with Eleventy on Clarity shared shell)
           fail: true
