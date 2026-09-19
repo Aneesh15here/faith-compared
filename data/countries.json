@@ -1,6 +1,6 @@
 {
-  "updated": "2026-09-17T08:38:22Z",
-  "total": 67,
+  "updated": "2026-09-19T08:01:55Z",
+  "total": 68,
   "countries": [
     {
       "code": "AU",
@@ -30,6 +30,11 @@
     {
       "code": "FR",
       "name": "France",
+      "count": 1
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
       "count": 1
     },
     {
