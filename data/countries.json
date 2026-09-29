@@ -1,11 +1,11 @@
 {
-  "updated": "2026-09-27T09:14:17Z",
-  "total": 77,
+  "updated": "2026-09-29T09:48:14Z",
+  "total": 79,
   "countries": [
     {
       "code": "US",
       "name": "United States",
-      "count": 33
+      "count": 35
     },
     {
       "code": "AU",
