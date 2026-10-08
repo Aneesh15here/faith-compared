@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-07T10:14:28Z",
-  "total": 86,
+  "updated": "2026-10-08T10:33:21Z",
+  "total": 87,
   "countries": [
     {
       "code": "US",
@@ -40,6 +40,11 @@
     {
       "code": "IN",
       "name": "India",
+      "count": 1
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
       "count": 1
     },
     {
