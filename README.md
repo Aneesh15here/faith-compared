@@ -43,9 +43,29 @@ Verify: English + one locale home, `#/religions` tiles, philosophy/happiness/sta
 
 Edit `cacheVersion` in `src/_data/site.js` and the `CACHE` / `SHELL` list in `src/assets/sw.js` (keep `styles.css?v=` in sync).
 
-## Contact form (FormSubmit)
+## Visitor notifications
 
-Honeypots `_honey` + `_gotcha` ship in templates. Operator checklist (domain allowlist, captcha, hash rotation): same as Clarity README guidance — endpoint URL lives in `js/app.js`.
+Every page footer includes a “Check in / Ask a question” form, in all seven languages. Strings live in `src/_data/ui.js` (`notify`). Option **values** stay English so the inbox can match them: `check-in`, `question`, `share`, `comment`, `suggestion`.
+
+The form is a normal HTML `POST` to [FormSubmit](https://formsubmit.co) at `aneesh@mail.grokbot.com`. There is no server and no paid service. The address is the public form recipient, not a credential.
+
+| Field | Value |
+| --- | --- |
+| name, email | optional |
+| `type` | `check-in`, `question`, `share`, `comment`, or `suggestion` |
+| message | required |
+| `page` | hidden URL of the page (the script updates it to the current URL, including the journey hash, on submit) |
+| `_subject` | `comparereligion.com: <type>` |
+| `_template` | `table` |
+| `_captcha` | `true` (captcha on) |
+| `_honey` | honeypot; leave empty |
+| `_next` | thank-you page for that language (`/thanks.html`, `/es/thanks.html`, …) |
+
+`js/site.js` copies the selected type into `_subject` before the browser posts, so the subject stays `comparereligion.com: <type>`.
+
+**One-time activation.** The first submission to a new FormSubmit address sends an activation email to `aneesh@mail.grokbot.com`. That email has to be confirmed once. Until it is confirmed, FormSubmit does not deliver visitor messages. After confirmation, later submissions arrive as email with the subject above.
+
+The journey’s chapter 12 comment form is unchanged and still posts with the existing AJAX endpoint in `js/app.js`.
 
 ## CI
 

@@ -9,6 +9,7 @@ Locales: `en`, `es`, `hi`, `ml`, `ta`, `zh`, `ja`.
 | Journey / essay / stats body | `src/_includes/content/<lang>/…` |
 | Nav link labels | `src/_includes/content/<lang>/nav-*.html` |
 | Form / share / continue / mobile menu strings | `js/i18n/<lang>.js` (Clarity maps) and matching keys in `src/_data/ui.js` (footer/brand in layouts) |
+| Footer check-in form | `src/_data/ui.js` `notify` strings. Keep option values in English: `check-in`, `question`, `share`, `comment`, `suggestion` |
 | Religion profiles / compare lab | `src/assets/js/religions/<lang>.js` (build emits `/religions.js` or `/<lang>/religions.js`) |
 | Shared behavior (router, drawer, SW) | `js/app.js`, `js/site.js`, root `sw.js` — **once for all languages** |
 

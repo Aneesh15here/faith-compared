@@ -120,6 +120,25 @@
     nodes.forEach(el => { el.classList.add('reveal'); io.observe(el); });
   }
 
+  // Footer check-in form: native POST so FormSubmit can show captcha and follow _next.
+  // Subject must stay "comparereligion.com: <type>" for the inbox listener.
+  function initNotifyForm() {
+    const form = document.getElementById('notifyForm');
+    if (!form) return;
+    const typeInput = form.querySelector('[name="type"]');
+    const subject = form.querySelector('[name="_subject"]');
+    const page = form.querySelector('[name="page"]');
+    const prefix = form.getAttribute('data-subject-prefix') || 'comparereligion.com: ';
+    function syncSubject() {
+      const type = typeInput && typeInput.value ? typeInput.value : 'check-in';
+      if (subject) subject.value = prefix + type;
+      if (page) page.value = location.href;
+    }
+    if (typeInput) typeInput.addEventListener('change', syncSubject);
+    form.addEventListener('submit', syncSubject);
+  }
+
+  initNotifyForm();
   initMobileNav();
   initReveal();
   initServiceWorker();

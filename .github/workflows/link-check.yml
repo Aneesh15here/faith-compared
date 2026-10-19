@@ -37,6 +37,7 @@ jobs:
           echo "Hash link patterns OK"
 
       - name: Link check (lychee)
+        # Thank-you URLs are emitted in this build. They are not on the live host until Pages deploys, so do not fetch them remotely.
         uses: lycheeverse/lychee-action@v2
         with:
           # Hash routes (#/religions etc.) are SPA navigation, not DOM ids — skip fragment checks.
@@ -53,6 +54,7 @@ jobs:
             --include-mail=false
             --exclude 'https://wa\.me/'
             --exclude 'https://formsubmit\.co/'
+            --exclude 'https://comparereligion\.com/(es/|hi/|ja/|ml/|ta/|zh/)?thanks\.html'
             --exclude 'https://gc\.zgo\.at/'
             --exclude 'https://comparereligion\.goatcounter\.com/'
             --exclude 'https://fonts\.googleapis\.com/'

@@ -20,10 +20,13 @@ function originFromCname() {
 module.exports = {
   name: 'Faith, Compared',
   url: originFromCname(),
-  cacheVersion: '20',
+  cacheVersion: '21',
   themeColor: '#0a0c14',
   goatcounter: 'https://comparereligion.goatcounter.com/count',
   formSubmit: 'https://formsubmit.co/ajax/3af65db5073e39fb154eb3268d8f0105',
+  // Public FormSubmit recipient. Not a credential. Subject prefix is matched by the inbox listener.
+  notifyEmail: 'aneesh@mail.grokbot.com',
+  notifySubjectPrefix: 'comparereligion.com: ',
   ogImage: '/img/og.jpg',
   ogImageAlt: 'Faith, Compared — seventeen worldviews, one honest comparison',
   ogImageWidth: 1200,
