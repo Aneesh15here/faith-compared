@@ -11,24 +11,40 @@
     });
   }
   if (toggles.length) {
-    toggles.forEach(t => t.addEventListener('click', () => {
-      const activeCount = [...toggles].filter(x => x.classList.contains('active')).length;
-      if (t.classList.contains('active') && activeCount === 1) return;
-      t.classList.toggle('active');
-      refreshCols();
-    }));
+    toggles.forEach(t => {
+      t.setAttribute('type', 'button');
+      t.setAttribute('aria-pressed', t.classList.contains('active') ? 'true' : 'false');
+      t.addEventListener('click', () => {
+        const activeCount = [...toggles].filter(x => x.classList.contains('active')).length;
+        if (t.classList.contains('active') && activeCount === 1) return;
+        t.classList.toggle('active');
+        t.setAttribute('aria-pressed', t.classList.contains('active') ? 'true' : 'false');
+        refreshCols();
+      });
+    });
     refreshCols();
   }
 
   // ---- deep dive tabs ----
+  const tabList = document.getElementById('ddTabs');
+  if (tabList) tabList.setAttribute('role', 'tablist');
   const tabs = document.querySelectorAll('#ddTabs .tab');
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-    tab.classList.add('active');
-    const panel = document.getElementById(tab.dataset.panel);
-    if (panel) panel.classList.add('active');
-  }));
+  tabs.forEach(tab => {
+    tab.setAttribute('type', 'button');
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('aria-selected', tab.classList.contains('active') ? 'true' : 'false');
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById(tab.dataset.panel);
+      if (panel) panel.classList.add('active');
+    });
+  });
 
   // ---- kinetic heading ----
   document.querySelectorAll('h1.kinetic').forEach(h => {
@@ -264,11 +280,28 @@
   // ---- share buttons ----
   (function () {
     const MSGS = i18n.shareMessages || {};
+    function shareTarget(url) {
+      const base = (window.FC && FC.siteUrl) || '';
+      if (!base || !url) return url;
+      try {
+        const target = new URL(url);
+        const site = new URL(base);
+        target.protocol = site.protocol;
+        target.host = site.host;
+        return target.toString();
+      } catch (err) {
+        return url;
+      }
+    }
+    document.querySelectorAll('.share-btn, .quiz-opt').forEach(b => {
+      if (!b.getAttribute('type')) b.setAttribute('type', 'button');
+    });
     document.querySelectorAll('.share-btn').forEach(b => b.addEventListener('click', async () => {
       const m = MSGS[b.dataset.share] || MSGS.site;
       if (!m) return;
-      if (navigator.share) { try { await navigator.share(m); } catch (e) { /* cancelled */ } }
-      else { window.open('https://wa.me/?text=' + encodeURIComponent(m.text + ' ' + m.url), '_blank', 'noopener'); }
+      const payload = { title: m.title, text: m.text, url: shareTarget(m.url) };
+      if (navigator.share) { try { await navigator.share(payload); } catch (e) { /* cancelled */ } }
+      else { window.open('https://wa.me/?text=' + encodeURIComponent(payload.text + ' ' + payload.url), '_blank', 'noopener'); }
     }));
   })();
 })();

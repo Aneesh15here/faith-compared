@@ -1,0 +1,22 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- for loc in locales -%}
+{%- for file in ['index.html', 'philosophy.html', 'happiness.html', 'stats.html'] -%}
+{%- set prefix = '' if loc.base == '/' else loc.base -%}
+{%- set locUrl = site.url + prefix + ('/' if file == 'index.html' else '/' + file) -%}
+  <url>
+    <loc>{{ locUrl }}</loc>
+{%- for alt in locales -%}
+{%- set altPrefix = '' if alt.base == '/' else alt.base -%}
+{%- set altUrl = site.url + altPrefix + ('/' if file == 'index.html' else '/' + file) -%}
+    <xhtml:link rel="alternate" hreflang="{{ alt.hreflang }}" href="{{ altUrl }}" />
+{%- endfor -%}
+    <xhtml:link rel="alternate" hreflang="x-default" href="{{ site.url + ('/' if file == 'index.html' else '/' + file) }}" />
+  </url>
+{%- endfor -%}
+{%- endfor -%}
+</urlset>

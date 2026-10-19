@@ -231,7 +231,7 @@ RELIGIONS.forEach(r => {
   const card = document.createElement('button');
   card.type = 'button';
   card.className = 'tile';
-  card.innerHTML = `<picture><source type="image/webp" srcset="${__IMG()}${r.id}-640.webp 640w, ${__IMG()}${r.id}-960.webp 960w, ${__IMG()}${r.id}.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:1000px) 50vw, 320px"><img src="${__IMG()}${r.id}.jpg" srcset="${__IMG()}${r.id}-640.jpg 640w, ${__IMG()}${r.id}-960.jpg 960w, ${__IMG()}${r.id}.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1000px) 50vw, 320px" alt="${r.name}" loading="lazy" width="640" height="400"></picture>` +
+  card.innerHTML = `<picture><source type="image/webp" srcset="${__IMG()}${r.id}-640.webp 640w, ${__IMG()}${r.id}-960.webp 960w, ${__IMG()}${r.id}.webp 1200w" sizes="(max-width:600px) 100vw, (max-width:1000px) 50vw, 320px"><img src="${__IMG()}${r.id}.jpg" srcset="${__IMG()}${r.id}-640.jpg 640w, ${__IMG()}${r.id}-960.jpg 960w, ${__IMG()}${r.id}.jpg 1200w" sizes="(max-width:600px) 100vw, (max-width:1000px) 50vw, 320px" alt="${r.name}" loading="lazy" decoding="async" width="640" height="400"></picture>` +
     `<div class="tile-body"><div class="t-tag">${r.tagline}</div>` +
     `<h3><span class="t-emoji" aria-hidden="true">${r.emoji}</span> ${r.name}</h3>` +
     `<p>${r.god}</p>` +

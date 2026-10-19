@@ -2,6 +2,7 @@
 window.FC = window.FC || {};
 window.FC.lang = {{ locale | dump | safe }};
 window.FC.imgBase = '/img/';
+window.FC.siteUrl = {{ site.url | dump | safe }};
 </script>
 {% if religionsSrc %}<script src="{{ religionsSrc }}"></script>{% endif %}
 {% for item in scriptSrcs or [] %}
