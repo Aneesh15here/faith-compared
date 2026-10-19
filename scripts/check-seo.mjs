@@ -155,6 +155,45 @@ for (const loc of locs) {
 if (!sitemap.includes('hreflang="x-default"')) fail('sitemap hreflang');
 if (sitemap.includes('faithcompared.com')) fail('sitemap host');
 
+const notifyTypes = ['check-in', 'question', 'share', 'comment', 'suggestion'];
+const notifyPages = pages.concat(['thanks.html']);
+for (const locale of locales) {
+  for (const page of notifyPages) {
+    const rel = path.posix.join(locale, page);
+    const html = read(rel);
+    const label = '/' + rel;
+    const formMatch = html.match(/<form id="notifyForm"[\s\S]*?<\/form>/);
+    if (!formMatch) {
+      fail(label + ' missing check-in form');
+      continue;
+    }
+    const form = formMatch[0];
+    if (!form.includes('method="POST"')) fail(label + ' form method');
+    if (!form.includes('action="https://formsubmit.co/aneesh@mail.grokbot.com"')) fail(label + ' form action');
+    if (!form.includes('name="_subject" value="comparereligion.com: check-in"')) fail(label + ' subject');
+    if (!form.includes('data-subject-prefix="comparereligion.com: "')) fail(label + ' subject prefix');
+    if (!form.includes('name="_template" value="table"')) fail(label + ' template');
+    if (!form.includes('name="_captcha" value="true"')) fail(label + ' captcha');
+    if (!form.includes('name="_honey"')) fail(label + ' honeypot');
+    if (!form.includes('name="page"')) fail(label + ' page url');
+    const thanksPath = (locale ? '/' + locale : '') + '/thanks.html';
+    if (!form.includes('name="_next" value="' + origin + thanksPath + '"')) fail(label + ' next');
+    for (const type of notifyTypes) {
+      if (!form.includes('<option value="' + type + '">')) fail(label + ' type ' + type);
+    }
+    const nameInput = form.match(/<input[^>]*name="name"[^>]*>/);
+    const emailInput = form.match(/<input[^>]*name="email"[^>]*>/);
+    const messageInput = form.match(/<textarea[^>]*name="message"[^>]*>/);
+    if (!nameInput || nameInput[0].includes('required')) fail(label + ' name should be optional');
+    if (!emailInput || emailInput[0].includes('required')) fail(label + ' email should be optional');
+    if (!messageInput || !messageInput[0].includes('required')) fail(label + ' message required');
+    if (!form.includes('for="notify-name"') || !form.includes('for="notify-email"') || !form.includes('for="notify-type"') || !form.includes('for="notify-message"')) {
+      fail(label + ' missing accessible labels');
+    }
+    if (page === 'thanks.html' && !html.includes('name="robots" content="noindex"')) fail(label + ' thanks noindex');
+  }
+}
+
 const robots = read('robots.txt');
 if (!robots.includes('Sitemap: ' + origin + '/sitemap.xml')) fail('robots sitemap line: ' + robots);
 if (!robots.includes('Allow: /')) fail('robots allow');

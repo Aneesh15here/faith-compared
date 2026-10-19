@@ -2,13 +2,13 @@
  * Cache version: bump CACHE when shell assets change; also bump styles.css?v= in HTML.
  * On activate, only removes other faith-compared-* caches — never unrelated origin caches.
  */
-const CACHE = 'faith-compared-v20';
+const CACHE = 'faith-compared-v21';
 const SHELL = [
   '/index.html',
   '/philosophy.html',
   '/happiness.html',
   '/stats.html',
-  '/styles.css?v=20',
+  '/styles.css?v=21',
   '/religions.js',
   '/js/app.js',
   '/js/site.js',

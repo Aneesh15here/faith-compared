@@ -2,6 +2,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{{ title }}</title>
 <meta name="description" content="{{ description }}" />
+{% if robots %}
+<meta name="robots" content="{{ robots }}" />
+{% endif %}
 {%- set prefix = '' if loc.base == '/' else loc.base -%}
 {%- if pageFile == 'index.html' -%}
 {%- set pagePath = prefix + '/' -%}

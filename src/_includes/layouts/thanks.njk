@@ -1,0 +1,46 @@
+{% set locale = localeItem.code %}
+{% set loc = localeByCode[locale] %}
+{% set chrome = ui[locale] or ui.en %}
+{% set title = chrome.notify.thanksTitle %}
+{% set description = chrome.notify.thanksDescription %}
+{% set pageFile = 'thanks.html' %}
+{% set homeHref = 'index.html' %}
+{% set seoKind = 'page' %}
+{% set loadApp = false %}
+<!DOCTYPE html>
+<html lang="{{ loc.hreflang }}" dir="{{ loc.dir }}">
+<head>
+{% include "partials/head.njk" %}
+</head>
+<body class="thanks-page">
+<a class="skip-link" href="#main">{{ chrome.skip }}</a>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+<nav aria-label="{{ chrome.nav.primary }}">
+  <div class="wrap nav-inner">
+    <a class="logo" href="index.html">{{ chrome.brandHtml | safe }}</a>
+    <div class="nav-links" id="primary-nav">
+      <a href="index.html">{{ chrome.nav.home }}</a>
+      <a href="index.html#/contact">{{ chrome.nav.contact }}</a>
+      {%- for alt in locales %}
+      {%- if alt.code == locale %}
+      <a href="thanks.html" hreflang="{{ alt.hreflang }}" lang="{{ alt.hreflang }}" aria-current="page">{{ alt.short }}</a>
+      {%- elif locale == 'en' %}
+      <a href="{{ alt.code }}/thanks.html" hreflang="{{ alt.hreflang }}" lang="{{ alt.hreflang }}">{{ alt.short }}</a>
+      {%- elif alt.code == 'en' %}
+      <a href="../thanks.html" hreflang="{{ alt.hreflang }}" lang="{{ alt.hreflang }}">{{ alt.short }}</a>
+      {%- else %}
+      <a href="../{{ alt.code }}/thanks.html" hreflang="{{ alt.hreflang }}" lang="{{ alt.hreflang }}">{{ alt.short }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </div>
+</nav>
+{{ content | safe }}
+{% set footerExtras %}
+ · <a href="index.html" style="color: var(--accent-2); text-decoration: none;">{{ chrome.backToJourney }}</a>
+{% endset %}
+{% include "partials/footer.njk" %}
+{% include "partials/scripts.njk" %}
+</body>
+</html>

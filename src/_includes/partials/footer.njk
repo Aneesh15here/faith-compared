@@ -1,5 +1,6 @@
 <footer>
   <div class="wrap">
-    <p>{{ chrome.footer }}{% if footerExtras %}{{ footerExtras | safe }}{% endif %}</p>
+    {% include "partials/notify-form.njk" %}
+    <p class="footer-note">{{ chrome.footer }}{% if footerExtras %}{{ footerExtras | safe }}{% endif %}</p>
   </div>
 </footer>

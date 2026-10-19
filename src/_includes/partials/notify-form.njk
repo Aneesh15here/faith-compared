@@ -1,0 +1,44 @@
+{# Visitor notification form. Native POST so FormSubmit can run captcha and redirect to _next. #}
+{%- set prefix = '' if loc.base == '/' else loc.base -%}
+{%- if pageFile == 'index.html' -%}
+{%- set pageUrl = site.url + prefix + '/' -%}
+{%- else -%}
+{%- set pageUrl = site.url + prefix + '/' + pageFile -%}
+{%- endif -%}
+{%- set thanksUrl = site.url + prefix + '/thanks.html' -%}
+<section id="check-in" class="notify" aria-labelledby="notify-title">
+  <h2 id="notify-title">{{ chrome.notify.title }}</h2>
+  <p class="notify-lead">{{ chrome.notify.lead }}</p>
+  <form id="notifyForm" class="contact-form" method="POST" action="https://formsubmit.co/{{ site.notifyEmail }}" accept-charset="UTF-8" data-subject-prefix="{{ site.notifySubjectPrefix }}">
+    <label for="notify-honey" style="display:none">{{ chrome.notify.honey }}</label>
+    <input id="notify-honey" type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="form-row">
+      <label for="notify-name">{{ chrome.notify.name }}
+        <input id="notify-name" type="text" name="name" autocomplete="name" maxlength="200">
+      </label>
+      <label for="notify-email">{{ chrome.notify.email }}
+        <input id="notify-email" type="email" name="email" autocomplete="email" inputmode="email" maxlength="200">
+      </label>
+    </div>
+    <label for="notify-type">{{ chrome.notify.type }}
+      <select id="notify-type" name="type" required>
+        <option value="check-in">{{ chrome.notify.checkIn }}</option>
+        <option value="question">{{ chrome.notify.question }}</option>
+        <option value="share">{{ chrome.notify.share }}</option>
+        <option value="comment">{{ chrome.notify.comment }}</option>
+        <option value="suggestion">{{ chrome.notify.suggestion }}</option>
+      </select>
+    </label>
+    <label for="notify-message">{{ chrome.notify.message }}
+      <textarea id="notify-message" name="message" rows="5" required placeholder="{{ chrome.notify.placeholder }}"></textarea>
+    </label>
+    <input type="hidden" name="page" value="{{ pageUrl }}">
+    <input type="hidden" name="_subject" value="{{ site.notifySubjectPrefix }}check-in">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="{{ thanksUrl }}">
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">{{ chrome.notify.send }}</button>
+    </div>
+  </form>
+</section>

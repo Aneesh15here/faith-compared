@@ -1,0 +1,22 @@
+---
+pagination:
+  data: locales
+  size: 1
+  alias: localeItem
+permalink: "{{ localeItem.code | thanksPermalink }}"
+layout: layouts/thanks.njk
+eleventyExcludeFromCollections: true
+robots: noindex
+---
+{% set chrome = ui[localeItem.code] or ui.en %}
+<main id="main">
+  <section class="notify-thanks">
+    <div class="wrap">
+      <div class="section-head">
+        <h1>{{ chrome.notify.thanksHeading }}</h1>
+        <p>{{ chrome.notify.thanksBody }}</p>
+        <p><a class="btn btn-ghost" href="index.html">{{ chrome.backToJourney }}</a></p>
+      </div>
+    </div>
+  </section>
+</main>

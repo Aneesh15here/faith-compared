@@ -10,6 +10,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('manifest.webmanifest');
   eleventyConfig.addPassthroughCopy('CNAME');
 
+  eleventyConfig.addFilter('thanksPermalink', (code) =>
+    code === 'en' ? '/thanks.html' : `/${code}/thanks.html`
+  );
+
   eleventyConfig.addFilter('jsonld', (value) =>
     JSON.stringify(value)
       .replace(/</g, '\\u003c')
