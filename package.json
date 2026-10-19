@@ -5,6 +5,7 @@
   "description": "Faith, Compared — multi-locale apologetics site (Eleventy)",
   "scripts": {
     "build": "eleventy",
+    "check:seo": "node scripts/check-seo.mjs",
     "start": "eleventy --serve --port=8080",
     "clean": "rm -rf _site",
     "import:legacy": "node scripts/import-legacy.mjs"

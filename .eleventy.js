@@ -1,13 +1,21 @@
+const { structuredData } = require('./scripts/structured-data');
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.setUseGitIgnore(false);
+  eleventyConfig.addNunjucksGlobal('structuredData', structuredData);
 
   // Clarity-track shared assets (keep UX/SEO/SW behavior in lockstep with product-improvements)
   eleventyConfig.addPassthroughCopy('styles.css');
   eleventyConfig.addPassthroughCopy('sw.js');
   eleventyConfig.addPassthroughCopy('manifest.webmanifest');
-  eleventyConfig.addPassthroughCopy('robots.txt');
-  eleventyConfig.addPassthroughCopy('sitemap.xml');
   eleventyConfig.addPassthroughCopy('CNAME');
+
+  eleventyConfig.addFilter('jsonld', (value) =>
+    JSON.stringify(value)
+      .replace(/</g, '\\u003c')
+      .replace(/\u2028/g, '\\u2028')
+      .replace(/\u2029/g, '\\u2029')
+  );
   eleventyConfig.addPassthroughCopy({ 'js': 'js' });
   eleventyConfig.addPassthroughCopy('vendor');
   eleventyConfig.addPassthroughCopy('img');

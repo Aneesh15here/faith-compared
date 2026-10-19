@@ -14,6 +14,14 @@
     --font-display: 'Fraunces', Georgia, serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  :focus-visible { outline: 2px solid var(--accent-2); outline-offset: 3px; }
+  .skip-link {
+    position: absolute; left: 12px; top: 8px; z-index: 100;
+    transform: translateY(-160%);
+    background: #fff; color: #12172a; padding: 10px 14px; border-radius: 8px;
+    font-weight: 700; text-decoration: none;
+  }
+  .skip-link:focus { transform: none; }
   html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
@@ -267,7 +275,7 @@
   .duel-card .faith-label { font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 12px; }
   .duel-card.christian .faith-label { color: #a5b4ff; }
   .duel-card.islam .faith-label { color: #5eead4; }
-  .duel-card h4 { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 14px; font-weight: 700; }
+  .duel-card h3 { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 14px; font-weight: 700; }
   .duel-card p { color: #c2c9da; font-size: .93rem; margin-bottom: 12px; }
   .duel-card p:last-child { margin-bottom: 0; }
   .cite {
@@ -457,7 +465,10 @@
   padding: 14px 16px; color: var(--text); font-family: inherit; font-size: .95rem;
   transition: border-color .2s; resize: vertical;
 }
-.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: rgba(124,140,255,.6); }
+.contact-form input:focus, .contact-form textarea:focus,
+  .contact-form input:focus-visible, .contact-form textarea:focus-visible {
+    outline: 2px solid var(--accent); outline-offset: 2px; border-color: rgba(124,140,255,.6);
+  }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: rgba(154,163,184,.55); }
 .form-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
 .form-actions .btn { border: none; }
@@ -518,10 +529,14 @@
 .hero-bg {
   position: absolute;
   inset: -8%;
-  background: url('/img/earth.jpg') center/cover no-repeat;
+  background-color: #12172a;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/img/earth-640.jpg');
   background-image: image-set(
-    url('/img/earth.webp') type('image/webp'),
-    url('/img/earth.jpg') type('image/jpeg')
+    url('/img/earth-640.webp') type('image/webp'),
+    url('/img/earth-640.jpg') type('image/jpeg')
   );
   opacity: .38;
   animation: earthBreathe 26s ease-in-out infinite;
@@ -589,6 +604,7 @@
 .tb-content { position: relative; z-index: 2; width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 24px 34px; }
 .tb-no { font-family: var(--font-display); font-size: .82rem; font-weight: 700; letter-spacing: .2em; color: var(--accent-2); text-transform: uppercase; display: block; margin-bottom: 8px; }
 .tb-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.3rem); font-weight: 700; letter-spacing: -.015em; line-height: 1.05; }
+h1.tb-title { margin-bottom: 0; animation: none; }
 .crumb {
   display: inline-flex; align-items: center; gap: 8px; margin-bottom: 18px;
   color: #d5dae8; text-decoration: none; font-size: .84rem; font-weight: 600;
@@ -642,6 +658,24 @@
   .view.active { animation: none; }
   .tile, .tile img, .tile-body, .chapter { transition: none; }
   .kinetic .kw { animation: none; opacity: 1; transform: none; filter: none; }
+}
+@media (min-width: 700px) {
+  .hero-bg {
+    background-image: url('/img/earth-960.jpg');
+    background-image: image-set(
+      url('/img/earth-960.webp') type('image/webp'),
+      url('/img/earth-960.jpg') type('image/jpeg')
+    );
+  }
+}
+@media (min-width: 1200px) {
+  .hero-bg {
+    background-image: url('/img/earth.jpg');
+    background-image: image-set(
+      url('/img/earth.webp') type('image/webp'),
+      url('/img/earth.jpg') type('image/jpeg')
+    );
+  }
 }
 @media (max-width: 640px) {
   .tile { height: 310px; }
@@ -800,7 +834,7 @@ h1, h2 { text-shadow: 0 2px 30px rgba(124,140,255,.18); }
 .lang-pill {
   position: relative; overflow: hidden; isolation: isolate;
   display: inline-flex; align-items: center; gap: 7px;
-  padding: 8px 18px; border-radius: 999px; text-decoration: none;
+  min-height: 44px; padding: 8px 18px; border-radius: 999px; text-decoration: none;
   border: 1px solid var(--card-border); background: rgba(255,255,255,.055);
   color: var(--text); font-size: .92rem; font-weight: 600;
   transition: transform .2s, border-color .2s, background .2s, box-shadow .2s;
