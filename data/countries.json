@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-02T11:02:05Z",
-  "total": 96,
+  "updated": "2026-11-03T10:50:27Z",
+  "total": 97,
   "countries": [
     {
       "code": "US",
@@ -15,7 +15,7 @@
     {
       "code": "CA",
       "name": "Canada",
-      "count": 11
+      "count": 12
     },
     {
       "code": "JP",
