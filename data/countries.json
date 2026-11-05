@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-03T10:50:27Z",
-  "total": 97,
+  "updated": "2026-11-05T10:53:16Z",
+  "total": 100,
   "countries": [
     {
       "code": "US",
       "name": "United States",
-      "count": 42
+      "count": 44
     },
     {
       "code": "AU",
@@ -50,6 +50,11 @@
     {
       "code": "IN",
       "name": "India",
+      "count": 1
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
       "count": 1
     },
     {
