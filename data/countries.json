@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-07T10:04:46Z",
-  "total": 101,
+  "updated": "2026-11-09T11:28:45Z",
+  "total": 102,
   "countries": [
     {
       "code": "US",
@@ -20,7 +20,7 @@
     {
       "code": "JP",
       "name": "Japan",
-      "count": 2
+      "count": 3
     },
     {
       "code": "MD",
