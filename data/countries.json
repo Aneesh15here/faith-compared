@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-09T11:28:45Z",
-  "total": 102,
+  "updated": "2026-11-10T11:09:20Z",
+  "total": 103,
   "countries": [
     {
       "code": "US",
@@ -30,6 +30,11 @@
     {
       "code": "DE",
       "name": "Germany",
+      "count": 1
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
       "count": 1
     },
     {
